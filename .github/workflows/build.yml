@@ -68,7 +68,7 @@ jobs:
           # Write package.json
           cat > npm_pkg/package.json <<EOF
           {
-            "name": "${{ matrix.npm_package }}",
+            "name": "@lightsing/${{ matrix.npm_package }}",
             "version": "${{ github.ref_name }}",
             "repository": {
               "type": "git",
