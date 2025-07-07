@@ -44,7 +44,7 @@ pub async fn run(
 
     let tool_path = dirs.cache_dir().join(EXECUTABLE_NAME);
 
-    if self_version > latest_version {
+    if self_version >= latest_version {
         fs::copy(&self_path, &tool_path)
             .await
             .inspect_err(|e| error!("Failed to copy self to tool path: {e}"))
@@ -96,9 +96,15 @@ async fn download_and_extract_update(dirs: &ProjectDirs, url: Url) -> eyre::Resu
             .context("无法获取更新包条目路径")?
             .ends_with(EXECUTABLE_NAME)
         {
-            file.unpack(dirs.cache_dir().join(EXECUTABLE_NAME))
+            let path = dirs.cache_dir().join(EXECUTABLE_NAME);
+            file.unpack(&path)
                 .inspect_err(|e| error!("Failed to unpack entry: {e}"))
                 .context("无法解压更新包条目")?;
+            let file_time = filetime::FileTime::now();
+            filetime::set_file_mtime(&path, file_time)
+                .and_then(|_| filetime::set_file_mtime(&path, file_time))
+                .inspect_err(|e| error!("Failed to set file modification time: {e}"))
+                .context("无法设置文件时间")?;
         }
     }
     Ok(())

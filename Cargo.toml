@@ -9,7 +9,7 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.7"
+version = "0.1.8"
 
 [workspace.dependencies]
 bytes = "1.10"
@@ -52,6 +52,7 @@ url = "2.5"
 vdf-reader = "0.3"
 winreg = "0.55"
 winres = "0.1"
+filetime = "0.2"
 
 [profile.release]
 codegen-units = 1
