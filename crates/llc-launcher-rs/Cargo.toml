@@ -9,6 +9,7 @@ rust-version.workspace = true
 version.workspace = true
 
 [dependencies]
+bytes.workspace = true
 ctor.workspace = true
 directories.workspace = true
 eyre.workspace = true
@@ -16,9 +17,8 @@ flate2.workspace = true
 futures.workspace = true
 hex.workspace = true
 llc-rs.workspace = true
-nyquest = { workspace = true, features = ["async", "json"] }
-nyquest-preset = { workspace = true, features = ["async"] }
 os_info.workspace = true
+reqwest.workspace = true
 semver = { workspace = true, features = ["serde"] }
 serde = { workspace = true, features = ["derive"] }
 serde_json.workspace = true

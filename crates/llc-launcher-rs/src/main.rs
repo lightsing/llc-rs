@@ -12,8 +12,7 @@ use crate::config::LauncherConfig;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
-use std::{fs, process::exit};
-use std::path::PathBuf;
+use std::{fs, path::PathBuf, process::exit};
 
 const ORGANIZATION: &str = "lightsing";
 const APP_NAME: &str = "llc-launcher-rs";
@@ -24,11 +23,6 @@ mod logging;
 mod self_update;
 mod utils;
 pub mod zeroasso;
-
-#[ctor::ctor]
-fn setup() {
-    nyquest_preset::register();
-}
 
 #[cfg(test)]
 #[ctor::ctor]
@@ -44,9 +38,13 @@ fn setup_test() {
 #[tokio::main]
 async fn main() {
     let (dirs, self_path, is_tool, (config, llc_config), _logging_guard) = match init() {
-        Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard)) => {
-            (dirs, self_path, is_tool, (config, llc_config), logging_guard)
-        }
+        Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard)) => (
+            dirs,
+            self_path,
+            is_tool,
+            (config, llc_config),
+            logging_guard,
+        ),
         Err(e) => {
             eprintln!("{e}");
             utils::create_msgbox(
@@ -75,13 +73,15 @@ async fn main() {
     }
 }
 
-fn init() -> eyre::Result<(
+type InitResult = (
     ProjectDirs,
     PathBuf,
     bool,
     (LauncherConfig, LLCConfig),
     Option<logging::LoggingGuard>,
-)> {
+);
+
+fn init() -> eyre::Result<InitResult> {
     let dirs = ProjectDirs::from("me", ORGANIZATION, APP_NAME).context("无法侦测用户目录")?;
 
     fs::create_dir_all(dirs.cache_dir()).context("无法创建缓存目录")?;
@@ -105,5 +105,11 @@ fn init() -> eyre::Result<(
         .inspect_err(|e| warn!("无法保存配置：{e}"))
         .context("无法保存配置")?;
 
-    Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard))
+    Ok((
+        dirs,
+        self_path,
+        is_tool,
+        (config, llc_config),
+        logging_guard,
+    ))
 }

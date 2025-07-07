@@ -1,7 +1,9 @@
-use crate::{utils, utils::github_client, zeroasso::utils::request_zeroasso_api};
-use eyre::Context;
+use crate::{
+    utils,
+    zeroasso::{CLIENT, utils::request_zeroasso_api},
+};
+use futures::{FutureExt, TryFutureExt};
 use llc_rs::LLCConfig;
-use nyquest::Request;
 use serde::Deserialize;
 use serde_with::{DisplayFromStr, serde_as};
 use std::sync::Arc;
@@ -25,12 +27,18 @@ async fn get_version_github(llc_config: &LLCConfig) -> eyre::Result<u64> {
         tag_name: u64,
     }
 
-    let client = github_client(llc_config)
-        .await
-        .inspect_err(|e| error!("Failed to create API client: {e}"))
-        .context("无法创建 API 客户端。")?;
-    let req = Request::get("v2/resource/get_version");
-    let ver: GithubRelease = client.request(req).await?.json().await?;
+    let ver: GithubRelease = CLIENT
+        .get(
+            llc_config
+                .github()
+                .api_url()
+                .join("v2/resource/get_version")
+                .expect("infallible"),
+        )
+        .send()
+        .map(|r| r.and_then(|res| res.error_for_status()))
+        .and_then(|res| res.json())
+        .await?;
     info!("get version from GitHub API");
     Ok(ver.tag_name)
 }

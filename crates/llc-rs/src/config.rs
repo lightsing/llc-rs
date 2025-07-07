@@ -295,6 +295,11 @@ mod tests {
 api-node = "零协会官方 API"
 download-node = "自动选择节点"
 
+[github]
+repo = "LocalizeLimbusCompany"
+owner = "LocalizeLimbusCompany"
+api = "https://api.github.com"
+
 [[download-node]]
 name = "自动选择节点"
 endpoint = "https://api.zeroasso.top/v2/download/files?file_name={{ file_name }}"

@@ -4,12 +4,20 @@ use crate::config::LauncherConfig;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use flate2::read::GzDecoder;
-use futures::{AsyncReadExt, FutureExt, StreamExt, stream::FuturesUnordered};
-use nyquest::{AsyncClient, ClientBuilder, Request, r#async::Response};
+use futures::{FutureExt, StreamExt, TryFutureExt, stream::FuturesUnordered};
+use reqwest::{
+    Client, ClientBuilder, Response, header,
+    header::{HeaderMap, HeaderName, HeaderValue},
+};
 use semver::Version;
 use serde::Deserialize;
-use std::{collections::BTreeMap, future::ready, path::Path, process::{Command, exit}};
-use std::path::PathBuf;
+use std::{
+    collections::BTreeMap,
+    future::ready,
+    path::{Path, PathBuf},
+    process::{Command, exit},
+    sync::LazyLock,
+};
 use tokio::fs;
 use url::Url;
 
@@ -23,11 +31,13 @@ const EXECUTABLE_NAME: &str = "llc-launcher-rs.exe";
 #[cfg(target_os = "linux")]
 const EXECUTABLE_NAME: &str = "llc-launcher-rs";
 
-pub async fn run(dirs: &ProjectDirs, self_path: PathBuf, config: LauncherConfig) -> eyre::Result<()> {
-    let client = npm_client().await?;
-
+pub async fn run(
+    dirs: &ProjectDirs,
+    self_path: PathBuf,
+    config: LauncherConfig,
+) -> eyre::Result<()> {
     let self_version = Version::parse(env!("CARGO_PKG_VERSION"))?;
-    let (latest_version, tarball_url) = get_latest_version(&client, &config)
+    let (latest_version, tarball_url) = get_latest_version(&config)
         .await
         .inspect_err(|e| error!("Failed to get latest version: {e}"))
         .context("无法获取最新版本信息，请检查网络连接。")?;
@@ -35,13 +45,14 @@ pub async fn run(dirs: &ProjectDirs, self_path: PathBuf, config: LauncherConfig)
     let tool_path = dirs.cache_dir().join(EXECUTABLE_NAME);
 
     if self_version > latest_version {
-        fs::copy(&self_path, &tool_path).await
+        fs::copy(&self_path, &tool_path)
+            .await
             .inspect_err(|e| error!("Failed to copy self to tool path: {e}"))
             .context("无法更新启动器可执行文件")?;
         launch_tool(&tool_path, &self_path)
     }
 
-    download_update(&client, &dirs, tarball_url).await?;
+    download_and_extract_update(dirs, tarball_url).await?;
     launch_tool(&tool_path, &self_path)
 }
 
@@ -51,10 +62,7 @@ fn launch_tool(tool_path: &Path, self_path: &Path) -> ! {
     info!("Launching tool at: {}", tool_path.display());
     Command::new(tool_path)
         .args(args)
-        .env(
-            "LLC_LAUNCHER_PATH",
-            self_path,
-        )
+        .env("LLC_LAUNCHER_PATH", self_path)
         .spawn()
         .inspect_err(|e| error!("Failed to launch tool: {e}"))
         .ok();
@@ -62,20 +70,17 @@ fn launch_tool(tool_path: &Path, self_path: &Path) -> ! {
     exit(0);
 }
 
-async fn download_update(client: &AsyncClient, dirs: &ProjectDirs, url: Url) -> eyre::Result<()> {
-    let res = client
-        .request(Request::get(url.to_string()))
+async fn download_and_extract_update(dirs: &ProjectDirs, url: Url) -> eyre::Result<()> {
+    let res = NPM_CLIENT
+        .get(url)
+        .send()
+        .map(|r| r.and_then(|res| res.error_for_status()))
+        .and_then(|res| res.bytes())
         .await
-        .inspect_err(|e| error!("Failed to download update package: {e}"))
+        .inspect_err(|e| error!("failed to download update package: {e}"))
         .context("无法下载更新包")?;
 
-    let buffer_size = res.content_length().unwrap_or(1024 * 1024 * 2); // default to 2 MiB buffer
-    let mut buffer = Vec::with_capacity(buffer_size as usize);
-    res.into_async_read()
-        .read_to_end(&mut buffer)
-        .await
-        .context("无法读取更新包内容")?;
-    let tar = GzDecoder::new(buffer.as_slice());
+    let tar = GzDecoder::new(res.as_ref());
     let mut archive = tar::Archive::new(tar);
     for file in archive
         .entries()
@@ -99,11 +104,8 @@ async fn download_update(client: &AsyncClient, dirs: &ProjectDirs, url: Url) -> 
     Ok(())
 }
 
-#[instrument(skip(client, config), ret)]
-async fn get_latest_version(
-    client: &AsyncClient,
-    config: &LauncherConfig,
-) -> eyre::Result<(Version, Url)> {
+#[instrument(skip(config), ret)]
+async fn get_latest_version(config: &LauncherConfig) -> eyre::Result<(Version, Url)> {
     #[derive(Deserialize)]
     struct Metadata {
         #[serde(rename = "dist-tags")]
@@ -122,7 +124,7 @@ async fn get_latest_version(
     struct DistInfo {
         tarball: Url,
     }
-    let mut res: Metadata = request_npm(client, config, PKG_NAME).await?.json().await?;
+    let mut res: Metadata = request_npm(config, PKG_NAME).await?.json().await?;
     let latest = res.dist_tags.latest;
     let tarball_url = res
         .versions
@@ -133,11 +135,7 @@ async fn get_latest_version(
     Ok((latest, tarball_url))
 }
 
-async fn request_npm(
-    client: &AsyncClient,
-    config: &LauncherConfig,
-    path: &str,
-) -> eyre::Result<Response> {
+async fn request_npm(config: &LauncherConfig, path: &str) -> eyre::Result<Response> {
     let registries = config.npm_registries();
 
     let (_, res) = registries
@@ -145,8 +143,10 @@ async fn request_npm(
         .map(|base_url| base_url.join(path).expect("infallible"))
         .enumerate()
         .map(|(idx, url)| {
-            client
-                .request(Request::get(url.to_string()))
+            NPM_CLIENT
+                .get(url.clone())
+                .send()
+                .map(|r| r.and_then(|res| res.error_for_status()))
                 .map(move |res| (idx, res.map(|v| (url, v))))
         })
         .collect::<FuturesUnordered<_>>()
@@ -165,22 +165,40 @@ async fn request_npm(
     Ok(res)
 }
 
-async fn npm_client() -> eyre::Result<AsyncClient> {
+static NPM_CLIENT: LazyLock<Client> = LazyLock::new(|| {
     ClientBuilder::default()
         .user_agent("npm/10.2.3 node/v20.11.1 win32 x64 workspaces/false ci/false")
-        .with_header(
-            "Accept",
-            "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
-        )
-        .with_header("Accept-Encoding", "gzip, deflate, br")
-        .with_header("Accept-Language", "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7")
-        .with_header("npm-in-ci", "false")
-        .with_header("npm-scope", "@lightsing")
-        .no_caching()
-        .build_async()
-        .await
-        .context("无法创建 npm 客户端")
-}
+        .default_headers(HeaderMap::from_iter([
+            (
+                header::ACCEPT,
+                HeaderValue::from_static(
+                    "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
+                ),
+            ),
+            (
+                header::ACCEPT_ENCODING,
+                HeaderValue::from_static("gzip, deflate, br"),
+            ),
+            (
+                header::ACCEPT_CHARSET,
+                HeaderValue::from_static("zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"),
+            ),
+            (
+                HeaderName::from_static("npm-in-ci"),
+                HeaderValue::from_static("false"),
+            ),
+            (
+                HeaderName::from_static("npm-scope"),
+                HeaderValue::from_static("@lightsing"),
+            ),
+        ]))
+        .brotli(true)
+        .deflate(true)
+        .gzip(true)
+        .https_only(true)
+        .build()
+        .expect("Building NPM client failed")
+});
 
 #[cfg(test)]
 mod tests {
@@ -189,9 +207,8 @@ mod tests {
     #[tokio::test]
     async fn test_get_latest_version() {
         let config = LauncherConfig::default();
-        let client = npm_client().await.unwrap();
 
-        let version = get_latest_version(&client, &config).await;
+        let version = get_latest_version(&config).await;
         println!(
             "[test_get_latest_version] Latest version: {:?}",
             version.unwrap()
@@ -202,16 +219,9 @@ mod tests {
     async fn test_download_update() {
         let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
         let config = LauncherConfig::default();
-        let client = npm_client().await.unwrap();
 
-        let (_version, url) = get_latest_version(&client, &config).await.unwrap();
-        // // Ensure the tool path is clean before testing
-        // if tool_path.exists() {
-        //     std::fs::remove_file(&tool_path).unwrap();
-        // }
-
-        let result = download_update(&client, &dirs, url).await;
+        let (_version, url) = get_latest_version(&config).await.unwrap();
+        let result = download_and_extract_update(&dirs, url).await;
         assert!(result.is_ok());
-        // assert!(tool_path.exists());
     }
 }

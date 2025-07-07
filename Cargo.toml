@@ -9,9 +9,10 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.4"
+version = "0.1.5"
 
 [workspace.dependencies]
+bytes = "1.10"
 compact_str = "0.9"
 ctor = "0.4"
 directories = "6.0"
@@ -23,9 +24,8 @@ hex = "0.4"
 llc-rs = { path = "crates/llc-rs" }
 minijinja = "2.11"
 msgbox = "0.7"
-nyquest = "0.2"
-nyquest-preset = "0.2"
 os_info = { version = "3", default-features = false }
+reqwest = { version = "0.12", features = ["json", "deflate", "brotli", "gzip"] }
 semver = "1.0"
 serde = "1.0"
 serde_json = "1.0"

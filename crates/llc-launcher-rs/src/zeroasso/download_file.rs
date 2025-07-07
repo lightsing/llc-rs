@@ -1,36 +1,32 @@
-use crate::utils::client;
+use crate::zeroasso::CLIENT;
+use bytes::Bytes;
 use eyre::Context;
-use futures::AsyncReadExt;
+use futures::{FutureExt, TryFutureExt};
 use llc_rs::LLCConfig;
-use nyquest::Request;
 use sha2::Digest;
 use std::sync::Arc;
 
-const DEFAULT_BUFFER_SIZE: usize = 2 * 1024 * 1024; // 1 MiB
 
 pub async fn run(
     llc_config: Arc<LLCConfig>,
     file_name: String,
     hash: Option<[u8; 32]>,
-) -> eyre::Result<Vec<u8>> {
-    let client = client()
-        .await
-        .inspect_err(|e| error!("Failed to create API client: {e}"))
-        .context("无法创建 API 客户端。")?;
+) -> eyre::Result<Bytes> {
     let download_url = llc_config.download_url_for(&file_name);
-    let req = Request::get(download_url.to_string());
     info!("Downloading file '{file_name}' from '{download_url}'");
-    let res = client.request(req).await?;
-    let buffer_size = res
-        .content_length()
-        .map(|n| n as usize)
-        .unwrap_or(DEFAULT_BUFFER_SIZE);
-
-    let mut buffer = Vec::with_capacity(buffer_size);
-    res.into_async_read().read_to_end(&mut buffer).await?;
+    let bytes = CLIENT
+        .get(download_url)
+        .send()
+        .map(|r| r.and_then(|res| res.error_for_status()))
+        .and_then(|res| res.bytes())
+        .await
+        .inspect_err(|e| error!("error downloading file: {e}"))
+        .context(format!(
+            "无法下载文件 '{file_name}'，请检查网络连接或文件名是否正确。",
+        ))?;
 
     if let Some(expected_hash) = hash {
-        let hash = sha2::Sha256::digest(buffer.as_slice());
+        let hash = sha2::Sha256::digest(bytes.as_ref());
         if hash.as_slice() != expected_hash {
             error!(
                 "Hash mismatch for '{}': expected {}, got {}",
@@ -44,7 +40,7 @@ pub async fn run(
         }
     }
 
-    Ok(buffer)
+    Ok(bytes)
 }
 
 #[cfg(test)]
