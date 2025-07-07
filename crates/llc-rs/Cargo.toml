@@ -13,7 +13,7 @@ compact_str = { workspace = true, features = ["serde"] }
 heapless = { workspace = true, features = ["serde"] }
 minijinja = { workspace = true, features = ["loader"] }
 serde = { workspace = true, features = ["derive"] }
-smallvec = { workspace = true, features = ["serde", "may_dangle", "specialization"] }
+smallvec.workspace = true
 thiserror.workspace = true
 tracing.workspace = true
 url = { workspace = true, features = ["serde"] }

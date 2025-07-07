@@ -4,19 +4,24 @@ use eyre::Context;
 use llc_rs::LLCConfig;
 use serde::{Deserialize, Serialize};
 use serde_with::{DisplayFromStr, serde_as};
+use smallvec::{SmallVec, smallvec};
 use std::{fs, path::Path};
+use url::Url;
 
 #[serde_as]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherConfig {
     #[serde_as(as = "DisplayFromStr")]
     log_level: tracing::Level,
+    #[serde(default = "default_npm_registries")]
+    npm_registries: SmallVec<Url, 10>,
 }
 
 impl Default for LauncherConfig {
     fn default() -> Self {
         Self {
             log_level: tracing::Level::INFO,
+            npm_registries: default_npm_registries(),
         }
     }
 }
@@ -25,6 +30,11 @@ impl LauncherConfig {
     #[inline]
     pub fn log_level(&self) -> tracing::Level {
         self.log_level
+    }
+
+    #[inline]
+    pub fn npm_registries(&self) -> &[Url] {
+        &self.npm_registries
     }
 }
 
@@ -44,6 +54,23 @@ pub fn load(dirs: &ProjectDirs) -> (LauncherConfig, LLCConfig) {
             std::process::exit(-1);
         }
     }
+}
+
+pub fn save(
+    dirs: &ProjectDirs,
+    config: &LauncherConfig,
+    llc_config: &LLCConfig,
+) -> eyre::Result<()> {
+    let config_dir = dirs.config_dir();
+    fs::create_dir_all(config_dir)
+        .inspect_err(|e| eprintln!("failed to create config dir: {e}"))
+        .context("无法创建配置目录")?;
+
+    save_config(&config_dir.join("config.toml"), config).context("无法保存启动器配置文件")?;
+    save_config(&config_dir.join("llc_config.toml"), llc_config)
+        .context("无法保存 LLC 配置文件")?;
+
+    Ok(())
 }
 
 fn load_inner(config_dir: &Path) -> eyre::Result<(LauncherConfig, LLCConfig)> {
@@ -77,4 +104,17 @@ fn load_config_or_default<T: Default + Serialize + for<'de> Deserialize<'de>>(
         .inspect_err(|e| eprintln!("failed to parse config file: {e}"))
         .context("无法解析配置文件")?;
     Ok(config)
+}
+
+fn save_config<T: Serialize>(path: &Path, config: &T) -> eyre::Result<()> {
+    fs::write(path, toml::to_string_pretty(config).expect("infallible"))
+        .inspect_err(|e| eprintln!("failed to write config file: {e}"))
+        .context("无法写入配置文件")
+}
+
+fn default_npm_registries() -> SmallVec<Url, 10> {
+    smallvec!(
+        Url::parse("https://registry.npmmirror.com").expect("infallible"),
+        Url::parse("https://registry.npmjs.org").expect("infallible"),
+    )
 }

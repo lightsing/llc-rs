@@ -1,41 +1,9 @@
-use crate::zeroasso::client;
+use crate::utils::client;
 use eyre::Context;
 use futures::{FutureExt, StreamExt, TryFutureExt, stream::FuturesUnordered};
 use llc_rs::LLCConfig;
 use nyquest::Request;
 use std::future::ready;
-use tokio::{pin, select};
-
-#[inline]
-pub async fn select_ok2<F1, F2, T, E>(f1: F1, f2: F2) -> Result<T, E>
-where
-    F1: Future<Output = Result<T, E>>,
-    F2: Future<Output = Result<T, E>>,
-{
-    pin!(f1);
-    pin!(f2);
-
-    select! {
-        res1 = &mut f1 => match res1 {
-            Ok(v) => Ok(v),
-            Err(e1) => {
-                match f2.await {
-                    Ok(v) => Ok(v),
-                    Err(_) => Err(e1),
-                }
-            }
-        },
-        res2 = &mut f2 => match res2 {
-            Ok(v) => Ok(v),
-            Err(e2) => {
-                match f1.await {
-                    Ok(v) => Ok(v),
-                    Err(_) => Err(e2),
-                }
-            }
-        },
-    }
-}
 
 #[instrument(skip(llc_config), level = "trace")]
 #[inline]

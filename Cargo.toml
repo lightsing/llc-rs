@@ -9,7 +9,7 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.1"
+version = "0.1.2"
 
 [workspace.dependencies]
 compact_str = "0.9"
@@ -30,7 +30,7 @@ serde_json = "1.0"
 serde_with = "3.14"
 sevenz-rust = "0.6"
 sha2 = "0.10"
-smallvec = "=2.0.0-alpha.11"
+smallvec = {  version = "=2.0.0-alpha.11", features = ["serde", "may_dangle", "specialization"] }
 thiserror = "2.0"
 tokio = "1"
 toml = "0.8"
@@ -41,6 +41,9 @@ url = "2.5"
 vdf-reader = "0.3"
 winreg = "0.55"
 winres = "0.1"
+semver = "1.0"
+flate2 = "1.1"
+tar = "0.4"
 
 [profile.release]
 opt-level = "s"

@@ -1,6 +1,6 @@
 use crate::{utils, zeroasso};
-use eyre::Context;
-use llc_rs::{LLCConfig, get_limbus_company_install_path};
+use eyre::{Context, ContextCompat};
+use llc_rs::{LLCConfig, get_limbus_company_install_path, launch_limbus_company};
 use serde::Deserialize;
 use sha2::Digest;
 use std::{
@@ -13,7 +13,33 @@ struct Version {
     version: u64,
 }
 
-pub async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
+pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
+    copy_self_to_launcher().await?;
+    install_or_update_llc(llc_config).await?;
+    launch_limbus_company()
+        .inspect_err(|e| error!("cannot start Limbus Company: {e}"))
+        .context("无法启动 Limbus Company")?;
+    Ok(())
+}
+
+/// Reverse update the launcher executable.
+async fn copy_self_to_launcher() -> eyre::Result<()> {
+    let launcher_path = PathBuf::from(
+        std::env::var_os("LLC_LAUNCHER_PATH")
+            .context("请勿直接运行本目录中的 llc-launcher-rs 可执行文件")
+            .inspect_err(|_e| error!("LLC_LAUNCHER_PATH unset"))?,
+    );
+    let current_exe = std::env::current_exe()
+        .inspect_err(|e| error!("Failed to get current executable path: {e}"))
+        .context("无法获取当前可执行文件路径")?;
+
+    tokio::fs::copy(current_exe, launcher_path)
+        .await
+        .inspect_err(|e| error!("Failed to copy executable to launcher path: {e}"))?;
+    Ok(())
+}
+
+async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
     let llc_config = Arc::new(llc_config);
     let game_root = get_limbus_company_install_path()
         .inspect_err(|e| error!("failed to get Limbus Company install path: {e}"))
