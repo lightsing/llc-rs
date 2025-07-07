@@ -8,12 +8,9 @@ use futures::{AsyncReadExt, FutureExt, StreamExt, stream::FuturesUnordered};
 use nyquest::{AsyncClient, ClientBuilder, Request, r#async::Response};
 use semver::Version;
 use serde::Deserialize;
-use std::{
-    collections::BTreeMap,
-    future::ready,
-    path::Path,
-    process::{Command, exit},
-};
+use std::{collections::BTreeMap, future::ready, path::Path, process::{Command, exit}};
+use std::path::PathBuf;
+use tokio::fs;
 use url::Url;
 
 #[cfg(target_os = "windows")]
@@ -26,7 +23,7 @@ const EXECUTABLE_NAME: &str = "llc-launcher-rs.exe";
 #[cfg(target_os = "linux")]
 const EXECUTABLE_NAME: &str = "llc-launcher-rs";
 
-pub async fn run(dirs: &ProjectDirs, config: LauncherConfig) -> eyre::Result<()> {
+pub async fn run(dirs: &ProjectDirs, self_path: PathBuf, config: LauncherConfig) -> eyre::Result<()> {
     let client = npm_client().await?;
 
     let self_version = Version::parse(env!("CARGO_PKG_VERSION"))?;
@@ -38,14 +35,17 @@ pub async fn run(dirs: &ProjectDirs, config: LauncherConfig) -> eyre::Result<()>
     let tool_path = dirs.cache_dir().join(EXECUTABLE_NAME);
 
     if self_version > latest_version {
-        launch_tool(&tool_path)
+        fs::copy(&self_path, &tool_path).await
+            .inspect_err(|e| error!("Failed to copy self to tool path: {e}"))
+            .context("无法更新启动器可执行文件")?;
+        launch_tool(&tool_path, &self_path)
     }
 
     download_update(&client, &dirs, tarball_url).await?;
-    launch_tool(&tool_path)
+    launch_tool(&tool_path, &self_path)
 }
 
-fn launch_tool(tool_path: &Path) -> ! {
+fn launch_tool(tool_path: &Path, self_path: &Path) -> ! {
     let args: Vec<_> = std::env::args_os().skip(1).collect();
 
     info!("Launching tool at: {}", tool_path.display());
@@ -53,7 +53,7 @@ fn launch_tool(tool_path: &Path) -> ! {
         .args(args)
         .env(
             "LLC_LAUNCHER_PATH",
-            std::env::current_exe().expect("already done this"),
+            self_path,
         )
         .spawn()
         .inspect_err(|e| error!("Failed to launch tool: {e}"))

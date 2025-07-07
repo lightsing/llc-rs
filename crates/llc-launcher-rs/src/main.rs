@@ -13,6 +13,7 @@ use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
 use std::{fs, process::exit};
+use std::path::PathBuf;
 
 const ORGANIZATION: &str = "lightsing";
 const APP_NAME: &str = "llc-launcher-rs";
@@ -42,9 +43,9 @@ fn setup_test() {
 
 #[tokio::main]
 async fn main() {
-    let (dirs, is_tool, (config, llc_config), _logging_guard) = match init() {
-        Ok((dirs, is_tool, (config, llc_config), logging_guard)) => {
-            (dirs, is_tool, (config, llc_config), logging_guard)
+    let (dirs, self_path, is_tool, (config, llc_config), _logging_guard) = match init() {
+        Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard)) => {
+            (dirs, self_path, is_tool, (config, llc_config), logging_guard)
         }
         Err(e) => {
             eprintln!("{e}");
@@ -60,7 +61,7 @@ async fn main() {
     if let Err(e) = if is_tool {
         llc::run(llc_config).await
     } else {
-        self_update::run(&dirs, config).await
+        self_update::run(&dirs, self_path, config).await
     } {
         error!("{e:?}");
         utils::create_msgbox(
@@ -76,6 +77,7 @@ async fn main() {
 
 fn init() -> eyre::Result<(
     ProjectDirs,
+    PathBuf,
     bool,
     (LauncherConfig, LLCConfig),
     Option<logging::LoggingGuard>,
@@ -103,5 +105,5 @@ fn init() -> eyre::Result<(
         .inspect_err(|e| warn!("无法保存配置：{e}"))
         .context("无法保存配置")?;
 
-    Ok((dirs, is_tool, (config, llc_config), logging_guard))
+    Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard))
 }
