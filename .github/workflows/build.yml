@@ -1,0 +1,94 @@
+name: Build & Publish Binaries to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - name: win32
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+            bin: llc-launcher-rs.exe
+            npm_package: llc-launcher-rs-win32
+            os_field: win32
+
+          - name: linux
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            bin: llc-launcher-rs
+            npm_package: llc-launcher-rs-linux
+            os_field: linux
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@nightly
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Setup Zig
+        if: matrix.name == 'linux'
+        uses: mlugg/setup-zig@v2
+
+      - name: cargo-zigbuild
+        if: matrix.name == 'linux'
+        run: cargo install --locked cargo-zigbuild
+
+      - name: Build (zig)
+        if: matrix.name == 'linux'
+        run: cargo zigbuild --release --target=${{ matrix.target }}
+
+      - name: Build (normal)
+        if: matrix.name != 'linux'
+        run: cargo build --release --target=${{ matrix.target }}
+
+      - name: Run UPX
+        if: matrix.name != 'linux'
+        uses: crazy-max/ghaction-upx@v3
+        with:
+          version: latest
+          files: target/${{ matrix.target }}/release/${{ matrix.bin }}
+          args: -fq
+
+      - name: Package for npm
+        run: |
+          mkdir -p npm_pkg
+          cp target/${{ matrix.target }}/release/${{ matrix.bin }} npm_pkg/${{ matrix.bin }}
+
+          # Write package.json
+          cat > npm_pkg/package.json <<EOF
+          {
+            "name": "${{ matrix.npm_package }}",
+            "version": "${{ github.ref_name }}",
+            "repository": {
+              "type": "git",
+              "url": "${{ github.repository }}"
+            },
+            "homepage": "${{ github.repository }}"
+            "bin": {
+              "llc-launcher-rs": "${{ matrix.bin }}"
+            },
+            "os": ["${{ matrix.os_field }}"],
+            "cpu": ["x64"],
+            "description": "Platform-specific build of llc-launcher-rs",
+            "license": "AGPL-3.0-or-later"
+          }
+          EOF
+        shell: bash
+
+      - name: Publish to npm
+        run: |
+          cd npm_pkg
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

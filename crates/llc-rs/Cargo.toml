@@ -1,0 +1,26 @@
+[package]
+authors.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+name = "llc-rs"
+repository.workspace = true
+rust-version.workspace = true
+version.workspace = true
+
+[dependencies]
+compact_str = { workspace = true, features = ["serde"] }
+heapless = { workspace = true, features = ["serde"] }
+minijinja = { workspace = true, features = ["loader"] }
+serde = { workspace = true, features = ["derive"] }
+smallvec = { workspace = true, features = ["serde", "may_dangle", "specialization"] }
+thiserror.workspace = true
+tracing.workspace = true
+url = { workspace = true, features = ["serde"] }
+vdf-reader.workspace = true
+
+[dev-dependencies]
+toml.workspace = true
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winreg.workspace = true
