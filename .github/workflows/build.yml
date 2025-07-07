@@ -94,10 +94,10 @@ jobs:
           cat > npm_pkg/package.json <<EOF
           {
             "name": "@lightsing/${{ matrix.npm_package }}",
-            "version": "0.1.1",
+            "version": "${{ github.ref_name }}",
             "repository": {
               "type": "git",
-              "url": "${REPO_URL}.git"
+              "url": "git+${REPO_URL}.git"
             },
             "homepage": "${REPO_URL}",
             "bin": {
