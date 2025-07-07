@@ -55,12 +55,11 @@ jobs:
         run: cargo build --release --target=${{ matrix.target }}
 
       - name: Run UPX
-        if: matrix.name != 'linux'
         uses: crazy-max/ghaction-upx@v3
         with:
           version: latest
           files: target/${{ matrix.target }}/release/${{ matrix.bin }}
-          args: -fq
+          args: --best
 
       - name: Package for npm
         run: |
