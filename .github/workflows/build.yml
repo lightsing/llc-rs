@@ -40,14 +40,34 @@ jobs:
         if: matrix.name == 'linux'
         uses: mlugg/setup-zig@v2
 
+      - name: Cache cargo registry + build
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-${{ matrix.target }}-
+
+      - name: Cache cargo install bin (cargo-zigbuild)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin
+          key: ${{ runner.os }}-cargo-bin
+
       - name: cargo-zigbuild
         if: matrix.name == 'linux'
-        run: cargo install --locked cargo-zigbuild
+        run: |
+          if ! command -v cargo-zigbuild > /dev/null; then
+           cargo install --locked cargo-zigbuild
+          fi
 
       - name: Build (zig)
         if: matrix.name == 'linux'
         run: |
-          sudo apt-get update && sudo apt-get install -y libglib2.0-dev pkg-config
+          sudo apt-get update && sudo apt-get install -y libglib2.0-dev libpango1.0-dev pkg-config
           cargo zigbuild --release --target=${{ matrix.target }}
 
       - name: Build (normal)
@@ -65,7 +85,8 @@ jobs:
         run: |
           mkdir -p npm_pkg
           cp target/${{ matrix.target }}/release/${{ matrix.bin }} npm_pkg/${{ matrix.bin }}
-
+          REPO_URL="https://github.com/${{ github.repository }}"
+          
           # Write package.json
           cat > npm_pkg/package.json <<EOF
           {
@@ -73,9 +94,9 @@ jobs:
             "version": "${{ github.ref_name }}",
             "repository": {
               "type": "git",
-              "url": "${{ github.repository }}"
+              "url": "${REPO_URL}.git"
             },
-            "homepage": "${{ github.repository }}"
+            "homepage": "${REPO_URL}",
             "bin": {
               "llc-launcher-rs": "${{ matrix.bin }}"
             },
@@ -87,9 +108,11 @@ jobs:
           EOF
         shell: bash
 
+
       - name: Publish to npm
         run: |
           cd npm_pkg
+          npm whoami
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
