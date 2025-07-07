@@ -46,7 +46,9 @@ jobs:
 
       - name: Build (zig)
         if: matrix.name == 'linux'
-        run: cargo zigbuild --release --target=${{ matrix.target }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y libglib2.0-dev pkg-config
+          cargo zigbuild --release --target=${{ matrix.target }}
 
       - name: Build (normal)
         if: matrix.name != 'linux'
