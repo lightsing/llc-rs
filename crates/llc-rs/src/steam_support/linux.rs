@@ -2,18 +2,19 @@ use std::{io, path::PathBuf};
 
 /// Retrieves the Steam installation root directory from the Windows registry.
 pub fn get_steam_root() -> io::Result<PathBuf> {
-    let home = std::env::var("HOME")
-        .map_err(|_| io::Error::new(io::ErrorKind::NotFound, "HOME environment variable not set"))?;
+    let home = std::env::var("HOME").map_err(|_| {
+        io::Error::new(io::ErrorKind::NotFound, "HOME environment variable not set")
+    })?;
     let home = PathBuf::from(home).canonicalize()?;
     let candidates = [
         ".steam/steam",
         ".local/share/Steam",
-        ".var/app/com.valvesoftware.Steam/.steam/steam"
+        ".var/app/com.valvesoftware.Steam/.steam/steam",
     ];
     for path in candidates.iter() {
         let full = home.join(path);
         if full.exists() {
-            return Ok(full)
+            return Ok(full);
         }
     }
     Err(io::Error::new(

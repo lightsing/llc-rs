@@ -1,12 +1,12 @@
-use crate::zeroasso;
+use crate::{utils, zeroasso};
 use eyre::Context;
 use llc_rs::{LLCConfig, get_limbus_company_install_path};
 use serde::Deserialize;
+use sha2::Digest;
 use std::{
     path::{Path, PathBuf},
     sync::Arc,
 };
-use sha2::Digest;
 
 #[derive(Deserialize)]
 struct Version {
@@ -50,8 +50,6 @@ pub async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         return Ok(());
     }
 
-
-
     let hashes = hashes
         .await
         .map_err(|e| e.into())
@@ -59,7 +57,11 @@ pub async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         .inspect_err(|e| error!("Failed to get hashes: {e}"))
         .context("无法获取文件哈希")?;
 
-    let font_installer = tokio::spawn(install_font_if_needed(llc_config.clone(), game_root.clone(), hashes.font_hash));
+    let font_installer = tokio::spawn(install_font_if_needed(
+        llc_config.clone(),
+        game_root.clone(),
+        hashes.font_hash,
+    ));
     let cleaner = tokio::spawn(cleanup_installed_llc(game_root.clone()));
     let downloader = tokio::spawn(zeroasso::download_file::run(
         llc_config.clone(),
@@ -72,12 +74,11 @@ pub async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         installed_version, latest_version
     );
 
-    msgbox::create(
+    utils::create_msgbox(
         "更新 LLC",
         &format!("将会更新 LLC 到版本 {latest_version}"),
-        msgbox::IconType::Info,
-    )
-    .ok();
+        utils::IconType::Info,
+    );
 
     cleaner
         .await
@@ -151,7 +152,11 @@ async fn cleanup_installed_llc(game_root: PathBuf) -> eyre::Result<()> {
     Ok(())
 }
 
-async fn install_font_if_needed(lc_config: Arc<LLCConfig>, game_root: PathBuf, font_hash: [u8; 32]) -> eyre::Result<()> {
+async fn install_font_if_needed(
+    lc_config: Arc<LLCConfig>,
+    game_root: PathBuf,
+    font_hash: [u8; 32],
+) -> eyre::Result<()> {
     let font_file = game_root
         .join("LimbusCompany_Data")
         .join("Lang")
@@ -172,11 +177,9 @@ async fn install_font_if_needed(lc_config: Arc<LLCConfig>, game_root: PathBuf, f
         info!("Font file does not exist, installing...");
     }
 
-    let font_file = zeroasso::download_file::run(
-        lc_config,
-        "LLCCN-Font.7z".to_string(),
-        Some(font_hash),
-    ).await?;
+    let font_file =
+        zeroasso::download_file::run(lc_config, "LLCCN-Font.7z".to_string(), Some(font_hash))
+            .await?;
     let reader = std::io::Cursor::new(font_file);
 
     sevenz_rust::decompress(reader, &game_root)?;

@@ -16,6 +16,7 @@ const APP_NAME: &str = "llc-launcher-rs";
 mod config;
 mod installer;
 mod logging;
+mod utils;
 pub mod zeroasso;
 
 #[ctor::ctor]
@@ -38,12 +39,11 @@ fn setup_test() {
 async fn main() {
     let Some(dirs) = ProjectDirs::from("me", ORGANIZATION, APP_NAME) else {
         eprintln!("无法初始化项目目录，无法侦测用户目录");
-        msgbox::create(
+        utils::create_msgbox(
             "启动器崩溃了！",
             "无法初始化项目目录，无法侦测用户目录。",
-            msgbox::IconType::Error,
-        )
-        .ok();
+            utils::IconType::Error,
+        );
         exit(-1);
     };
 
@@ -52,15 +52,14 @@ async fn main() {
 
     if let Err(e) = inner(llc_config).await {
         error!("{e:?}");
-        msgbox::create(
+        utils::create_msgbox(
             "启动器崩溃了！",
             &format!(
                 "无法启动 Limbus Company：{e}。\n请检查日志文件（位于 {}）以获取更多信息。",
                 dirs.data_dir().join("logs").display()
             ),
-            msgbox::IconType::Error,
-        )
-        .ok();
+            utils::IconType::Error,
+        );
     }
 }
 

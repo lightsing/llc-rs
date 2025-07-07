@@ -9,14 +9,12 @@ rust-version.workspace = true
 version.workspace = true
 
 [dependencies]
-compact_str = { workspace = true, features = ["serde"] }
 ctor.workspace = true
 directories.workspace = true
 eyre.workspace = true
 futures.workspace = true
 hex.workspace = true
 llc-rs.workspace = true
-msgbox.workspace = true
 nyquest = { workspace = true, features = ["async", "json"] }
 nyquest-preset = { workspace = true, features = ["async"] }
 os_info.workspace = true
@@ -33,6 +31,9 @@ tracing-subscriber.workspace = true
 
 [dev-dependencies]
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+msgbox.workspace = true
 
 [target.'cfg(target_os = "windows")'.build-dependencies]
 winres.workspace = true

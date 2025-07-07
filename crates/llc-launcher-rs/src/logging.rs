@@ -1,4 +1,4 @@
-use crate::config::LauncherConfig;
+use crate::{config::LauncherConfig, utils};
 use directories::ProjectDirs;
 use eyre::Context;
 use std::fs;
@@ -20,11 +20,13 @@ pub fn init(dirs: &ProjectDirs, config: &LauncherConfig) -> Option<LoggingGuard>
         Ok(guard) => Some(guard),
         Err(e) => {
             eprintln!("{e}");
-            msgbox::create(
+            utils::create_msgbox(
                 "启动器出错了！",
-                &format!("无法初始化日志系统：{e}。\n启动器仍然会继续运行，但日志将会无法记录，如果后续发生错误，将无法提供帮助。"),
-                msgbox::IconType::Error
-            ).ok();
+                &format!(
+                    "无法初始化日志系统：{e}。\n启动器仍然会继续运行，但日志将会无法记录，如果后续发生错误，将无法提供帮助。"
+                ),
+                utils::IconType::Error,
+            );
             None
         }
     }

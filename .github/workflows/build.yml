@@ -71,10 +71,7 @@ jobs:
 
       - name: Build (zig)
         if: matrix.name == 'linux'
-        run: |
-          sudo apt-get update
-          sudo apt install -y libgtk-3-dev libpango1.0-dev libcairo2-dev libgdk-pixbuf2.0-dev libglib2.0-dev libatk1.0-dev libfontconfig1-dev pkg-config
-          cargo zigbuild --release --target=${{ matrix.target }}
+        run: cargo zigbuild --release --target=${{ matrix.target }}
 
       - name: Build (normal)
         if: matrix.name != 'linux'
@@ -97,7 +94,7 @@ jobs:
           cat > npm_pkg/package.json <<EOF
           {
             "name": "@lightsing/${{ matrix.npm_package }}",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "repository": {
               "type": "git",
               "url": "${REPO_URL}.git"

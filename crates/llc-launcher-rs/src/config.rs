@@ -1,3 +1,4 @@
+use crate::utils;
 use directories::ProjectDirs;
 use eyre::Context;
 use llc_rs::LLCConfig;
@@ -32,11 +33,14 @@ pub fn load(dirs: &ProjectDirs) -> (LauncherConfig, LLCConfig) {
         Ok(config) => config,
         Err(e) => {
             eprintln!("{e}");
-            msgbox::create(
+            utils::create_msgbox(
                 "启动器出错了！",
-                &format!("无法加载配置文件：{e}。\n启动器将会退出。\n如果不知道如何解决，请删除如下目录：{}", dirs.config_dir().display()),
-                msgbox::IconType::Error
-            ).ok();
+                &format!(
+                    "无法加载配置文件：{e}。\n启动器将会退出。\n如果不知道如何解决，请删除如下目录：{}",
+                    dirs.config_dir().display()
+                ),
+                utils::IconType::Error,
+            );
             std::process::exit(-1);
         }
     }
