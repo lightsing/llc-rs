@@ -14,16 +14,25 @@ struct Version {
 }
 
 pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
-    copy_self_to_launcher().await?;
+    let job = tokio::spawn(copy_self_to_launcher());
+
     install_or_update_llc(llc_config).await?;
+
     launch_limbus_company()
         .inspect_err(|e| error!("cannot start Limbus Company: {e}"))
         .context("无法启动 Limbus Company")?;
+
+    job.await
+        .map_err(|e| e.into())
+        .flatten()
+        .inspect_err(|e| error!("Failed to copy self to launcher: {e}"))
+        .context("无法更新启动器可执行文件")?;
     Ok(())
 }
 
 /// Reverse update the launcher executable.
 async fn copy_self_to_launcher() -> eyre::Result<()> {
+    tokio::time::sleep(tokio::time::Duration::from_secs(1)).await; // Give some time for parent process to finish
     let launcher_path = PathBuf::from(
         std::env::var_os("LLC_LAUNCHER_PATH")
             .context("请勿直接运行本目录中的 llc-launcher-rs 可执行文件")

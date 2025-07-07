@@ -1,6 +1,6 @@
 #![feature(exit_status_error)]
 #![cfg_attr(
-    all(target_os = "windows", debug_assertions),
+    all(target_os = "windows", not(debug_assertions)),
     windows_subsystem = "windows"
 )]
 #![cfg_attr(not(test), deny(clippy::unwrap_used))]

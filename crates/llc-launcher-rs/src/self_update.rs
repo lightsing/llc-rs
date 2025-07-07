@@ -1,18 +1,19 @@
 //! Run self-update logic for the launcher.
 
-use std::collections::BTreeMap;
-use std::future::ready;
-use std::path::{Path};
 use crate::config::LauncherConfig;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use flate2::read::GzDecoder;
-use futures::{FutureExt, StreamExt, stream::FuturesUnordered, AsyncReadExt};
-use nyquest::{AsyncClient, ClientBuilder, Request};
-use nyquest::r#async::Response;
+use futures::{AsyncReadExt, FutureExt, StreamExt, stream::FuturesUnordered};
+use nyquest::{AsyncClient, ClientBuilder, Request, r#async::Response};
 use semver::Version;
 use serde::Deserialize;
-use tokio::process::Command;
+use std::{
+    collections::BTreeMap,
+    future::ready,
+    path::Path,
+    process::{Command, exit},
+};
 use url::Url;
 
 #[cfg(target_os = "windows")]
@@ -29,62 +30,67 @@ pub async fn run(dirs: &ProjectDirs, config: LauncherConfig) -> eyre::Result<()>
     let client = npm_client().await?;
 
     let self_version = Version::parse(env!("CARGO_PKG_VERSION"))?;
-    let (latest_version, tarball_url) = get_latest_version(&client, &config).await
+    let (latest_version, tarball_url) = get_latest_version(&client, &config)
+        .await
         .inspect_err(|e| error!("Failed to get latest version: {e}"))
         .context("无法获取最新版本信息，请检查网络连接。")?;
 
     let tool_path = dirs.cache_dir().join(EXECUTABLE_NAME);
 
     if self_version > latest_version {
-        return launch_tool(&tool_path).await
+        launch_tool(&tool_path)
     }
 
     download_update(&client, &dirs, tarball_url).await?;
-    launch_tool(&tool_path).await
+    launch_tool(&tool_path)
 }
 
-async fn launch_tool(tool_path: &Path) -> eyre::Result<()> {
+fn launch_tool(tool_path: &Path) -> ! {
     let args: Vec<_> = std::env::args_os().skip(1).collect();
 
     info!("Launching tool at: {}", tool_path.display());
-     Command::new(tool_path)
+    Command::new(tool_path)
         .args(args)
+        .env(
+            "LLC_LAUNCHER_PATH",
+            std::env::current_exe().expect("already done this"),
+        )
         .spawn()
-        .context("无法启动更新后的工具")?
-        .wait()
-        .await
-        .context("无法等待工具进程结束")?
-        .exit_ok()
-        .context("工具进程非正常退出")
+        .inspect_err(|e| error!("Failed to launch tool: {e}"))
+        .ok();
+
+    exit(0);
 }
 
-async fn download_update(
-    client: &AsyncClient,
-    dirs: &ProjectDirs,
-    url: Url
-) -> eyre::Result<()> {
-    let res = client.request(Request::get(url.to_string()))
+async fn download_update(client: &AsyncClient, dirs: &ProjectDirs, url: Url) -> eyre::Result<()> {
+    let res = client
+        .request(Request::get(url.to_string()))
         .await
         .inspect_err(|e| error!("Failed to download update package: {e}"))
         .context("无法下载更新包")?;
 
     let buffer_size = res.content_length().unwrap_or(1024 * 1024 * 2); // default to 2 MiB buffer
     let mut buffer = Vec::with_capacity(buffer_size as usize);
-    res.into_async_read().read_to_end(&mut buffer).await
+    res.into_async_read()
+        .read_to_end(&mut buffer)
+        .await
         .context("无法读取更新包内容")?;
     let tar = GzDecoder::new(buffer.as_slice());
     let mut archive = tar::Archive::new(tar);
-    for file in archive.entries()
+    for file in archive
+        .entries()
         .inspect_err(|e| error!("Failed to read archive: {e}"))
-        .context("无法读取更新包条目")? {
-
+        .context("无法读取更新包条目")?
+    {
         let mut file = file
             .inspect_err(|e| error!("Failed to read archive entry: {e}"))
             .context("无法获取更新包条目")?;
-        if file.path()
+        if file
+            .path()
             .inspect_err(|e| error!("Failed to get entry path: {e}"))
             .context("无法获取更新包条目路径")?
-            .ends_with(EXECUTABLE_NAME) {
+            .ends_with(EXECUTABLE_NAME)
+        {
             file.unpack(dirs.cache_dir().join(EXECUTABLE_NAME))
                 .inspect_err(|e| error!("Failed to unpack entry: {e}"))
                 .context("无法解压更新包条目")?;
@@ -94,12 +100,15 @@ async fn download_update(
 }
 
 #[instrument(skip(client, config), ret)]
-async fn get_latest_version(client: &AsyncClient, config: &LauncherConfig) -> eyre::Result<(Version, Url)> {
+async fn get_latest_version(
+    client: &AsyncClient,
+    config: &LauncherConfig,
+) -> eyre::Result<(Version, Url)> {
     #[derive(Deserialize)]
     struct Metadata {
         #[serde(rename = "dist-tags")]
         dist_tags: DistTags,
-        versions: BTreeMap<Version, VersionMetadata>
+        versions: BTreeMap<Version, VersionMetadata>,
     }
     #[derive(Deserialize)]
     struct DistTags {
@@ -115,15 +124,20 @@ async fn get_latest_version(client: &AsyncClient, config: &LauncherConfig) -> ey
     }
     let mut res: Metadata = request_npm(client, config, PKG_NAME).await?.json().await?;
     let latest = res.dist_tags.latest;
-    let tarball_url = res.versions.remove(&latest)
+    let tarball_url = res
+        .versions
+        .remove(&latest)
         .map(|v| v.dist.tarball)
         .context("NPM 中未找到最新版本的 tarball URL")
         .inspect_err(|e| error!("Failed to get tarball url: {e}"))?;
     Ok((latest, tarball_url))
-
 }
 
-async fn request_npm(client: &AsyncClient, config: &LauncherConfig, path: &str) -> eyre::Result<Response> {
+async fn request_npm(
+    client: &AsyncClient,
+    config: &LauncherConfig,
+    path: &str,
+) -> eyre::Result<Response> {
     let registries = config.npm_registries();
 
     let (_, res) = registries
@@ -154,7 +168,10 @@ async fn request_npm(client: &AsyncClient, config: &LauncherConfig, path: &str) 
 async fn npm_client() -> eyre::Result<AsyncClient> {
     ClientBuilder::default()
         .user_agent("npm/10.2.3 node/v20.11.1 win32 x64 workspaces/false ci/false")
-        .with_header("Accept", "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*")
+        .with_header(
+            "Accept",
+            "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
+        )
         .with_header("Accept-Encoding", "gzip, deflate, br")
         .with_header("Accept-Language", "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7")
         .with_header("npm-in-ci", "false")
@@ -164,7 +181,6 @@ async fn npm_client() -> eyre::Result<AsyncClient> {
         .await
         .context("无法创建 npm 客户端")
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -176,7 +192,10 @@ mod tests {
         let client = npm_client().await.unwrap();
 
         let version = get_latest_version(&client, &config).await;
-        println!("[test_get_latest_version] Latest version: {:?}", version.unwrap());
+        println!(
+            "[test_get_latest_version] Latest version: {:?}",
+            version.unwrap()
+        );
     }
 
     #[tokio::test]
@@ -186,7 +205,6 @@ mod tests {
         let client = npm_client().await.unwrap();
 
         let (_version, url) = get_latest_version(&client, &config).await.unwrap();
-        //
         // // Ensure the tool path is clean before testing
         // if tool_path.exists() {
         //     std::fs::remove_file(&tool_path).unwrap();
