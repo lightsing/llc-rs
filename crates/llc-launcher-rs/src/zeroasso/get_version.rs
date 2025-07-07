@@ -32,7 +32,11 @@ async fn get_version_github(llc_config: &LLCConfig) -> eyre::Result<u64> {
             llc_config
                 .github()
                 .api_url()
-                .join("v2/resource/get_version")
+                .join(&format!(
+                    "repos/{}/{}/releases/latest",
+                    llc_config.github().owner(),
+                    llc_config.github().repo()
+                ))
                 .expect("infallible"),
         )
         .send()

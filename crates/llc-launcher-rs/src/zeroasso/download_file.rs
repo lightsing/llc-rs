@@ -6,7 +6,6 @@ use llc_rs::LLCConfig;
 use sha2::Digest;
 use std::sync::Arc;
 
-
 pub async fn run(
     llc_config: Arc<LLCConfig>,
     file_name: String,
