@@ -15,23 +15,24 @@ version = "0.1.10"
 ctor = "0.4"
 directories = "6.0"
 eyre = "0.6"
+filetime = "0.2"
 flate2 = "1.1"
 futures-util = { version = "0.3", default-features = false }
-smol-macros = "0.1"
 hex = "0.4"
 llc-rs = { path = "crates/llc-rs" }
 minijinja = { version = "2.11", default-features = false }
 msgbox = "0.7"
-os_info = { version = "3", default-features = false }
 nyquest = { git = "https://github.com/bdbai/nyquest", features = ["async", "json"] }
 nyquest-preset = { git = "https://github.com/bdbai/nyquest", features = ["async"] }
-smol = "2.0"
+os_info = { version = "3", default-features = false }
 semver = "1.0"
 serde = "1.0"
 serde_json = "1.0"
 serde_with = "3.14"
 sevenz-rust = { version = "0.6", default-features = false }
 sha2 = "0.10"
+smol = "2.0"
+smol-macros = "0.1"
 tar = { version = "0.4", default-features = false }
 thiserror = "2.0"
 toml = "0.8"
@@ -42,11 +43,10 @@ url = "2.5"
 vdf-reader = "0.3"
 winreg = "0.55"
 winres = "0.1"
-filetime = "0.2"
 
 [profile.release]
 codegen-units = 1
 lto = true
 opt-level = "s"
-strip = true
 panic = "abort"
+strip = true
