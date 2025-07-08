@@ -16,7 +16,6 @@ filetime.workspace = true
 flate2.workspace = true
 llc-rs.workspace = true
 nyquest.workspace = true
-nyquest-preset.workspace = true
 semver = { workspace = true, features = ["serde"] }
 serde = { workspace = true, features = ["derive"] }
 serde_json.workspace = true
@@ -37,6 +36,10 @@ tracing-subscriber = { workspace = true, features = ["env-filter"] }
 
 [target.'cfg(target_os = "windows")'.dependencies]
 msgbox.workspace = true
+nyquest-backend-winrt.workspace = true
 
 [target.'cfg(target_os = "windows")'.build-dependencies]
 winres.workspace = true
+
+[target.'cfg(target_os = "linux")'.dependencies]
+nyquest-backend-curl.workspace = true

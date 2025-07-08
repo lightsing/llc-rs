@@ -14,6 +14,11 @@ use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
 use std::{fs, path::PathBuf, process::exit};
 
+#[cfg(target_os = "linux")]
+use nyquest_backend_curl as nyquest_backend;
+#[cfg(target_os = "windows")]
+use nyquest_backend_winrt as nyquest_backend;
+
 const ORGANIZATION: &str = "lightsing";
 const APP_NAME: &str = "llc-launcher-rs";
 
@@ -22,11 +27,6 @@ mod llc;
 mod logging;
 mod self_update;
 mod utils;
-
-#[ctor::ctor]
-fn setup_nyquest() {
-    nyquest_preset::register();
-}
 
 #[cfg(test)]
 #[ctor::ctor]
@@ -39,9 +39,13 @@ fn setup_test() {
         .with_file(true)
         .with_line_number(true)
         .init();
+
+    nyquest_backend::register();
 }
 
 fn main() {
+    nyquest_backend::register();
+
     let (dirs, self_path, is_tool, (config, llc_config), _logging_guard) = match init() {
         Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard)) => (
             dirs,

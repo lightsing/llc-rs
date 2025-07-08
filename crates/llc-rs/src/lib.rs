@@ -44,5 +44,10 @@ fn setup_test() {
         .with_line_number(true)
         .init();
 
-    nyquest_preset::register();
+    #[cfg(target_os = "linux")]
+    use nyquest_backend_curl as nyquest_backend;
+    #[cfg(target_os = "windows")]
+    use nyquest_backend_winrt as nyquest_backend;
+
+    nyquest_backend::register();
 }
