@@ -79,7 +79,7 @@ jobs:
       - name: Build (zig)
         if: matrix.name == 'linux'
         env:
-          OPENSSL_DIR: /usr/include/openssl
+          OPENSSL_DIR: /usr/include/x86_64-linux-gnu/openssl
         run: cargo zigbuild --release --target=${{ matrix.target }}
 
       - name: Build (normal)
