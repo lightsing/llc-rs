@@ -14,15 +14,13 @@ struct Version {
 }
 
 pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
-    let job = smol::spawn(copy_self_to_launcher());
-
     install_or_update_llc(llc_config).await?;
 
     launch_limbus_company()
         .inspect_err(|e| error!("cannot start Limbus Company: {e}"))
         .context("无法启动 Limbus Company")?;
 
-    job.await
+    copy_self_to_launcher().await
         .inspect_err(|e| error!("Failed to copy self to launcher: {e}"))
         .context("无法更新启动器可执行文件")?;
     Ok(())
