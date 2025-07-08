@@ -51,7 +51,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pkg-config libssl-dev
           find /usr/include/ -name opensslconf.h
+          find /usr/include/ -name opensslv.h
           find /usr/lib/x86_64-linux-gnu -name 'libssl*'
+          pkg-config --cflags --libs openssl
 
       - name: Cache cargo registry + build
         uses: actions/cache@v4
