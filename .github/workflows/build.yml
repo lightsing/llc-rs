@@ -49,7 +49,7 @@ jobs:
         if: matrix.name == 'linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y pkg-config libssl-dev
+          sudo apt-get install -y ca-certificates make libc6-dev libssl-dev libcurl4-openssl-dev pkg-config
           find /usr/include/ -name opensslconf.h
           find /usr/include/ -name opensslv.h
           find /usr/lib/x86_64-linux-gnu -name 'libssl*'
@@ -81,11 +81,6 @@ jobs:
 
       - name: Build (zig)
         if: matrix.name == 'linux'
-        env:
-          OPENSSL_INCLUDE_DIR: /usr/include/x86_64-linux-gnu/openssl
-          OPENSSL_LIB_DIR: /usr/lib/x86_64-linux-gnu
-          OPENSSL_DIR: /usr/include/x86_64-linux-gnu
-          PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
         run: cargo zigbuild --release --target=${{ matrix.target }}
 
       - name: Build (normal)
