@@ -1,12 +1,12 @@
-use crate::{utils, zeroasso};
+use crate::{utils};
 use eyre::{Context, ContextCompat};
-use llc_rs::{LLCConfig, get_limbus_company_install_path, launch_limbus_company};
+use llc_rs::{LLCConfig, get_limbus_company_install_path, launch_limbus_company, zeroasso};
 use serde::Deserialize;
-use sha2::Digest;
 use std::{
     path::{Path, PathBuf},
     sync::Arc,
 };
+use smol::stream::StreamExt;
 
 #[derive(Deserialize)]
 struct Version {
@@ -14,7 +14,7 @@ struct Version {
 }
 
 pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
-    let job = tokio::spawn(copy_self_to_launcher());
+    let job = smol::spawn(copy_self_to_launcher());
 
     install_or_update_llc(llc_config).await?;
 
@@ -23,8 +23,6 @@ pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
         .context("无法启动 Limbus Company")?;
 
     job.await
-        .map_err(|e| e.into())
-        .flatten()
         .inspect_err(|e| error!("Failed to copy self to launcher: {e}"))
         .context("无法更新启动器可执行文件")?;
     Ok(())
@@ -32,7 +30,7 @@ pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
 
 /// Reverse update the launcher executable.
 async fn copy_self_to_launcher() -> eyre::Result<()> {
-    tokio::time::sleep(tokio::time::Duration::from_secs(1)).await; // Give some time for parent process to finish
+    smol::Timer::after(std::time::Duration::from_secs(1)).await;  // Give some time for parent process to finish
     let launcher_path = PathBuf::from(
         std::env::var_os("LLC_LAUNCHER_PATH")
             .context("请勿直接运行本目录中的 llc-launcher-rs 可执行文件")
@@ -42,7 +40,7 @@ async fn copy_self_to_launcher() -> eyre::Result<()> {
         .inspect_err(|e| error!("Failed to get current executable path: {e}"))
         .context("无法获取当前可执行文件路径")?;
 
-    tokio::fs::copy(current_exe, launcher_path)
+    smol::fs::copy(current_exe, launcher_path)
         .await
         .inspect_err(|e| error!("Failed to copy executable to launcher path: {e}"))?;
     Ok(())
@@ -55,7 +53,7 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         .context("无法获取 Limbus Company 安装路径")?;
     info!("Limbus Company install path: {}", game_root.display());
 
-    tokio::fs::create_dir_all(game_root.join("LimbusCompany_Data").join("Lang"))
+    smol::fs::create_dir_all(game_root.join("LimbusCompany_Data").join("Lang"))
         .await
         .inspect_err(|e| error!("Failed to create LLC directory: {e}"))
         .context("无法创建语言目录")?;
@@ -72,7 +70,7 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         }
     };
 
-    let hashes = tokio::spawn(zeroasso::get_hash::run(llc_config.clone()));
+    let hashes = smol::spawn(zeroasso::get_hash::run(llc_config.clone()));
     let latest_version = zeroasso::get_version::run(llc_config.clone())
         .await
         .inspect_err(|e| error!("Failed to get latest version: {e}"))
@@ -87,18 +85,16 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
 
     let hashes = hashes
         .await
-        .map_err(|e| e.into())
-        .flatten()
         .inspect_err(|e| error!("Failed to get hashes: {e}"))
         .context("无法获取文件哈希")?;
 
-    let font_installer = tokio::spawn(install_font_if_needed(
+    let font_installer = smol::spawn(install_font_if_needed(
         llc_config.clone(),
         game_root.clone(),
         hashes.font_hash,
     ));
-    let cleaner = tokio::spawn(cleanup_installed_llc(game_root.clone()));
-    let downloader = tokio::spawn(zeroasso::download_file::run(
+    let cleaner = smol::spawn(cleanup_installed_llc(game_root.clone()));
+    let downloader = smol::spawn(zeroasso::download_file::run(
         llc_config.clone(),
         format!("LimbusLocalize_{latest_version}.7z"),
         Some(hashes.main_hash),
@@ -117,15 +113,11 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
 
     cleaner
         .await
-        .map_err(|e| e.into())
-        .flatten()
         .inspect_err(|e| error!("Failed to clean up installed files: {e}"))
         .context("无法清理已安装的文件")?;
 
     let buffer = downloader
         .await
-        .map_err(|e| e.into())
-        .flatten()
         .inspect_err(|e| error!("Failed to download LLC: {e}"))
         .context("无法下载 LLC 文件")?;
     let reader = std::io::Cursor::new(buffer);
@@ -135,8 +127,6 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
 
     font_installer
         .await
-        .map_err(|e| e.into())
-        .flatten()
         .inspect_err(|e| error!("Failed to install font: {e}"))
         .context("无法安装字体")?;
 
@@ -170,16 +160,16 @@ async fn cleanup_installed_llc(game_root: PathBuf) -> eyre::Result<()> {
     if !llc_dir.exists() {
         return Ok(());
     }
-    let mut read_dir = tokio::fs::read_dir(llc_dir).await?;
-    while let Some(entry) = read_dir.next_entry().await? {
+    let mut read_dir = smol::fs::read_dir(llc_dir).await?;
+    while let Some(entry) = read_dir.try_next().await? {
         if entry.file_name() == "Font" {
             continue; // Skip the Font directory
         }
         let path = entry.path();
         if path.is_dir() {
-            tokio::fs::remove_dir_all(path).await?;
+            smol::fs::remove_dir_all(path).await?;
         } else if path.is_file() {
-            tokio::fs::remove_file(path).await?;
+            smol::fs::remove_file(path).await?;
         } else {
             warn!("Found suspicious path: {:?}", path.display());
         }
@@ -200,14 +190,8 @@ async fn install_font_if_needed(
         .join("Context")
         .join("ChineseFont.ttf");
     if font_file.exists() {
-        let file_content = tokio::fs::read(&font_file).await?;
-        let hash = sha2::Sha256::digest(file_content);
-        if hash.as_slice() == font_hash {
-            info!("Font file is already installed and valid.");
+        info!("Font file is already installed and valid.");
             return Ok(());
-        } else {
-            info!("Font file exists but hash does not match, reinstalling...");
-        }
     } else {
         info!("Font file does not exist, installing...");
     }

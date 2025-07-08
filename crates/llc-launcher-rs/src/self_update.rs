@@ -1,25 +1,20 @@
 //! Run self-update logic for the launcher.
 
-use crate::config::LauncherConfig;
+use crate::{config::LauncherConfig};
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use flate2::read::GzDecoder;
-use futures::{FutureExt, StreamExt, TryFutureExt, stream::FuturesUnordered};
-use reqwest::{
-    Client, ClientBuilder, Response, header,
-    header::{HeaderMap, HeaderName, HeaderValue},
-};
+use nyquest::{AsyncClient, ClientBuilder};
 use semver::Version;
 use serde::Deserialize;
 use std::{
     collections::BTreeMap,
-    future::ready,
     path::{Path, PathBuf},
     process::{Command, exit},
-    sync::LazyLock,
 };
-use tokio::fs;
+use smol::fs;
 use url::Url;
+use llc_rs::utils::{ClientExt, ResultExt};
 
 #[cfg(target_os = "windows")]
 const PKG_NAME: &str = "@lightsing/llc-launcher-rs-win32";
@@ -36,8 +31,10 @@ pub async fn run(
     self_path: PathBuf,
     config: LauncherConfig,
 ) -> eyre::Result<()> {
+    let client = create_client().await?;
+
     let self_version = Version::parse(env!("CARGO_PKG_VERSION"))?;
-    let (latest_version, tarball_url) = get_latest_version(&config)
+    let (latest_version, tarball_url) = get_latest_version(&client, &config)
         .await
         .inspect_err(|e| error!("Failed to get latest version: {e}"))
         .context("无法获取最新版本信息，请检查网络连接。")?;
@@ -52,7 +49,7 @@ pub async fn run(
         launch_tool(&tool_path, &self_path)
     }
 
-    download_and_extract_update(dirs, tarball_url).await?;
+    download_and_extract_update(&client, dirs, tarball_url).await?;
     launch_tool(&tool_path, &self_path)
 }
 
@@ -70,17 +67,19 @@ fn launch_tool(tool_path: &Path, self_path: &Path) -> ! {
     exit(0);
 }
 
-async fn download_and_extract_update(dirs: &ProjectDirs, url: Url) -> eyre::Result<()> {
-    let res = NPM_CLIENT
-        .get(url)
-        .send()
-        .map(|r| r.and_then(|res| res.error_for_status()))
-        .and_then(|res| res.bytes())
+#[instrument(skip(client, dirs))]
+async fn download_and_extract_update(
+    client: &AsyncClient,
+    dirs: &ProjectDirs,
+    url: Url,
+) -> eyre::Result<()> {
+    let res = client
+        .download(url)
         .await
         .inspect_err(|e| error!("failed to download update package: {e}"))
         .context("无法下载更新包")?;
 
-    let tar = GzDecoder::new(res.as_ref());
+    let tar = GzDecoder::new(res.as_slice());
     let mut archive = tar::Archive::new(tar);
     for file in archive
         .entries()
@@ -111,7 +110,10 @@ async fn download_and_extract_update(dirs: &ProjectDirs, url: Url) -> eyre::Resu
 }
 
 #[instrument(skip(config), ret)]
-async fn get_latest_version(config: &LauncherConfig) -> eyre::Result<(Version, Url)> {
+async fn get_latest_version(
+    client: &AsyncClient,
+    config: &LauncherConfig,
+) -> eyre::Result<(Version, Url)> {
     #[derive(Deserialize)]
     struct Metadata {
         #[serde(rename = "dist-tags")]
@@ -130,7 +132,16 @@ async fn get_latest_version(config: &LauncherConfig) -> eyre::Result<(Version, U
     struct DistInfo {
         tarball: Url,
     }
-    let mut res: Metadata = request_npm(config, PKG_NAME).await?.json().await?;
+
+    let registries = config.npm_registries();
+
+    let mut res: Metadata = client
+        .get_json(
+            registries
+                .iter()
+                .map(|base_url| base_url.join(PKG_NAME).infallible()),
+        )
+        .await?;
     let latest = res.dist_tags.latest;
     let tarball_url = res
         .versions
@@ -141,93 +152,50 @@ async fn get_latest_version(config: &LauncherConfig) -> eyre::Result<(Version, U
     Ok((latest, tarball_url))
 }
 
-async fn request_npm(config: &LauncherConfig, path: &str) -> eyre::Result<Response> {
-    let registries = config.npm_registries();
-
-    let (_, res) = registries
-        .iter()
-        .map(|base_url| base_url.join(path).expect("infallible"))
-        .enumerate()
-        .map(|(idx, url)| {
-            NPM_CLIENT
-                .get(url.clone())
-                .send()
-                .map(|r| r.and_then(|res| res.error_for_status()))
-                .map(move |res| (idx, res.map(|v| (url, v))))
-        })
-        .collect::<FuturesUnordered<_>>()
-        .skip_while(|(idx, res)| {
-            ready(
-                *idx != registries.len() - 1 // keep trying until the last node
-                    && res.as_ref().inspect_err(|e| error!("{e}")).is_err(),
-            )
-        })
-        .next()
-        .await
-        .expect("unreachable: should always yield at least one item");
-
-    let (url, res) = res?;
-    info!("request npm from {url}");
-    Ok(res)
-}
-
-static NPM_CLIENT: LazyLock<Client> = LazyLock::new(|| {
+async fn create_client() -> eyre::Result<AsyncClient> {
     ClientBuilder::default()
         .user_agent("npm/10.2.3 node/v20.11.1 win32 x64 workspaces/false ci/false")
-        .default_headers(HeaderMap::from_iter([
-            (
-                header::ACCEPT,
-                HeaderValue::from_static(
-                    "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
-                ),
-            ),
-            (
-                header::ACCEPT_ENCODING,
-                HeaderValue::from_static("gzip, deflate, br"),
-            ),
-            (
-                header::ACCEPT_CHARSET,
-                HeaderValue::from_static("zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"),
-            ),
-            (
-                HeaderName::from_static("npm-in-ci"),
-                HeaderValue::from_static("false"),
-            ),
-            (
-                HeaderName::from_static("npm-scope"),
-                HeaderValue::from_static("@lightsing"),
-            ),
-        ]))
-        .brotli(true)
-        .deflate(true)
-        .gzip(true)
-        .https_only(true)
-        .build()
-        .expect("Building NPM client failed")
-});
+        .with_header(
+            "Accept",
+            "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
+        )
+        .with_header("Accept-Charset", "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7")
+        .with_header("npm-in-ci", "false")
+        .with_header("npm-scope", "@lightsing")
+        .build_async()
+        .await
+        .inspect_err(|e| error!("Failed to create NPM client: {e}"))
+        .context("无法创建 NPM 客户端")
+}
 
 #[cfg(test)]
 mod tests {
+    use smol_macros::test;
     use super::*;
 
-    #[tokio::test]
-    async fn test_get_latest_version() {
-        let config = LauncherConfig::default();
+    test! {
+        async fn test_get_latest_version() {
+            let client = create_client().await.unwrap();
+            let config = LauncherConfig::default();
 
-        let version = get_latest_version(&config).await;
-        println!(
-            "[test_get_latest_version] Latest version: {:?}",
-            version.unwrap()
-        );
+            let version = get_latest_version(&client, &config).await;
+            println!(
+                "[test_get_latest_version] Latest version: {:?}",
+                version.unwrap()
+            );
+        }
     }
 
-    #[tokio::test]
-    async fn test_download_update() {
-        let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
-        let config = LauncherConfig::default();
 
-        let (_version, url) = get_latest_version(&config).await.unwrap();
-        let result = download_and_extract_update(&dirs, url).await;
-        assert!(result.is_ok());
+    test! {
+        async fn test_download_update() {
+            let client = create_client().await.unwrap();
+            let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
+            let config = LauncherConfig::default();
+
+            let (_version, url) = get_latest_version(&client, &config).await.unwrap();
+            let result = download_and_extract_update(&client, &dirs, url).await;
+            assert!(result.is_ok());
+        }
     }
 }

@@ -4,9 +4,9 @@ use eyre::Context;
 use llc_rs::LLCConfig;
 use serde::{Deserialize, Serialize};
 use serde_with::{DisplayFromStr, serde_as};
-use smallvec::{SmallVec, smallvec};
 use std::{fs, path::Path};
 use url::Url;
+use llc_rs::utils::ResultExt;
 
 #[serde_as]
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -14,7 +14,7 @@ pub struct LauncherConfig {
     #[serde_as(as = "DisplayFromStr")]
     log_level: tracing::Level,
     #[serde(default = "default_npm_registries")]
-    npm_registries: SmallVec<Url, 10>,
+    npm_registries: Vec<Url>,
 }
 
 impl Default for LauncherConfig {
@@ -91,7 +91,7 @@ fn load_config_or_default<T: Default + Serialize + for<'de> Deserialize<'de>>(
 ) -> eyre::Result<T> {
     if !path.exists() {
         let config = T::default();
-        fs::write(path, toml::to_string_pretty(&config).expect("infallible"))
+        fs::write(path, toml::to_string_pretty(&config).infallible())
             .inspect_err(|e| eprintln!("failed to write config file: {e}"))
             .context("无法写入配置文件")?;
         return Ok(config);
@@ -107,14 +107,14 @@ fn load_config_or_default<T: Default + Serialize + for<'de> Deserialize<'de>>(
 }
 
 fn save_config<T: Serialize>(path: &Path, config: &T) -> eyre::Result<()> {
-    fs::write(path, toml::to_string_pretty(config).expect("infallible"))
+    fs::write(path, toml::to_string_pretty(config).infallible())
         .inspect_err(|e| eprintln!("failed to write config file: {e}"))
         .context("无法写入配置文件")
 }
 
-fn default_npm_registries() -> SmallVec<Url, 10> {
-    smallvec!(
-        Url::parse("https://registry.npmmirror.com").expect("infallible"),
-        Url::parse("https://registry.npmjs.org").expect("infallible"),
-    )
+fn default_npm_registries() -> Vec<Url> {
+    vec![
+        Url::parse("https://registry.npmmirror.com").infallible(),
+        Url::parse("https://registry.npmjs.org").infallible(),
+    ]
 }

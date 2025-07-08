@@ -4,12 +4,15 @@
 #[macro_use]
 extern crate tracing;
 
+use std::path::PathBuf;
+
 mod config;
 pub use config::LLCConfig;
 
 mod steam_support;
+pub mod zeroasso;
+pub mod utils;
 
-use std::path::PathBuf;
 pub use steam_support::{
     SteamSupportError, find_game_path_for_app, get_steam_root, launch_game_via_steam,
 };
@@ -27,4 +30,19 @@ pub fn get_limbus_company_install_path() -> Result<PathBuf, SteamSupportError> {
 pub fn launch_limbus_company() -> Result<(), SteamSupportError> {
     launch_game_via_steam(LIMBUS_COMPANY_STEAM_APP_ID)?;
     Ok(())
+}
+
+#[cfg(test)]
+#[ctor::ctor]
+fn setup_test() {
+    use tracing_subscriber::EnvFilter;
+    tracing_subscriber::fmt()
+        .with_env_filter(
+            EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("trace")),
+        )
+        .with_file(true)
+        .with_line_number(true)
+        .init();
+
+    nyquest_preset::register();
 }

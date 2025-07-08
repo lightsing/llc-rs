@@ -1,30 +1,29 @@
-use compact_str::CompactString;
-use heapless::FnvIndexMap;
 use minijinja::{Environment, Template, context};
 use serde::{Deserialize, Serialize, ser::SerializeStruct};
-use smallvec::SmallVec;
+use std::collections::BTreeMap;
 use url::Url;
+use crate::utils::ResultExt;
 
 #[derive(Debug, Clone)]
 pub struct LLCConfig {
     settings: Settings,
     github: GitHub,
     download_nodes: Environment<'static>,
-    api_nodes: FnvIndexMap<CompactString, Url, 8>,
+    api_nodes: BTreeMap<String, Url>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "kebab-case")]
 struct Settings {
-    download_node: CompactString,
-    api_node: CompactString,
+    download_node: String,
+    api_node: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct GitHub {
-    repo: CompactString,
-    owner: CompactString,
+    repo: String,
+    owner: String,
     api: Url,
 }
 
@@ -43,7 +42,7 @@ impl LLCConfig {
     }
 
     /// Get the API nodes URL based on the current settings.
-    pub fn api_nodes(&self) -> impl Iterator<Item = &Url> {
+    pub fn api_nodes(&self) -> impl Iterator<Item = &Url> + ExactSizeIterator {
         self.api_nodes.values()
     }
 
@@ -92,7 +91,12 @@ impl LLCConfig {
                 "API node '{}' not found, using first available node",
                 self.settings.api_node
             );
-            self.settings.api_node = self.api_nodes.first().expect("empty api nodes").0.clone();
+            self.settings.api_node = self
+                .api_nodes
+                .keys()
+                .next()
+                .expect("empty api nodes")
+                .clone();
         }
     }
 }
@@ -114,28 +118,25 @@ impl Default for LLCConfig {
                 env.add_template(
                     "自动选择节点",
                     "https://api.zeroasso.top/v2/download/files?file_name={{ file_name }}",
-                )
-                .expect("infallible");
+                ).infallible();
                 env.add_template(
                     "零协会镇江节点",
                     "https://download.zeroasso.top/files/{{ file_name }}",
-                )
-                .expect("infallible");
+                ).infallible();
                 env.add_template(
                     "CloudFlare CDN(海外)",
                     "https://cdn-download.zeroasso.top/files/{{ file_name }}",
-                )
-                .expect("infallible");
+                ).infallible();
                 env
             },
-            api_nodes: FnvIndexMap::from_iter([
+            api_nodes: BTreeMap::from_iter([
                 (
                     "零协会官方 API".into(),
-                    Url::parse("https://api.zeroasso.top").expect("infallible"),
+                    Url::parse("https://api.zeroasso.top").infallible(),
                 ),
                 (
                     "CloudFlare CDN API(海外)".into(),
-                    Url::parse("https://cdn-api.zeroasso.top").expect("infallible"),
+                    Url::parse("https://cdn-api.zeroasso.top").infallible(),
                 ),
             ]),
         }
@@ -152,8 +153,8 @@ impl Serialize for LLCConfig {
         struct LLCConfigHelper<'a> {
             settings: &'a Settings,
             github: &'a GitHub,
-            download_node: SmallVec<DownloadNodeHelper<'a>, 8>,
-            api_node: SmallVec<NodeHelper<'a>, 8>,
+            download_node: Vec<DownloadNodeHelper<'a>>,
+            api_node: Vec<NodeHelper<'a>>,
         }
 
         struct DownloadNodeHelper<'a> {
@@ -179,17 +180,20 @@ impl Serialize for LLCConfig {
             }
         }
 
+        let mut download_node = self
+            .download_nodes
+            .templates()
+            .map(|(name, template)| DownloadNodeHelper {
+                name,
+                endpoint: template,
+            })
+            .collect::<Vec<_>>();
+        download_node.sort_by_key(|node| node.name);
+
         let helper = LLCConfigHelper {
             settings: &self.settings,
             github: &self.github,
-            download_node: self
-                .download_nodes
-                .templates()
-                .map(|(name, template)| DownloadNodeHelper {
-                    name,
-                    endpoint: template,
-                })
-                .collect(),
+            download_node,
             api_node: self
                 .api_nodes
                 .iter()
@@ -214,8 +218,8 @@ impl<'de> Deserialize<'de> for LLCConfig {
         struct LLCConfigHelper {
             settings: Settings,
             github: GitHub,
-            download_node: SmallVec<DownloadNodeHelper, 8>,
-            api_node: SmallVec<NodeHelper, 8>,
+            download_node: Vec<DownloadNodeHelper>,
+            api_node: Vec<NodeHelper>,
         }
 
         #[derive(Deserialize)]
@@ -226,7 +230,7 @@ impl<'de> Deserialize<'de> for LLCConfig {
 
         #[derive(Deserialize)]
         struct NodeHelper {
-            name: CompactString,
+            name: String,
             endpoint: Url,
         }
 
@@ -245,7 +249,7 @@ impl<'de> Deserialize<'de> for LLCConfig {
             env
         };
 
-        let mut api_nodes: FnvIndexMap<CompactString, Url, 8> = helper
+        let mut api_nodes: BTreeMap<String, Url> = helper
             .api_node
             .into_iter()
             .map(|node| (node.name, node.endpoint))
@@ -292,13 +296,17 @@ mod tests {
     #[test]
     fn test_config() {
         let toml = r#"[settings]
-api-node = "零协会官方 API"
 download-node = "自动选择节点"
+api-node = "零协会官方 API"
 
 [github]
 repo = "LocalizeLimbusCompany"
 owner = "LocalizeLimbusCompany"
-api = "https://api.github.com"
+api = "https://api.github.com/"
+
+[[download-node]]
+name = "CloudFlare CDN(海外)"
+endpoint = "https://cdn-download.zeroasso.top/files/{{ file_name }}"
 
 [[download-node]]
 name = "自动选择节点"
@@ -308,17 +316,13 @@ endpoint = "https://api.zeroasso.top/v2/download/files?file_name={{ file_name }}
 name = "零协会镇江节点"
 endpoint = "https://download.zeroasso.top/files/{{ file_name }}"
 
-[[download-node]]
-name = "CloudFlare CDN(海外)"
-endpoint = "https://cdn-download.zeroasso.top/files/{{ file_name }}"
+[[api-node]]
+name = "CloudFlare CDN API(海外)"
+endpoint = "https://cdn-api.zeroasso.top/"
 
 [[api-node]]
 name = "零协会官方 API"
-endpoint = "https://api.zeroasso.top"
-
-[[api-node]]
-name = "CloudFlare CDN API(海外)"
-endpoint = "https://cdn-api.zeroasso.top"
+endpoint = "https://api.zeroasso.top/"
 "#;
 
         let config: LLCConfig = toml::from_str(toml).expect("Failed to deserialize config");
@@ -326,6 +330,7 @@ endpoint = "https://cdn-api.zeroasso.top"
         assert_eq!(config.settings.api_node, "零协会官方 API");
 
         let serialized = toml::to_string_pretty(&config).expect("Failed to serialize config");
+        println!("{}", serialized);
         assert_eq!(serialized, toml);
     }
 }

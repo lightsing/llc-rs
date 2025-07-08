@@ -9,18 +9,27 @@ rust-version.workspace = true
 version.workspace = true
 
 [dependencies]
-compact_str = { workspace = true, features = ["serde"] }
-heapless = { workspace = true, features = ["serde"] }
-minijinja = { workspace = true, features = ["loader"] }
+minijinja = { workspace = true, features = ["loader", "serde"] }
 serde = { workspace = true, features = ["derive"] }
-smallvec.workspace = true
 thiserror.workspace = true
 tracing.workspace = true
 url = { workspace = true, features = ["serde"] }
 vdf-reader.workspace = true
+nyquest.workspace = true
+os_info.workspace = true
+futures-util = { workspace = true, features = ["io"] }
+sha2.workspace = true
+hex.workspace = true
+serde_with = { workspace = true, features = ["hex"] }
 
 [dev-dependencies]
 toml.workspace = true
+ctor.workspace = true
+smol-macros.workspace = true
+serde_json.workspace = true
+sevenz-rust.workspace = true
+nyquest-preset.workspace = true
+tracing-subscriber.workspace = true
 
 [target.'cfg(target_os = "windows")'.dependencies]
 winreg.workspace = true

@@ -1,6 +1,3 @@
-use std::sync::LazyLock;
-use tokio::{pin, select};
-
 #[derive(Debug, Copy, Clone)]
 pub enum IconType {
     Error,
@@ -20,61 +17,3 @@ pub fn create_msgbox(title: &str, content: &str, icon_type: IconType) {
 
 #[cfg(not(target_os = "windows"))]
 pub fn create_msgbox(_title: &str, _content: &str, _icon_type: IconType) {}
-
-#[inline]
-pub async fn select_ok2<F1, F2, T, E>(f1: F1, f2: F2) -> Result<T, E>
-where
-    F1: Future<Output = Result<T, E>>,
-    F2: Future<Output = Result<T, E>>,
-{
-    pin!(f1);
-    pin!(f2);
-
-    select! {
-        res1 = &mut f1 => match res1 {
-            Ok(v) => Ok(v),
-            Err(e1) => {
-                match f2.await {
-                    Ok(v) => Ok(v),
-                    Err(_) => Err(e1),
-                }
-            }
-        },
-        res2 = &mut f2 => match res2 {
-            Ok(v) => Ok(v),
-            Err(e2) => {
-                match f1.await {
-                    Ok(v) => Ok(v),
-                    Err(_) => Err(e2),
-                }
-            }
-        },
-    }
-}
-
-pub static USER_AGENT: LazyLock<&str> = LazyLock::new(|| {
-    let os_info = os_info::get();
-    let os_ty = os_info.os_type();
-    Box::leak(format!(
-        "{pkg}/{ver} ({os} {os_ver}; {rustc}; {arch}; +{homepage}) nyquest/0.2 (+https://github.com/bdbai/nyquest)",
-        pkg = env!("CARGO_PKG_NAME"),
-        ver = env!("CARGO_PKG_VERSION"),
-        os = match os_ty {
-            os_info::Type::Windows => format_args!("Windows NT"),
-            _ => format_args!("{os_ty}"),
-        },
-        os_ver = os_info.version(),
-        rustc = env!("RUSTC_VERSION"),
-        arch = std::env::consts::ARCH,
-        homepage = env!("CARGO_PKG_HOMEPAGE"),
-    ).into_boxed_str())
-});
-
-#[cfg(test)]
-mod tests {
-    use super::USER_AGENT;
-    #[test]
-    fn test_user_agent() {
-        println!("{}", *USER_AGENT)
-    }
-}

@@ -22,7 +22,11 @@ mod llc;
 mod logging;
 mod self_update;
 mod utils;
-pub mod zeroasso;
+
+#[ctor::ctor]
+fn setup_nyquest() {
+    nyquest_preset::register();
+}
 
 #[cfg(test)]
 #[ctor::ctor]
@@ -32,11 +36,12 @@ fn setup_test() {
         .with_env_filter(
             EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("trace")),
         )
+        .with_file(true)
+        .with_line_number(true)
         .init();
 }
 
-#[tokio::main]
-async fn main() {
+fn main() {
     let (dirs, self_path, is_tool, (config, llc_config), _logging_guard) = match init() {
         Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard)) => (
             dirs,
@@ -56,11 +61,13 @@ async fn main() {
         }
     };
 
-    if let Err(e) = if is_tool {
-        llc::run(llc_config).await
-    } else {
-        self_update::run(&dirs, self_path, config).await
-    } {
+    if let Err(e) = smol::block_on(async {
+        if is_tool {
+            llc::run(llc_config).await
+        } else {
+            self_update::run(&dirs, self_path, config).await
+        }
+    }) {
         error!("{e:?}");
         utils::create_msgbox(
             "启动器崩溃了！",

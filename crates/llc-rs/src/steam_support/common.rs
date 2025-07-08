@@ -1,7 +1,5 @@
 use crate::steam_support::SteamSupportError;
-use compact_str::CompactString;
 use serde::Deserialize;
-use smallvec::SmallVec;
 use std::{
     collections::BTreeMap,
     path::{Path, PathBuf},
@@ -15,11 +13,11 @@ pub fn find_game_path_for_app(
     // Get Steam Libraries
     #[derive(Debug, Deserialize)]
     struct LibraryFolders {
-        libraryfolders: SmallVec<Library, 4>,
+        libraryfolders: Vec<Library>,
     }
     #[derive(Debug, Deserialize)]
     struct Library {
-        path: CompactString,
+        path: String,
         apps: BTreeMap<u32, usize>,
     }
 
