@@ -38,3 +38,4 @@ nyquest-backend-winrt.workspace = true
 
 [target.'cfg(target_os = "linux")'.dev-dependencies]
 nyquest-backend-curl.workspace = true
+openssl.workspace = true

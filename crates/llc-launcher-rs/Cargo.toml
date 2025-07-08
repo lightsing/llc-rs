@@ -43,3 +43,4 @@ winres.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
 nyquest-backend-curl.workspace = true
+openssl.workspace = true

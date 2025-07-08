@@ -25,6 +25,7 @@ msgbox = "0.7"
 nyquest = { git = "https://github.com/bdbai/nyquest", features = ["async", "json"] }
 nyquest-backend-curl = { git = "https://github.com/bdbai/nyquest", features = ["async"] }
 nyquest-backend-winrt = { git = "https://github.com/bdbai/nyquest", features = ["async"] }
+openssl = { version = "0.10", features = ["vendored"] }
 os_info = { version = "3", default-features = false }
 semver = "1.0"
 serde = "1.0"
