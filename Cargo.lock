@@ -1306,7 +1306,7 @@ checksum = "241eaef5fd12c88705a01fc1066c48c4b36e0dd4377dcdc7ec3942cea7a69956"
 
 [[package]]
 name = "llc-launcher-rs"
-version = "0.1.12"
+version = "0.1.13"
 dependencies = [
  "ctor",
  "directories",
@@ -1336,7 +1336,7 @@ dependencies = [
 
 [[package]]
 name = "llc-rs"
-version = "0.1.12"
+version = "0.1.13"
 dependencies = [
  "ctor",
  "futures-util",

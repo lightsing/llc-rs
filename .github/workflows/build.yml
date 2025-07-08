@@ -51,6 +51,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pkg-config libssl-dev
           find /usr/include/ -name opensslconf.h
+          find /usr/lib/x86_64-linux-gnu -name 'libssl*'
 
       - name: Cache cargo registry + build
         uses: actions/cache@v4
@@ -79,7 +80,10 @@ jobs:
       - name: Build (zig)
         if: matrix.name == 'linux'
         env:
-          OPENSSL_DIR: /usr/include/x86_64-linux-gnu/openssl
+          OPENSSL_INCLUDE_DIR: /usr/include/x86_64-linux-gnu/openssl
+          OPENSSL_LIB_DIR: /usr/lib/x86_64-linux-gnu
+          OPENSSL_DIR: /usr/include/x86_64-linux-gnu
+          PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
         run: cargo zigbuild --release --target=${{ matrix.target }}
 
       - name: Build (normal)
