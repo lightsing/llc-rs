@@ -1,20 +1,20 @@
 //! Run self-update logic for the launcher.
 
-use crate::{config::LauncherConfig};
+use crate::config::LauncherConfig;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use flate2::read::GzDecoder;
+use llc_rs::utils::{ClientExt, ResultExt};
 use nyquest::{AsyncClient, ClientBuilder};
 use semver::Version;
 use serde::Deserialize;
+use smol::fs;
 use std::{
     collections::BTreeMap,
     path::{Path, PathBuf},
     process::{Command, exit},
 };
-use smol::fs;
 use url::Url;
-use llc_rs::utils::{ClientExt, ResultExt};
 
 #[cfg(target_os = "windows")]
 const PKG_NAME: &str = "@lightsing/llc-launcher-rs-win32";
@@ -170,8 +170,8 @@ async fn create_client() -> eyre::Result<AsyncClient> {
 
 #[cfg(test)]
 mod tests {
-    use smol_macros::test;
     use super::*;
+    use smol_macros::test;
 
     test! {
         async fn test_get_latest_version() {
@@ -185,7 +185,6 @@ mod tests {
             );
         }
     }
-
 
     test! {
         async fn test_download_update() {

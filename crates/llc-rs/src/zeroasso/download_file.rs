@@ -1,8 +1,10 @@
-use crate::{utils::ClientExt, zeroasso::get_client, LLCConfig};
+use crate::{
+    LLCConfig,
+    utils::{ClientExt, ResultExt},
+    zeroasso::{ZeroAssoApiError, get_client},
+};
 use sha2::Digest;
 use std::sync::Arc;
-use crate::utils::ResultExt;
-use crate::zeroasso::ZeroAssoApiError;
 
 #[instrument(skip(llc_config, hash))]
 pub async fn run(
@@ -16,8 +18,7 @@ pub async fn run(
     let bytes = client
         .download(download_url)
         .await
-        .inspect_err(|e| error!("error downloading file: {e}"))
-        ?;
+        .inspect_err(|e| error!("error downloading file: {e}"))?;
 
     if let Some(expected_hash) = hash {
         let actual_hash = sha2::Sha256::digest(bytes.as_slice());

@@ -1,30 +1,28 @@
-use std::future::ready;
-use crate::{zeroasso::{request_zeroasso_api}, LLCConfig};
-use futures_util::{FutureExt, StreamExt, TryFutureExt};
+use crate::{
+    LLCConfig,
+    utils::OptionExt,
+    zeroasso::{ZeroAssoApiError, get_github_client, request_zeroasso_api},
+};
+use futures_util::{FutureExt, StreamExt, TryFutureExt, stream::FuturesUnordered};
 use nyquest::Request;
 use serde::Deserialize;
 use serde_with::{DisplayFromStr, serde_as};
-use std::sync::Arc;
-use futures_util::stream::FuturesUnordered;
-use crate::utils::OptionExt;
-use crate::zeroasso::{get_github_client, ZeroAssoApiError};
+use std::{future::ready, sync::Arc};
 
 #[instrument(skip(llc_config), level = "trace", ret)]
 #[inline]
 pub async fn run(llc_config: Arc<LLCConfig>) -> Result<u64, ZeroAssoApiError> {
     [
         get_version_github(&llc_config).map(|r| (r, false)).boxed(),
-        get_version_zeroasso(&llc_config).map(|r| (r, true)).boxed()
+        get_version_zeroasso(&llc_config).map(|r| (r, true)).boxed(),
     ]
-        .into_iter()
-        .collect::<FuturesUnordered<_>>()
-        .skip_while(|(r, is_last)| {
-            ready(!is_last && r.is_err())
-        })
-        .next()
-        .await
-        .infallible()
-        .0
+    .into_iter()
+    .collect::<FuturesUnordered<_>>()
+    .skip_while(|(r, is_last)| ready(!is_last && r.is_err()))
+    .next()
+    .await
+    .infallible()
+    .0
 }
 
 #[inline]
@@ -64,7 +62,7 @@ async fn get_version_zeroasso(llc_config: &LLCConfig) -> Result<u64, ZeroAssoApi
 #[cfg(test)]
 mod tests {
     use super::*;
-    use     smol_macros::test;
+    use smol_macros::test;
 
     test! {
     async fn test_get_version() {

@@ -1,7 +1,6 @@
 use futures_util::{AsyncReadExt, FutureExt, StreamExt, TryFutureExt, stream::FuturesUnordered};
 use nyquest::{AsyncClient, Request};
-use std::{future::ready};
-use std::fmt::{Debug};
+use std::{fmt::Debug, future::ready};
 use url::Url;
 
 pub trait ClientExt {
@@ -50,13 +49,15 @@ impl ClientExt for AsyncClient {
                         *idx != n_urls - 1 // keep trying until the last node
                             && res.as_ref().inspect_err(|e| error!("{e}")).is_err(),
                     )
-                }).next().await.infallible();
+                })
+                .next()
+                .await
+                .infallible();
 
             let (url, res) = res?;
             info!("request JSON from {url}");
             Ok(res)
         }
-
     }
 }
 
@@ -67,9 +68,7 @@ pub trait OptionExt<T> {
 impl<T> OptionExt<T> for Option<T> {
     #[cfg(not(debug_assertions))]
     fn infallible(self) -> T {
-        unsafe {
-            self.unwrap_unchecked()
-        }
+        unsafe { self.unwrap_unchecked() }
     }
 
     #[cfg(debug_assertions)]
@@ -85,9 +84,7 @@ pub trait ResultExt<T, E> {
 impl<T, E: Debug> ResultExt<T, E> for Result<T, E> {
     #[cfg(not(debug_assertions))]
     fn infallible(self) -> T {
-        unsafe {
-            self.unwrap_unchecked()
-        }
+        unsafe { self.unwrap_unchecked() }
     }
 
     #[cfg(debug_assertions)]

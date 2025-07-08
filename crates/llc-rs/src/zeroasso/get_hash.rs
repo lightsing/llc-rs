@@ -1,8 +1,10 @@
-use crate::zeroasso::{request_zeroasso_api, ZeroAssoApiError};
+use crate::{
+    LLCConfig,
+    zeroasso::{ZeroAssoApiError, request_zeroasso_api},
+};
 use serde::Deserialize;
 use serde_with::serde_as;
 use std::sync::Arc;
-use crate::LLCConfig;
 
 #[serde_as]
 #[derive(Debug, Clone, Deserialize)]

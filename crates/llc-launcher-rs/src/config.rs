@@ -1,12 +1,11 @@
 use crate::utils;
 use directories::ProjectDirs;
 use eyre::Context;
-use llc_rs::LLCConfig;
+use llc_rs::{LLCConfig, utils::ResultExt};
 use serde::{Deserialize, Serialize};
 use serde_with::{DisplayFromStr, serde_as};
 use std::{fs, path::Path};
 use url::Url;
-use llc_rs::utils::ResultExt;
 
 #[serde_as]
 #[derive(Debug, Clone, Serialize, Deserialize)]

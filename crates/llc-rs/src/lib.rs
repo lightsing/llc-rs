@@ -10,8 +10,8 @@ mod config;
 pub use config::LLCConfig;
 
 mod steam_support;
-pub mod zeroasso;
 pub mod utils;
+pub mod zeroasso;
 
 pub use steam_support::{
     SteamSupportError, find_game_path_for_app, get_steam_root, launch_game_via_steam,

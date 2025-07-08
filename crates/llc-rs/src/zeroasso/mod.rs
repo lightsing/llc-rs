@@ -1,7 +1,9 @@
-use std::sync::{LazyLock, OnceLock};
-use crate::utils::{ClientExt, OptionExt, ResultExt};
+use crate::{
+    LLCConfig,
+    utils::{ClientExt, OptionExt, ResultExt},
+};
 use nyquest::{AsyncClient, ClientBuilder};
-use crate::LLCConfig;
+use std::sync::{LazyLock, OnceLock};
 
 pub mod download_file;
 pub mod get_hash;
@@ -16,13 +18,13 @@ pub enum ZeroAssoApiError {
         file_name: String,
         expected_hash: [u8; 32],
         actual_hash: [u8; 32],
-    }
+    },
 }
 
 async fn get_client() -> Result<&'static AsyncClient, ZeroAssoApiError> {
     static CLIENT: OnceLock<AsyncClient> = OnceLock::new();
     if let Some(client) = CLIENT.get() {
-        return Ok(client)
+        return Ok(client);
     }
 
     let client = ClientBuilder::default()
@@ -43,7 +45,7 @@ async fn get_github_client(
 ) -> Result<&'static AsyncClient, ZeroAssoApiError> {
     static CLIENT: OnceLock<AsyncClient> = OnceLock::new();
     if let Some(client) = CLIENT.get() {
-        return Ok(client)
+        return Ok(client);
     }
 
     let client = ClientBuilder::default()
@@ -60,22 +62,19 @@ async fn get_github_client(
     Ok(CLIENT.get().infallible())
 }
 
-
 #[inline]
 async fn request_zeroasso_api<T: serde::de::DeserializeOwned + Send + 'static>(
     llc_config: &LLCConfig,
     path: &str,
 ) -> Result<T, ZeroAssoApiError> {
-    Ok(
-        get_client()
+    Ok(get_client()
         .await?
         .get_json(
             llc_config
                 .api_nodes()
                 .map(|base_url| base_url.join(path).infallible()),
         )
-        .await?
-    )
+        .await?)
 }
 
 static USER_AGENT: LazyLock<&str> = LazyLock::new(|| {

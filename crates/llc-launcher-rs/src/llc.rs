@@ -1,12 +1,12 @@
-use crate::{utils};
+use crate::utils;
 use eyre::{Context, ContextCompat};
 use llc_rs::{LLCConfig, get_limbus_company_install_path, launch_limbus_company, zeroasso};
 use serde::Deserialize;
+use smol::stream::StreamExt;
 use std::{
     path::{Path, PathBuf},
     sync::Arc,
 };
-use smol::stream::StreamExt;
 
 #[derive(Deserialize)]
 struct Version {
@@ -30,7 +30,7 @@ pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
 
 /// Reverse update the launcher executable.
 async fn copy_self_to_launcher() -> eyre::Result<()> {
-    smol::Timer::after(std::time::Duration::from_secs(1)).await;  // Give some time for parent process to finish
+    smol::Timer::after(std::time::Duration::from_secs(1)).await; // Give some time for parent process to finish
     let launcher_path = PathBuf::from(
         std::env::var_os("LLC_LAUNCHER_PATH")
             .context("请勿直接运行本目录中的 llc-launcher-rs 可执行文件")
@@ -191,7 +191,7 @@ async fn install_font_if_needed(
         .join("ChineseFont.ttf");
     if font_file.exists() {
         info!("Font file is already installed and valid.");
-            return Ok(());
+        return Ok(());
     } else {
         info!("Font file does not exist, installing...");
     }

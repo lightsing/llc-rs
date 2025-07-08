@@ -1,8 +1,8 @@
+use crate::utils::ResultExt;
 use minijinja::{Environment, Template, context};
 use serde::{Deserialize, Serialize, ser::SerializeStruct};
 use std::collections::BTreeMap;
 use url::Url;
-use crate::utils::ResultExt;
 
 #[derive(Debug, Clone)]
 pub struct LLCConfig {
@@ -118,15 +118,18 @@ impl Default for LLCConfig {
                 env.add_template(
                     "自动选择节点",
                     "https://api.zeroasso.top/v2/download/files?file_name={{ file_name }}",
-                ).infallible();
+                )
+                .infallible();
                 env.add_template(
                     "零协会镇江节点",
                     "https://download.zeroasso.top/files/{{ file_name }}",
-                ).infallible();
+                )
+                .infallible();
                 env.add_template(
                     "CloudFlare CDN(海外)",
                     "https://cdn-download.zeroasso.top/files/{{ file_name }}",
-                ).infallible();
+                )
+                .infallible();
                 env
             },
             api_nodes: BTreeMap::from_iter([
