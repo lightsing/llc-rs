@@ -11,7 +11,7 @@ use serde::Deserialize;
 use smol::fs;
 use std::{
     collections::BTreeMap,
-    path::{Path, PathBuf},
+    path::Path,
     process::{Command, exit},
 };
 use url::Url;
@@ -28,8 +28,8 @@ const EXECUTABLE_NAME: &str = "llc-launcher-rs";
 
 pub async fn run(
     dirs: &ProjectDirs,
-    self_path: PathBuf,
-    config: LauncherConfig,
+    self_path: &Path,
+    config: &LauncherConfig,
 ) -> eyre::Result<()> {
     let client = create_client().await?;
 
@@ -42,13 +42,23 @@ pub async fn run(
     let tool_path = dirs.cache_dir().join(EXECUTABLE_NAME);
 
     if self_version >= latest_version {
+        info!("Current version is up-to-date: {}", self_version);
         fs::copy(&self_path, &tool_path)
             .await
             .inspect_err(|e| error!("Failed to copy self to tool path: {e}"))
             .context("无法更新启动器可执行文件")?;
+        info!(
+            "Copied self({}) to tool path: {}",
+            self_path.display(),
+            tool_path.display()
+        );
         launch_tool(&tool_path, &self_path)
     }
 
+    info!(
+        "Current version: {}, Latest version: {}",
+        self_version, latest_version
+    );
     download_and_extract_update(&client, dirs, tarball_url).await?;
     launch_tool(&tool_path, &self_path)
 }

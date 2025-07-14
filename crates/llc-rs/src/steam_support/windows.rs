@@ -21,6 +21,8 @@ pub fn launch_game_via_steam(app_id: u32) -> io::Result<()> {
         ));
     }
 
+    trace!("steam executable: {}", steam_exe.display());
+
     let steam_url = format!("steam://rungameid/{app_id}");
     std::process::Command::new(steam_exe)
         .arg(steam_url)

@@ -8,16 +8,16 @@
 #[macro_use]
 extern crate tracing;
 
-use crate::config::LauncherConfig;
+use crate::{config::LauncherConfig, logging::LoggingGuard};
+use async_broadcast::broadcast;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
-use std::{fs, path::PathBuf, process::exit};
-
 #[cfg(target_os = "linux")]
 use nyquest_backend_curl as nyquest_backend;
 #[cfg(target_os = "windows")]
 use nyquest_backend_winrt as nyquest_backend;
+use std::{fs, path::PathBuf, process::exit};
 
 const ORGANIZATION: &str = "lightsing";
 const APP_NAME: &str = "llc-launcher-rs";
@@ -46,14 +46,8 @@ fn setup_test() {
 fn main() {
     nyquest_backend::register();
 
-    let (dirs, self_path, is_tool, (config, llc_config), _logging_guard) = match init() {
-        Ok((dirs, self_path, is_tool, (config, llc_config), logging_guard)) => (
-            dirs,
-            self_path,
-            is_tool,
-            (config, llc_config),
-            logging_guard,
-        ),
+    let init_res = match smol::block_on(init()) {
+        Ok(res) => res,
         Err(e) => {
             eprintln!("{e}");
             utils::create_msgbox(
@@ -65,34 +59,61 @@ fn main() {
         }
     };
 
-    if let Err(e) = smol::block_on(async {
-        if is_tool {
-            llc::run(llc_config).await
-        } else {
-            self_update::run(&dirs, self_path, config).await
+    smol::block_on(async {
+        main_inner(&init_res).await;
+
+        config::save(
+            &init_res.dirs,
+            &init_res.launcher_config,
+            &init_res.llc_config,
+        )
+        .inspect_err(|e| warn!("无法保存配置：{e}"))
+        .ok();
+
+        init_res.shutdown_tx.broadcast_direct(()).await.ok();
+        if let Some(reporter) = init_res.logging_guard.sls_reporter {
+            reporter.await;
         }
-    }) {
+    })
+}
+
+async fn main_inner(init_res: &InitResources) {
+    if let Err(e) = {
+        if init_res.is_tool {
+            llc::run(init_res.llc_config.clone()).await
+        } else {
+            self_update::run(
+                &init_res.dirs,
+                &init_res.self_path,
+                &init_res.launcher_config,
+            )
+            .await
+        }
+    } {
         error!("{e:?}");
         utils::create_msgbox(
             "启动器崩溃了！",
             &format!(
                 "{e}\n请检查日志文件（位于 {}）以获取更多信息。",
-                dirs.data_dir().join("logs").display()
+                init_res.dirs.data_dir().join("logs").display()
             ),
             utils::IconType::Error,
         );
     }
 }
 
-type InitResult = (
-    ProjectDirs,
-    PathBuf,
-    bool,
-    (LauncherConfig, LLCConfig),
-    Option<logging::LoggingGuard>,
-);
+pub struct InitResources {
+    dirs: ProjectDirs,
+    self_path: PathBuf,
+    is_tool: bool,
+    launcher_config: LauncherConfig,
+    llc_config: LLCConfig,
+    logging_guard: LoggingGuard,
+    shutdown_tx: async_broadcast::Sender<()>,
+}
 
-fn init() -> eyre::Result<InitResult> {
+async fn init() -> eyre::Result<InitResources> {
+    let (shutdown_tx, shutdown_rx) = broadcast::<()>(1);
     let dirs = ProjectDirs::from("me", ORGANIZATION, APP_NAME).context("无法侦测用户目录")?;
 
     fs::create_dir_all(dirs.cache_dir()).context("无法创建缓存目录")?;
@@ -109,18 +130,22 @@ fn init() -> eyre::Result<InitResult> {
 
     let is_tool = self_path.starts_with(&cache_dir);
 
-    let (config, llc_config) = config::load(&dirs);
-    let logging_guard = logging::init(&dirs, &config);
+    let (launcher_config, llc_config) = config::load(&dirs);
+    let logging_guard = logging::init(&dirs, &launcher_config, shutdown_rx).await;
 
-    config::save(&dirs, &config, &llc_config)
-        .inspect_err(|e| warn!("无法保存配置：{e}"))
-        .context("无法保存配置")?;
+    if is_tool {
+        info!("Running as tool, path: {}", self_path.display());
+    } else {
+        info!("Running as launcher, path: {}", self_path.display());
+    }
 
-    Ok((
+    Ok(InitResources {
         dirs,
         self_path,
         is_tool,
-        (config, llc_config),
+        launcher_config,
+        llc_config,
         logging_guard,
-    ))
+        shutdown_tx,
+    })
 }

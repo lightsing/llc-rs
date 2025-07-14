@@ -9,9 +9,10 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.14"
+version = "0.1.15"
 
 [workspace.dependencies]
+async-broadcast = { version = "0.7.2", default-features = false }
 ctor = "0.4"
 directories = "6.0"
 eyre = "0.6"
@@ -39,9 +40,11 @@ tar = { version = "0.4", default-features = false }
 thiserror = "2.0"
 toml = "0.8"
 tracing = "0.1"
+tracing-aliyun-sls = { git = "https://github.com/lightsing/tracing-aliyun-sls", default-features = false }
 tracing-appender = "0.2"
 tracing-subscriber = { version = "0.3", default-features = false }
 url = "2.5"
+uuid = { version = "1.17", default-features = false }
 vdf-reader = "0.3"
 winreg = "0.55"
 winres = "0.1"

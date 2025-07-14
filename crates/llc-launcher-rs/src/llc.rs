@@ -14,15 +14,25 @@ struct Version {
 }
 
 pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
-    install_or_update_llc(llc_config).await?;
+    install_or_update_llc(llc_config)
+        .await
+        .inspect_err(|e| error!("Failed to install or update LLC: {e}"))
+        .context("无法安装或更新 LLC")?;
+
+    info!("LLC installation or update completed successfully.");
 
     launch_limbus_company()
         .inspect_err(|e| error!("cannot start Limbus Company: {e}"))
         .context("无法启动 Limbus Company")?;
 
-    copy_self_to_launcher().await
+    info!("Limbus Company launched successfully.");
+
+    copy_self_to_launcher()
+        .await
         .inspect_err(|e| error!("Failed to copy self to launcher: {e}"))
         .context("无法更新启动器可执行文件")?;
+
+    info!("Launcher executable updated successfully.");
     Ok(())
 }
 

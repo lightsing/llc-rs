@@ -6,12 +6,17 @@ use serde::{Deserialize, Serialize};
 use serde_with::{DisplayFromStr, serde_as};
 use std::{fs, path::Path};
 use url::Url;
+use uuid::Uuid;
 
 #[serde_as]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LauncherConfig {
+    #[serde(default = "Uuid::new_v4")]
+    uuid: Uuid,
     #[serde_as(as = "DisplayFromStr")]
     log_level: tracing::Level,
+    #[serde(default = "default_true")]
+    telemetry: bool,
     #[serde(default = "default_npm_registries")]
     npm_registries: Vec<Url>,
 }
@@ -19,7 +24,9 @@ pub struct LauncherConfig {
 impl Default for LauncherConfig {
     fn default() -> Self {
         Self {
+            uuid: Uuid::new_v4(),
             log_level: tracing::Level::INFO,
+            telemetry: true,
             npm_registries: default_npm_registries(),
         }
     }
@@ -27,8 +34,18 @@ impl Default for LauncherConfig {
 
 impl LauncherConfig {
     #[inline]
+    pub fn uuid(&self) -> Uuid {
+        self.uuid
+    }
+
+    #[inline]
     pub fn log_level(&self) -> tracing::Level {
         self.log_level
+    }
+
+    #[inline]
+    pub fn telemetry(&self) -> bool {
+        self.telemetry
     }
 
     #[inline]
@@ -116,4 +133,8 @@ fn default_npm_registries() -> Vec<Url> {
         Url::parse("https://registry.npmmirror.com").infallible(),
         Url::parse("https://registry.npmjs.org").infallible(),
     ]
+}
+
+const fn default_true() -> bool {
+    true
 }
