@@ -6,6 +6,13 @@ on:
       - 'v*'
   workflow_dispatch:
 
+env:
+  ALIYUN_SLS_ENDPOINT: ${{ vars.ALIYUN_SLS_ENDPOINT }}
+  ALIYUN_SLS_LOGSTORE: ${{ vars.ALIYUN_SLS_LOGSTORE }}
+  ALIYUN_SLS_PROJECT: ${{ vars.ALIYUN_SLS_PROJECT }}
+  ALIYUN_SLS_ACCESS_KEY: ${{ secrets.ALIYUN_SLS_ACCESS_KEY }}
+  ALIYUN_SLS_ACCESS_SECRET: ${{ secrets.ALIYUN_SLS_ACCESS_SECRET }}
+
 jobs:
   build:
     strategy:
