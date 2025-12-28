@@ -130,5 +130,4 @@ jobs:
       - name: Publish to npm
         run: |
           cd npm_pkg
-          npm whoami
           npm publish --access public
