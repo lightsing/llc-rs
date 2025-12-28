@@ -79,15 +79,11 @@ async fn request_zeroasso_api<T: serde::de::DeserializeOwned + Send + 'static>(
 
 static USER_AGENT: LazyLock<&str> = LazyLock::new(|| {
     let os_info = os_info::get();
-    let os_ty = os_info.os_type();
     Box::leak(format!(
         "Downloader/4.0.3 {pkg}/{ver} ({os} {os_ver}; {rustc}; {arch}; +{homepage}) nyquest/0.2 (+https://github.com/bdbai/nyquest)",
         pkg = env!("CARGO_PKG_NAME"),
         ver = env!("CARGO_PKG_VERSION"),
-        os = match os_ty {
-            os_info::Type::Windows => format_args!("Windows NT"),
-            _ => format_args!("{os_ty}"),
-        },
+        os = os_info.os_type(),
         os_ver = os_info.version(),
         rustc = env!("RUSTC_VERSION"),
         arch = std::env::consts::ARCH,
