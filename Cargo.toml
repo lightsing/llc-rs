@@ -9,7 +9,7 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.15"
+version = "0.1.16"
 
 [workspace.dependencies]
 async-broadcast = { version = "0.7.2", default-features = false }
@@ -23,9 +23,9 @@ hex = "0.4"
 llc-rs = { path = "crates/llc-rs" }
 minijinja = { version = "2.11", default-features = false }
 msgbox = "0.7"
-nyquest = { git = "https://github.com/bdbai/nyquest", features = ["async", "json"] }
-nyquest-backend-curl = { git = "https://github.com/bdbai/nyquest", features = ["async"] }
-nyquest-backend-winrt = { git = "https://github.com/bdbai/nyquest", features = ["async"] }
+nyquest = { version = "0.4", features = ["async", "async-stream", "json"] }
+nyquest-backend-curl = { version = "0.4", features = ["async", "async-stream"] }
+nyquest-backend-winrt = { version = "0.4", features = ["async", "async-stream"] }
 openssl = { version = "0.10", features = ["vendored"] }
 os_info = { version = "3", default-features = false }
 semver = "1.0"

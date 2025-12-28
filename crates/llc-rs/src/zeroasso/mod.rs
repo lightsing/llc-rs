@@ -81,7 +81,7 @@ static USER_AGENT: LazyLock<&str> = LazyLock::new(|| {
     let os_info = os_info::get();
     let os_ty = os_info.os_type();
     Box::leak(format!(
-        "{pkg}/{ver} ({os} {os_ver}; {rustc}; {arch}; +{homepage}) nyquest/0.2 (+https://github.com/bdbai/nyquest)",
+        "Downloader/4.0.3 {pkg}/{ver} ({os} {os_ver}; {rustc}; {arch}; +{homepage}) nyquest/0.2 (+https://github.com/bdbai/nyquest)",
         pkg = env!("CARGO_PKG_NAME"),
         ver = env!("CARGO_PKG_VERSION"),
         os = match os_ty {
