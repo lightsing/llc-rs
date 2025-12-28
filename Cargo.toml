@@ -9,7 +9,7 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.17"
+version = "0.1.18"
 
 [workspace.dependencies]
 async-broadcast = { version = "0.7.2", default-features = false }

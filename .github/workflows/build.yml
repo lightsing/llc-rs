@@ -6,6 +6,11 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
+
 env:
   ALIYUN_SLS_ENDPOINT: ${{ vars.ALIYUN_SLS_ENDPOINT }}
   ALIYUN_SLS_LOGSTORE: ${{ vars.ALIYUN_SLS_LOGSTORE }}
@@ -127,5 +132,3 @@ jobs:
           cd npm_pkg
           npm whoami
           npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
