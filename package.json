@@ -1,0 +1,27 @@
+{
+  "name": "@lightsing/llc-zh-cn",
+  "version": "",
+  "githubTag": "",
+  "description": "**Unofficial** NPM distribution of LocalizeLimbusCompany assets.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "LimbusCompany_Data",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LocalizeLimbusCompany/LocalizeLimbusCompany.git"
+  },
+  "keywords": [
+    "LimbusCompany",
+    "Localization",
+    "Assets"
+  ],
+  "author": "Localize Limbus Company Team",
+  "maintainer": "Akase Haruka <light.tsing@gmail.com>",
+  "license": "CC-BY-NC-SA-4.0",
+  "homepage": "https://github.com/LocalizeLimbusCompany/LocalizeLimbusCompany#readme"
+}
