@@ -1,0 +1,2099 @@
+{
+  "dataList": [
+    {
+      "id": 1110501,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "慢着慢着！",
+          "desc": "若本技能被丢弃，则对自身施加3层震颤 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使自身的混乱阈值后移与自身的震颤 层数相当的数值(最多10)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "慢着慢着！",
+          "desc": "若本技能被丢弃，则对自身施加4层震颤 \n[WhenUse] 对自身施加2层震颤 \n若自身的震颤 层数不低于6层，则使本技能的最终威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身的混乱阈值后移与自身的震颤 层数相当的数值(最多10)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "慢着慢着！",
+          "desc": "若本技能被丢弃，则对自身施加4层震颤 \n[WhenUse] 对自身施加2层震颤 \n若自身的震颤 层数不低于6层，则使本技能的最终威力+2",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身的混乱阈值后移与自身的震颤 层数相当的数值(最多10)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110502,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "锯刃切割",
+          "desc": "[WhenUse] 丢弃 自身所有行动槽中级别最低的1个技能",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标增加1级震颤 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标增加1级震颤 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的震颤 层数不低于6层，则使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "锯刃切割",
+          "desc": "若本技能被丢弃，则使自身获得1层攻击等级提升 \n[WhenUse] 丢弃 自身所有行动槽中级别最低的1个技能",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级震颤 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级震颤 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的震颤 层数不低于6层，则使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "锯刃切割",
+          "desc": "若本技能被丢弃，则使自身获得1层攻击等级提升 \n[WhenUse] 丢弃 自身所有行动槽中级别最低的1个技能",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级震颤 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级震颤 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的震颤 层数不低于6层，则使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110503,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "当机立断",
+          "desc": "[WhenUse] 按技能级别由高到低丢弃 自身所有行动槽中的技能\n消耗10层震颤 并使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加4级震颤 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若使用本技能时消耗了震颤 层数，则对目标施加3层震颤 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "当机立断",
+          "desc": "[WhenUse] 按技能级别由高到低丢弃 自身所有行动槽中的技能\n消耗10层震颤 并使本技能的硬币威力+2",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加4级震颤 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若使用本技能时消耗了震颤 层数，则对目标施加3层震颤 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标震颤引爆 ，并使目标的震颤 层数减少1层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110504,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "醒酒",
+          "desc": "[WhenUse] 丢弃 自身所有行动槽中级别最低的1个技能",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "醒酒",
+          "desc": "[WhenUse] 丢弃 自身所有行动槽中级别最低的1个技能",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110601,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "前进",
+          "desc": "[WhenUse] 下回合使自身获得2层迅捷 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使自身获得1层呼吸法 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使自身获得1层呼吸法 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "前进",
+          "desc": "[WhenUse] 下回合使自身获得2层迅捷 \n[WhenUse] 下回合使本技能对应行动槽的挑衅值 +1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层呼吸法 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层呼吸法 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "前进",
+          "desc": "[WhenUse] 下回合使自身获得2层迅捷 \n[WhenUse] 下回合使本技能对应行动槽的挑衅值 +3",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层呼吸法 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层呼吸法 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110602,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "惩罚",
+          "desc": "[WhenUse] 使自身获得2层呼吸法 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使自身增加2级呼吸法 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层束缚 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "惩罚",
+          "desc": "若自身的速度值高于目标，则使本技能的硬币威力+1\n[WhenUse] 使自身获得2层[Breath]\n[WhenUse] 下回合使本技能对应行动槽的挑衅值 +2",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级呼吸法 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层束缚 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "惩罚",
+          "desc": "若自身的速度值高于目标，则使本技能的硬币威力+2\n[WhenUse] 使自身获得2层[Breath]\n[WhenUse] 下回合使本技能对应行动槽的挑衅值 +4",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级呼吸法 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层束缚 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110603,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "腾跃长刺",
+          "desc": "若自身的呼吸法 强度不低于7级，则使本技能的最终威力+2\n[WinDuel] 根据拼点次数，相应使自身增加呼吸法 强度(最多10级)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加决斗宣告-奥提斯 "
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使速度值最低的2名友方单位在下回合获得1层迅捷 "
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使本硬币暴击时造成的伤害+50%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "腾跃长刺",
+          "desc": "若自身的呼吸法 强度不低于7级，则使本技能的最终威力+4\n[WinDuel] 根据拼点次数，相应使自身增加呼吸法 强度(最多10级)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加决斗宣告-奥提斯 "
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使速度值最低的2名友方单位在下回合获得2层迅捷 "
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使本硬币暴击时造成的伤害+70%"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110604,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "撤退",
+          "desc": "若自身的速度值高于攻击者，则使本技能的硬币威力+1\n[OnSucceedEvade] 使自身增加1级[Breath]强度(最多5级)",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "撤退",
+          "desc": "若自身的速度值高于攻击者，则每相差1点，使本技能的硬币威力+1(最多+3)\n[OnSucceedEvade] 使自身增加1级呼吸法 强度(最多10级)",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110701,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "点火",
+          "desc": "",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 下回合对目标施加1层黑焰 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据目标带有的黑焰 层数，使其增加相应的烧伤 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "点火",
+          "desc": "目标每带有3级烧伤 强度，使本技能的硬币威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 下回合对目标施加1层黑焰 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据目标带有的黑焰 层数，使其增加相应的烧伤 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "点火",
+          "desc": "目标每带有3级烧伤 强度，使本技能的硬币威力+1(最多+3)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层黑焰 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据目标带有的黑焰 层数，使其增加相应的烧伤 强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110702,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "魔弹起爆",
+          "desc": "若目标的烧伤 强度不低于6级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的魔弹 层数低于4层，则使自身获得1层魔弹 ，并根据自身带有的魔弹 层数，下回合对目标施加相应层数的黑焰 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 根据目标带有的黑焰 层数，使其增加相应的烧伤 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "魔弹起爆",
+          "desc": "目标每带有6级烧伤 强度，使本技能的硬币威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的魔弹 层数低于4层，则使自身获得1层魔弹 ，并根据自身带有的魔弹 层数，下回合对目标施加相应层数的黑焰 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据目标带有的黑焰 层数，使其增加相应的烧伤 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "魔弹起爆",
+          "desc": "目标每带有6级烧伤 强度，使本技能的硬币威力+1(最多+3)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的魔弹 层数低于4层，则使自身获得1层魔弹 ，并根据自身带有的魔弹 层数，下回合对目标施加相应层数的黑焰 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据目标带有的黑焰 层数，使其增加相应的烧伤 强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110703,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "魔弹射击",
+          "desc": "目标每带有1级[Combustion]强度，使本技能造成的伤害+0.5%(最多+15%)\n\n[BeforeAttack] 使自身获得1层[FreischutzShotCount]\n- 使自身失去(自身的[FreischutzShotCount]层数-1)×5点理智值\n- 使本技能的攻击容量变为与自身的[FreischutzShotCount]层数相同\n- 若自身的理智值不高于10点，则本技能以50%的概率进行无差别攻击\n\n[EndSkill] 若自身的[FreischutzShotCount]层数为7层，则将其重置为0层(视作消耗了最后的弹药 )",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据自身带有的魔弹 层数，下回合对目标施加相应层数的黑焰 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "魔弹射击",
+          "desc": "<style=\"highlight\">目标每带有1级[Combustion]强度，使本技能造成的伤害+1%(最多+30%)</style>\n\n[BeforeAttack] 使自身获得1层[FreischutzShotCount]\n- 使自身失去(自身的[FreischutzShotCount]层数-1)×5点理智值\n- 使本技能的攻击容量变为与自身的[FreischutzShotCount]层数相同\n- 若自身的理智值不高于10点，则本技能以50%的概率进行无差别攻击\n\n[EndSkill] 若自身的[FreischutzShotCount]层数为7层，则将其重置为0层(视作消耗了最后的弹药 )",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 根据自身带有的魔弹 层数，下回合对目标施加相应层数的黑焰 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110704,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "魔弹的代价",
+          "desc": "[WhenUse] 使自身获得1层魔弹 (每回合最多1层)\n[EndSkillAll] 根据自身带有的魔弹 层数，使自身失去相应的理智值",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "魔弹的代价",
+          "desc": "[WhenUse] 使自身获得1层魔弹 (每回合最多1层)\n[WhenUse] 使本技能的最终威力+(自身的魔弹 层数×2)\n[EndSkillAll] 根据自身带有的魔弹 层数，使自身失去相应的理智值",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110801,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "敲击",
+          "desc": "",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级沉沦 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "敲击",
+          "desc": "[WhenUse] 若目标的沉沦 强度不低于7级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级沉沦 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "敲击",
+          "desc": "[WhenUse] 若目标的沉沦 强度不低于5级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级沉沦 强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110802,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "掸尘",
+          "desc": "[WinDuel] 对目标施加1层沉沦 ",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级沉沦 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级沉沦 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "掸尘",
+          "desc": "[WinDuel] 对目标施加2层沉沦 ",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级沉沦 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级沉沦 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "掸尘",
+          "desc": "[WhenUse] 若目标的沉沦 强度不低于5级，则使本技能的硬币威力+1\n[WinDuel] 对目标施加2层沉沦 ",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级沉沦 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级沉沦 强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110803,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "遵夫人之命",
+          "desc": "[WinDuel] 对目标施加3层沉沦 ",
+          "coinlist": [
+            {},
+            {},
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加3层[EchoOfMansion]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[EchoOfMansion]，则对目标额外造成相当于其[Sinking]强度一半的忧郁伤害(最多20点)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "遵夫人之命",
+          "desc": "[WhenUse] 若目标的沉沦 强度不低于7级，则使本技能的硬币威力+1\n[WinDuel] 对目标施加3层沉沦 ",
+          "coinlist": [
+            {},
+            {},
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加3层[EchoOfMansion]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[EchoOfMansion]，则对目标额外造成相当于其[Sinking]强度的忧郁伤害(最多30点)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110804,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "何等失礼…！",
+          "desc": "[OnSucceedEvade] 使目标增加1级沉沦 强度(每回合最多3级)",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "何等失礼…！",
+          "desc": "[OnSucceedEvade] 使目标增加1级沉沦 强度(每回合最多6级)",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110901,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "点画",
+          "desc": "",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttackHead] 使目标增加1级流血 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "点画",
+          "desc": "若目标的流血 强度不低于6级，则使本技能的拼点威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "点画",
+          "desc": "若目标的流血 强度不低于6级，则使本技能的拼点威力+1\n<style=\"highlight\">若目标的流血 强度不低于10级，则使本技能的硬币威力+1</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110902,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "血描画",
+          "desc": "",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 以20%概率重复使用本硬币1次。目标每带有1种负面状态，使本硬币重复使用的概率+20%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层流血 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "血描画",
+          "desc": "若目标的流血 强度不低于6级，则使本技能的拼点威力+1",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 以20%概率重复使用本硬币1次。目标每带有1种负面状态，使本硬币重复使用的概率+20%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层流血 \n通过自身硬币效果重复使用本硬币时，对目标额外施加1层流血 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "血描画",
+          "desc": "若目标的流血 强度不低于6级，则使本技能的拼点威力+2",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 以40%概率重复使用本硬币。目标每带有1种负面状态，使本硬币重复使用的概率+20%(每个技能最多2次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层流血 \n通过自身硬币效果重复使用本硬币时，对目标额外施加1层流血 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110903,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "检查作品",
+          "desc": "目标每带有1种负面状态，使本技能造成的伤害+10%(最多+30%)\n[WhenUse] 使仪表盘上位于自身两侧的友方单位在下回合获得1层[Agility]",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级某1种随机效果的强度，该效果可能为烧伤 、流血 、震颤 、破裂 或沉沦 "
+                },
+                {
+                  "desc": "[EndSkill] 若目标陷入混乱或击杀目标，则使除自身以外理智值最高的1名友方单位在下回合获得1层突刺伤害强化 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "检查作品",
+          "desc": "若目标的[Laceration]强度不低于6级，则使本技能的硬币威力+1\n目标每带有1种负面状态，使本技能造成的伤害+12.5%(最多+50%)\n[WhenUse] 使仪表盘上位于自身两侧的友方单位在下回合获得1层[Agility]",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级某1种随机效果的强度，该效果可能为烧伤 、流血 、震颤 、破裂 或沉沦 "
+                },
+                {
+                  "desc": "[EndSkill] 若目标陷入混乱或击杀目标，则使除自身以外理智值最高的1名友方单位在下回合获得1层突刺伤害强化 。<style=\"highlight\">若该友方单位属于环指成员，则额外使其获得1层突刺威力提升 </style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1110904,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "防御",
+          "desc": "[WhenUse] 若目标的流血 强度不低于10级，则使本技能的硬币威力+3",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "防御",
+          "desc": "[WhenUse] 若目标的流血 强度不低于10级，则使本技能的硬币威力+7",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111001,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "脉冲轰炸",
+          "desc": "[WhenUse] 若自身的充能 层数不低于4层，则使本技能的拼点威力+1\n[WhenUse] 使自身获得2层充能 ",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层充能 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "脉冲轰炸",
+          "desc": "[WhenUse] 若自身的充能 层数不低于4层，则使本技能的基础威力+1\n[WhenUse] 若自身的充能 层数不低于6层，则使本技能的拼点威力+1\n[WhenUse] 使自身获得2层充能 ",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层充能 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "脉冲轰炸",
+          "desc": "[WhenUse] 若自身的充能 层数不低于4层，则使本技能的基础威力+1\n[WhenUse] 自身每带有5层充能 ，使本技能的拼点威力+1(最多+2)\n[WhenUse] 使自身获得2层充能 ",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得2层充能 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111002,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "充能腾跃",
+          "desc": "[WhenUse] 消耗自身的6层充能 并使本技能的基础威力+1\n[WhenUse] 使自身获得2层充能 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层充能 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层充能 "
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层束缚 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "充能腾跃",
+          "desc": "[WhenUse] 消耗自身的6层充能 并使本技能的基础威力+1\n- 若自身消耗了充能 层数，则使自身与除自身以外充能 层数最低的2名友方单位获得(自身的充能 强度+1)层充能力场 (最多7层，每回合最多1次)\n[WhenUse] 使自身获得2层充能 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得1层充能 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得2层充能 "
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层束缚 "
+                },
+                {
+                  "desc": "[OnSucceedAttackHead] 若本技能使用时消耗了充能 层数，则下回合对目标施加2层束缚 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "充能腾跃",
+          "desc": "[WhenUse] 消耗自身的6层充能 并使本技能的硬币威力+1\n- 若自身消耗了充能 层数，则使自身与除自身以外充能 层数最低的2名友方单位获得(自身的充能 强度+<style=\"highlight\">2</style>)层充能力场 (最多<style=\"highlight\">8</style>层，每回合最多<style=\"highlight\">2</style>次)\n[WhenUse] 使自身获得2层充能 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得2层充能 "
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得2层充能 "
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层束缚 "
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若本技能使用时消耗了充能 层数，则下回合对目标施加2层束缚 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111003,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "次元撕裂",
+          "desc": "[StartBattle] 根据自身带有的充能 强度，使自身与(最大共鸣数)名带有充能 的友方单位获得相应层数的载荷 \n(最多5名其他友方单位)\n[WhenUse] 若自身的充能 强度不低于2级，且自身的充能 层数在7~14层之间，则消耗自身所有充能 层数并使本技能的硬币威力+1\n[WhenUse] 消耗15层充能 并使本技能的硬币威力+1",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若本技能使用时消耗了15层充能 ，则使目标增加2级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得(5-自身的充能 强度)层充能 (最少0层)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "次元撕裂",
+          "desc": "[StartBattle] 根据自身带有的充能 强度，使自身与(最大共鸣数)名带有充能 的友方单位获得相应层数的载荷 \n(最多5名其他友方单位)\n[WhenUse] 若自身的充能 强度不低于2级，且自身的充能 层数在7~14层之间，则消耗自身所有充能 层数并使本技能的硬币威力+2\n[WhenUse] 消耗15层充能 并使本技能的硬币威力+2",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若本技能使用时消耗了15层充能 ，则使目标增加2级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得(5-自身的充能 强度)层充能 (最少0层)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111004,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "等离子场展开",
+          "desc": "[WhenUse] 自身每带有2层充能 ，使本技能的基础威力+1(最多+5)\n[WhenUse] 使自身获得2层充能 (每回合最多2次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "等离子场展开",
+          "desc": "[WhenUse] 自身<style=\"highlight\">每带有1层</style>充能 ，使本技能的基础威力+1(最多+<style=\"highlight\">10</style>)\n[WhenUse] 使自身获得2层充能 (每回合最多<style=\"highlight\">3</style>次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111101,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "缝纫",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量10%的体力(最多10点)\n[WhenUse] 消耗至多40层血宴 ，每消耗8层血宴 ，使自身获得1层[BloodScissorPersonalityFirst]\n- 若未消耗血宴 ，则对自身施加2层流血 ",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "缝纫",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量10%的体力(最多10点)\n[WhenUse] 消耗至多40层血宴 ，每消耗8层血宴 ，使自身获得1层[BloodScissorPersonalityFirst]\n- 若未消耗血宴 ，则对自身施加2层流血 \n<style=\"highlight\">[WhenUse] 若目标的流血 强度不低于6级，则使本技能的硬币威力+1</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则对其施加1层流血 </style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则对其施加1层流血 </style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "缝纫",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量10%的体力(最多10点)\n[WhenUse] 消耗至多40层血宴 ，每消耗8层血宴 ，使自身获得1层[BloodScissorPersonalityFirst]\n- 若未消耗血宴 ，则对自身施加2层流血 \n[WhenUse] 目标<style=\"highlight\">每带有6级</style>流血 强度，使本技能的硬币威力+1<style=\"highlight\">(最多+2)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则对其施加1层流血 <style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则对其施加1层流血 <style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111102,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "剪断",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量10%的体力(最多20点)\n[WhenUse] 消耗至多60层血宴 ，每消耗6层血宴 ，使自身获得1层[BloodScissorPersonalityFirst]\n- 若未消耗血宴 ，则使自身增加5级流血 强度",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则使其增加2级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则使其增加2级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则下回合对目标施加1层[LineCuttingPersonality]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "剪断",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量20%的体力(最多20点)\n[WhenUse] 消耗至多60层血宴 ，每消耗6层血宴 ，使自身获得1层[BloodScissorPersonalityFirst]\n- 若未消耗血宴 ，则使自身增加5级流血 强度\n<style=\"highlight\">[WhenUse] 若目标的流血 强度不低于6级，则使本技能的硬币威力+1</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则使其增加2级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则使其增加2级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则下回合对目标施加1层[LineCuttingPersonality]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "剪断",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量20%的体力(最多20点)\n[WhenUse] 消耗至多60层血宴 ，每消耗6层血宴 ，使自身获得1层[BloodScissorPersonalityFirst]\n- 若未消耗血宴 ，则使自身增加5级流血 强度\n[WhenUse] 若目标的流血 强度不低于6级，则使本技能的硬币威力+1<style=\"highlight\"></style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则使其增加2级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有[LineCuttingPersonality]，则使其增加2级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[LineCuttingPersonality]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111103,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "给你做条新裙子！",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量30%的体力(最多20点)\n[BeforeAttack] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则使本技能的攻击容量+1\n[WhenUse] 若目标的流血 强度不低于5级，则使本技能的硬币威力+1\n[WhenUse] 目标每带有6级流血 强度，使本技能的拼点威力+1(最多+2)\n[EndSkill] 本技能的攻击容量每增加1点，使自身消耗15层[BloodScissorPersonalityFirst]\n[EndSkill] 若击杀目标，则获得10层血宴 。使自身重新获得本技能消耗量一半的[BloodScissorPersonalityFirst](每回合最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则使本硬币造成的伤害+(自身的[BloodScissorPersonalityFirst]层数×2)%(最多+38%)\n- 若自身的[BloodScissorPersonalityFirst]层数不低于20层，则改为使本硬币造成的伤害+(自身的[BloodScissorPersonalityFirst]层数×3)%(最多+90%)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "给你做条新裙子！",
+          "desc": "本技能命中时，使自身恢复造成体力伤害量30%的体力(最多20点)\n[BeforeAttack] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则使本技能的攻击容量+1\n<style=\"highlight\">- 若自身的[BloodScissorPersonalityFirst]层数不低于20层，则改为使本技能的攻击容量+2</style>\n[WhenUse] 若目标的流血 强度不低于5级，则使本技能的硬币威力+1\n[WhenUse] 目标每带有6级流血 强度，使本技能的拼点威力+1(最多+2)\n[EndSkill] 本技能的攻击容量每增加1点，使自身消耗<style=\"highlight\">10</style>层[BloodScissorPersonalityFirst]\n[EndSkill] 若击杀目标，则获得<style=\"highlight\">20</style>层血宴 。使自身重新获得本技能消耗量一半的[BloodScissorPersonalityFirst](每回合最多1次)\n<style=\"highlight\">- 若目标带有[LineCuttingPersonality]，则额外获得20层血宴 ，并使自身获得5层[BloodScissorPersonalityFirst](每回合最多1次)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加<style=\"highlight\">2</style>级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加<style=\"highlight\">2</style>级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加<style=\"highlight\">2</style>级流血 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则使本硬币造成的伤害+(自身的[BloodScissorPersonalityFirst]层数×<style=\"highlight\">3</style>)%(最多+<style=\"highlight\">57</style>%)\n- 若自身的[BloodScissorPersonalityFirst]层数不低于20层，则改为使本硬币造成的伤害+(自身的[BloodScissorPersonalityFirst]层数×<style=\"highlight\">4</style>)%(最多+<style=\"highlight\">120</style>%)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111104,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "真是无礼！",
+          "desc": "[WhenUse] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则使本技能的基础威力+1\n[WhenUse] 若自身的流血 强度不低于5级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层流血 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "真是无礼！",
+          "desc": "[WhenUse] 若自身的[BloodScissorPersonalityFirst]层数不低于10层，则使本技能的基础威力+1<style=\"highlight\">\n- 若自身的[BloodScissorPersonalityFirst]层数不低于20层，则改为使本技能的基础威力+2</style>\n[WhenUse] 自身<style=\"highlight\">每带有5级</style>流血 强度，使本技能的硬币威力+1<style=\"highlight\">(最多+3)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层流血 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111201,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "瞬步",
+          "desc": "[WhenUse] 若目标的破裂 强度不低于6级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "瞬步",
+          "desc": "[WhenUse] 若目标的破裂 强度不低于<style=\"highlight\">4</style>级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 若自身的速度值不低于12，则重复使用本硬币1次(每个技能最多1次)</style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "瞬步",
+          "desc": "<style=\"highlight\">若自身的速度值高于目标至少3点，则使本技能的硬币威力+1</style>\n[WhenUse] 若目标的[Burst]强度不低于4级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身的速度值不低于<style=\"highlight\">10</style>，则重复使用本硬币1次(每个技能最多1次)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111202,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "刺杀",
+          "desc": "[WhenUse] 若目标的破裂 强度不低于6级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "若自身的速度值不低于10，则使本硬币造成的伤害+10%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层破裂 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "刺杀",
+          "desc": "[WhenUse] 若目标的破裂 强度不低于<style=\"highlight\">4</style>级，则使本技能的硬币威力+1\n<style=\"highlight\">[OnDirectAttack] 对目标施加1层破裂 </style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 对目标施加1层破裂 </style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "若自身的速度值不低于10，则使本硬币造成的伤害+<style=\"highlight\">20</style>%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层破裂 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "刺杀",
+          "desc": "<style=\"highlight\">若自身的速度值高于目标至少3点，则使本技能的硬币威力+1</style>\n[WhenUse] 若目标的[Burst]强度不低于4级，则使本技能的硬币威力+1\n[OnDirectAttack] 对目标施加1层[Burst]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层破裂 <style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 下回合使自身获得1层迅捷 (每回合最多2次)</style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "若自身的速度值不低于10，则使本硬币造成的伤害+<style=\"highlight\">30</style>%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层破裂 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111203,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "刻咒杀剑",
+          "desc": "若自身的速度值高于目标，则使本技能造成的伤害+(速度值之差×目标的[Burst]强度)%(最多+50%)\n若自身的速度值高于目标至少2点，则使本技能的硬币威力+1\n[WhenUse] 使自身获得3层[LegStrength]\n[OnDirectAttack] 对目标施加2层[Burst]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加[BurstAgility]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身的速度值不低于10，则重复使用本硬币1次(每个技能最多1次)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "刻咒杀剑",
+          "desc": "若自身的速度值高于目标，则使本技能造成的伤害+(速度值之差×目标的[Burst]强度)%(最多+50%)\n<style=\"highlight\">若自身的速度值高于目标，则每相差2点，使本技能的硬币威力+1(最多+2)\n[WhenUse] 若目标的[Burst]强度不低于15级，则使本技能的硬币威力+1</style>\n[WhenUse] 使自身获得3层[LegStrength]\n[OnDirectAttack] 对目标施加2层[Burst]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加[BurstAgility]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级破裂 强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身的速度值不低于10，则重复使用本硬币1次(每个技能最多1次)"
+                },
+                {
+                  "desc": "<style=\"highlight\">[ReUseOnSucceedAttack] 对目标施加[BurstAgility]</style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111204,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "部分黑兽化",
+          "desc": "[DuelCounter]\n[WhenUse] 使自身获得3层[LegStrength]\n[WhenUse] 若自身的速度值高于目标至少2点，则使本技能的基础威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层破裂 "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "部分黑兽化",
+          "desc": "[DuelCounter]\n[WhenUse] 使自身获得3层[LegStrength]\n<style=\"highlight\">[WhenUse] 若自身的速度值高于目标，则每相差2点，使本技能的基础威力+1(最多+2)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层破裂 "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111301,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "征收准备",
+          "desc": "[WhenUse] 对自身施加1层[Vibration]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Vibration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Vibration]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "征收准备",
+          "desc": "[WhenUse] 对自身施加<style=\"highlight\">2</style>层[Vibration]\n<style=\"highlight\">[WhenUse] 若目标的[Vibration]强度不低于6级，则使本技能的硬币威力+1</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "征收准备",
+          "desc": "[WhenUse] 对自身施加<style=\"highlight\">3</style>层[Vibration]\n[WhenUse] 若目标的[Vibration]强度不低于6级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111302,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "T公司制共振模块",
+          "desc": "[WhenUse] 对自身施加2层[Vibration]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于3层，则使目标[VibrationExplosion]1次并使其[Vibration]层数减少1层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "T公司制共振模块",
+          "desc": "[WhenUse] 对自身施加<style=\"highlight\">3</style>层[Vibration]\n<style=\"highlight\">[WhenUse] 若目标的[Vibration]强度不低于6级，则使本技能的硬币威力+1</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 若目标的[Vibration]强度不低于10级，则消耗目标的4级[Vibration]强度并对目标与自身施加2层[Vibration]</style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 若目标未处于[Switch_Vibration]或[FusionVibration]状态，则消耗自身的3层[Vibration]并使目标[Switch_Vibration]为[VibrationChainPersonality]</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于3层，则使目标[VibrationExplosion]1次并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "T公司制共振模块",
+          "desc": "[WhenUse] 对自身施加<style=\"highlight\">4</style>层[Vibration]\n[WhenUse] 若目标的[Vibration]强度不低于6级，则使本技能的硬币威力+1",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]强度不低于10级，则消耗目标的4级[Vibration]强度并对目标与自身施加2层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "<style=\"highlight\">若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+60%</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]或[FusionVibration]状态，则消耗自身的3层[Vibration]并使目标[Switch_Vibration]为[VibrationChainPersonality]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于3层，则使目标[VibrationExplosion]1次并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111303,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "T3型征收铁锤最大化展开",
+          "desc": "若目标带有[TimeSuspend]，则使本技能造成的伤害+30%\n[WhenUse] 若目标的[Vibration]强度不低于6级，则使本技能的硬币威力+1\n[EndSkill] 解除自身的[TimeRentalTwoPersonality]\n[EndSkill] 使自身获得[OutisNoHat](每场战斗最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 消耗目标至多3级[Vibration]强度\n- 对自身施加(消耗的[Vibration]强度×2)层[Vibration]\n- 下回合对目标施加(消耗的[Vibration]强度-1)层[Binding]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于3层，则使目标[VibrationExplosion]并使其[Vibration]层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnStartCoin] 消耗自身所有[Vibration]层数\n- 每消耗5层[Vibration]，使本硬币威力+1(最多+5)\n- 每消耗1层[Vibration]，使本硬币造成的伤害+1%(最多+50%)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身带有[TimeRentalTwoPersonality]，则使目标[VibrationExplosion]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身带有[TimeRentalTwoPersonality]，则对目标施加2层[TimeSuspend]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "T3型征收铁锤最大化展开",
+          "desc": "<style=\"highlight\">若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本技能造成的伤害+30%</style>\n若目标带有[TimeSuspend]，则使本技能造成的伤害+30%\n<style=\"highlight\">[WhenUse] 目标每带有6级[Vibration]强度，使本技能的硬币威力+1(最多+2)</style>\n<style=\"highlight\">[WhenUse] 若目标带有[Binding]，则使本技能的拼点威力+1</style>\n[EndSkill] 解除自身的[TimeRentalTwoPersonality]\n[EndSkill] 使自身获得[OutisNoHat](每场战斗最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 消耗目标至多3级[Vibration]强度<style=\"highlight\"></style>\n- 对自身施加(消耗的[Vibration]强度×2)层[Vibration]<style=\"highlight\"></style>\n- 下回合对目标施加(消耗的[Vibration]强度-1)层[Binding]<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于3层，则使目标[VibrationExplosion]并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnStartCoin] 消耗自身所有[Vibration]层数<style=\"highlight\"></style>\n- 每消耗<style=\"highlight\">4</style>层[Vibration]，使本硬币威力+1(最多+5)\n- 每消耗1层[Vibration]，使本硬币造成的伤害<style=\"highlight\">+2%</style>(最多+100%)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身带有[TimeRentalTwoPersonality]，则使目标[VibrationExplosion]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若自身带有[TimeRentalTwoPersonality]，则对目标施加2层[TimeSuspend]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111304,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "时间租赁-共振",
+          "desc": "[CanDuelGuard]\n[StartBattle] 若自身未带有[TimeRentalTwoPersonality]，则回合结束时使自身获得4层[TimeRentalTwoPersonality](每回合最多1次)\n[WinDuel] 对目标与自身施加2层[Vibration]\n[DefeatDuel] 对自身施加4层[Vibration]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "时间租赁-共振",
+          "desc": "[CanDuelGuard]\n[StartBattle] 若自身未带有[TimeRentalTwoPersonality]，则回合结束时使自身获得4层[TimeRentalTwoPersonality](每回合最多1次)\n[WinDuel] 对目标与自身施加2层[Vibration]\n[DefeatDuel] 对自身施加4层[Vibration]<style=\"highlight\"></style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
