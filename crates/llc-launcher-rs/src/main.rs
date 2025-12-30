@@ -9,7 +9,6 @@
 extern crate tracing;
 
 use crate::{config::LauncherConfig, logging::LoggingGuard};
-use async_broadcast::broadcast;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
@@ -63,7 +62,7 @@ async fn main() {
     .inspect_err(|e| warn!("无法保存配置：{e}"))
     .ok();
 
-    init_res.shutdown_tx.broadcast_direct(()).await.ok();
+    init_res.shutdown_tx.send(()).ok();
     if let Some(reporter) = init_res.logging_guard.sls_reporter {
         reporter.await.unwrap();
     }
@@ -96,11 +95,11 @@ pub struct InitResources {
     launcher_config: LauncherConfig,
     llc_config: LLCConfig,
     logging_guard: LoggingGuard,
-    shutdown_tx: async_broadcast::Sender<()>,
+    shutdown_tx: tokio::sync::broadcast::Sender<()>,
 }
 
 async fn init() -> eyre::Result<InitResources> {
-    let (shutdown_tx, shutdown_rx) = broadcast::<()>(1);
+    let (shutdown_tx, shutdown_rx) = tokio::sync::broadcast::channel::<()>(1);
     let dirs = ProjectDirs::from("me", ORGANIZATION, APP_NAME).context("无法侦测用户目录")?;
 
     fs::create_dir_all(dirs.cache_dir()).context("无法创建缓存目录")?;

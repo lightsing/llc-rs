@@ -8,7 +8,7 @@ use llc_rs::{
     npm::{DistInfo, NpmClient},
     utils::{ClientExt, ResultExt},
 };
-use serde::Deserialize;
+use serde_json::Value;
 use std::{
     path::{Path, PathBuf},
     time::Duration,
@@ -16,11 +16,6 @@ use std::{
 use url::Url;
 
 const PKG_NAME: &str = "@lightsing/llc-zh-cn";
-
-#[derive(Deserialize)]
-struct Version {
-    version: u64,
-}
 
 pub async fn run(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> {
     install_or_update_llc(dirs, llc_config)
@@ -78,11 +73,11 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
         Ok(Some(version)) => version,
         Ok(None) => {
             info!("No version installed, proceeding with installation.");
-            0
+            String::new()
         }
         Err(e) => {
             warn!("Failed to get installed version: {e}, proceeding with installation.");
-            0
+            String::new()
         }
     };
 
@@ -142,7 +137,7 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
     Ok(())
 }
 
-fn get_version_installed(game_root: &Path) -> eyre::Result<Option<u64>> {
+fn get_version_installed(game_root: &Path) -> eyre::Result<Option<String>> {
     let version_file = game_root
         .join("LimbusCompany_Data")
         .join("Lang")
@@ -153,11 +148,20 @@ fn get_version_installed(game_root: &Path) -> eyre::Result<Option<u64>> {
         info!("Version file does not exist at {}", version_file.display());
         return Ok(None);
     }
-    let version = serde_json::from_reader::<_, Version>(std::fs::File::open(version_file)?)
-        .inspect_err(|e| error!("Failed to parse version file: {e}"))?
-        .version;
-    info!("Installed version: {version}");
-    Ok(Some(version))
+    let version = serde_json::from_reader::<_, Value>(std::fs::File::open(version_file)?)
+        .inspect_err(|e| error!("Failed to parse version file: {e}"))?;
+    let Some(version) = version.get("version") else {
+        info!("Version field not found in version file");
+        return Ok(None);
+    };
+    match version {
+        Value::String(s) => Ok(Some(s.clone())),
+        Value::Number(n) => Ok(Some(n.to_string())),
+        _ => {
+            info!("Version field is neither string nor number");
+            Ok(None)
+        }
+    }
 }
 
 async fn cleanup_installed_llc(game_root: PathBuf) {

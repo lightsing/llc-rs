@@ -55,6 +55,8 @@ pub static DEFAULT_CLIENT: LazyLock<Client> = LazyLock::new(|| {
             header::FROM,
             "ligh.tsing@gmail.com".parse().infallible(),
         )]))
+        .use_rustls_tls()
+        .https_only(true)
         .build()
         .unwrap()
 });

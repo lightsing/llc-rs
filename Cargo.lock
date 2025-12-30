@@ -57,18 +57,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a23eb6b1614318a8071c9b2521f36b424b2c83db5eb3a0fead4a6c0809af6e61"
 
 [[package]]
-name = "async-broadcast"
-version = "0.7.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "435a87a52755b8f27fcf321ac4f04b2802e337c8c4872923137471ec39c37532"
-dependencies = [
- "event-listener",
- "event-listener-strategy",
- "futures-core",
- "pin-project-lite",
-]
-
-[[package]]
 name = "async-channel"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1390,9 +1378,8 @@ checksum = "6373607a59f0be73a39b6fe456b8192fcc3585f602af20751600e974dd455e77"
 
 [[package]]
 name = "llc-launcher-rs"
-version = "0.1.24"
+version = "0.1.25"
 dependencies = [
- "async-broadcast",
  "bytes",
  "ctor",
  "directories",
@@ -1421,7 +1408,7 @@ dependencies = [
 
 [[package]]
 name = "llc-rs"
-version = "0.1.24"
+version = "0.1.25"
 dependencies = [
  "bytes",
  "ctor",

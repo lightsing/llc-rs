@@ -39,13 +39,12 @@ struct Metadata {
 struct DistTags {
     latest: Version,
 }
-#[serde_as]
+
 #[derive(Debug, Deserialize)]
 pub struct VersionMetadata {
     pub version: Version,
     #[serde(rename = "githubTag")]
-    #[serde_as(as = "Option<DisplayFromStr>")]
-    pub github_tag: Option<u64>,
+    pub github_tag: Option<String>,
     pub dist: DistInfo,
 }
 
@@ -101,9 +100,7 @@ static NPM_CLIENT: LazyLock<Client> = LazyLock::new(|| {
             (header::FROM, "ligh.tsing@gmail.com".parse().infallible()),
             (
                 header::ACCEPT,
-                "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
-                    .parse()
-                    .infallible(),
+                "application/json; q=1, */*".parse().infallible(),
             ),
         ]))
         .build()
@@ -120,10 +117,11 @@ mod tests {
         let registries = crate::config::default_npm_registries();
         let npm_client = NpmClient::new(&registries);
 
-        npm_client
+        let ver = npm_client
             .get_lastest_version("@lightsing/llc-zh-cn")
             .await
             .unwrap();
+        println!("[test_get_npm_metadata] Latest version: {ver:?}");
     }
 
     #[test]

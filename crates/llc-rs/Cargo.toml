@@ -12,7 +12,7 @@ version.workspace = true
 bytes.workspace = true
 futures-util = { workspace = true, features = ["io"] }
 os_info.workspace = true
-reqwest = { workspace = true, features = ["json", "stream"] }
+reqwest = { workspace = true, features = ["json", "stream", "rustls-tls"] }
 semver = { workspace = true, features = ["serde"] }
 serde = { workspace = true, features = ["derive"] }
 serde_with = { workspace = true, features = ["hex"] }

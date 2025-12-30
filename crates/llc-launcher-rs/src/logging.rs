@@ -21,7 +21,7 @@ pub(crate) struct LoggingGuard {
 pub async fn init(
     dirs: &ProjectDirs,
     config: &LauncherConfig,
-    shutdown_rx: async_broadcast::Receiver<()>,
+    shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 ) -> LoggingGuard {
     init_inner(dirs, config, shutdown_rx).await.unwrap_or_else(|e| {
         eprintln!("{e}");
@@ -39,7 +39,7 @@ pub async fn init(
 async fn init_inner(
     dirs: &ProjectDirs,
     config: &LauncherConfig,
-    shutdown_rx: async_broadcast::Receiver<()>,
+    shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 ) -> eyre::Result<LoggingGuard> {
     let log_dir = dirs.data_dir().join("logs");
     fs::create_dir_all(&log_dir)

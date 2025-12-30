@@ -9,7 +9,6 @@ rust-version.workspace = true
 version.workspace = true
 
 [dependencies]
-async-broadcast.workspace = true
 bytes.workspace = true
 ctor.workspace = true
 directories.workspace = true
