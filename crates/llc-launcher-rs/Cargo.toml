@@ -27,7 +27,7 @@ tar.workspace = true
 tokio = { workspace = true, features = ["rt", "fs", "io-util", "time", "macros"] }
 toml.workspace = true
 tracing.workspace = true
-tracing-aliyun-sls = { workspace = true, features = ["reqwest-rustls"] }
+tracing-aliyun-sls = { workspace = true, default-features = false, features = ["reqwest-rustls"] }
 tracing-appender.workspace = true
 tracing-subscriber = { workspace = true, features = ["fmt"] }
 url.workspace = true
