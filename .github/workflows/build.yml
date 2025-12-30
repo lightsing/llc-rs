@@ -62,7 +62,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ca-certificates make libc6-dev libssl-dev libcurl4-openssl-dev pkg-config
-          sudo apt-get install -y libwayland-dev libxkbcommon-dev libegl1-mesa-dev libgbm-dev libasound2-dev libdbus-1-dev libx11-dev libxcursor-dev libxi-dev libxrandr-dev
+          sudo apt-get install -y libfontconfig1-dev libwayland-dev libxkbcommon-dev libegl1-mesa-dev libgbm-dev libasound2-dev libdbus-1-dev libx11-dev libxcursor-dev libxi-dev libxrandr-dev
           find /usr/include/ -name opensslconf.h
           find /usr/include/ -name opensslv.h
           find /usr/lib/x86_64-linux-gnu -name 'libssl*'
