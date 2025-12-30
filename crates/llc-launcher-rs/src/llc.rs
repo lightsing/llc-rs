@@ -91,7 +91,7 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
         .context("无法获取最新 LLC 版本的发布标签")?;
     info!("Latest version available: {tag}");
 
-    if installed_tag != tag {
+    if installed_tag == tag {
         info!("LLC is already up to date (version {}).", installed_tag);
         return Ok(());
     }

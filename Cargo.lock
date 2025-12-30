@@ -1378,7 +1378,7 @@ checksum = "6373607a59f0be73a39b6fe456b8192fcc3585f602af20751600e974dd455e77"
 
 [[package]]
 name = "llc-launcher-rs"
-version = "0.1.25"
+version = "0.1.26"
 dependencies = [
  "bytes",
  "ctor",
@@ -1408,7 +1408,7 @@ dependencies = [
 
 [[package]]
 name = "llc-rs"
-version = "0.1.25"
+version = "0.1.26"
 dependencies = [
  "bytes",
  "ctor",
