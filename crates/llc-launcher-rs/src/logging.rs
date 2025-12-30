@@ -2,8 +2,7 @@ use crate::{config::LauncherConfig, utils};
 use directories::ProjectDirs;
 use eyre::Context;
 use smol::Task;
-use std::{fs, time::Duration};
-use tracing_aliyun_sls::{SlsClient, reporter::Reporter};
+use std::fs;
 use tracing_appender::{
     non_blocking::WorkerGuard,
     rolling::{self, Rotation},
@@ -83,6 +82,7 @@ async fn init_inner(
                 .with_writer(non_blocking_stderr_appender.with_max_level(config.log_level())),
         );
 
+    #[cfg(not(debug_assertions))]
     let sls_reporter = if config.telemetry() {
         let client = SlsClient::builder()
             .endpoint(env!("ALIYUN_SLS_ENDPOINT"))
@@ -119,6 +119,13 @@ async fn init_inner(
             .init();
         Some(sls_reporter)
     } else {
+        layered.init();
+        None
+    };
+
+    #[cfg(debug_assertions)]
+    let sls_reporter = {
+        let _ = shutdown_rx;
         layered.init();
         None
     };

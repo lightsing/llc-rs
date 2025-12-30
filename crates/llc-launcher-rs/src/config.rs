@@ -5,7 +5,6 @@ use llc_rs::{LLCConfig, utils::ResultExt};
 use serde::{Deserialize, Serialize};
 use serde_with::{DisplayFromStr, serde_as};
 use std::{fs, path::Path};
-use url::Url;
 use uuid::Uuid;
 
 #[serde_as]
@@ -17,8 +16,6 @@ pub struct LauncherConfig {
     log_level: tracing::Level,
     #[serde(default = "default_true")]
     telemetry: bool,
-    #[serde(default = "default_npm_registries")]
-    npm_registries: Vec<Url>,
 }
 
 impl Default for LauncherConfig {
@@ -27,30 +24,27 @@ impl Default for LauncherConfig {
             uuid: Uuid::new_v4(),
             log_level: tracing::Level::INFO,
             telemetry: true,
-            npm_registries: default_npm_registries(),
         }
     }
 }
 
 impl LauncherConfig {
     #[inline]
+    #[allow(dead_code)]
     pub fn uuid(&self) -> Uuid {
         self.uuid
     }
 
     #[inline]
+    #[allow(dead_code)]
     pub fn log_level(&self) -> tracing::Level {
         self.log_level
     }
 
     #[inline]
+    #[allow(dead_code)]
     pub fn telemetry(&self) -> bool {
         self.telemetry
-    }
-
-    #[inline]
-    pub fn npm_registries(&self) -> &[Url] {
-        &self.npm_registries
     }
 }
 
@@ -126,13 +120,6 @@ fn save_config<T: Serialize>(path: &Path, config: &T) -> eyre::Result<()> {
     fs::write(path, toml::to_string_pretty(config).infallible())
         .inspect_err(|e| eprintln!("failed to write config file: {e}"))
         .context("无法写入配置文件")
-}
-
-fn default_npm_registries() -> Vec<Url> {
-    vec![
-        Url::parse("https://registry.npmmirror.com").infallible(),
-        Url::parse("https://registry.npmjs.org").infallible(),
-    ]
 }
 
 const fn default_true() -> bool {

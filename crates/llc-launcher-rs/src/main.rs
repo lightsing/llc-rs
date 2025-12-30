@@ -13,10 +13,6 @@ use async_broadcast::broadcast;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
-#[cfg(target_os = "linux")]
-use nyquest_backend_curl as nyquest_backend;
-#[cfg(target_os = "windows")]
-use nyquest_backend_winrt as nyquest_backend;
 use std::{fs, path::PathBuf, process::exit};
 
 const ORGANIZATION: &str = "lightsing";
@@ -40,11 +36,11 @@ fn setup_test() {
         .with_line_number(true)
         .init();
 
-    nyquest_backend::register();
+    nyquest_preset::register();
 }
 
 fn main() {
-    nyquest_backend::register();
+    nyquest_preset::register();
 
     let init_res = match smol::block_on(init()) {
         Ok(res) => res,
@@ -62,6 +58,7 @@ fn main() {
     smol::block_on(async {
         main_inner(&init_res).await;
 
+        // for migration
         config::save(
             &init_res.dirs,
             &init_res.launcher_config,
@@ -80,14 +77,9 @@ fn main() {
 async fn main_inner(init_res: &InitResources) {
     if let Err(e) = {
         if init_res.is_tool {
-            llc::run(init_res.llc_config.clone()).await
+            llc::run(&init_res.dirs, init_res.llc_config.clone()).await
         } else {
-            self_update::run(
-                &init_res.dirs,
-                &init_res.self_path,
-                &init_res.launcher_config,
-            )
-            .await
+            self_update::run(&init_res.dirs, &init_res.self_path, &init_res.llc_config).await
         }
     } {
         error!("{e:?}");

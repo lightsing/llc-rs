@@ -21,11 +21,9 @@ flate2 = "1.1"
 futures-util = { version = "0.3", default-features = false }
 hex = "0.4"
 llc-rs = { path = "crates/llc-rs" }
-minijinja = { version = "2.11", default-features = false }
 msgbox = "0.7"
 nyquest = { version = "0.4", features = ["async", "async-stream", "json"] }
-nyquest-backend-curl = { version = "0.4", features = ["async", "async-stream"] }
-nyquest-backend-winrt = { version = "0.4", features = ["async", "async-stream"] }
+nyquest-preset = { version = "0.4", features = ["async", "async-stream"] }
 openssl = { version = "0.10", features = ["vendored"] }
 os_info = { version = "3", default-features = false }
 semver = "1.0"
@@ -36,6 +34,7 @@ sevenz-rust = { version = "0.6", default-features = false }
 sha2 = "0.10"
 smol = "2.0"
 smol-macros = "0.1"
+ssri = "9.2.0"
 tar = { version = "0.4", default-features = false }
 thiserror = "2.0"
 toml = "0.8"

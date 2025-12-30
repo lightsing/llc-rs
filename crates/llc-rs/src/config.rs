@@ -6,23 +6,9 @@ use url::Url;
 pub struct LLCConfig {
     #[serde(default = "default_npm_registries", rename = "npm-registries")]
     npm_registries: Vec<Url>,
-    github: GitHub,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(rename_all = "kebab-case")]
-pub struct GitHub {
-    repo: String,
-    owner: String,
-    api: Url,
 }
 
 impl LLCConfig {
-    /// Get the GitHub settings.
-    pub fn github(&self) -> &GitHub {
-        &self.github
-    }
-
     /// Get the NPM registries.
     pub fn npm_registries(&self) -> &[Url] {
         &self.npm_registries
@@ -33,29 +19,7 @@ impl Default for LLCConfig {
     fn default() -> Self {
         LLCConfig {
             npm_registries: default_npm_registries(),
-            github: GitHub {
-                repo: "LocalizeLimbusCompany".into(),
-                owner: "LocalizeLimbusCompany".into(),
-                api: Url::parse("https://api.github.com").expect("valid GitHub API URL"),
-            },
         }
-    }
-}
-
-impl GitHub {
-    /// Get the GitHub API URL.
-    pub fn api_url(&self) -> &Url {
-        &self.api
-    }
-
-    /// Get the Owner
-    pub fn owner(&self) -> &str {
-        &self.owner
-    }
-
-    /// Get the Repository name.
-    pub fn repo(&self) -> &str {
-        &self.repo
     }
 }
 
@@ -74,21 +38,18 @@ mod tests {
     "https://registry.npmmirror.com/",
     "https://registry.npmjs.org/",
 ]
-
-[github]
-repo = "LocalizeLimbusCompany"
-owner = "LocalizeLimbusCompany"
-api = "https://api.github.com/"
 "#;
     #[test]
     fn test_config() {
-        let config: LLCConfig = toml::from_str(CURRENT_DEFAULT).expect("Failed to deserialize config");
+        let config: LLCConfig =
+            toml::from_str(CURRENT_DEFAULT).expect("Failed to deserialize config");
 
         let serialized = toml::to_string_pretty(&config).expect("Failed to serialize config");
         println!("{}", serialized);
         assert_eq!(serialized, CURRENT_DEFAULT);
     }
 
+    #[test]
     fn test_cross_version_compatibility() {
         let old_toml = r#"[settings]
 download-node = "自动选择节点"
@@ -119,8 +80,7 @@ endpoint = "https://cdn-api.zeroasso.top/"
 name = "零协会官方 API"
 endpoint = "https://api.zeroasso.top/"
 "#;
-        let config: LLCConfig =
-            toml::from_str(old_toml).expect("Failed to deserialize old config");
+        let config: LLCConfig = toml::from_str(old_toml).expect("Failed to deserialize old config");
 
         let serialized = toml::to_string_pretty(&config).expect("Failed to serialize config");
         println!("{}", serialized);

@@ -1,20 +1,26 @@
 use crate::utils;
+use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
-use llc_rs::{LLCConfig, get_limbus_company_install_path, launch_limbus_company, zeroasso};
+use flate2::read::GzDecoder;
+use llc_rs::{
+    LLCConfig, get_client, get_limbus_company_install_path, launch_limbus_company,
+    npm::{DistInfo, NpmClient},
+    utils::{ClientExt, ResultExt},
+};
 use serde::Deserialize;
 use smol::stream::StreamExt;
-use std::{
-    path::{Path, PathBuf},
-    sync::Arc,
-};
+use std::path::{Path, PathBuf};
+use url::Url;
+
+const PKG_NAME: &str = "@lightsing/llc-zh-cn";
 
 #[derive(Deserialize)]
 struct Version {
     version: u64,
 }
 
-pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
-    install_or_update_llc(llc_config)
+pub async fn run(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> {
+    install_or_update_llc(dirs, llc_config)
         .await
         .inspect_err(|e| error!("Failed to install or update LLC: {e}"))
         .context("无法安装或更新 LLC")?;
@@ -54,8 +60,7 @@ async fn copy_self_to_launcher() -> eyre::Result<()> {
     Ok(())
 }
 
-async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
-    let llc_config = Arc::new(llc_config);
+async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> {
     let game_root = get_limbus_company_install_path()
         .inspect_err(|e| error!("failed to get Limbus Company install path: {e}"))
         .context("无法获取 Limbus Company 安装路径")?;
@@ -66,7 +71,7 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         .inspect_err(|e| error!("Failed to create LLC directory: {e}"))
         .context("无法创建语言目录")?;
 
-    let installed_version = match get_version_installed(&game_root) {
+    let installed_tag = match get_version_installed(&game_root) {
         Ok(Some(version)) => version,
         Ok(None) => {
             info!("No version installed, proceeding with installation.");
@@ -78,44 +83,33 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         }
     };
 
-    let hashes = smol::spawn(zeroasso::get_hash::run(llc_config.clone()));
-    let latest_version = zeroasso::get_version::run(llc_config.clone())
+    let latest_version = NpmClient::new(llc_config.npm_registries())
+        .get_lastest_version(PKG_NAME)
         .await
-        .inspect_err(|e| error!("Failed to get latest version: {e}"))
-        .context("无法获取最新版本")?;
+        .inspect_err(|e| error!("Failed to get latest LLC version: {e}"))
+        .context("无法获取最新 LLC 版本")?;
+    let tag = latest_version
+        .github_tag
+        .context("无法获取最新 LLC 版本的发布标签")?;
+    info!("Latest version available: {tag}");
 
-    info!("Latest version available: {}", latest_version);
-
-    if installed_version >= latest_version {
-        info!("LLC is already up to date (version {}).", installed_version);
+    if installed_tag != tag {
+        info!("LLC is already up to date (version {}).", installed_tag);
         return Ok(());
     }
 
-    let hashes = hashes
-        .await
-        .inspect_err(|e| error!("Failed to get hashes: {e}"))
-        .context("无法获取文件哈希")?;
-
     let font_installer = smol::spawn(install_font_if_needed(
-        llc_config.clone(),
+        dirs.cache_dir().to_path_buf(),
         game_root.clone(),
-        hashes.font_hash,
     ));
     let cleaner = smol::spawn(cleanup_installed_llc(game_root.clone()));
-    let downloader = smol::spawn(zeroasso::download_file::run(
-        llc_config.clone(),
-        format!("LimbusLocalize_{latest_version}.7z"),
-        Some(hashes.main_hash),
-    ));
+    let downloader = smol::spawn(download_release(llc_config, latest_version.dist));
 
-    info!(
-        "Updating LLC from version {} to {}.",
-        installed_version, latest_version
-    );
+    info!("Updating LLC from version {installed_tag} to {tag}.",);
 
     utils::create_msgbox(
         "更新 LLC",
-        &format!("将会更新 LLC 到版本 {latest_version}"),
+        &format!("将会更新 LLC 到版本 {tag}"),
         utils::IconType::Info,
     );
 
@@ -124,14 +118,14 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         .inspect_err(|e| error!("Failed to clean up installed files: {e}"))
         .context("无法清理已安装的文件")?;
 
-    let buffer = downloader
+    let tarball = downloader
         .await
         .inspect_err(|e| error!("Failed to download LLC: {e}"))
         .context("无法下载 LLC 文件")?;
-    let reader = std::io::Cursor::new(buffer);
-    sevenz_rust::decompress(reader, &game_root)
-        .inspect_err(|e| error!("Failed to extract LLC files: {e}"))
-        .context("无法解压 LLC 文件")?;
+    extract_apply_release(tarball, game_root.clone())
+        .await
+        .inspect_err(|e| error!("Failed to extract and apply LLC update: {e}"))
+        .context("无法解压并应用 LLC 更新")?;
 
     font_installer
         .await
@@ -185,11 +179,14 @@ async fn cleanup_installed_llc(game_root: PathBuf) -> eyre::Result<()> {
     Ok(())
 }
 
-async fn install_font_if_needed(
-    lc_config: Arc<LLCConfig>,
-    game_root: PathBuf,
-    font_hash: [u8; 32],
-) -> eyre::Result<()> {
+async fn install_font_if_needed(cache_dir: PathBuf, game_root: PathBuf) -> eyre::Result<()> {
+    const FONT_SOURCES: &[&str] = &[
+        "https://mirror.nju.edu.cn/github-release/be5invis/Sarasa-Gothic/Sarasa%20Gothic%2C%20Version%201.0.35/SarasaGothicSC-TTF-1.0.35.7z",
+        "https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa%20Gothic%2C%20Version%201.0.35/SarasaGothicSC-TTF-1.0.35.7z",
+        "https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.35/SarasaGothicSC-TTF-1.0.35.7z",
+    ];
+    const FILENAME: &str = "Font.7z";
+
     let font_file = game_root
         .join("LimbusCompany_Data")
         .join("Lang")
@@ -204,12 +201,110 @@ async fn install_font_if_needed(
         info!("Font file does not exist, installing...");
     }
 
-    let font_file =
-        zeroasso::download_file::run(lc_config, "LLCCN-Font.7z".to_string(), Some(font_hash))
-            .await?;
-    let reader = std::io::Cursor::new(font_file);
+    let client = get_client().await?;
+    let path = cache_dir.join(FILENAME);
+    info!("Downloading font file to {}", path.display());
+    client
+        .download_to(
+            FONT_SOURCES.iter().map(|&url| Url::parse(url).infallible()),
+            &path,
+        )
+        .await?;
 
-    sevenz_rust::decompress(reader, &game_root)?;
+    sevenz_rust::decompress_file(&path, &cache_dir)?;
+
+    smol::fs::remove_file(&path)
+        .await
+        .inspect_err(|e| warn!("Failed to remove temporary font archive: {e}"))
+        .ok();
+
+    let extracted_font = cache_dir.join("SarasaGothicSC-Bold.ttf");
+    smol::fs::create_dir_all(font_file.parent().unwrap()).await?;
+    smol::fs::copy(extracted_font, font_file).await?;
+
+    let Ok(mut dir) = smol::fs::read_dir(&cache_dir).await else {
+        warn!("Failed to read cache directory for cleanup");
+        return Ok(());
+    };
+    while let Ok(Some(entry)) = dir.try_next().await {
+        if entry.path().extension().and_then(|s| s.to_str()) == Some("ttf") {
+            smol::fs::remove_file(entry.path())
+                .await
+                .inspect_err(|e| warn!("Failed to remove temporary font file: {e}"))
+                .ok();
+        }
+    }
 
     Ok(())
+}
+
+async fn download_release(llc_config: LLCConfig, dist: DistInfo) -> eyre::Result<Vec<u8>> {
+    let client = NpmClient::new(llc_config.npm_registries());
+    let buffer = client.download_dist(dist).await?;
+    Ok(buffer)
+}
+
+async fn extract_apply_release(tarball: Vec<u8>, game_root: PathBuf) -> eyre::Result<()> {
+    let tar = GzDecoder::new(tarball.as_slice());
+    let mut archive = tar::Archive::new(tar);
+
+    let dst_dir = game_root
+        .join("LimbusCompany_Data")
+        .join("Lang")
+        .join("LLC_zh-CN");
+
+    for file in archive.entries()? {
+        let mut file = file?;
+        let path = file.path()?.to_path_buf();
+        let Ok(path) = path.strip_prefix("package/LimbusCompany_Data/Lang/LLC_zh-CN") else {
+            continue;
+        };
+        let dest_path = dst_dir.join(path);
+        if let Some(parent) = dest_path.parent()
+            && !parent.exists()
+        {
+            smol::fs::create_dir_all(parent).await?;
+        }
+        file.unpack(&dest_path)?;
+        let file_time = filetime::FileTime::now();
+        filetime::set_file_atime(&dest_path, file_time)?;
+        filetime::set_file_mtime(&dest_path, file_time)?;
+    }
+
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use smol_macros::test;
+
+    test! {
+        async fn test_install_font_if_needed() {
+            let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
+            let game_root = get_limbus_company_install_path().unwrap();
+
+            install_font_if_needed(dirs.cache_dir().to_path_buf(), game_root)
+                .await
+                .unwrap();
+        }
+    }
+
+    test! {
+        async fn test_download_extract_release() {
+            let game_root = get_limbus_company_install_path().unwrap();
+            let llc_config = LLCConfig::default();
+            let npm_client = NpmClient::new(llc_config.npm_registries());
+            let dist = npm_client
+                .get_lastest_version(PKG_NAME)
+                .await
+                .unwrap()
+                .dist;
+
+            let tarball = download_release(llc_config, dist).await.unwrap();
+            extract_apply_release(tarball, game_root)
+                .await
+                .unwrap();
+        }
+    }
 }
