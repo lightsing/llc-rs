@@ -5,7 +5,18 @@ set -ex
 UPSTREAM_REPO="LocalizeLimbusCompany/LocalizeLimbusCompany"
 NPM_PACKAGE="@lightsing/llc-zh-cn"
 
-LATEST_RELEASE=$(curl -s https://api.github.com/repos/$UPSTREAM_REPO/releases/latest)
+AUTH_HEADER=()
+if [ -n "$GITHUB_TOKEN" ]; then
+    AUTH_HEADER=(-H "Authorization: Bearer $GITHUB_TOKEN")
+fi
+
+LATEST_RELEASE=$(curl -s "${AUTH_HEADER[@]}" https://api.github.com/repos/$UPSTREAM_REPO/releases/latest)
+
+if [ -z "$LATEST_RELEASE" ] || [ "$(echo "$LATEST_RELEASE" | jq -r '.message?')" == "API rate limit exceeded" ]; then
+    echo "Error: GitHub API rate limit exceeded or empty response."
+    exit 1
+fi
+
 PUBLISHED_AT=$(echo "$LATEST_RELEASE" | jq -r '.published_at')
 TAG=$(echo "$LATEST_RELEASE" | jq -r '.tag_name')
 TIMESTAMP=$(node -e "console.log(Math.floor(new Date('$PUBLISHED_AT').getTime() / 1000))")
