@@ -1,4 +1,4 @@
-use crate::utils;
+use crate::splash::{set_state_str, set_state_string};
 use bytes::Bytes;
 use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
@@ -9,10 +9,7 @@ use llc_rs::{
     utils::{ClientExt, ResultExt},
 };
 use serde_json::Value;
-use std::{
-    path::{Path, PathBuf},
-    time::Duration,
-};
+use std::path::{Path, PathBuf};
 use url::Url;
 
 const PKG_NAME: &str = "@lightsing/llc-zh-cn";
@@ -25,24 +22,30 @@ pub async fn run(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> 
 
     info!("LLC installation or update completed successfully.");
 
+    set_state_str("启动 Limbus Company...");
     launch_limbus_company()
         .inspect_err(|e| error!("cannot start Limbus Company: {e}"))
         .context("无法启动 Limbus Company")?;
 
     info!("Limbus Company launched successfully.");
 
-    copy_self_to_launcher()
-        .await
-        .inspect_err(|e| error!("Failed to copy self to launcher: {e}"))
-        .context("无法更新启动器可执行文件")?;
+    #[cfg(not(debug_assertions))]
+    {
+        copy_self_to_launcher()
+            .await
+            .inspect_err(|e| error!("Failed to copy self to launcher: {e}"))
+            .context("无法更新启动器可执行文件")?;
 
-    info!("Launcher executable updated successfully.");
+        info!("Launcher executable updated successfully.");
+    }
+
     Ok(())
 }
 
 /// Reverse update the launcher executable.
+#[cfg(not(debug_assertions))]
 async fn copy_self_to_launcher() -> eyre::Result<()> {
-    tokio::time::sleep(Duration::from_secs(1)).await; // Give some time for parent process to finish
+    tokio::time::sleep(std::time::Duration::from_secs(1)).await; // Give some time for parent process to finish
     let launcher_path = PathBuf::from(
         std::env::var_os("LLC_LAUNCHER_PATH")
             .context("请勿直接运行本目录中的 llc-launcher-rs 可执行文件")
@@ -59,6 +62,7 @@ async fn copy_self_to_launcher() -> eyre::Result<()> {
 }
 
 async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> {
+    set_state_str("获取 Limbus Company 安装路径...");
     let game_root = get_limbus_company_install_path()
         .inspect_err(|e| error!("failed to get Limbus Company install path: {e}"))
         .context("无法获取 Limbus Company 安装路径")?;
@@ -81,6 +85,7 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
         }
     };
 
+    set_state_str("获取最新 LLC 版本信息...");
     let latest_version = NpmClient::new(llc_config.npm_registries())
         .get_lastest_version(PKG_NAME)
         .await
@@ -92,6 +97,7 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
     info!("Latest version available: {tag}");
 
     if installed_tag == tag {
+        set_state_str("LLC 已是最新版本");
         info!("LLC is already up to date (version {}).", installed_tag);
         return Ok(());
     }
@@ -104,12 +110,6 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
     let downloader = tokio::spawn(download_release(llc_config, latest_version.dist));
 
     info!("Updating LLC from version {installed_tag} to {tag}.",);
-
-    utils::create_msgbox(
-        "更新 LLC",
-        &format!("将会更新 LLC 到版本 {tag}"),
-        utils::IconType::Info,
-    );
 
     cleaner
         .await
@@ -138,6 +138,7 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
 }
 
 fn get_version_installed(game_root: &Path) -> eyre::Result<Option<String>> {
+    set_state_str("检查已安装的 LLC 版本...");
     let version_file = game_root
         .join("LimbusCompany_Data")
         .join("Lang")
@@ -212,7 +213,7 @@ async fn install_font_if_needed(cache_dir: PathBuf, game_root: PathBuf) -> eyre:
     } else {
         info!("Font file does not exist, installing...");
     }
-
+    set_state_str("安装所需字体...");
     let path = cache_dir.join(FILENAME);
     info!("Downloading font file to {}", path.display());
     DEFAULT_CLIENT
@@ -250,12 +251,14 @@ async fn install_font_if_needed(cache_dir: PathBuf, game_root: PathBuf) -> eyre:
 }
 
 async fn download_release(llc_config: LLCConfig, dist: DistInfo) -> eyre::Result<Bytes> {
+    set_state_str("下载 LLC 文件...");
     let client = NpmClient::new(llc_config.npm_registries());
     let buffer = client.download_dist(dist).await?;
     Ok(buffer)
 }
 
 async fn extract_apply_release(tarball: Bytes, game_root: PathBuf) -> eyre::Result<()> {
+    set_state_str("解压并应用 LLC 文件...");
     let tar = GzDecoder::new(tarball.as_ref());
     let mut archive = tar::Archive::new(tar);
 
@@ -276,6 +279,7 @@ async fn extract_apply_release(tarball: Bytes, game_root: PathBuf) -> eyre::Resu
         {
             tokio::fs::create_dir_all(parent).await?;
         }
+        set_state_string(format!("正在释放：\n{}", path.display()));
         file.unpack(&dest_path)?;
         let file_time = filetime::FileTime::now();
         filetime::set_file_atime(&dest_path, file_time)?;

@@ -9,15 +9,17 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.1.26"
+version = "0.2.0"
 
 [workspace.dependencies]
 bytes = "1.2"
 ctor = "0.4"
 directories = "6.0"
+eframe = "0.33"
 eyre = "0.6"
 filetime = "0.2"
 flate2 = "1.1"
+font-kit = "0.14"
 futures-util = { version = "0.3", default-features = false }
 hex = "0.4"
 llc-rs = { path = "crates/llc-rs" }

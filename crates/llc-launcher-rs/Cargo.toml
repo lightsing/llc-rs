@@ -12,9 +12,11 @@ version.workspace = true
 bytes.workspace = true
 ctor.workspace = true
 directories.workspace = true
+eframe.workspace = true
 eyre.workspace = true
 filetime.workspace = true
 flate2.workspace = true
+font-kit.workspace = true
 llc-rs.workspace = true
 reqwest = { workspace = true, features = ["rustls-tls", "json"] }
 semver = { workspace = true, features = ["serde"] }

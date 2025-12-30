@@ -8,8 +8,9 @@
 #[macro_use]
 extern crate tracing;
 
-use crate::{config::LauncherConfig, logging::LoggingGuard};
+use crate::config::LauncherConfig;
 use directories::ProjectDirs;
+use eframe::egui;
 use eyre::{Context, ContextCompat};
 use llc_rs::LLCConfig;
 use std::{fs, path::PathBuf, process::exit};
@@ -20,7 +21,9 @@ const APP_NAME: &str = "llc-launcher-rs";
 mod config;
 mod llc;
 mod logging;
+#[cfg(not(debug_assertions))]
 mod self_update;
+mod splash;
 mod utils;
 
 #[cfg(test)]
@@ -36,9 +39,8 @@ fn setup_test() {
         .init();
 }
 
-#[tokio::main(flavor = "current_thread")]
-async fn main() {
-    let init_res = match init().await {
+fn main() {
+    let init_res = match init() {
         Ok(res) => res,
         Err(e) => {
             eprintln!("{e}");
@@ -51,54 +53,102 @@ async fn main() {
         }
     };
 
-    main_inner(&init_res).await;
+    let is_tool = init_res.is_tool;
+    let shutdown_rx = init_res.shutdown_tx.subscribe();
 
-    // for migration
-    config::save(
-        &init_res.dirs,
-        &init_res.launcher_config,
-        &init_res.llc_config,
-    )
-    .inspect_err(|e| warn!("无法保存配置：{e}"))
-    .ok();
+    let handle = std::thread::spawn(move || {
+        tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .build()
+            .unwrap()
+            .block_on(main_inner(init_res))
+    });
 
-    init_res.shutdown_tx.send(()).ok();
-    if let Some(reporter) = init_res.logging_guard.sls_reporter {
-        reporter.await.unwrap();
+    if is_tool {
+        let options = eframe::NativeOptions {
+            viewport: egui::ViewportBuilder::default()
+                .with_decorations(false)
+                .with_resizable(false)
+                .with_inner_size([1280.0, 800.0])
+                .with_always_on_top(),
+            centered: true,
+            ..Default::default()
+        };
+
+        eframe::run_native(
+            "Limbus Company Launcher",
+            options,
+            Box::new(|cc| Ok(Box::new(splash::SplashScreen::new(cc, shutdown_rx)))),
+        )
+        .unwrap();
+    } else {
+        handle.join().unwrap();
     }
 }
 
-async fn main_inner(init_res: &InitResources) {
+async fn main_inner(
+    InitResources {
+        dirs,
+        launcher_config,
+        llc_config,
+        self_path,
+        is_tool,
+        shutdown_tx,
+        shutdown_rx,
+    }: InitResources,
+) {
+    let logging_guard = logging::init(&dirs, &launcher_config, shutdown_rx).await;
+
+    if is_tool {
+        info!("Running as tool, path: {}", self_path.display());
+    } else {
+        info!("Running as launcher, path: {}", self_path.display());
+    }
+
     if let Err(e) = {
-        if init_res.is_tool {
-            llc::run(&init_res.dirs, init_res.llc_config.clone()).await
+        #[cfg(not(debug_assertions))]
+        if is_tool {
+            llc::run(&dirs, llc_config.clone()).await
         } else {
-            self_update::run(&init_res.dirs, &init_res.self_path, &init_res.llc_config).await
+            self_update::run(&dirs, &self_path, &llc_config).await
         }
+        #[cfg(debug_assertions)]
+        llc::run(&dirs, llc_config.clone()).await
     } {
         error!("{e:?}");
         utils::create_msgbox(
             "启动器崩溃了！",
             &format!(
                 "{e}\n请检查日志文件（位于 {}）以获取更多信息。",
-                init_res.dirs.data_dir().join("logs").display()
+                dirs.data_dir().join("logs").display()
             ),
             utils::IconType::Error,
         );
     }
+
+    // for migration
+    config::save(&dirs, &launcher_config, &llc_config)
+        .inspect_err(|e| warn!("无法保存配置：{e}"))
+        .ok();
+
+    shutdown_tx.send(()).ok();
+    if let Some(reporter) = logging_guard.sls_reporter {
+        reporter.await.unwrap();
+    }
 }
 
+#[allow(unused)]
 pub struct InitResources {
     dirs: ProjectDirs,
     self_path: PathBuf,
     is_tool: bool,
     launcher_config: LauncherConfig,
     llc_config: LLCConfig,
-    logging_guard: LoggingGuard,
     shutdown_tx: tokio::sync::broadcast::Sender<()>,
+    shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 }
 
-async fn init() -> eyre::Result<InitResources> {
+fn init() -> eyre::Result<InitResources> {
     let (shutdown_tx, shutdown_rx) = tokio::sync::broadcast::channel::<()>(1);
     let dirs = ProjectDirs::from("me", ORGANIZATION, APP_NAME).context("无法侦测用户目录")?;
 
@@ -117,13 +167,6 @@ async fn init() -> eyre::Result<InitResources> {
     let is_tool = self_path.starts_with(&cache_dir);
 
     let (launcher_config, llc_config) = config::load(&dirs);
-    let logging_guard = logging::init(&dirs, &launcher_config, shutdown_rx).await;
-
-    if is_tool {
-        info!("Running as tool, path: {}", self_path.display());
-    } else {
-        info!("Running as launcher, path: {}", self_path.display());
-    }
 
     Ok(InitResources {
         dirs,
@@ -131,7 +174,7 @@ async fn init() -> eyre::Result<InitResources> {
         is_tool,
         launcher_config,
         llc_config,
-        logging_guard,
         shutdown_tx,
+        shutdown_rx,
     })
 }
