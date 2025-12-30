@@ -1,13 +1,14 @@
 use crate::{
     USER_AGENT,
-    utils::{ClientExt, OptionExt, ResultExt},
+    utils::{ClientExt, ReqwestExtError, ResultExt},
 };
-use nyquest::{AsyncClient, ClientBuilder};
+use bytes::Bytes;
+use reqwest::{Client, ClientBuilder, header, header::HeaderMap};
 use semver::Version;
 use serde::Deserialize;
 use serde_with::{DisplayFromStr, Map, serde_as};
 use ssri::Integrity;
-use std::sync::OnceLock;
+use std::sync::LazyLock;
 use url::Url;
 
 #[derive(Debug)]
@@ -18,7 +19,7 @@ pub struct NpmClient<'a> {
 #[derive(Debug, thiserror::Error)]
 pub enum NpmError {
     #[error(transparent)]
-    Http(#[from] nyquest::Error),
+    Http(#[from] ReqwestExtError),
     #[error("npm metadata missing latest version")]
     MissingLatestVersion,
     #[error("downloaded file integrity check failed: {0}")]
@@ -63,9 +64,8 @@ impl<'a> NpmClient<'a> {
     }
 
     /// Download a distribution file.
-    pub async fn download_dist(&self, dist: DistInfo) -> Result<Vec<u8>, NpmError> {
-        let client = get_npm_client().await?;
-        let bytes = client
+    pub async fn download_dist(&self, dist: DistInfo) -> Result<Bytes, NpmError> {
+        let bytes = NPM_CLIENT
             .download([dist.tarball].into_iter())
             .await
             .inspect_err(|e| error!("error downloading dist file: {e}"))?;
@@ -75,8 +75,7 @@ impl<'a> NpmClient<'a> {
     }
 
     pub async fn get_lastest_version(&self, package: &str) -> Result<VersionMetadata, NpmError> {
-        let metadata = get_npm_client()
-            .await?
+        let metadata = NPM_CLIENT
             .get_json::<_, Metadata>(
                 self.registries
                     .iter()
@@ -95,50 +94,48 @@ impl<'a> NpmClient<'a> {
     }
 }
 
-async fn get_npm_client() -> nyquest::Result<&'static AsyncClient> {
-    static CLIENT: OnceLock<AsyncClient> = OnceLock::new();
-    if let Some(client) = CLIENT.get() {
-        return Ok(client);
-    }
-
-    let client = ClientBuilder::default()
+static NPM_CLIENT: LazyLock<Client> = LazyLock::new(|| {
+    ClientBuilder::default()
         .user_agent(*USER_AGENT)
-        .with_header("FROM", "ligh.tsing@gmail.com")
-        .with_header(
-            "Accept",
-            "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
-        )
-        .no_caching()
-        .build_async()
-        .await
-        .inspect_err(|e| error!("Failed to initialize client: {e}"))?;
-
-    CLIENT.set(client).ok();
-    Ok(CLIENT.get().infallible())
-}
+        .default_headers(HeaderMap::from_iter([
+            (header::FROM, "ligh.tsing@gmail.com".parse().infallible()),
+            (
+                header::ACCEPT,
+                "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+                    .parse()
+                    .infallible(),
+            ),
+        ]))
+        .build()
+        .expect("Failed to build default NPM client")
+});
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use smol_macros::test;
+    use tokio::test;
 
-    test! {
-        async fn test_get_npm_metadata() {
-            let registries = crate::config::default_npm_registries();
-            let npm_client = NpmClient::new(&registries);
+    #[test]
+    async fn test_get_npm_metadata() {
+        let registries = crate::config::default_npm_registries();
+        let npm_client = NpmClient::new(&registries);
 
-            npm_client.get_lastest_version("@lightsing/llc-zh-cn").await.unwrap();
-        }
+        npm_client
+            .get_lastest_version("@lightsing/llc-zh-cn")
+            .await
+            .unwrap();
     }
 
-    test! {
-        async fn test_download_dist() {
-            let registries = crate::config::default_npm_registries();
-            let npm_client = NpmClient::new(&registries);
+    #[test]
+    async fn test_download_dist() {
+        let registries = crate::config::default_npm_registries();
+        let npm_client = NpmClient::new(&registries);
 
-            let meta = npm_client.get_lastest_version("@lightsing/llc-zh-cn").await.unwrap();
+        let meta = npm_client
+            .get_lastest_version("@lightsing/llc-zh-cn")
+            .await
+            .unwrap();
 
-            npm_client.download_dist(meta.dist).await.unwrap();
-        }
+        npm_client.download_dist(meta.dist).await.unwrap();
     }
 }

@@ -4,20 +4,16 @@
 #[macro_use]
 extern crate tracing;
 
-use crate::utils::OptionExt;
-use nyquest::{AsyncClient, ClientBuilder};
-use std::{
-    path::PathBuf,
-    sync::{LazyLock, OnceLock},
-};
+use crate::utils::ResultExt;
+use reqwest::{Client, ClientBuilder, header, header::HeaderMap};
+use std::{path::PathBuf, sync::LazyLock};
 
 mod config;
 pub use config::LLCConfig;
 
+pub mod npm;
 mod steam_support;
 pub mod utils;
-// pub mod zeroasso;
-pub mod npm;
 
 pub use steam_support::{
     SteamSupportError, find_game_path_for_app, get_steam_root, launch_game_via_steam,
@@ -52,23 +48,16 @@ pub static USER_AGENT: LazyLock<&str> = LazyLock::new(|| {
     ).into_boxed_str())
 });
 
-pub async fn get_client() -> nyquest::Result<&'static AsyncClient> {
-    static CLIENT: OnceLock<AsyncClient> = OnceLock::new();
-    if let Some(client) = CLIENT.get() {
-        return Ok(client);
-    }
-
-    let client = ClientBuilder::default()
+pub static DEFAULT_CLIENT: LazyLock<Client> = LazyLock::new(|| {
+    ClientBuilder::default()
         .user_agent(*USER_AGENT)
-        .with_header("FROM", "ligh.tsing@gmail.com")
-        .no_caching()
-        .build_async()
-        .await
-        .inspect_err(|e| error!("Failed to initialize client: {e}"))?;
-
-    CLIENT.set(client).ok();
-    Ok(CLIENT.get().infallible())
-}
+        .default_headers(HeaderMap::from_iter([(
+            header::FROM,
+            "ligh.tsing@gmail.com".parse().infallible(),
+        )]))
+        .build()
+        .unwrap()
+});
 
 #[cfg(test)]
 #[ctor::ctor]
@@ -81,6 +70,4 @@ fn setup_test() {
         .with_file(true)
         .with_line_number(true)
         .init();
-
-    nyquest_preset::register();
 }

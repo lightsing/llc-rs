@@ -1,15 +1,25 @@
-use futures_util::{AsyncReadExt, TryFutureExt};
-use nyquest::{AsyncClient, Request, r#async::Response};
+use bytes::Bytes;
+use futures_util::{TryFutureExt, TryStreamExt};
+use reqwest::Response;
 use std::{fmt::Debug, path::Path};
+use tokio::io::AsyncWriteExt;
 use url::Url;
 
+#[derive(Debug, thiserror::Error)]
+pub enum ReqwestExtError {
+    #[error(transparent)]
+    Io(#[from] std::io::Error),
+    #[error(transparent)]
+    Reqwest(#[from] reqwest::Error),
+}
+
 pub trait ClientExt {
-    fn get<I>(&self, urls: I) -> impl Future<Output = nyquest::Result<Response>> + Send
+    fn try_get<I>(&self, urls: I) -> impl Future<Output = Result<Response, ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send;
 
     /// Download the content from one of the given URLs.
-    fn download<I>(&self, urls: I) -> impl Future<Output = nyquest::Result<Vec<u8>>> + Send
+    fn download<I>(&self, urls: I) -> impl Future<Output = Result<Bytes, ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send;
 
@@ -18,85 +28,77 @@ pub trait ClientExt {
         &self,
         urls: I,
         dest: P,
-    ) -> impl Future<Output = nyquest::Result<()>> + Send
+    ) -> impl Future<Output = Result<(), ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send,
         P: AsRef<Path>;
 
     /// Get and deserialize JSON content from one of the given URLs.
-    fn get_json<I, T>(&self, urls: I) -> impl Future<Output = nyquest::Result<T>> + Send
+    fn get_json<I, T>(&self, urls: I) -> impl Future<Output = Result<T, ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send,
         T: serde::de::DeserializeOwned + Send + 'static;
 }
 
-impl ClientExt for AsyncClient {
-    fn get<I>(&self, urls: I) -> impl Future<Output = nyquest::Result<Response>> + Send
+impl ClientExt for reqwest::Client {
+    fn try_get<I>(&self, urls: I) -> impl Future<Output = Result<Response, ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send,
     {
         async move {
             let mut last_err = None;
             for url in urls {
-                match self.request(Request::get(url.to_string())).await {
-                    Ok(res) => {
-                        if let Ok(res) = res.with_successful_status() {
-                            return Ok(res);
-                        }
-                    }
+                match self
+                    .get(url)
+                    .send()
+                    .await
+                    .and_then(|res| res.error_for_status())
+                {
+                    Ok(res) => return Ok(res),
                     Err(e) => {
-                        error!("{e}");
                         last_err = Some(e);
                     }
                 }
             }
-            Err(last_err.unwrap())
+            Err(last_err.unwrap().into())
         }
     }
 
-    fn download<I>(&self, urls: I) -> impl Future<Output = nyquest::Result<Vec<u8>>> + Send
+    fn download<I>(&self, urls: I) -> impl Future<Output = Result<Bytes, ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send,
     {
-        self.get(urls).and_then(|res| async {
-            let len = res.content_length().unwrap_or(10 * 1024 * 1024); // Default to 10MB if unknown
-            let mut buffer = Vec::with_capacity(len as _);
-            res.into_async_read()
-                .read_to_end(&mut buffer)
-                .await
-                .map_err(nyquest::Error::Io)
-                .map(|_| buffer)
-        })
+        self.try_get(urls)
+            .and_then(|res| res.bytes().map_err(|e| e.into()))
     }
 
     fn download_to<I, P>(
         &self,
         urls: I,
         dest: P,
-    ) -> impl Future<Output = nyquest::Result<()>> + Send
+    ) -> impl Future<Output = Result<(), ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send,
         P: AsRef<Path>,
     {
         let dest = dest.as_ref().to_path_buf();
-        self.get(urls).and_then(move |res| async move {
-            let mut file = smol::fs::File::create(&dest)
-                .await
-                .map_err(nyquest::Error::Io)?;
-            let mut stream = res.into_async_read();
-            smol::io::copy(&mut stream, &mut file)
-                .await
-                .map_err(nyquest::Error::Io)?;
+        self.try_get(urls).and_then(move |res| async move {
+            let mut file = tokio::fs::File::create(&dest).await?;
+            let mut stream = res.bytes_stream();
+            while let Some(chunk) = stream.try_next().await? {
+                file.write_all(&chunk).await?;
+            }
             Ok(())
         })
     }
 
-    fn get_json<I, T>(&self, urls: I) -> impl Future<Output = nyquest::Result<T>> + Send
+    fn get_json<I, T>(&self, urls: I) -> impl Future<Output = Result<T, ReqwestExtError>> + Send
     where
         I: Iterator<Item = Url> + Send,
         T: serde::de::DeserializeOwned + Send + 'static,
     {
-        self.get(urls).and_then(|res| res.json::<T>())
+        self.try_get(urls)
+            .and_then(|res| res.json::<T>().map_err(|e| e.into()))
     }
 }
 

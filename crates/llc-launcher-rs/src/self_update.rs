@@ -4,13 +4,14 @@ use directories::ProjectDirs;
 use eyre::Context;
 use flate2::read::GzDecoder;
 
+use bytes::Bytes;
 use llc_rs::{LLCConfig, npm::NpmClient};
 use semver::Version;
-use smol::fs;
 use std::{
     path::Path,
     process::{Command, exit},
 };
+use tokio::fs;
 
 #[cfg(target_os = "windows")]
 const PKG_NAME: &str = "@lightsing/llc-launcher-rs-win32";
@@ -77,8 +78,8 @@ fn launch_tool(tool_path: &Path, self_path: &Path) -> ! {
 }
 
 #[instrument(skip(tarball, dirs))]
-async fn extract_update(tarball: Vec<u8>, dirs: &ProjectDirs) -> eyre::Result<()> {
-    let tar = GzDecoder::new(tarball.as_slice());
+async fn extract_update(tarball: Bytes, dirs: &ProjectDirs) -> eyre::Result<()> {
+    let tar = GzDecoder::new(tarball.as_ref());
     let mut archive = tar::Archive::new(tar);
     for file in archive
         .entries()
@@ -111,27 +112,25 @@ async fn extract_update(tarball: Vec<u8>, dirs: &ProjectDirs) -> eyre::Result<()
 #[cfg(test)]
 mod tests {
     use super::*;
-    use smol_macros::test;
+    use tokio::test;
 
-    test! {
-        async fn test_get_latest_version() {
-            let config = LLCConfig::default();
-            let client = NpmClient::new(&config.npm_registries());
+    #[test]
+    async fn test_get_latest_version() {
+        let config = LLCConfig::default();
+        let client = NpmClient::new(&config.npm_registries());
 
-            let version = client.get_lastest_version(PKG_NAME).await.unwrap();
-            println!("[test_get_latest_version] Latest version: {version:?}");
-        }
+        let version = client.get_lastest_version(PKG_NAME).await.unwrap();
+        println!("[test_get_latest_version] Latest version: {version:?}");
     }
 
-    test! {
-        async fn test_download_update() {
-            let config = LLCConfig::default();
-            let client = NpmClient::new(&config.npm_registries());
-            let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
+    #[test]
+    async fn test_download_update() {
+        let config = LLCConfig::default();
+        let client = NpmClient::new(&config.npm_registries());
+        let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
 
-            let version = client.get_lastest_version(PKG_NAME).await.unwrap();
-            let tarball = client.download_dist(version.dist).await.unwrap();
-            extract_update(tarball, &dirs).await.unwrap();
-        }
+        let version = client.get_lastest_version(PKG_NAME).await.unwrap();
+        let tarball = client.download_dist(version.dist).await.unwrap();
+        extract_update(tarball, &dirs).await.unwrap();
     }
 }

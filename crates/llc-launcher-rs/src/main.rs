@@ -35,14 +35,11 @@ fn setup_test() {
         .with_file(true)
         .with_line_number(true)
         .init();
-
-    nyquest_preset::register();
 }
 
-fn main() {
-    nyquest_preset::register();
-
-    let init_res = match smol::block_on(init()) {
+#[tokio::main(flavor = "current_thread")]
+async fn main() {
+    let init_res = match init().await {
         Ok(res) => res,
         Err(e) => {
             eprintln!("{e}");
@@ -55,23 +52,21 @@ fn main() {
         }
     };
 
-    smol::block_on(async {
-        main_inner(&init_res).await;
+    main_inner(&init_res).await;
 
-        // for migration
-        config::save(
-            &init_res.dirs,
-            &init_res.launcher_config,
-            &init_res.llc_config,
-        )
-        .inspect_err(|e| warn!("无法保存配置：{e}"))
-        .ok();
+    // for migration
+    config::save(
+        &init_res.dirs,
+        &init_res.launcher_config,
+        &init_res.llc_config,
+    )
+    .inspect_err(|e| warn!("无法保存配置：{e}"))
+    .ok();
 
-        init_res.shutdown_tx.broadcast_direct(()).await.ok();
-        if let Some(reporter) = init_res.logging_guard.sls_reporter {
-            reporter.await;
-        }
-    })
+    init_res.shutdown_tx.broadcast_direct(()).await.ok();
+    if let Some(reporter) = init_res.logging_guard.sls_reporter {
+        reporter.await.unwrap();
+    }
 }
 
 async fn main_inner(init_res: &InitResources) {

@@ -1,8 +1,8 @@
 use crate::{config::LauncherConfig, utils};
 use directories::ProjectDirs;
 use eyre::Context;
-use smol::Task;
 use std::fs;
+use tokio::task::JoinHandle;
 use tracing_appender::{
     non_blocking::WorkerGuard,
     rolling::{self, Rotation},
@@ -15,7 +15,7 @@ use tracing_subscriber::{
 pub(crate) struct LoggingGuard {
     _file_appender_guard: Option<WorkerGuard>,
     _stderr_appender_guard: Option<WorkerGuard>,
-    pub(crate) sls_reporter: Option<Task<()>>,
+    pub(crate) sls_reporter: Option<JoinHandle<()>>,
 }
 
 pub async fn init(
@@ -84,7 +84,7 @@ async fn init_inner(
 
     #[cfg(not(debug_assertions))]
     let sls_reporter = if config.telemetry() {
-        let client = SlsClient::builder()
+        let client = tracing_aliyun_sls::SlsClient::builder()
             .endpoint(env!("ALIYUN_SLS_ENDPOINT"))
             .access_key(env!("ALIYUN_SLS_ACCESS_KEY"))
             .access_secret(env!("ALIYUN_SLS_ACCESS_SECRET"))?
@@ -94,13 +94,13 @@ async fn init_inner(
             .build()
             .inspect_err(|e| eprintln!("failed to create sls client: {e}"))
             .context("无法创建 SLS 客户端")?;
-        let reporter = Reporter::from_client(client);
+        let reporter = tracing_aliyun_sls::reporter::Reporter::from_client(client);
 
-        let sls_reporter = smol::spawn(
+        let sls_reporter = tokio::spawn(
             reporter
                 .clone()
                 .reporting(|| async {
-                    smol::Timer::interval(Duration::from_millis(100)).await;
+                    tokio::time::sleep(std::time::Duration::from_millis(100)).await;
                 })
                 .await
                 .unwrap()
