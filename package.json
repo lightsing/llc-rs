@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LocalizeLimbusCompany/LocalizeLimbusCompany.git"
+    "url": "git+https://github.com/lightsing/llc-rs.git"
   },
   "keywords": [
     "LimbusCompany",
@@ -23,5 +23,5 @@
   "author": "Localize Limbus Company Team",
   "maintainer": "Akase Haruka <light.tsing@gmail.com>",
   "license": "CC-BY-NC-SA-4.0",
-  "homepage": "https://github.com/LocalizeLimbusCompany/LocalizeLimbusCompany#readme"
+  "homepage": "https://github.com/lightsing/llc-rs/blob/llc-sync/README.md"
 }
