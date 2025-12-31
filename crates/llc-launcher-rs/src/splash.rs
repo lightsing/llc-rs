@@ -82,6 +82,12 @@ impl SplashScreen {
 
 impl eframe::App for SplashScreen {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        let height = ctx.content_rect().height();
+
+        let font_title = height * 0.07;
+        let font_body = height * 0.03;
+        let font_small = height * 0.02;
+
         if self.shutdown_rx.try_recv().is_ok() {
             self.should_quit = true;
         }
@@ -130,7 +136,7 @@ impl eframe::App for SplashScreen {
                     ui.label(
                         egui::RichText::new("Limbus Company 启动器")
                             .color(Color32::WHITE)
-                            .size(50.0),
+                            .size(font_title),
                     );
                 });
 
@@ -145,14 +151,14 @@ impl eframe::App for SplashScreen {
                                     ui.label(
                                         egui::RichText::new(error_text)
                                             .color(Color32::RED)
-                                            .size(18.0),
+                                            .size(font_small),
                                     );
                                 });
                             });
                         ui.add_space(20.0);
                         if ui
                             .add(
-                                egui::Button::new(egui::RichText::new("我知道了").size(30.0))
+                                egui::Button::new(egui::RichText::new("我知道了").size(font_body))
                                     .min_size(egui::vec2(200.0, 60.0)),
                             )
                             .clicked()
@@ -168,7 +174,7 @@ impl eframe::App for SplashScreen {
                     ui.label(
                         egui::RichText::new(state_text)
                             .color(Color32::WHITE)
-                            .size(30.0),
+                            .size(font_body),
                     );
                 });
 
