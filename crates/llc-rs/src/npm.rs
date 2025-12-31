@@ -118,7 +118,7 @@ mod tests {
         let npm_client = NpmClient::new(&registries);
 
         let ver = npm_client
-            .get_lastest_version("@lightsing/llc-zh-cn")
+            .get_lastest_version("@lightsing/llc-launcher-rs-win32")
             .await
             .unwrap();
         println!("[test_get_npm_metadata] Latest version: {ver:?}");

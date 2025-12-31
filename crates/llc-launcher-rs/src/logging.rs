@@ -1,4 +1,5 @@
 use crate::{config::LauncherConfig, utils};
+use aho_corasick::{AhoCorasick, AhoCorasickKind, Anchored, Input, StartKind};
 use directories::ProjectDirs;
 use eyre::Context;
 use std::fs;
@@ -60,12 +61,25 @@ async fn init_inner(
     let (non_blocking_stderr_appender, stderr_appender_guard) =
         tracing_appender::non_blocking(std::io::stderr());
 
-    let nosie_filter = filter_fn(|metadata| {
+    let nosie_targets = AhoCorasick::builder()
+        .kind(Some(AhoCorasickKind::DFA))
+        .start_kind(StartKind::Anchored)
+        .build(&[
+            "async_io",
+            "polling",
+            "react",
+            "hyper",
+            "aliyun_sls",
+            "winit",
+            "zbus",
+        ])?;
+    let nosie_filter = filter_fn(move |metadata| {
         let target = metadata.target();
-        !target.starts_with("async_io")
-            && !target.starts_with("polling")
-            && !target.starts_with("react")
-            && !target.starts_with("aliyun_sls")
+        let input = Input::new(target).anchored(Anchored::Yes);
+        if nosie_targets.find(input).is_some() && metadata.level() <= &tracing::Level::INFO {
+            return false;
+        }
+        true
     });
 
     let layered = tracing_subscriber::registry()

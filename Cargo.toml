@@ -9,9 +9,10 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.2.1"
+version = "0.2.2"
 
 [workspace.dependencies]
+aho-corasick = "1.1"
 bytes = "1.2"
 ctor = "0.4"
 directories = "6.0"

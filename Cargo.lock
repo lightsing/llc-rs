@@ -2615,8 +2615,9 @@ checksum = "11d3d7f243d5c5a8b9bb5d6dd2b1602c0cb0b9db1621bafc7ed66e35ff9fe092"
 
 [[package]]
 name = "llc-launcher-rs"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
+ "aho-corasick",
  "bytes",
  "ctor",
  "directories",
@@ -2647,7 +2648,7 @@ dependencies = [
 
 [[package]]
 name = "llc-rs"
-version = "0.2.1"
+version = "0.2.2"
 dependencies = [
  "bytes",
  "ctor",
