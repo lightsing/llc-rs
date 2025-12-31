@@ -1,4 +1,4 @@
-use crate::{config::LauncherConfig, utils};
+use crate::{config::LauncherConfig, splash::set_error_string};
 use aho_corasick::{AhoCorasick, Anchored, Input, MatchKind, StartKind};
 use directories::ProjectDirs;
 use eyre::Context;
@@ -18,6 +18,7 @@ static NOISE_TARGETS: &[&str] = &[
     "polling",
     "react",
     "hyper",
+    "reqwest",
     "aliyun_sls",
     "winit",
     "zbus",
@@ -37,12 +38,10 @@ pub async fn init(
 ) -> LoggingGuard {
     init_inner(dirs, config, shutdown_rx).await.unwrap_or_else(|e| {
         eprintln!("{e}");
-        utils::create_msgbox(
-            "启动器出错了！",
-            &format!(
+        set_error_string(
+            format!(
                 "无法初始化日志系统：{e}。\n启动器仍然会继续运行，但日志将会无法记录，如果后续发生错误，将无法提供帮助。"
             ),
-            utils::IconType::Error,
         );
         LoggingGuard::default()
     })
@@ -75,15 +74,7 @@ async fn init_inner(
     let nosie_targets = AhoCorasick::builder()
         .match_kind(MatchKind::LeftmostFirst)
         .start_kind(StartKind::Anchored)
-        .build(&[
-            "async_io",
-            "polling",
-            "react",
-            "hyper",
-            "aliyun_sls",
-            "winit",
-            "zbus",
-        ])?;
+        .build(NOISE_TARGETS)?;
     let nosie_filter = filter_fn(move |metadata| {
         let target = metadata.target();
         let input = Input::new(target).anchored(Anchored::Yes);
@@ -176,10 +167,17 @@ mod tests {
 
         for target in NOISE_TARGETS {
             let input = Input::new(target).anchored(Anchored::Yes);
-            assert!(nosie_targets.find(input).is_some(), "Target '{}' should be matched", target);
+            assert!(
+                nosie_targets.find(input).is_some(),
+                "Target '{}' should be matched",
+                target
+            );
         }
 
         let input = Input::new("some_other_target").anchored(Anchored::Yes);
-        assert!(nosie_targets.find(input).is_none(), "Target 'some_other_target' should not be matched");
+        assert!(
+            nosie_targets.find(input).is_none(),
+            "Target 'some_other_target' should not be matched"
+        );
     }
 }

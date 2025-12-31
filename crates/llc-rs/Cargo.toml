@@ -10,7 +10,9 @@ version.workspace = true
 
 [dependencies]
 bytes.workspace = true
+eyre.workspace = true
 futures-util = { workspace = true, features = ["io"] }
+indenter.workspace = true
 os_info.workspace = true
 reqwest = { workspace = true, features = ["json", "stream", "rustls-tls"] }
 semver = { workspace = true, features = ["serde"] }

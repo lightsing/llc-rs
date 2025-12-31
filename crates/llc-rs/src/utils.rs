@@ -5,6 +5,8 @@ use std::{fmt::Debug, path::Path};
 use tokio::io::AsyncWriteExt;
 use url::Url;
 
+pub mod eyre_backtrace;
+
 #[derive(Debug, thiserror::Error)]
 pub enum ReqwestExtError {
     #[error(transparent)]

@@ -9,7 +9,7 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.2.3"
+version = "0.2.4"
 
 [workspace.dependencies]
 aho-corasick = "1.1"
@@ -23,6 +23,7 @@ flate2 = "1.1"
 font-kit = "0.14"
 futures-util = { version = "0.3", default-features = false }
 hex = "0.4"
+indenter = "0.3"
 llc-rs = { path = "crates/llc-rs" }
 msgbox = "0.7"
 os_info = { version = "3", default-features = false }
@@ -50,6 +51,7 @@ winres = "0.1"
 
 [profile.release]
 codegen-units = 1
+debug = 1
 lto = true
 opt-level = "s"
 panic = "abort"

@@ -8,7 +8,7 @@
 #[macro_use]
 extern crate tracing;
 
-use crate::config::LauncherConfig;
+use crate::{config::LauncherConfig, splash::set_error_string};
 use directories::ProjectDirs;
 use eframe::egui;
 use eyre::{Context, ContextCompat};
@@ -21,10 +21,8 @@ const APP_NAME: &str = "llc-launcher-rs";
 mod config;
 mod llc;
 mod logging;
-#[cfg(not(debug_assertions))]
 mod self_update;
 mod splash;
-mod utils;
 
 #[cfg(test)]
 #[ctor::ctor]
@@ -40,50 +38,57 @@ fn setup_test() {
 }
 
 fn main() {
+    llc_rs::utils::eyre_backtrace::install().unwrap();
+    let (shutdown_tx, shutdown_rx) = tokio::sync::broadcast::channel::<()>(1);
+
+    let options = eframe::NativeOptions {
+        viewport: egui::ViewportBuilder::default()
+            .with_decorations(false)
+            .with_resizable(false)
+            .with_inner_size([1280.0, 800.0])
+            .with_always_on_top(),
+        centered: true,
+        ..Default::default()
+    };
+
     let init_res = match init() {
         Ok(res) => res,
         Err(e) => {
             eprintln!("{e}");
-            utils::create_msgbox(
-                "启动器出错了！",
-                &format!("无法初始化：{e}。"),
-                utils::IconType::Error,
-            );
+            shutdown_tx.send(()).unwrap();
+            eframe::run_native(
+                "Limbus Company Launcher",
+                options,
+                Box::new(|cc| Ok(Box::new(splash::SplashScreen::new(cc, false, shutdown_rx)))),
+            )
+            .unwrap();
             exit(-1);
         }
     };
 
     let is_tool = init_res.is_tool;
-    let shutdown_rx = init_res.shutdown_tx.subscribe();
+    let _shutdown_rx = shutdown_tx.subscribe();
 
-    let handle = std::thread::spawn(move || {
+    std::thread::spawn(move || {
         tokio::runtime::Builder::new_current_thread()
             .enable_all()
             .build()
             .unwrap()
-            .block_on(main_inner(init_res))
+            .block_on(main_inner(init_res, shutdown_tx, shutdown_rx))
     });
 
-    if is_tool {
-        let options = eframe::NativeOptions {
-            viewport: egui::ViewportBuilder::default()
-                .with_decorations(false)
-                .with_resizable(false)
-                .with_inner_size([1280.0, 800.0])
-                .with_always_on_top(),
-            centered: true,
-            ..Default::default()
-        };
-
-        eframe::run_native(
-            "Limbus Company Launcher",
-            options,
-            Box::new(|cc| Ok(Box::new(splash::SplashScreen::new(cc, shutdown_rx)))),
-        )
-        .unwrap();
-    } else {
-        handle.join().unwrap();
-    }
+    eframe::run_native(
+        "Limbus Company Launcher",
+        options,
+        Box::new(|cc| {
+            Ok(Box::new(splash::SplashScreen::new(
+                cc,
+                is_tool,
+                _shutdown_rx,
+            )))
+        }),
+    )
+    .unwrap();
 }
 
 async fn main_inner(
@@ -93,9 +98,9 @@ async fn main_inner(
         llc_config,
         self_path,
         is_tool,
-        shutdown_tx,
-        shutdown_rx,
     }: InitResources,
+    shutdown_tx: tokio::sync::broadcast::Sender<()>,
+    shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 ) {
     let logging_guard = logging::init(&dirs, &launcher_config, shutdown_rx).await;
 
@@ -106,24 +111,17 @@ async fn main_inner(
     }
 
     if let Err(e) = {
-        #[cfg(not(debug_assertions))]
         if is_tool {
             llc::run(&dirs, llc_config.clone()).await
         } else {
             self_update::run(&dirs, &self_path, &llc_config).await
         }
-        #[cfg(debug_assertions)]
-        llc::run(&dirs, llc_config.clone()).await
     } {
         error!("{e:?}");
-        utils::create_msgbox(
-            "启动器崩溃了！",
-            &format!(
-                "{e}\n请检查日志文件（位于 {}）以获取更多信息。",
-                dirs.data_dir().join("logs").display()
-            ),
-            utils::IconType::Error,
-        );
+        set_error_string(format!(
+            "启动器崩溃了！请检查日志文件（位于 {}）以获取更多信息。\n{e:?}",
+            dirs.data_dir().join("logs").display()
+        ));
     }
 
     // for migration
@@ -144,12 +142,9 @@ pub struct InitResources {
     is_tool: bool,
     launcher_config: LauncherConfig,
     llc_config: LLCConfig,
-    shutdown_tx: tokio::sync::broadcast::Sender<()>,
-    shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 }
 
 fn init() -> eyre::Result<InitResources> {
-    let (shutdown_tx, shutdown_rx) = tokio::sync::broadcast::channel::<()>(1);
     let dirs = ProjectDirs::from("me", ORGANIZATION, APP_NAME).context("无法侦测用户目录")?;
 
     fs::create_dir_all(dirs.cache_dir()).context("无法创建缓存目录")?;
@@ -164,7 +159,7 @@ fn init() -> eyre::Result<InitResources> {
         .canonicalize()
         .context("无法获取缓存目录路径")?;
 
-    let is_tool = self_path.starts_with(&cache_dir);
+    let is_tool = self_path.starts_with(&cache_dir) || cfg!(debug_assertions);
 
     let (launcher_config, llc_config) = config::load(&dirs);
 
@@ -174,7 +169,5 @@ fn init() -> eyre::Result<InitResources> {
         is_tool,
         launcher_config,
         llc_config,
-        shutdown_tx,
-        shutdown_rx,
     })
 }
