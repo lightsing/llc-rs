@@ -1,5 +1,5 @@
 use crate::{config::LauncherConfig, utils};
-use aho_corasick::{AhoCorasick, AhoCorasickKind, Anchored, Input, StartKind};
+use aho_corasick::{AhoCorasick, Anchored, Input, MatchKind, StartKind};
 use directories::ProjectDirs;
 use eyre::Context;
 use std::fs;
@@ -12,6 +12,17 @@ use tracing_subscriber::{
     filter::filter_fn, fmt, fmt::writer::MakeWriterExt, layer::SubscriberExt,
     util::SubscriberInitExt,
 };
+
+static NOISE_TARGETS: &[&str] = &[
+    "async_io",
+    "polling",
+    "react",
+    "hyper",
+    "aliyun_sls",
+    "winit",
+    "zbus",
+];
+
 #[derive(Default)]
 pub(crate) struct LoggingGuard {
     _file_appender_guard: Option<WorkerGuard>,
@@ -62,7 +73,7 @@ async fn init_inner(
         tracing_appender::non_blocking(std::io::stderr());
 
     let nosie_targets = AhoCorasick::builder()
-        .kind(Some(AhoCorasickKind::DFA))
+        .match_kind(MatchKind::LeftmostFirst)
         .start_kind(StartKind::Anchored)
         .build(&[
             "async_io",
@@ -149,4 +160,26 @@ async fn init_inner(
         _stderr_appender_guard: Some(stderr_appender_guard),
         sls_reporter,
     })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_filter() {
+        let nosie_targets = AhoCorasick::builder()
+            .match_kind(MatchKind::LeftmostFirst)
+            .start_kind(StartKind::Anchored)
+            .build(NOISE_TARGETS)
+            .unwrap();
+
+        for target in NOISE_TARGETS {
+            let input = Input::new(target).anchored(Anchored::Yes);
+            assert!(nosie_targets.find(input).is_some(), "Target '{}' should be matched", target);
+        }
+
+        let input = Input::new("some_other_target").anchored(Anchored::Yes);
+        assert!(nosie_targets.find(input).is_none(), "Target 'some_other_target' should not be matched");
+    }
 }
