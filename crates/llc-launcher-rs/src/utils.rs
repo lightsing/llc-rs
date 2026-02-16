@@ -1,6 +1,19 @@
-use eyre::InstallError;
+use eyre::{EyreHandler, InstallError};
 use indenter::indented;
-use std::{backtrace::Backtrace, error::Error, iter};
+use llc_rs::utils::ResultExt;
+use std::{
+    backtrace::Backtrace, collections::VecDeque, error::Error, fmt::Formatter, iter, sync::Mutex,
+};
+
+static LAST_ERRORS: Mutex<VecDeque<String>> = Mutex::new(VecDeque::new());
+
+pub fn next_error() -> Option<String> {
+    LAST_ERRORS.lock().infallible().front().cloned()
+}
+
+pub fn consume_next_error() -> Option<String> {
+    LAST_ERRORS.lock().infallible().pop_front()
+}
 
 /// A custom context type for capturing backtraces on stable with `eyre`
 #[derive(Debug)]
@@ -8,12 +21,8 @@ struct Handler {
     backtrace: Backtrace,
 }
 
-impl eyre::EyreHandler for Handler {
-    fn debug(
-        &self,
-        error: &(dyn Error + 'static),
-        f: &mut core::fmt::Formatter<'_>,
-    ) -> core::fmt::Result {
+impl EyreHandler for Handler {
+    fn debug(&self, error: &(dyn Error + 'static), f: &mut Formatter<'_>) -> core::fmt::Result {
         use core::fmt::Write as _;
 
         if f.alternate() {
@@ -59,10 +68,18 @@ impl eyre::EyreHandler for Handler {
     }
 }
 
-fn hook(_e: &(dyn Error + 'static)) -> Box<dyn eyre::EyreHandler> {
-    Box::new(Handler {
+fn hook(_e: &(dyn Error + 'static)) -> Box<dyn EyreHandler> {
+    let handler = Handler {
         backtrace: Backtrace::force_capture(),
-    })
+    };
+
+    let mut error_message = String::new();
+    let mut formatter = Formatter::new(&mut error_message, Default::default());
+    handler.debug(_e, &mut formatter).ok();
+
+    LAST_ERRORS.lock().infallible().push_back(error_message);
+
+    Box::new(handler)
 }
 
 fn is_noisy_backtrace_line(line: &str) -> bool {
@@ -73,6 +90,6 @@ fn is_noisy_backtrace_line(line: &str) -> bool {
 }
 
 /// Install the given hook as the global error report hook
-pub fn install() -> Result<(), InstallError> {
+pub fn install_eyre_hook() -> Result<(), InstallError> {
     eyre::set_hook(Box::new(hook))
 }

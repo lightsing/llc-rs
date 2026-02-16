@@ -46,7 +46,7 @@ pub async fn run(dirs: &ProjectDirs, self_path: &Path, config: &LLCConfig) -> ey
             self_path.display(),
             tool_path.display()
         );
-        launch_tool(&tool_path, &self_path)
+        launch_tool(&tool_path, self_path)
     }
 
     info!(
@@ -60,7 +60,7 @@ pub async fn run(dirs: &ProjectDirs, self_path: &Path, config: &LLCConfig) -> ey
         .context("无法下载更新包")?;
 
     extract_update(tarball, dirs).await?;
-    launch_tool(&tool_path, &self_path)
+    launch_tool(&tool_path, self_path)
 }
 
 fn launch_tool(tool_path: &Path, self_path: &Path) -> ! {

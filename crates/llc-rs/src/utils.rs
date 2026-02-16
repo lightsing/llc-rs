@@ -5,8 +5,6 @@ use std::{fmt::Debug, path::Path};
 use tokio::io::AsyncWriteExt;
 use url::Url;
 
-pub mod eyre_backtrace;
-
 #[derive(Debug, thiserror::Error)]
 pub enum ReqwestExtError {
     #[error(transparent)]
@@ -43,27 +41,25 @@ pub trait ClientExt {
 }
 
 impl ClientExt for reqwest::Client {
-    fn try_get<I>(&self, urls: I) -> impl Future<Output = Result<Response, ReqwestExtError>> + Send
+    async fn try_get<I>(&self, urls: I) -> Result<Response, ReqwestExtError>
     where
         I: Iterator<Item = Url> + Send,
     {
-        async move {
-            let mut last_err = None;
-            for url in urls {
-                match self
-                    .get(url)
-                    .send()
-                    .await
-                    .and_then(|res| res.error_for_status())
-                {
-                    Ok(res) => return Ok(res),
-                    Err(e) => {
-                        last_err = Some(e);
-                    }
+        let mut last_err = None;
+        for url in urls {
+            match self
+                .get(url)
+                .send()
+                .await
+                .and_then(|res| res.error_for_status())
+            {
+                Ok(res) => return Ok(res),
+                Err(e) => {
+                    last_err = Some(e);
                 }
             }
-            Err(last_err.unwrap().into())
         }
+        Err(last_err.infallible().into())
     }
 
     fn download<I>(&self, urls: I) -> impl Future<Output = Result<Bytes, ReqwestExtError>> + Send

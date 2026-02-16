@@ -58,7 +58,7 @@ pub static DEFAULT_CLIENT: LazyLock<Client> = LazyLock::new(|| {
         .use_rustls_tls()
         .https_only(true)
         .build()
-        .unwrap()
+        .infallible()
 });
 
 #[cfg(test)]

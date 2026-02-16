@@ -1,4 +1,3 @@
-use crate::{splash::set_error_string};
 use directories::ProjectDirs;
 use eyre::Context;
 use llc_rs::{LLCConfig, utils::ResultExt};
@@ -53,10 +52,6 @@ pub fn load(dirs: &ProjectDirs) -> (LauncherConfig, LLCConfig) {
         Ok(config) => config,
         Err(e) => {
             eprintln!("{e}");
-            set_error_string(format!(
-                "无法加载配置文件：{e}。\n启动器将会退出。\n如果不知道如何解决，请删除如下目录：{}",
-                dirs.config_dir().display()
-            ));
             std::process::exit(-1);
         }
     }

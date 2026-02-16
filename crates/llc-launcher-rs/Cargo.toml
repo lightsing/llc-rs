@@ -13,18 +13,20 @@ aho-corasick.workspace = true
 bytes.workspace = true
 ctor.workspace = true
 directories.workspace = true
-eframe.workspace = true
+ecolor = { workspace = true, features = ["color-hex"] }
+eframe = { workspace = true, features = [] }
+egui = { workspace = true, features = [] }
 eyre.workspace = true
 filetime.workspace = true
 flate2.workspace = true
 font-kit.workspace = true
+indenter.workspace = true
 llc-rs.workspace = true
 reqwest = { workspace = true, features = ["rustls-tls", "json"] }
 semver = { workspace = true, features = ["serde"] }
 serde = { workspace = true, features = ["derive"] }
 serde_json.workspace = true
 serde_with = { workspace = true, features = ["hex"] }
-sevenz-rust.workspace = true
 tar.workspace = true
 tokio = { workspace = true, features = ["rt", "fs", "io-util", "time", "macros"] }
 toml.workspace = true

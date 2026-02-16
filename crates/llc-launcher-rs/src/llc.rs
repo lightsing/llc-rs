@@ -1,28 +1,24 @@
-use crate::splash::{set_state_str, set_state_string};
 use bytes::Bytes;
-use directories::ProjectDirs;
 use eyre::{Context, ContextCompat};
 use flate2::read::GzDecoder;
 use llc_rs::{
-    DEFAULT_CLIENT, LLCConfig, get_limbus_company_install_path, launch_limbus_company,
+    LLCConfig, get_limbus_company_install_path, launch_limbus_company,
     npm::{DistInfo, NpmClient},
-    utils::{ClientExt, ResultExt},
+    utils::OptionExt,
 };
 use serde_json::Value;
 use std::path::{Path, PathBuf};
-use url::Url;
 
 const PKG_NAME: &str = "@lightsing/llc-zh-cn";
 
-pub async fn run(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> {
-    install_or_update_llc(dirs, llc_config)
+pub async fn run(llc_config: LLCConfig) -> eyre::Result<()> {
+    install_or_update_llc(llc_config)
         .await
         .inspect_err(|e| error!("Failed to install or update LLC: {e}"))
         .context("无法安装或更新 LLC")?;
 
     info!("LLC installation or update completed successfully.");
 
-    set_state_str("启动 Limbus Company...");
     launch_limbus_company()
         .inspect_err(|e| error!("cannot start Limbus Company: {e}"))
         .context("无法启动 Limbus Company")?;
@@ -61,8 +57,7 @@ async fn copy_self_to_launcher() -> eyre::Result<()> {
     Ok(())
 }
 
-async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyre::Result<()> {
-    set_state_str("获取 Limbus Company 安装路径...");
+async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
     let game_root = get_limbus_company_install_path()
         .inspect_err(|e| error!("failed to get Limbus Company install path: {e}"))
         .context("无法获取 Limbus Company 安装路径")?;
@@ -85,7 +80,6 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
         }
     };
 
-    set_state_str("获取最新 LLC 版本信息...");
     let latest_version = NpmClient::new(llc_config.npm_registries())
         .get_lastest_version(PKG_NAME)
         .await
@@ -97,15 +91,11 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
     info!("Latest version available: {tag}");
 
     if installed_tag == tag {
-        set_state_str("LLC 已是最新版本");
         info!("LLC is already up to date (version {}).", installed_tag);
         return Ok(());
     }
 
-    let font_installer = tokio::spawn(install_font_if_needed(
-        dirs.cache_dir().to_path_buf(),
-        game_root.clone(),
-    ));
+    let font_installer = tokio::spawn(install_font_if_needed(game_root.clone()));
     let cleaner = tokio::spawn(cleanup_installed_llc(game_root.clone()));
     let downloader = tokio::spawn(download_release(llc_config, latest_version.dist));
 
@@ -138,7 +128,6 @@ async fn install_or_update_llc(dirs: &ProjectDirs, llc_config: LLCConfig) -> eyr
 }
 
 fn get_version_installed(game_root: &Path) -> eyre::Result<Option<String>> {
-    set_state_str("检查已安装的 LLC 版本...");
     let version_file = game_root
         .join("LimbusCompany_Data")
         .join("Lang")
@@ -192,13 +181,8 @@ async fn cleanup_installed_llc(game_root: PathBuf) {
     }
 }
 
-async fn install_font_if_needed(cache_dir: PathBuf, game_root: PathBuf) -> eyre::Result<()> {
-    const FONT_SOURCES: &[&str] = &[
-        "https://mirror.nju.edu.cn/github-release/be5invis/Sarasa-Gothic/Sarasa%20Gothic%2C%20Version%201.0.35/SarasaGothicSC-TTF-1.0.35.7z",
-        "https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa%20Gothic%2C%20Version%201.0.35/SarasaGothicSC-TTF-1.0.35.7z",
-        "https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.35/SarasaGothicSC-TTF-1.0.35.7z",
-    ];
-    const FILENAME: &str = "Font.7z";
+async fn install_font_if_needed(game_root: PathBuf) -> eyre::Result<()> {
+    static FONT_FILE: &[u8] = include_bytes!("../../../assets/SarasaGothicSC-Bold.ttf");
 
     let font_file = game_root
         .join("LimbusCompany_Data")
@@ -207,58 +191,30 @@ async fn install_font_if_needed(cache_dir: PathBuf, game_root: PathBuf) -> eyre:
         .join("Font")
         .join("Context")
         .join("ChineseFont.ttf");
+
     if font_file.exists() {
-        info!("Font file is already installed and valid.");
+        info!("Font file is already installed.");
         return Ok(());
     } else {
         info!("Font file does not exist, installing...");
     }
-    set_state_str("安装所需字体...");
-    let path = cache_dir.join(FILENAME);
-    info!("Downloading font file to {}", path.display());
-    DEFAULT_CLIENT
-        .download_to(
-            FONT_SOURCES.iter().map(|&url| Url::parse(url).infallible()),
-            &path,
-        )
-        .await?;
 
-    sevenz_rust::decompress_file(&path, &cache_dir)?;
-
-    tokio::fs::remove_file(&path)
-        .await
-        .inspect_err(|e| warn!("Failed to remove temporary font archive: {e}"))
-        .ok();
-
-    let extracted_font = cache_dir.join("SarasaGothicSC-Bold.ttf");
-    tokio::fs::create_dir_all(font_file.parent().unwrap()).await?;
-    tokio::fs::copy(extracted_font, font_file).await?;
-
-    let Ok(mut dir) = tokio::fs::read_dir(&cache_dir).await else {
-        warn!("Failed to read cache directory for cleanup");
-        return Ok(());
-    };
-    while let Ok(Some(entry)) = dir.next_entry().await {
-        if entry.path().extension().and_then(|s| s.to_str()) == Some("ttf") {
-            tokio::fs::remove_file(entry.path())
-                .await
-                .inspect_err(|e| warn!("Failed to remove temporary font file: {e}"))
-                .ok();
-        }
-    }
-
+    tokio::fs::create_dir_all(font_file.parent().infallible()).await?;
+    tokio::fs::write(&font_file, FONT_FILE).await?;
+    info!(
+        "Font file installed successfully at {}",
+        font_file.display()
+    );
     Ok(())
 }
 
 async fn download_release(llc_config: LLCConfig, dist: DistInfo) -> eyre::Result<Bytes> {
-    set_state_str("下载 LLC 文件...");
     let client = NpmClient::new(llc_config.npm_registries());
     let buffer = client.download_dist(dist).await?;
     Ok(buffer)
 }
 
 async fn extract_apply_release(tarball: Bytes, game_root: PathBuf) -> eyre::Result<()> {
-    set_state_str("解压并应用 LLC 文件...");
     let tar = GzDecoder::new(tarball.as_ref());
     let mut archive = tar::Archive::new(tar);
 
@@ -279,7 +235,6 @@ async fn extract_apply_release(tarball: Bytes, game_root: PathBuf) -> eyre::Resu
         {
             tokio::fs::create_dir_all(parent).await?;
         }
-        set_state_string(format!("正在释放：\n{}", path.display()));
         file.unpack(&dest_path)?;
         let file_time = filetime::FileTime::now();
         filetime::set_file_atime(&dest_path, file_time)?;
@@ -293,16 +248,6 @@ async fn extract_apply_release(tarball: Bytes, game_root: PathBuf) -> eyre::Resu
 mod tests {
     use super::*;
     use tokio::test;
-
-    #[test]
-    async fn test_install_font_if_needed() {
-        let dirs = ProjectDirs::from("com", "lightsing", "llc-launcher-rs").unwrap();
-        let game_root = get_limbus_company_install_path().unwrap();
-
-        install_font_if_needed(dirs.cache_dir().to_path_buf(), game_root)
-            .await
-            .unwrap();
-    }
 
     #[test]
     async fn test_download_extract_release() {

@@ -1,4 +1,4 @@
-use crate::{config::LauncherConfig, splash::set_error_string};
+use crate::config::LauncherConfig;
 use aho_corasick::{AhoCorasick, Anchored, Input, MatchKind, StartKind};
 use directories::ProjectDirs;
 use eyre::Context;
@@ -36,15 +36,12 @@ pub async fn init(
     config: &LauncherConfig,
     shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 ) -> LoggingGuard {
-    init_inner(dirs, config, shutdown_rx).await.unwrap_or_else(|e| {
-        eprintln!("{e}");
-        set_error_string(
-            format!(
-                "无法初始化日志系统：{e}。\n启动器仍然会继续运行，但日志将会无法记录，如果后续发生错误，将无法提供帮助。"
-            ),
-        );
-        LoggingGuard::default()
-    })
+    init_inner(dirs, config, shutdown_rx)
+        .await
+        .unwrap_or_else(|e| {
+            eprintln!("{e}");
+            LoggingGuard::default()
+        })
 }
 
 async fn init_inner(

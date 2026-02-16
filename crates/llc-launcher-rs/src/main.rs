@@ -1,4 +1,5 @@
 #![feature(exit_status_error)]
+#![feature(formatting_options)]
 #![cfg_attr(
     all(target_os = "windows", not(debug_assertions)),
     windows_subsystem = "windows"
@@ -8,7 +9,7 @@
 #[macro_use]
 extern crate tracing;
 
-use crate::{config::LauncherConfig, splash::set_error_string};
+use crate::config::LauncherConfig;
 use directories::ProjectDirs;
 use eframe::egui;
 use eyre::{Context, ContextCompat};
@@ -23,6 +24,7 @@ mod llc;
 mod logging;
 mod self_update;
 mod splash;
+mod utils;
 
 #[cfg(test)]
 #[ctor::ctor]
@@ -38,15 +40,19 @@ fn setup_test() {
 }
 
 fn main() {
-    llc_rs::utils::eyre_backtrace::install().unwrap();
+    utils::install_eyre_hook().expect("Failed to install eyre");
+
     let (shutdown_tx, shutdown_rx) = tokio::sync::broadcast::channel::<()>(1);
 
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
+            .with_visible(false)
             .with_decorations(false)
             .with_resizable(false)
-            .with_inner_size([1280.0, 800.0])
-            .with_always_on_top(),
+            .with_transparent(true)
+            .with_has_shadow(false)
+            .with_always_on_top()
+            .with_inner_size([1280.0, 800.0]),
         centered: true,
         ..Default::default()
     };
@@ -55,13 +61,13 @@ fn main() {
         Ok(res) => res,
         Err(e) => {
             eprintln!("{e}");
-            shutdown_tx.send(()).unwrap();
+            shutdown_tx.send(()).ok();
             eframe::run_native(
                 "Limbus Company Launcher",
                 options,
                 Box::new(|cc| Ok(Box::new(splash::SplashScreen::new(cc, false, shutdown_rx)))),
             )
-            .unwrap();
+            .expect("Failed to run the launcher splash screen");
             exit(-1);
         }
     };
@@ -73,7 +79,7 @@ fn main() {
         tokio::runtime::Builder::new_current_thread()
             .enable_all()
             .build()
-            .unwrap()
+            .expect("Failed to create Tokio runtime")
             .block_on(main_inner(init_res, shutdown_tx, shutdown_rx))
     });
 
@@ -88,7 +94,7 @@ fn main() {
             )))
         }),
     )
-    .unwrap();
+    .expect("Failed to run the launcher splash screen");
 }
 
 async fn main_inner(
@@ -112,16 +118,12 @@ async fn main_inner(
 
     if let Err(e) = {
         if is_tool {
-            llc::run(&dirs, llc_config.clone()).await
+            llc::run(llc_config.clone()).await
         } else {
             self_update::run(&dirs, &self_path, &llc_config).await
         }
     } {
         error!("{e:?}");
-        set_error_string(format!(
-            "启动器崩溃了！请检查日志文件（位于 {}）以获取更多信息。\n{e:?}",
-            dirs.data_dir().join("logs").display()
-        ));
     }
 
     // for migration
@@ -131,7 +133,7 @@ async fn main_inner(
 
     shutdown_tx.send(()).ok();
     if let Some(reporter) = logging_guard.sls_reporter {
-        reporter.await.unwrap();
+        reporter.await.ok();
     }
 }
 
