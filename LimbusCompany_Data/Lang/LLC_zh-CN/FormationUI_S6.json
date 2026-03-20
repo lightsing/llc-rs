@@ -230,23 +230,23 @@
     },
     {
       "id": "character_list_skin_not_existed",
-      "content": "没有符合条件的外形。"
+      "content": "没有符合条件的外观。"
     },
     {
       "id": "character_list_title_all_skin",
-      "content": "外形投影"
+      "content": "外观投影"
     },
     {
       "id": "character_list_title_all_skin_with_character_name",
-      "content": "外形投影：{0}"
+      "content": "外观投影：{0}"
     },
     {
       "id": "mainui_common_skin",
-      "content": "外形投影"
+      "content": "外观投影"
     },
     {
       "id": "formation_side_button_skin",
-      "content": "外形投影"
+      "content": "外观投影"
     }
   ]
 }

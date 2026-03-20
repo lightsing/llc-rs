@@ -1255,6 +1255,14 @@
     {
       "id": "10514_getCondition_gacksung",
       "content": "脑叶公司E.G.O::黄蜂【变调】默尔索 3阶段同步完成"
+    },
+    {
+      "id": "11215_getCondition_normal",
+      "content": "LCE E.G.O::AEDD 格里高尔 获得时"
+    },
+    {
+      "id": "11215_getCondition_gacksung",
+      "content": "LCE E.G.O::AEDD 格里高尔 3阶段同步完成"
     }
   ]
 }

@@ -2653,12 +2653,12 @@
     {
       "id": "LCE연구원1",
       "name": "畏怯的研究员",
-      "nickName": "LCE事务部"
+      "nickName": "LCE事务组"
     },
     {
       "id": "LCE연구원2",
       "name": "逃跑的研究员",
-      "nickName": "LCE事务部"
+      "nickName": "LCE事务组"
     },
     {
       "id": "9장소드다침",
@@ -2763,7 +2763,7 @@
     {
       "id": "라비",
       "name": "拉维",
-      "nickName": "LCE事务部"
+      "nickName": "LCE事务组"
     },
     {
       "id": "LCA네임드",

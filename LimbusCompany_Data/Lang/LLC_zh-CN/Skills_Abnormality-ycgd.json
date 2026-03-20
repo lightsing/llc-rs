@@ -215,7 +215,7 @@
                   "desc": "[OnSucceedAttack] 对目标施加3层[Laceration]"
                 },
                 {
-                  "desc": "[OnSucceedAttack] 下回合使自身获得1层伤害强化 "
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[AttackDmgUp]"
                 }
               ]
             },

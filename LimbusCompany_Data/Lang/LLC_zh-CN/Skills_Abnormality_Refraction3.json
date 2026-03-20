@@ -452,7 +452,7 @@
                   "desc": "[OnSucceedAttack] 下回合对目标施加1层[AttackDmgDown]"
                 },
                 {
-                  "desc": "[OnSucceedAttackHead] 下回合使自身获得1层伤害强化 "
+                  "desc": "[OnSucceedAttackHead] 下回合使自身获得1层[AttackDmgUp]"
                 }
               ]
             }
@@ -474,7 +474,7 @@
                   "desc": "[OnSucceedAttack] 对目标施加3层掌 "
                 },
                 {
-                  "desc": "[OnSucceedAttack] 下回合使自身获得1层伤害强化 "
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[AttackDmgUp]"
                 }
               ]
             },
@@ -484,7 +484,7 @@
                   "desc": "[OnSucceedAttack] 对目标施加3层掌 "
                 },
                 {
-                  "desc": "[OnSucceedAttack] 下回合使自身获得1层伤害强化 "
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[AttackDmgUp]"
                 }
               ]
             }

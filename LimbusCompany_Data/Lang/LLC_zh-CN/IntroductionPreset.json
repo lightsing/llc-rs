@@ -1899,6 +1899,22 @@
     {
       "id": "introduce_sentence_238",
       "content": "绝美的……{0}。"
+    },
+    {
+      "id": "introduce_word_239",
+      "content": "实验"
+    },
+    {
+      "id": "introduce_sentence_239",
+      "content": "来，开始{0}吧。"
+    },
+    {
+      "id": "introduce_word_240",
+      "content": "摇曳"
+    },
+    {
+      "id": "introduce_sentence_240",
+      "content": "直到双手触及那{0}为止，不论多少次……！"
     }
   ]
 }

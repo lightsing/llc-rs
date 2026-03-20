@@ -34,7 +34,7 @@
         },
         {
           "abilityID": 91583,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         }
       ]
     },
@@ -337,7 +337,7 @@
         },
         {
           "abilityID": 91831,
-          "simpleDesc": "根据[Charge]层数相应获得1层伤害强化 或[Charge]层数"
+          "simpleDesc": "根据[Charge]层数相应获得1层[AttackDmgUp]或[Charge]层数"
         }
       ]
     },
@@ -348,7 +348,7 @@
       "simpleDesc": [
         {
           "abilityID": 9184,
-          "simpleDesc": "根据[Charge]层数相应获得1层伤害强化 或[Charge]层数"
+          "simpleDesc": "根据[Charge]层数相应获得1层[AttackDmgUp]或[Charge]层数"
         },
         {
           "abilityID": 91841,

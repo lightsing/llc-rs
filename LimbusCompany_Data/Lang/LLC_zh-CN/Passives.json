@@ -88,7 +88,7 @@
     {
       "id": 1060301,
       "name": "愉悦",
-      "desc": "下回合开始时，使自身恢复(暴食共鸣数x2)点理智值。"
+      "desc": "下回合开始时，使自身恢复(暴食共鸣数×2)点理智值。"
     },
     {
       "id": 1070101,
@@ -158,7 +158,7 @@
     {
       "id": 1100401,
       "name": "随兴游乐",
-      "desc": "闪避成功后，以(忧郁共鸣数x5)%的概率使自身的混乱阈值后移相当于闪避技能威力的数值"
+      "desc": "闪避成功后，以(忧郁共鸣数×5)%的概率使自身的混乱阈值后移相当于闪避技能威力的数值"
     },
     {
       "id": 1110101,
@@ -1029,7 +1029,7 @@
     {
       "id": 1060801,
       "name": "以钥窥视",
-      "desc": "丢弃 技能时，根据被丢弃技能的级别，使自身获得相应层数的伤害强化 (每回合最多3层)"
+      "desc": "丢弃 技能时，根据被丢弃技能的级别，使自身获得相应层数的[AttackDmgUp](每回合最多3层)"
     },
     {
       "id": 1060811,
@@ -1290,13 +1290,13 @@
     {
       "id": 1120901,
       "name": "无尽噩梦",
-      "desc": "- 战斗开始时，自身的理智值与上回合开始时每相差5点，使自身获得1层伤害强化 并对自身施加1层[Vulnerable](每回合最多3次)\n- 目标每带有1级[Sinking]强度，对其造成的伤害+1%(最多+20%)",
+      "desc": "- 战斗开始时，自身的理智值与上回合开始时每相差5点，使自身获得1层[AttackDmgUp]并对自身施加1层[Vulnerable](每回合最多3次)\n- 目标每带有1级[Sinking]强度，对其造成的伤害+1%(最多+20%)",
       "summary": ""
     },
     {
       "id": 1120911,
       "name": "无尽噩梦",
-      "desc": "- 战斗开始时，自身的理智值与上回合开始时每相差5点，使自身获得1层伤害强化 并对自身施加1层[Vulnerable](每回合最多5次)\n- 目标每带有1级[Sinking]强度，对其造成的伤害+2%(最多+40%)",
+      "desc": "- 战斗开始时，自身的理智值与上回合开始时每相差5点，使自身获得1层[AttackDmgUp]并对自身施加1层[Vulnerable](每回合最多5次)\n- 目标每带有1级[Sinking]强度，对其造成的伤害+2%(最多+40%)",
       "summary": ""
     },
     {
@@ -1490,7 +1490,7 @@
     {
       "id": 1060901,
       "name": "震动结合变形战斗拐杖(未许可发明)",
-      "desc": "回合结束时，根据自身本回合造成[VibrationExplosion]的次数，下回合使自身获得相应层数的伤害强化 (最多3层)"
+      "desc": "回合结束时，根据自身本回合造成[VibrationExplosion]的次数，下回合使自身获得相应层数的[AttackDmgUp](最多3层)"
     },
     {
       "id": 1060921,
@@ -1668,8 +1668,8 @@
     {
       "id": 1091002,
       "name": "放我一马我保证一定会好好完成派送的！",
-      "desc": "<连续遭遇战专属> 通过“战略性休息福利模式 ”撤退后，若自身重返战斗，则使自身的派送箱-罗佳 层数减半(每场战斗最多1次，向上取整)",
-      "summary": "使派送箱-罗佳 层数减半"
+      "desc": "<连续遭遇战专属> 通过“战略性休息福利模式 ”撤退后，若自身重返战斗，则使自身的DevyatDimensionalSack层数减半(每场战斗最多1次，向上取整)",
+      "summary": "使DevyatDimensionalSack层数减半"
     },
     {
       "id": 1091021,
@@ -1858,12 +1858,12 @@
     {
       "id": 1031004,
       "name": "血甲",
-      "desc": "自身攻击结束后，若击杀目标，则获得相当于目标体力上限10%的[BloodDinner](每回合最多100层，若是集中遭遇战，则改为破坏部位)\n回合结束时，自身每失去15%的体力，下回合使自身获得1层伤害强化 。(最多3层)\n战斗中友方单位受到致死的流血 伤害时，使其在本回合内不会因流血 伤害而阵亡。(每场战斗每名友方单位最多1次)"
+      "desc": "自身攻击结束后，若击杀目标，则获得相当于目标体力上限10%的[BloodDinner](每回合最多100层，若是集中遭遇战，则改为破坏部位)\n回合结束时，自身每失去15%的体力，下回合使自身获得1层[AttackDmgUp]。(最多3层)\n战斗中友方单位受到致死的流血 伤害时，使其在本回合内不会因流血 伤害而阵亡。(每场战斗每名友方单位最多1次)"
     },
     {
       "id": 1031021,
       "name": "“族人们啊，去满足压抑已久的饥饿吧”",
-      "desc": "战斗开始时，现存体力最低的1名友方单位每失去20%的体力，使其获得1层伤害强化 。(最多3层)\n- 若该友方单位属于<血魔>，则改为每失去15%的体力，获得1层伤害强化 。(最多3层)"
+      "desc": "战斗开始时，现存体力最低的1名友方单位每失去20%的体力，使其获得1层[AttackDmgUp]。(最多3层)\n- 若该友方单位属于<血魔>，则改为每失去15%的体力，获得1层[AttackDmgUp]。(最多3层)"
     },
     {
       "id": 1061101,
@@ -2341,12 +2341,12 @@
     {
       "id": 1011401,
       "name": "黑风马蹄",
-      "desc": "符合以下条件时，使自身获得1层[BreakthroughHorse]\n- 自身的攻击开始时，自身的速度值高于目标至少2点\n- 自身通过技能触发2次[VibrationExplosion]时(包括E.G.O技能)\n- 自身带有[LegStrengthHorseYisang]时拼点胜利\n※ 每回合最多获得3层[BreakthroughHorse]，无法通过技能“黑风马蹄月斩”获得"
+      "desc": "满足以下条件时，使自身获得1层[BreakthroughHorse]\n- 自身的攻击开始时，自身的速度值高于目标至少2点\n- 自身通过技能触发2次[VibrationExplosion]时(包括E.G.O技能)\n- 自身带有[LegStrengthHorseYisang]时拼点胜利\n※ 每回合最多获得3层[BreakthroughHorse]，无法通过技能“黑风马蹄月斩”获得"
     },
     {
       "id": 1011411,
       "name": "黑风马蹄",
-      "desc": "符合以下条件时，使自身获得1层[BreakthroughHorse]\n- 自身的攻击开始时，自身的速度值高于目标至少2点\n- 自身通过技能触发2次[VibrationExplosion]时(包括E.G.O技能)\n- 自身带有[LegStrengthHorseYisang]时拼点胜利\n※ 每回合最多获得3层[BreakthroughHorse]，无法通过技能“黑风马蹄月斩”获得\n\n<style=\"highlight\">自身带有护盾时，使自身增加(自身的护盾/10)级防御等级(最多5级，向下取整)</style>"
+      "desc": "满足以下条件时，使自身获得1层[BreakthroughHorse]\n- 自身的攻击开始时，自身的速度值高于目标至少2点\n- 自身通过技能触发2次[VibrationExplosion]时(包括E.G.O技能)\n- 自身带有[LegStrengthHorseYisang]时拼点胜利\n※ 每回合最多获得3层[BreakthroughHorse]，无法通过技能“黑风马蹄月斩”获得\n\n<style=\"highlight\">自身带有护盾时，使自身增加(自身的护盾/10)级防御等级(最多5级，向下取整)</style>"
     },
     {
       "id": 1011402,
@@ -2756,7 +2756,7 @@
     {
       "id": 1011511,
       "name": "仿造的一生",
-      "desc": "自身每带有1层[BlessingOfIndexPrescriptAlly]，使自身带有[IndexPrescriptTargetMarkToEnemy]的技能造成的伤害+2%(最多+16%)\n- 若自身的[BlessingOfIndexPrescriptAlly]层数为9层，则改为使自身基础技能造成的伤害+20%\n\n自身基础攻击技能的[SuperCoin]命中时，使自身获得1层[StackYisangSpecialSkill]\n- 攻击后，使自身获得(剩余的[SuperCoin]数)层[StackYisangSpecialSkill]\n<style=\"highlight\">- “Furioso-Replica”攻击后，使自身获得(剩余的[SuperCoin]数/2)层[StackYisangSpecialSkill](向下取整)</style>\n\n<style=\"highlight\">回合结束时，若本回合自身的[StackYisangSpecialSkill]层数获得至9层，\n且下回合开始时仪表盘上不存在自身的3技能，则使自身的1个基础技能转化为3技能(优先转化位于仪表盘最左侧行动槽下方一行的技能)</style>",
+      "desc": "自身每带有1层[BlessingOfIndexPrescriptAlly]，使自身带有[IndexPrescriptTargetMarkToEnemy]的技能造成的伤害+2%(最多+16%)\n- 若自身的[BlessingOfIndexPrescriptAlly]层数为9层，则改为使自身基础技能造成的伤害+20%\n\n自身基础攻击技能的[SuperCoin]命中时，使自身获得1层[StackYisangSpecialSkill]\n- 攻击后，使自身获得(剩余的[SuperCoin]数)层[StackYisangSpecialSkill]\n<style=\"highlight\">- “Furioso-Replica”攻击后，使自身获得(剩余的[SuperCoin]数/2)层[StackYisangSpecialSkill](向下取整)</style>\n\n<style=\"highlight\">回合结束时，若本回合自身的[StackYisangSpecialSkill]层数达到9层，\n且下回合开始时仪表盘上不存在自身的3技能，则使自身的1个基础技能转化为3技能(优先转化位于仪表盘最左侧行动槽下方一行的技能)</style>",
       "summary": "根据自身的指令加护 层数，\n使自身被指令的印记 标记的技能造成的伤害增加\n命中时，使自身恢复理智值\n满足条件时，使自身获得[StackYisangSpecialSkill]"
     },
     {
@@ -2773,7 +2773,7 @@
     {
       "id": 1051411,
       "name": "孢子扩散",
-      "desc": "击杀带有[MeursaultBeeSpore]的敌方单位时，触发以下效果\n- 下回合内令自身施加的[MeursaultBeeSpore]层数变为2倍\n<style=\"highlight\">- 基础攻击技能击杀时，使自身获得(该技能消耗的孢子弹数/2)发孢子弹(向下取整，每个技能最多1次)</style>"
+      "desc": "击杀带有[MeursaultBeeSpore]的敌方单位时，触发以下效果\n- 下回合内令自身施加的[MeursaultBeeSpore]层数变为2倍\n<style=\"highlight\">- 基础攻击技能击杀时，使自身获得(该技能消耗的孢子弹数/2)发孢子弹(向上取整，每个技能最多1次)</style>"
     },
     {
       "id": 1051402,
@@ -2809,6 +2809,36 @@
       "name": "春之诞",
       "desc": "速度值最高的1名友方单位增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦[TabExplain]的技能技能命中敌方单位时，使该敌方单位增加2级[Vibration]强度，[VibrationExplosion]，并使该敌方单位的[Vibration]层数减少1层(每回合最多1次)",
       "summary": "增加[Vibration]强度，[VibrationExplosion]"
+    },
+    {
+      "id": 1121502,
+      "name": "顽强的生命力",
+      "desc": "本场战斗中，每当自身累计消耗10层[Charge]时，使自身增加1级[Charge]强度\n使自身获得的[ChargeForceField]转化为[HighVoltageExoshell]\n\n若自身的[Charge]强度不低于3级，则使自身的最小与最大速度值+3\n\n本场战斗中，自身受到将自身体力降至0点的伤害时，\n使自身获得(5+自身的[Charge]强度×3)层[SelfChargeAlly](最多20层，每场战斗最多1次)"
+    },
+    {
+      "id": 1121503,
+      "name": "交流放电支援",
+      "desc": "回合开始时，若包括自身在内身着E.G.O装备的友方单位数不低于3名，\n则使身着E.G.O装备的全体友方单位获得1层[AttackUp]\n\n自身通过AEDD 格里高尔的E.G.O被动效果消耗[Charge]层数时，若自身的[Charge]层数不高于12层，则正面命中时改为消耗自身4点护盾或体力触发效果，而非消耗2层[Charge]\n- 该效果仅在现存体力不低于25%时生效"
+    },
+    {
+      "id": 1121501,
+      "name": "带路吧。我会支援你的。",
+      "desc": "战斗开始时，使自身获得5层[Charge](每场战斗最多1次)\n\n战斗结束时，若自身的[Charge]层数高于12层，\n则消耗至多8层溢出[Charge]并使1名友方单位获得(该效果消耗的[Charge]层数的一半)层[Charge](最少1层，向下取整)\n- 该效果优先适用于比自身编队顺序靠前的友方单位中[Charge]层数最低的友方单位\n- 若场上没有比自身编队顺序靠前的的友方单位或自身[Charge]强度不低于3级，则禁用该效果\n\n若忧郁或嫉妒共鸣数不低于3，\n则下回合使比自身编队顺序靠前的的友方单位获得2层[Charge]\n- 按编队顺序使(忧郁或嫉妒共鸣中较高的共鸣数-2)名友方获得(最多3名)\n- 若自身[Charge]强度不低于3级，则改为使友方单位获得4层[Charge]\n- 若场上没有比自身编队顺序靠前的友方单位，则改为使自身获得4层[Charge]"
+    },
+    {
+      "id": 1121511,
+      "name": "带路吧。我会支援你的。",
+      "desc": "战斗开始时，使自身获得<style=\"highlight\">10</style>层[Charge](每场战斗最多1次)\n\n战斗结束时，若自身的[Charge]层数高于12层，\n则消耗至多8层溢出[Charge]并使1名友方单位获得(该效果消耗的[Charge]层数的一半)层[Charge]<style=\"highlight\">(向上取整)</style>\n- 该效果优先适用于比自身编队顺序靠前的友方单位中[Charge]层数最低的友方单位\n- 若场上没有比自身编队顺序靠前的的友方单位或自身[Charge]强度不低于3级，则禁用该效果\n\n若忧郁或嫉妒共鸣数不低于<style=\"highlight\">2</style>，\n则下回合使比自身编队顺序靠前的的友方单位获得2层[Charge]\n- 按编队顺序使(忧郁或嫉妒共鸣中较高的共鸣数-<style=\"highlight\">1</style>)名友方获得(最多3名)\n- 若自身[Charge]强度不低于3级，则改为使友方单位获得4层[Charge]\n- 若场上没有比自身编队顺序靠前的友方单位，则改为使自身获得4层[Charge]"
+    },
+    {
+      "id": 1121521,
+      "name": "除颤",
+      "desc": "回合结束时，按编队顺序使2名友方单位恢复(本回合其攻击技能消耗的[Charge]层数与特殊充能之和)点体力(最多10点)"
+    },
+    {
+      "id": 1121531,
+      "name": "除颤",
+      "desc": "回合结束时，按编队顺序使<style=\"highlight\">3</style>名友方单位恢复(本回合其攻击技能消耗的[Charge]层数与特殊充能之和)点体力(最多10点)"
     }
   ]
 }

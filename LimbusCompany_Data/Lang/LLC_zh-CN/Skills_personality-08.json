@@ -1078,7 +1078,7 @@
         {
           "level": 1,
           "name": "锋芒毕现",
-          "desc": "[StartBattle] 使除自身以外速度值最高且属于黑云会的2名友方单位获得1层伤害强化 (每回合最多1次)\n- 若包括自身在内属于黑云会的友方单位不低于6名，则改为使5名友方单位获得2层伤害强化 ",
+          "desc": "[StartBattle] 使除自身以外速度值最高且属于黑云会的2名友方单位获得1层[AttackDmgUp](每回合最多1次)\n- 若包括自身在内属于黑云会的友方单位不低于6名，则改为使5名友方单位获得2层[AttackDmgUp]",
           "coinlist": [
             {
               "coindescs": [
@@ -1099,7 +1099,7 @@
         {
           "level": 2,
           "name": "锋芒毕现",
-          "desc": "<style=\"highlight\">若目标的[Laceration]强度不低于6级，则使本技能的硬币威力+1</style>\n[StartBattle] 使除自身以外速度值最高且属于黑云会的2名友方单位获得<style=\"highlight\">2</style>层伤害强化 (每回合最多1次)\n- 若包括自身在内属于黑云会的友方单位不低于6名，则改为使5名友方单位获得<style=\"highlight\">3</style>层伤害强化",
+          "desc": "<style=\"highlight\">若目标的[Laceration]强度不低于6级，则使本技能的硬币威力+1</style>\n[StartBattle] 使除自身以外速度值最高且属于黑云会的2名友方单位获得<style=\"highlight\">2</style>层[AttackDmgUp](每回合最多1次)\n- 若包括自身在内属于黑云会的友方单位不低于6名，则改为使5名友方单位获得<style=\"highlight\">3</style>层伤害强化",
           "coinlist": [
             {
               "coindescs": [

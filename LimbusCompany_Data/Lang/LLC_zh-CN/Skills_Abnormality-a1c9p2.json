@@ -291,7 +291,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "电力释流",
+          "name": "电力释出",
           "desc": "[StartBattle] 使自身获得1层[SelfCharge]\n[WhenUse] 若自身的[SelfCharge]层数不低于5层，则使本技能的硬币威力+1\n若目标带有[Paralysis]，则使本技能造成的伤害+30%\n[DefeatDuel] 消耗3层[SelfCharge]",
           "coinlist": [
             {

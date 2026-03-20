@@ -234,45 +234,45 @@
     {
       "id": 9010,
       "name": "鲜血装饰",
-      "desc": "回合开始时，随机使1名友方单位获得2层伤害强化 。\n\n优先选取拥有色欲攻击技能的友方单位，且该情况下使其额外获得1层伤害强化 。",
+      "desc": "回合开始时，随机使1名友方单位获得2层[AttackDmgUp]。\n\n优先选取拥有色欲攻击技能的友方单位，且该情况下使其额外获得1层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 9010,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         },
         {
           "abilityID": 90101,
-          "simpleDesc": "获得3层伤害强化 "
+          "simpleDesc": "获得3层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 19010,
       "name": "鲜血装饰+",
-      "desc": "回合开始时，随机使1名友方单位获得2层伤害强化 。\n\n优先选取拥有色欲攻击技能的友方单位，且该情况下使其额外获得<style=\"upgradeHighlight\">2层伤害强化 </style>。",
+      "desc": "回合开始时，随机使1名友方单位获得2层[AttackDmgUp]。\n\n优先选取拥有色欲攻击技能的友方单位，且该情况下使其额外获得<style=\"upgradeHighlight\">2层[AttackDmgUp]</style>。",
       "simpleDesc": [
         {
           "abilityID": 19010,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         },
         {
           "abilityID": 190101,
-          "simpleDesc": "获得4层伤害强化 "
+          "simpleDesc": "获得4层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 29010,
       "name": "鲜血装饰++",
-      "desc": "回合开始时，<style=\"upgradeHighlight\">随机使2名友方单位</style>获得2层伤害强化 。\n\n优先选取拥有色欲攻击技能的友方单位，且该情况下使其额外获得2层伤害强化 。",
+      "desc": "回合开始时，<style=\"upgradeHighlight\">随机使2名友方单位</style>获得2层[AttackDmgUp]。\n\n优先选取拥有色欲攻击技能的友方单位，且该情况下使其额外获得2层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 29010,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         },
         {
           "abilityID": 290101,
-          "simpleDesc": "获得4层伤害强化 "
+          "simpleDesc": "获得4层[AttackDmgUp]"
         }
       ]
     },
@@ -514,7 +514,7 @@
       "simpleDesc": [
         {
           "abilityID": 9020,
-          "simpleDesc": "增加(8+混乱阶段x4)级[Laceration]强度"
+          "simpleDesc": "增加(8+混乱阶段×4)级[Laceration]强度"
         }
       ]
     },
@@ -525,7 +525,7 @@
       "simpleDesc": [
         {
           "abilityID": 19020,
-          "simpleDesc": "增加(10+混乱阶段x5)级[Laceration]强度"
+          "simpleDesc": "增加(10+混乱阶段×5)级[Laceration]强度"
         }
       ]
     },
@@ -536,7 +536,7 @@
       "simpleDesc": [
         {
           "abilityID": 29020,
-          "simpleDesc": "增加(12+混乱阶段x6)级[Laceration]强度"
+          "simpleDesc": "增加(12+混乱阶段×6)级[Laceration]强度"
         }
       ]
     },
@@ -912,11 +912,11 @@
     {
       "id": 9038,
       "name": "异想狩猎",
-      "desc": "集中遭遇战开始时，使全体友方单位获得2层伤害强化 。",
+      "desc": "集中遭遇战开始时，使全体友方单位获得2层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 9038,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         }
       ]
     },
@@ -1784,7 +1784,7 @@
     {
       "id": 19065,
       "name": "美感+",
-      "desc": "对<style=\"upgradeHighlight\">理智值低于0点的敌方单位造成的伤害+40%</style>。\n\n增加[Sinking]强度或施加[Sinking]层数的技能造成的伤害额外+<style=\"upgradeHighlight\">10%</style>(包括特殊<noparse>沉沦</noparse>)\n\n对未带有理智值的敌方单位触发[Sinking]效果时，改为对其造成包括忧郁属性在内的所有罪孽属性中最有效的属性伤害。",
+      "desc": "对<style=\"upgradeHighlight\">理智值低于0点的敌方单位造成的伤害+40%</style>。\n\n增加[Sinking]强度或施加[Sinking]层数的技能造成的伤害额外+10%(包括特殊<noparse>沉沦</noparse>)\n\n对未带有理智值的敌方单位触发[Sinking]效果时，改为对其造成包括忧郁属性在内的所有罪孽属性中最有效的属性伤害。",
       "simpleDesc": [
         {
           "abilityID": 19065,
@@ -1799,7 +1799,7 @@
     {
       "id": 29065,
       "name": "美感++",
-      "desc": "对<style=\"upgradeHighlight\">未带有理智值或理智值低于0点的敌方单位造成的伤害+50%</style>。\n\n增加[Sinking]强度或施加[Sinking]层数的技能造成的伤害额外+<style=\"upgradeHighlight\">10%</style>(包括特殊<noparse>沉沦</noparse>)\n\n对未带有理智值的敌方单位触发[Sinking]效果时，改为对其造成包括忧郁属性在内的所有罪孽属性中最有效的属性伤害。",
+      "desc": "对<style=\"upgradeHighlight\">未带有理智值或理智值低于0点的敌方单位造成的伤害+50%</style>。\n\n增加[Sinking]强度或施加[Sinking]层数的技能造成的伤害额外+10%(包括特殊<noparse>沉沦</noparse>)\n\n对未带有理智值的敌方单位触发[Sinking]效果时，改为对其造成包括忧郁属性在内的所有罪孽属性中最有效的属性伤害。",
       "simpleDesc": [
         {
           "abilityID": 29065,
@@ -1885,45 +1885,45 @@
     {
       "id": 9069,
       "name": "护腕",
-      "desc": "回合开始时，[Charge]与特殊充能层数之和不低于5层的友方单位获得1层伤害强化 。\n\n若该友方单位拥有傲慢攻击技能，则改为获得2层伤害强化 。",
+      "desc": "回合开始时，[Charge]与特殊充能层数之和不低于5层的友方单位获得1层[AttackDmgUp]。\n\n若该友方单位拥有傲慢攻击技能，则改为获得2层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 9069,
-          "simpleDesc": "获得1层伤害强化 "
+          "simpleDesc": "获得1层[AttackDmgUp]"
         },
         {
           "abilityID": 90691,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 19069,
       "name": "护腕+",
-      "desc": "回合开始时，<style=\"upgradeHighlight\">[Charge]与特殊充能层数之和不低于3层</style>的友方单位获得1层伤害强化 。\n\n若该友方单位拥有傲慢攻击技能，则改为获得2层伤害强化 。",
+      "desc": "回合开始时，<style=\"upgradeHighlight\">[Charge]与特殊充能层数之和不低于3层</style>的友方单位获得1层[AttackDmgUp]。\n\n若该友方单位拥有傲慢攻击技能，则改为获得2层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 19069,
-          "simpleDesc": "获得1层伤害强化 "
+          "simpleDesc": "获得1层[AttackDmgUp]"
         },
         {
           "abilityID": 190691,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 29069,
       "name": "护腕++",
-      "desc": "回合开始时，<style=\"upgradeHighlight\">带有[Charge]或特殊充能</style>的友方单位获得2层伤害强化 。\n\n若该友方单位拥有傲慢攻击技能，则改为<style=\"upgradeHighlight\">获得3层伤害强化 </style>。",
+      "desc": "回合开始时，<style=\"upgradeHighlight\">带有[Charge]或特殊充能</style>的友方单位获得2层[AttackDmgUp]。\n\n若该友方单位拥有傲慢攻击技能，则改为<style=\"upgradeHighlight\">获得3层[AttackDmgUp]</style>。",
       "simpleDesc": [
         {
           "abilityID": 29069,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         },
         {
           "abilityID": 290691,
-          "simpleDesc": "获得3层伤害强化 "
+          "simpleDesc": "获得3层[AttackDmgUp]"
         }
       ]
     },
@@ -2225,7 +2225,7 @@
     {
       "id": 9081,
       "name": "信念",
-      "desc": "使用硬币类型为加算的技能后，在下回合开始时使该单位的理智值变为最大值(侵蚀状态除外)。",
+      "desc": "使用硬币类型为加算的技能后，在下回合开始时使该单位的理智值变为最大值(不包括侵蚀的单位)。",
       "simpleDesc": [
         {
           "abilityID": 9036,
@@ -2317,33 +2317,33 @@
     {
       "id": 9087,
       "name": "炽热的智慧",
-      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方单位获得1层伤害强化 。",
+      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方单位获得1层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 9087,
-          "simpleDesc": "获得1层伤害强化 "
+          "simpleDesc": "获得1层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 19087,
       "name": "炽热的智慧+",
-      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方单位<style=\"upgradeHighlight\">获得2层伤害强化 。</style>",
+      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方单位<style=\"upgradeHighlight\">获得2层[AttackDmgUp]。</style>",
       "simpleDesc": [
         {
           "abilityID": 19087,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 29087,
       "name": "炽热的智慧++",
-      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的<style=\"upgradeHighlight\">3名友方单位</style>获得2层伤害强化 。",
+      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的<style=\"upgradeHighlight\">3名友方单位</style>获得2层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 29087,
-          "simpleDesc": "获得2层伤害强化 "
+          "simpleDesc": "获得2层[AttackDmgUp]"
         }
       ]
     },
@@ -2489,33 +2489,33 @@
     {
       "id": 9093,
       "name": "荧光灯",
-      "desc": "回合结束时，若有敌方单位或异想体部位带有[Burst]，则下回合随机使1名友方单位获得1层伤害强化 或1层[Agility]。触发(带有[Burst]的敌方单位或异想体部位数量+1)次。",
+      "desc": "回合结束时，若有敌方单位或异想体部位带有[Burst]，则下回合随机使1名友方单位获得1层[AttackDmgUp]或1层[Agility]。触发(带有[Burst]的敌方单位或异想体部位数量+1)次。",
       "simpleDesc": [
         {
           "abilityID": 9093,
-          "simpleDesc": "获得1层伤害强化 或1层[Agility]"
+          "simpleDesc": "获得1层[AttackDmgUp]或1层[Agility]"
         }
       ]
     },
     {
       "id": 19093,
       "name": "荧光灯+",
-      "desc": "回合结束时，若有敌方单位或异想体部位带有[Burst]，则下回合随机使1名友方单位获得1层伤害强化 或1层[Agility]。<style=\"upgradeHighlight\">触发(带有[Burst]的敌方单位或异想体部位数量+3)次</style>。",
+      "desc": "回合结束时，若有敌方单位或异想体部位带有[Burst]，则下回合随机使1名友方单位获得1层[AttackDmgUp]或1层[Agility]。<style=\"upgradeHighlight\">触发(带有[Burst]的敌方单位或异想体部位数量+3)次</style>。",
       "simpleDesc": [
         {
           "abilityID": 19093,
-          "simpleDesc": "获得1层伤害强化 或1层[Agility]"
+          "simpleDesc": "获得1层[AttackDmgUp]或1层[Agility]"
         }
       ]
     },
     {
       "id": 29093,
       "name": "荧光灯++",
-      "desc": "回合结束时，若有敌方单位或异想体部位带有[Burst]，则下回合随机使1名友方单位<style=\"upgradeHighlight\">获得1层伤害强化 与1层[Agility]。</style>触发(带有[Burst]的敌方单位或异想体部位数量+3)次。",
+      "desc": "回合结束时，若有敌方单位或异想体部位带有[Burst]，则下回合随机使1名友方单位<style=\"upgradeHighlight\">获得1层[AttackDmgUp]与1层[Agility]。</style>触发(带有[Burst]的敌方单位或异想体部位数量+3)次。",
       "simpleDesc": [
         {
           "abilityID": 29093,
-          "simpleDesc": "获得1层伤害强化 与1层[Agility]"
+          "simpleDesc": "获得1层[AttackDmgUp]与1层[Agility]"
         }
       ]
     },
@@ -2706,7 +2706,7 @@
         },
         {
           "abilityID": 91002,
-          "simpleDesc": "获得伤害强化 "
+          "simpleDesc": "获得[AttackDmgUp]"
         },
         {
           "abilityID": 91003,
@@ -2809,7 +2809,7 @@
     {
       "id": 29103,
       "name": "郁火++",
-      "desc": "通过技能效果使带有[Combustion]或特殊烧伤的敌方单位增加[Combustion]强度，对其施加[Combustion]层数或施加特殊烧伤时，下回合使自身获得1层[Agility]。(每个技能最多1次，每回合最多3次)\n\n若该友方单位带有[Agility]，则改为获得2层[Agility]，2层[AttackUp]与<style=\"upgradeHighlight\">2层伤害强化 </style>。",
+      "desc": "通过技能效果使带有[Combustion]或特殊烧伤的敌方单位增加[Combustion]强度，对其施加[Combustion]层数或施加特殊烧伤时，下回合使自身获得1层[Agility]。(每个技能最多1次，每回合最多3次)\n\n若该友方单位带有[Agility]，则改为获得2层[Agility]，2层[AttackUp]与<style=\"upgradeHighlight\">2层[AttackDmgUp]</style>。",
       "simpleDesc": [
         {
           "abilityID": 29103,
@@ -2857,22 +2857,22 @@
     {
       "id": 19106,
       "name": "被扣留的颂歌+",
-      "desc": "战斗开始时，若全体敌方单位(若是异想体，则改为所有部位)均带有[Laceration]，则下回合使全体友方单位获得1层[Agility]与<style=\"upgradeHighlight\">1层伤害强化 </style>。",
+      "desc": "战斗开始时，若全体敌方单位(若是异想体，则改为所有部位)均带有[Laceration]，则下回合使全体友方单位获得1层[Agility]与<style=\"upgradeHighlight\">1层[AttackDmgUp]</style>。",
       "simpleDesc": [
         {
           "abilityID": 19106,
-          "simpleDesc": "若全体敌方单位均带有[Laceration]，则下回合使全体友方单位获得1层[Agility]与1层伤害强化 。"
+          "simpleDesc": "若全体敌方单位均带有[Laceration]，则下回合使全体友方单位获得1层[Agility]与1层[AttackDmgUp]。"
         }
       ]
     },
     {
       "id": 29106,
       "name": "被扣留的颂歌++",
-      "desc": "战斗开始时，若全体敌方单位(若是异想体，则改为所有部位)均带有[Laceration]，则下回合使全体友方单位获得<style=\"upgradeHighlight\">2层[Agility]</style>，1层伤害强化 与<style=\"upgradeHighlight\">2层[AttackUp]</style>。",
+      "desc": "战斗开始时，若全体敌方单位(若是异想体，则改为所有部位)均带有[Laceration]，则下回合使全体友方单位获得<style=\"upgradeHighlight\">2层[Agility]</style>，1层[AttackDmgUp]与<style=\"upgradeHighlight\">2层[AttackUp]</style>。",
       "simpleDesc": [
         {
           "abilityID": 29106,
-          "simpleDesc": "若全体敌方单位均带有[Laceration]，则下回合使全体友方单位获得2层[Agility]，1层伤害强化 与2层[AttackUp]。"
+          "simpleDesc": "若全体敌方单位均带有[Laceration]，则下回合使全体友方单位获得2层[Agility]，1层[AttackDmgUp]与2层[AttackUp]。"
         }
       ]
     },
@@ -3412,18 +3412,18 @@
       "simpleDesc": [
         {
           "abilityID": 19127,
-          "simpleDesc": "下回合获得1层[Agility]与1层伤害强化 "
+          "simpleDesc": "下回合获得1层[Agility]与1层[AttackDmgUp]"
         }
       ]
     },
     {
       "id": 29127,
       "name": "魔鬼所享++",
-      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]，1层[AttackUp]与<style=\"upgradeHighlight\">1层伤害强化 </style>。(该效果可能对同一单位重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]2层[AttackUp]与<style=\"upgradeHighlight\">2层伤害强化 </style>。(不包括E.G.O技能)",
+      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]，1层[AttackUp]与<style=\"upgradeHighlight\">1层[AttackDmgUp]</style>。(该效果可能对同一单位重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]2层[AttackUp]与<style=\"upgradeHighlight\">2层[AttackDmgUp]</style>。(不包括E.G.O技能)",
       "simpleDesc": [
         {
           "abilityID": 29127,
-          "simpleDesc": "下回合获得2层[Agility]与1层伤害强化 "
+          "simpleDesc": "下回合获得2层[Agility]与1层[AttackDmgUp]"
         }
       ]
     },
@@ -3500,15 +3500,15 @@
       "simpleDesc": [
         {
           "abilityID": 9130,
-          "simpleDesc": "友方单位拼点威力+1并获得1层伤害强化 "
+          "simpleDesc": "友方单位拼点威力+1并获得1层[AttackDmgUp]"
         },
         {
           "abilityID": 91301,
-          "simpleDesc": "拼点威力+1并获得3层伤害强化 "
+          "simpleDesc": "拼点威力+1并获得3层[AttackDmgUp]"
         },
         {
           "abilityID": 91302,
-          "simpleDesc": "拼点威力+2并获得3层伤害强化 "
+          "simpleDesc": "拼点威力+2并获得3层[AttackDmgUp]"
         }
       ]
     },
@@ -3538,7 +3538,7 @@
         },
         {
           "abilityID": 91321,
-          "simpleDesc": "下回合开始时获得1层伤害强化 "
+          "simpleDesc": "下回合开始时获得1层[AttackDmgUp]"
         }
       ]
     },
@@ -3553,7 +3553,7 @@
         },
         {
           "abilityID": 191321,
-          "simpleDesc": "下回合开始时获得1层伤害强化 "
+          "simpleDesc": "下回合开始时获得1层[AttackDmgUp]"
         }
       ]
     },
@@ -3568,7 +3568,7 @@
         },
         {
           "abilityID": 291321,
-          "simpleDesc": "下回合开始时获得2层伤害强化 "
+          "simpleDesc": "下回合开始时获得2层[AttackDmgUp]"
         }
       ]
     },
@@ -4486,7 +4486,7 @@
       "simpleDesc": [
         {
           "abilityID": 9182,
-          "simpleDesc": "获得([Charge]层数/10)层伤害强化 "
+          "simpleDesc": "获得([Charge]层数/10)层[AttackDmgUp]"
         },
         {
           "abilityID": 91821,
@@ -4556,7 +4556,7 @@
     {
       "id": 9190,
       "name": "试用计划指南",
-      "desc": "商店技能替换所需经费减少30%(技能观测除外)",
+      "desc": "商店技能替换所需经费减少30%(不包括技能观测的消耗)",
       "simpleDesc": [
         {
           "abilityID": 29190,

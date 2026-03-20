@@ -1671,7 +1671,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[OnSucceedAttack] 对目标造成(尖钉层数x3)点伤害，随后解除目标的尖钉 "
+                  "desc": "[OnSucceedAttack] 对目标造成(其尖钉 层数×3)点伤害，随后解除其尖钉 "
                 }
               ]
             }
@@ -3103,7 +3103,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "电力释放",
+          "name": "电力释出",
           "desc": "[WhenUse] 使自身获得1层自体发电 \n若目标带有麻痹 ，则使本技能造成的伤害+10%",
           "coinlist": [
             {},

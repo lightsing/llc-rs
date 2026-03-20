@@ -48,7 +48,7 @@
     {
       "id": 860801,
       "name": "熟悉的插头",
-      "desc": "自身每带有1层[ConnectedPlug]，使自身的最小速度值+1，获得1层伤害强化 并对自身施加1层[Vulnerable]\n若自身因带有3层[ConnectedPlug]而在下回合陷入混乱，则对自身施加4层[Vulnerable]"
+      "desc": "自身每带有1层[ConnectedPlug]，使自身的最小速度值+1，获得1层[AttackDmgUp]并对自身施加1层[Vulnerable]\n若自身因带有3层[ConnectedPlug]而在下回合陷入混乱，则对自身施加4层[Vulnerable]"
     },
     {
       "id": 860802,

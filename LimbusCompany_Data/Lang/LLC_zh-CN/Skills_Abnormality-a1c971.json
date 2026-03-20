@@ -486,7 +486,7 @@
                   "desc": "[WinDuelAttack] 对目标施加3层[Vibration]"
                 },
                 {
-                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]。使其[VibrationExplosion]时，使其[Vibration]层数减少1层"
                 }
               ]
             }
@@ -500,6 +500,122 @@
         {
           "level": 1,
           "name": "执行分析",
+          "desc": "[WhenUse] 若自身的[Breath]强度不低于10级，则消耗[Breath]强度，每消耗3级[Breath]强度，使本技能的最终威力+2(最多+4)。该效果每使本技能增加1点最终威力，额外消耗3级[Breath]强度",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于5层，则使目标[VibrationExplosion]。使其[VibrationExplosion]时，使其[Vibration]层数减少1层"
+                },
+                {
+                  "desc": "[WinDuelAttack] 使目标增加5级[Vibration]强度并对其施加3层[Vibration]"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]2次。使其[VibrationExplosion]时，使其[Vibration]层数减少1层(若自身拼点胜利，则使减少的效果无效1次)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 108204,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "启动销毁程序",
+          "desc": "[WhenUse] 消耗自身一半的[Breath]强度与[Breath]层数\n- 使本技能的最终威力+(消耗的[Breath]强度与[Breath]层数之和/2)(最多+20)\n- 使本技能造成的伤害+(消耗的[Breath]强度×2)%(最多+50%)\n- 使本技能暴击时造成的伤害+(消耗的[Breath]层数×4)%(最多+100%)\n[DefeatDuel] 使自身剩余的[Breath]层数减半",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "若自身上回合未受到体力伤害，则使本硬币必定暴击"
+                },
+                {
+                  "desc": "若自身上回合受到了体力伤害，则使本硬币必定不会暴击，并使造成的伤害-80%"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]3次。使其[VibrationExplosion]时，每触发1次[VibrationExplosion]，使其[Vibration]层数减少3层(最多减少9层)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 108205,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "考察",
+          "desc": "[WhenUse] 自身每带有3级[Breath]强度，使本技能的最终威力+1(最多+5)\n[WhenUse] 使自身增加4级[Breath]强度\n- 若自身带有护盾，则额外使自身获得2层[Breath]",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 137801,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "压缩",
+          "desc": "[WhenUse] 自身每带有5级[Breath]强度，使本技能的最终威力+1(最多+3)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标增加3级[Vibration]强度并对其施加2层[Vibration]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 137802,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "分解",
+          "desc": "[WhenUse] 自身每带有3级[Breath]强度，使本技能的最终威力+1(最多+5)\n<color=#ff6000><mark=#ff000040><b><u>[WhenUse] 若目标的[ObservedPerson]层数不低于20层，则使本技能的所有硬币转化为[SuperCoin]</u></b></mark></color>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Vibration]强度"
+                },
+                {
+                  "desc": "[WinDuelAttack] 对目标施加3层[Vibration]"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 137803,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "执行分析",
           "desc": "[WhenUse] 若自身的[Breath]强度不低于10级，则消耗[Breath]强度，每消耗3级[Breath]强度，使本技能的最终威力+2(最多+4)",
           "coinlist": [
             {
@@ -508,7 +624,7 @@
                   "desc": "[SuperCoin]"
                 },
                 {
-                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于5层，则使目标[VibrationExplosion]并使其[Vibration]层数减少1层"
+                  "desc": "[OnSucceedAttack] 若目标的[Vibration]层数不低于5层，则使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
                 },
                 {
                   "desc": "[WinDuelAttack] 使目标增加5级[Vibration]强度并对其施加3层[Vibration]"
@@ -523,12 +639,12 @@
       ]
     },
     {
-      "id": 108204,
+      "id": 137804,
       "levelList": [
         {
           "level": 1,
           "name": "启动销毁程序",
-          "desc": "[WhenUse] 消耗自身一半的[Breath]强度与层数\n- 使本技能的最终威力+(消耗的[Breath]强度与层数之和/2)(最多+20)\n- 使本技能造成的伤害+(消耗的[Breath]强度×2)%(最多+50%)\n- 使本技能暴击时造成的伤害+(消耗的[Breath]层数×4)%(最多+100%)\n[DefeatDuel] 使自身剩余的[Breath]层数减半",
+          "desc": "[WhenUse] 消耗自身一半的[Breath]强度与[Breath]层数\n- 使本技能的最终威力+(消耗的[Breath]强度与[Breath]层数之和/2)(最多+20)\n- 使本技能造成的伤害+(消耗的[Breath]强度×2)%(最多+50%)\n- 使本技能暴击时造成的伤害+(消耗的[Breath]层数×4)%(最多+100%)\n[DefeatDuel] 使自身剩余的[Breath]层数减半",
           "coinlist": [
             {
               "coindescs": [
@@ -551,14 +667,16 @@
       ]
     },
     {
-      "id": 108205,
+      "id": 137805,
       "levelList": [
         {
           "level": 1,
           "name": "考察",
-          "desc": "[WhenUse] 自身每带有3级[Breath]强度，使本技能的最终威力+1(最多+5)\n[WhenUse] 使自身增加4级[Breath]强度\n- 若自身带有护盾，则额外使自身获得2层[Breath]",
-          "coinlist": [
-            {}
+          "desc": "[CanDuelGuard]\n[WhenUse] 自身每带有3级[Breath]强度，使本技能的最终威力+1(最多+5)\n[WhenUse] 使自身增加4级[Breath]强度\n- 若自身带有护盾，则额外使自身获得2层[Breath]",
+          "coindescs": [
+            {
+              "desc": "[SuperCoin]"
+            }
           ]
         }
       ]

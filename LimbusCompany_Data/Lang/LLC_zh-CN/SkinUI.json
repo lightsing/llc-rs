@@ -2,11 +2,11 @@
   "dataList": [
     {
       "id": "title_skin",
-      "content": "外形投影"
+      "content": "外观投影"
     },
     {
       "id": "label_skin_equip_warning",
-      "content": "外形投影时，有可能会出现人格演出无法被替换的情况。"
+      "content": "外观投影时，有可能会出现人格演出无法被替换的情况。"
     },
     {
       "id": "btn_title_skin_acquisition",
@@ -26,7 +26,7 @@
     },
     {
       "id": "btn_title_deck_unequip_skin",
-      "content": "解除现编队\n全部外形投影"
+      "content": "解除现有编队的\n所有外观投影"
     },
     {
       "id": "label_can_craft",
@@ -38,7 +38,7 @@
     },
     {
       "id": "btn_title_equip_skin",
-      "content": "外形投影"
+      "content": "外观投影"
     },
     {
       "id": "label_equip_skin_main",
@@ -54,7 +54,7 @@
     },
     {
       "id": "btn_title_unequip_skin",
-      "content": "解除外形投影"
+      "content": "解除外观投影"
     },
     {
       "id": "popup_title_craft_skin",
@@ -82,7 +82,7 @@
     },
     {
       "id": "modal_desc_craft_skin_caution",
-      "content": "对于部分人格，可能会出现即使使用外形投影，演出也无法完全对应的情况，也有可能出现无法进行外形投影的情况。\n\n是否制作该人格的投影用外形？"
+      "content": "对于部分人格，可能会出现即使使用外观投影，演出也无法完全对应的情况，也有可能出现无法进行外观投影的情况。\n\n是否制作该人格的投影用外观？"
     },
     {
       "id": "btn_exchange_popup_cancel_btn_text_select_character",
@@ -110,11 +110,11 @@
     },
     {
       "id": "popup_desc_craft_skin_confirm",
-      "content": "要制作投影用外形吗？"
+      "content": "要制作投影用外观吗？"
     },
     {
       "id": "view_skin_status_button_label",
-      "content": "外形投影"
+      "content": "外观投影"
     },
     {
       "id": "craft_purchase_confirm_popup_title",

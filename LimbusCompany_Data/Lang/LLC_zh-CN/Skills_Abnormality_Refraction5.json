@@ -551,7 +551,7 @@
         {
           "level": 1,
           "name": "饥渴的荆棘",
-          "desc": "[StartBattle] 使自身获得3层伤害强化 并对自身施加2层[Vulnerable]",
+          "desc": "[StartBattle] 使自身获得3层[AttackDmgUp]并对自身施加2层[Vulnerable]",
           "coinlist": [
             {
               "coindescs": [

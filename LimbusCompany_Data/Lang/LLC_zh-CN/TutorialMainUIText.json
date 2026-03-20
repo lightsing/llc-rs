@@ -4418,11 +4418,11 @@
     },
     {
       "id": "tutorial_mainui_01_selection_page_15_title_01",
-      "content": "外形投影"
+      "content": "外观投影"
     },
     {
       "id": "tutorial_mainui_01_selection_page_15_desc_01",
-      "content": "展示可以选入编队的罪人的外形一览。"
+      "content": "展示可以选入编队的罪人的外观一览。"
     },
     {
       "id": "tutorial_mainui_01_selection_page_16_title_01",
@@ -4438,23 +4438,103 @@
     },
     {
       "id": "tutorial_mainui_01_selection_page_17_desc_01",
-      "content": "可使用自我碎片与纺锤制作投影。若使用与所制作投影的外形相对应的罪人的自我碎片，则可花费更低的成本以制作投影。"
+      "content": "可使用自我碎片与纺锤制作投影。若使用与所制作投影的外观相对应的罪人的自我碎片，则可花费更低的成本以制作投影。"
     },
     {
       "id": "tutorial_mainui_01_selection_page_18_title_01",
-      "content": "外形投影应用"
+      "content": "外观投影应用"
     },
     {
       "id": "tutorial_mainui_01_selection_page_18_desc_01",
-      "content": "投影了外形的罪人，将显示外形投影图标。"
+      "content": "投影了外观的罪人，将显示外观投影图标。"
     },
     {
       "id": "tutorial_mainui_01_selection_page_19_title_01",
-      "content": "外形投影应用"
+      "content": "外观投影应用"
     },
     {
       "id": "tutorial_mainui_01_selection_page_19_desc_01",
-      "content": "也可在“公司”界面将已经外形投影的人格设为助战人格。"
+      "content": "也可在“公司”界面将已经投影了外观的人格设为助战人格。"
+    },
+    {
+      "id": "TutoEvent7512_Title",
+      "content": "LCB定期体检 复刻"
+    },
+    {
+      "id": "TutoEvent7512_P1_T1",
+      "content": "活动开放"
+    },
+    {
+      "id": "TutoEvent7512_P1_D1",
+      "content": "您可以通过玻璃窗或驾驶席上的活动横幅，进入[LCB定期体检 复刻活动页面]。"
+    },
+    {
+      "id": "TutoEvent7512_P2_T1",
+      "content": "活动时间"
+    },
+    {
+      "id": "TutoEvent7512_P2_D1",
+      "content": "此处显示了LCB定期体检 复刻活动的持续时间。\n\n活动期间内，通过LCB定期体检关卡、镜像迷宫，或者初次通关主线剧情关卡时，均可获得[情报文件]。\n\n※ 您无法从采光关卡以及折射轨道中获取[情报文件]。"
+    },
+    {
+      "id": "TutoEvent7512_P3_T1",
+      "content": "活动战斗"
+    },
+    {
+      "id": "TutoEvent7512_P3_D1",
+      "content": "LCB定期体检 复刻包括剧情关卡在内共有12关和1个迷宫。\n\n除了活动通关奖励外，这些关卡均有[情报文件]作为首次通关奖励。（每个关卡仅首次通关时可获得）"
+    },
+    {
+      "id": "TutoEvent7512_P4_T1",
+      "content": "活动加成角色"
+    },
+    {
+      "id": "TutoEvent7512_P4_D1",
+      "content": "在队伍中编入活动加成角色与E.G.O后清剿活动关卡及迷宫，能够提升[情报文件]的获取量。"
+    },
+    {
+      "id": "TutoEvent7512_P5_T1",
+      "content": "奖励兑换"
+    },
+    {
+      "id": "TutoEvent7512_P5_D1",
+      "content": "在[奖励兑换]窗口中花费持有的[情报文件]可获得各种奖励。"
+    },
+    {
+      "id": "TutoEvent7512_P6_D1",
+      "content": "此处显示了[奖励兑换]页面的开放时间。"
+    },
+    {
+      "id": "TutoEvent7512_P6_D2",
+      "content": "在[奖励兑换]中可以获得活动限定人格、播报员、车票装饰、横幅及各类资源。"
+    },
+    {
+      "id": "TutoEvent7512_P7_T1",
+      "content": "机密文件"
+    },
+    {
+      "id": "TutoEvent7512_P7_D1",
+      "content": "您有小概率从战斗奖励中获得[机密文件]。[机密文件]将会自动转换为20个[情报文件]。"
+    },
+    {
+      "id": "TutoEvent7512_P8_T1",
+      "content": "困难难度"
+    },
+    {
+      "id": "TutoEvent7512_P8_D1",
+      "content": "活动期间可以游玩LCB定期体检困难难度。困难难度在通过主线剧情关卡8-33后解锁。"
+    },
+    {
+      "id": "TutoEvent7512_P8_D2",
+      "content": "困难难度能够比普通难度获得更多的活动道具。"
+    },
+    {
+      "id": "TutoEvent7512_P8_D3",
+      "content": "通关困难关卡同样可获得首次通关奖励、EX通关奖励与章节进度奖励。"
+    },
+    {
+      "id": "TutoEvent7512_P9_D1",
+      "content": "活动结束后，可在驾驶席 - [外传故事]及放映室 - [其他故事]中，重温LCB定期体检的战斗和剧情。"
     }
   ]
 }
