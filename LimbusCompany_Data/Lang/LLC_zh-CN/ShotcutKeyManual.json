@@ -55,6 +55,22 @@
     {
       "id": "shotcutKeyManual_zoom_inout_battle",
       "content": "[战斗] 放大与缩小"
+    },
+    {
+      "id": "shotcutKeyManual_mirror_dungeon_side_move",
+      "content": "[镜像迷宫] 画面左右移动"
+    },
+    {
+      "id": "shotcutKeyManual_mirror_dungeon_move_node",
+      "content": "[镜像迷宫] 移动至下个节点"
+    },
+    {
+      "id": "shotcutKeyManual_mirror_dungeon_cancel_select_node",
+      "content": "[镜像迷宫] 取消节点选择"
+    },
+    {
+      "id": "shotcutKeyManual_choice_event_next_dialog",
+      "content": "[选项事件] 加载下一段文本"
     }
   ]
 }

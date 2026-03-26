@@ -632,7 +632,7 @@
         {
           "level": 2,
           "name": "秀回",
-          "desc": "[OnSucceedEvade] 下回合使自身增加3级[Breath]强度(每回合最多2次)"
+          "desc": "[OnSucceedEvade] 下回合使自身增加3级[Breath]强度(每个技能最多2次)"
         },
         {
           "level": 3,

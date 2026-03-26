@@ -2,7 +2,7 @@
   "dataList": [
     {
       "id": 0,
-      "place": "LCE研究部 广播部门入口",
+      "place": "LCE研究组 广播部门入口",
       "model": "싱클레어",
       "content": "好像是这边。"
     },
@@ -172,7 +172,7 @@
     },
     {
       "id": 30,
-      "place": "LCE研究部 广播部门",
+      "place": "LCE研究组 广播部门",
       "model": "에즈라",
       "teller": "？？？",
       "title": "？？？",

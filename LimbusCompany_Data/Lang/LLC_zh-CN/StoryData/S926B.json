@@ -2,7 +2,7 @@
   "dataList": [
     {
       "id": 1,
-      "place": "LCE研究部 走廊",
+      "place": "LCE研究组 走廊",
       "model": "검지제자2",
       "content": "啊，电、电梯就在下个转角处。"
     },
@@ -26,7 +26,7 @@
     },
     {
       "id": 6,
-      "place": "LCE研究部 电梯",
+      "place": "LCE研究组 电梯",
       "model": "료슈",
       "content": "……"
     },

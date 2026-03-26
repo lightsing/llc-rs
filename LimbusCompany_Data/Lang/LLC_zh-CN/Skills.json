@@ -2635,7 +2635,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "一刀两断",
+          "name": "斩割",
           "desc": "",
           "keywords": [],
           "coinlist": [
@@ -2650,7 +2650,7 @@
         },
         {
           "level": 2,
-          "name": "一刀两断",
+          "name": "斩割",
           "desc": "",
           "keywords": [],
           "coinlist": [
@@ -2665,7 +2665,7 @@
         },
         {
           "level": 4,
-          "name": "一刀两断",
+          "name": "斩割",
           "desc": "",
           "keywords": [],
           "coinlist": [
@@ -2933,7 +2933,7 @@
                   "desc": "[OnSucceedAttackHead] 对目标额外造成7点伤害"
                 },
                 {
-                  "desc": "[ReUseOnSucceedAttackHead] 本硬币造成的伤害+100%"
+                  "desc": "[ReUseOnSucceedAttackHead] 使本硬币造成的伤害+100%"
                 }
               ]
             }
@@ -2950,7 +2950,7 @@
                   "desc": "[OnSucceedAttackHead] 对目标额外造成7点伤害"
                 },
                 {
-                  "desc": "[ReUseOnSucceedAttackHead] 本硬币造成的伤害+100%"
+                  "desc": "[ReUseOnSucceedAttackHead] 使本硬币造成的伤害+100%"
                 },
                 {
                   "desc": "[ReUseOnSucceedAttackHead] 若目标的[Laceration]强度不低于10级，则使本硬币造成的伤害+50%"
@@ -6267,7 +6267,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "野蛮劈砍",
+          "name": "斩割",
           "desc": "[WinDuel] 使本技能造成的伤害+20%",
           "coinlist": [
             {
@@ -6282,7 +6282,7 @@
         },
         {
           "level": 2,
-          "name": "野蛮劈砍",
+          "name": "斩割",
           "desc": "[WinDuel] 使本技能造成的伤害+40%",
           "coinlist": [
             {
@@ -6297,7 +6297,7 @@
         },
         {
           "level": 4,
-          "name": "野蛮劈砍",
+          "name": "斩割",
           "desc": "[WinDuel] 使本技能造成的伤害+40%\n若目标的[Burst]强度不低于5级，则使本技能的硬币威力+1",
           "coinlist": [
             {

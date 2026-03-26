@@ -1939,7 +1939,7 @@
                   "desc": "[SuperCoin]"
                 },
                 {
-                  "desc": "[OnSucceedAttack] 使目标增加10级[Combustion]强度"
+                  "desc": "[UnBrokenCoinOnSucceedAttack] 使目标增加10级[Combustion]强度"
                 }
               ]
             }

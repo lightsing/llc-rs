@@ -1063,7 +1063,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "目标行动槽每带有1层集中攻击-默尔索 ，使本硬币造成的伤害+10%"
+                  "desc": "目标行动槽每带有1层[ConcentratedAttackMeursault]，使本硬币造成的伤害+10%"
                 },
                 {
                   "desc": "使本硬币暴击时造成的伤害+30%"
@@ -1094,7 +1094,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "目标行动槽每带有1层集中攻击-默尔索 ，使本硬币造成的伤害<style=\"highlight\">+20%</style>"
+                  "desc": "目标行动槽每带有1层[ConcentratedAttackMeursault]，使本硬币造成的伤害<style=\"highlight\">+20%</style>"
                 },
                 {
                   "desc": "使本技能暴击时造成的伤害+30%"

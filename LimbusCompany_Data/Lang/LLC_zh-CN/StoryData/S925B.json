@@ -2,7 +2,7 @@
   "dataList": [
     {
       "id": 0,
-      "place": "LCE研究部 走廊",
+      "place": "LCE研究组 走廊",
       "model": "단테",
       "content": "<还是没有信号吗？>"
     },
@@ -451,7 +451,7 @@
     },
     {
       "id": 88,
-      "place": "LCE研究部 走廊",
+      "place": "LCE研究组 走廊",
       "model": "단테",
       "content": "<……>"
     },

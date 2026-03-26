@@ -104,7 +104,7 @@
         {
           "level": 1,
           "name": "啃咬",
-          "desc": "本攻击技能命中时，下回合使自身获得体力恢复提升 ",
+          "desc": "本攻击技能命中时，下回合使自身获得[TakeHpHealIncrease]",
           "coinlist": [
             {
               "coindescs": [
