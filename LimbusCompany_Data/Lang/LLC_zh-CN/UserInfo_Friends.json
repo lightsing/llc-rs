@@ -54,7 +54,7 @@
     },
     {
       "id": "Delete_Friends",
-      "content": "解除好友"
+      "content": "删除好友"
     },
     {
       "id": "Waiting_Friends",
@@ -86,7 +86,7 @@
     },
     {
       "id": "Delete_Friends_Apply",
-      "content": "确定要解除与该玩家的好友关系吗？"
+      "content": "确定要将该玩家从好友列表中删除吗？"
     },
     {
       "id": "SendSendFriend_1",

@@ -1358,11 +1358,11 @@
     },
     {
       "id": "notice_of_pity_point_progress_or_not",
-      "content": "是否消耗200个理想进行兑换？"
+      "content": "是否消耗200个[理想]进行兑换？"
     },
     {
       "id": "notice_of_pity_point_progress_or_not_already_have",
-      "content": "您已拥有选定的人格。是否消耗200个理想兑换所选罪人的50个自我碎片？"
+      "content": "您已拥有选定的人格。是否消耗200个[理想]兑换所选罪人的50个自我碎片？"
     },
     {
       "id": "open_date_description_month_day_time_zone",

@@ -453,11 +453,11 @@
       "simpleDesc": [
         {
           "abilityID": 9772,
-          "simpleDesc": "增加烧伤 强度"
+          "simpleDesc": "增加[Conbustion]强度"
         },
         {
           "abilityID": 97721,
-          "simpleDesc": "施加烧伤 层数"
+          "simpleDesc": "施加[Conbustion]层数"
         },
         {
           "abilityID": 97722,

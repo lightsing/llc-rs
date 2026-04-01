@@ -847,7 +847,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "专注探求",
+          "name": "求索",
           "desc": "[WhenUse] [Discard]自身所有行动槽中级别最高的1个技能",
           "coinlist": [
             {
@@ -861,7 +861,7 @@
         },
         {
           "level": 4,
-          "name": "专注探求",
+          "name": "求索",
           "desc": "[WhenUse] [Discard]自身所有行动槽中级别最高的1个技能\n<style=\"highlight\">[WhenUse] 下回合使本技能对应行动槽的挑衅值 +6</style>",
           "coinlist": [
             {

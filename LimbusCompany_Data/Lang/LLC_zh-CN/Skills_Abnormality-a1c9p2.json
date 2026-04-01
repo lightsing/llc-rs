@@ -759,7 +759,7 @@
         {
           "level": 1,
           "name": "立、立刻执行指令…",
-          "desc": "<color=#ff6000><mark=#ff000040><b><u>若自身的[PressureOfPrescript]层数不低于2层，则使本技能无法改变拼点目标</u></b></mark></color>\n<color=#ff6000><mark=#ff000040><b><u>本技能不会触发目标的守备技能</u></b></mark></color>\n自身的[Breath]强度与目标的[Sinking]强度之和每有6级，使本技能的最终威力+1(最多+3)\n[StartBattle]<color=#ff6000><mark=#ff000040><b><u> 若自身带有[PressureOfPrescript]，或目标带有[IndexPrescriptTargetToPersonality]</u></b></mark></color>，则使本技能的所有硬币转化为[SuperCoin]\n[DefeatDuel] 使本技能造成的伤害-80%，且本技能命中时不会使目标陷入混乱或触发目标的[Sinking]\n[WhenUse] 使自身增加2级[Breath]强度并使自身获得2层[Breath]",
+          "desc": "<color=#ff6000><mark=#ff000040><b><u>若自身的[PressureOfPrescript]层数不低于2层，则使本技能无法改变目标</u></b></mark></color>\n<color=#ff6000><mark=#ff000040><b><u>本技能不会触发目标的守备技能</u></b></mark></color>\n自身的[Breath]强度与目标的[Sinking]强度之和每有6级，使本技能的最终威力+1(最多+3)\n[StartBattle]<color=#ff6000><mark=#ff000040><b><u> 若自身带有[PressureOfPrescript]，或目标带有[IndexPrescriptTargetToPersonality]</u></b></mark></color>，则使本技能的所有硬币转化为[SuperCoin]\n[DefeatDuel] 使本技能造成的伤害-80%，且本技能命中时不会使目标陷入混乱或触发目标的[Sinking]\n[WhenUse] 使自身增加2级[Breath]强度并使自身获得2层[Breath]",
           "coinlist": [
             {
               "coindescs": [
