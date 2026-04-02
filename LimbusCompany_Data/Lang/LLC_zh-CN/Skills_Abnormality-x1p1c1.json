@@ -145,7 +145,7 @@
         {
           "level": 1,
           "name": "砰咯啵咣！",
-          "desc": "",
+          "desc": "[DefeatDuel] 使本技能造成的伤害-50%，且本技能造成的伤害不会使目标陷入混乱",
           "coinlist": [
             {
               "coindescs": [

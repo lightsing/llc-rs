@@ -1915,6 +1915,22 @@
     {
       "id": "introduce_sentence_240",
       "content": "直到双手触及那{0}为止，不论多少次……！"
+    },
+    {
+      "id": "introduce_word_241",
+      "content": "感想"
+    },
+    {
+      "id": "introduce_sentence_241",
+      "content": "您的{0}如何！"
+    },
+    {
+      "id": "introduce_word_242",
+      "content": "法西娅"
+    },
+    {
+      "id": "introduce_sentence_242",
+      "content": "你在害怕吗，{0}？"
     }
   ]
 }

@@ -2393,6 +2393,604 @@
           ]
         }
       ]
+    },
+    {
+      "id": 1021501,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "屠宰-肋骨",
+          "desc": "[IronMaidenPersonality]专用技能",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层[DefenseDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得2层[DefenseUp](每回合最多1次)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "屠宰-肋骨",
+          "desc": "[IronMaidenPersonality]专用技能\n[WhenUse] 目标每带有1种负面状态，使本技能的拼点威力+1(最多+2)\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层[DefenseDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得2层[DefenseUp](每回合最多1次)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "屠宰-肋骨",
+          "desc": "[IronMaidenPersonality]专用技能\n[WhenUse] 目标每带有1种负面状态，使本技能的拼点威力+1(最多+2)\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+3)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层[DefenseDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得2层[DefenseUp](每回合最多1次)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021502,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "法西娅在挨饿呢",
+          "desc": "[IronMaidenPersonality]专用技能\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得4层[ChargeBodyArt]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "法西娅在挨饿呢",
+          "desc": "[IronMaidenPersonality]专用技能\n<style=\"highlight\">[WhenUse] 目标每带有1种负面状态，使本技能的拼点威力+1(最多+2)</style>\n<style=\"highlight\">[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+2)</style>\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得4层[ChargeBodyArt]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "法西娅在挨饿呢",
+          "desc": "[IronMaidenPersonality]专用技能\n[WhenUse] 目标每带有1种负面状态，使本技能的拼点威力+1(最多+2)\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+<style=\"highlight\">4</style>)\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得4层[ChargeBodyArt]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021503,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "受压肉体",
+          "desc": "[IronMaidenPersonality]专用技能\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+2)\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗至多20层[ChargeBodyArt]并触发以下效果\n- 使本技能的最终威力+2\n- 每消耗1层[ChargeBodyArt]，使本技能造成的伤害+3%",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Laceration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[AttackDmgDown](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "目标每带有1种负面状态，使本硬币造成的伤害+5%(最多+30%)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "受压肉体",
+          "desc": "[IronMaidenPersonality]专用技能\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+3)\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗至多20层[ChargeBodyArt]并触发以下效果\n- 使本技能的最终威力+2\n- 每消耗1层[ChargeBodyArt]，使本技能造成的伤害+3%",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加4级[Laceration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[AttackDmgDown](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "目标每带有1种负面状态，使本硬币造成的伤害+5%(最多+30%)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021504,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "展览准备",
+          "desc": "[CanDuelGuard]\n[IronMaidenPersonality]专用技能\n[WinDuel] 对攻击者施加1层[Laceration](每回合最多2次)\n[WinDuel] 对攻击者造成相当于其[Laceration]强度的突刺伤害(最多20点)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "展览准备",
+          "desc": "[CanDuelGuard]\n[IronMaidenPersonality]专用技能\n[WinDuel] 对攻击者施加1层[Laceration](每回合最多2次)\n[WinDuel] 对攻击者造成<style=\"highlight\">(其[Laceration]强度×2)</style>点突刺伤害(最多<style=\"highlight\">30</style>点)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021505,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "屠宰-肋骨",
+          "desc": "[SilverOpportunity]专用技能",
+          "coinlist": [
+            {},
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层[DefenseDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得2层[DefenseUp](每回合最多1次)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "屠宰-肋骨",
+          "desc": "[SilverOpportunity]专用技能\n目标每带有1种负面状态，使本技能造成的伤害+5%(最多+20%)\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层[DefenseDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得2层[DefenseUp](每回合最多1次)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "屠宰-肋骨",
+          "desc": "[SilverOpportunity]专用技能\n目标每带有1种负面状态，使本技能造成的伤害+10%(最多+30%)\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+3)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加2层[DefenseDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得2层[DefenseUp](每回合最多1次)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021506,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "法西娅的吃饭时间到了",
+          "desc": "[SilverOpportunity]专用技能\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[Agility](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得4层[ChargeBodyArt]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "法西娅的吃饭时间到了",
+          "desc": "[SilverOpportunity]专用技能\n<style=\"highlight\">目标每带有1种负面状态，使本技能造成的伤害+5%(最多+20%)</style>\n<style=\"highlight\">[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+2)</style>\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[Agility](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得4层[ChargeBodyArt]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "法西娅的吃饭时间到了",
+          "desc": "[SilverOpportunity]专用技能\n目标每带有1种负面状态，使本技能造成的伤害+<style=\"highlight\">10</style>%(最多+<style=\"highlight\">30</style>%)\n[WhenUse] 目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+<style=\"highlight\">4</style>)\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[Agility](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身获得4层[ChargeBodyArt]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021507,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "受压肉体的解放",
+          "desc": "[SilverOpportunity]专用技能\n[WhenUse] 本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+30%(若是集中遭遇战，则改为以部位判定)\n[WhenUse] 主要目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+2)\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗至多20层[ChargeBodyArt]并触发以下效果\n- 使本技能的最终威力+2\n- 每消耗1层[ChargeBodyArt]，使本技能造成的伤害+1%\n- 若自身的[ChargeBodyArt]强度不低于3级/5级，则使本技能的攻击容量+1/+2\n- 使本技能的所有硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Laceration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[Agility](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[AttackDmgDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[SlashDamageUp](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "目标每带有1种负面状态，使本硬币造成的伤害+5%(最多+30%)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "受压肉体的解放",
+          "desc": "[SilverOpportunity]专用技能\n[WhenUse] 本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+30%(若是集中遭遇战，则改为以部位判定)\n[WhenUse] 主要目标每带有4级[Laceration]强度，使本技能的最终威力+1(最多+3)\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗至多20层[ChargeBodyArt]并触发以下效果\n- 使本技能的最终威力+2\n- 每消耗1层[ChargeBodyArt]，使本技能造成的伤害+1%\n- 若自身的[ChargeBodyArt]强度不低于3级/5级，则使本技能的攻击容量+1/+2\n- 使本技能的所有硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加4级[Laceration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[Binding](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[Agility](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 下回合对目标施加1层[AttackDmgDown](每回合最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[SlashDamageUp](每回合最多1次)"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "目标每带有1种负面状态，使本硬币造成的伤害+5%(最多+30%)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021508,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "展览开始",
+          "desc": "[SilverOpportunity]专用技能\n[StartBattle] 使自身获得1层[SupportProtect](每回合最多1次)\n[OnSucceedEvade] 下回合对攻击者施加1层[Binding](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "展览开始",
+          "desc": "[SilverOpportunity]专用技能\n[StartBattle] 使自身获得1层[SupportProtect](每回合最多1次)\n[OnSucceedEvade] 下回合对攻击者施加1层[Binding](每回合最多1次)\n[OnSucceedEvade] 下回合使自身获得1层[Agility](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1021509,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "禁止破坏展品",
+          "desc": "[DuelCounter]\n[SilverOpportunity]专用技能\n[SupportProtect]专用技能\n目标每带有1种负面状态，使本技能造成的伤害+5%(最多+20%)\n[WhenUse] 若目标的[Laceration]强度不低于6级，则使本技能的硬币威力+1\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "禁止破坏展品",
+          "desc": "[DuelCounter]\n[SilverOpportunity]专用技能\n[SupportProtect]专用技能\n目标每带有1种负面状态，使本技能造成的伤害+<style=\"highlight\">10</style>%(最多+<style=\"highlight\">30</style>%)\n[WhenUse] <style=\"highlight\">目标每带有6级[Laceration]强度，使本技能的硬币威力+1(最多+2)</style>\n[WhenUse] 若自身的[ChargeBodyArt]层数不低于10层，则消耗5层[ChargeBodyArt]并触发以下效果\n- 使本技能的拼点威力+1\n- 使本技能的最后一枚硬币转化为[SuperCoin]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Laceration]强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

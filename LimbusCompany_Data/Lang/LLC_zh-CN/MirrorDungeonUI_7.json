@@ -223,6 +223,14 @@
     {
       "id": "mirror_dungeon_ego_gift_list_popup_theme_ego_gift_pool_scroll_tag_appearable",
       "content": "可出现"
+    },
+    {
+      "id": "warning_select_lack_of_ego_gift_desc",
+      "content": "仍有选择E.G.O饰品的机会。\n要在不选择E.G.O饰品的情况下继续吗？"
+    },
+    {
+      "id": "mainui_settings_select_lack_of_ego_gift_warning",
+      "content": "E.G.O饰品选择"
     }
   ]
 }

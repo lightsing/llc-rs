@@ -77,19 +77,19 @@
       "content": "清剿第{0}或更高层镜像迷宫且离开最后一层的商店时拥有的经费为0点"
     },
     {
-      "id": "mission_ui_condition_tags_201005016",
+      "id": "mission_ui_condition_tags_201005016_6",
       "content": "使用单个技能对敌方单位造成不低于{0}点技能伤害（包括对护盾造成的伤害与技能命中时触发的沉沦泛滥与时间延付造成的伤害，不包括关键词与其他来源造成的伤害）"
     },
     {
-      "id": "mission_ui_condition_tags_201005017",
-      "content": "在一次镜像迷宫进程中，全体人格等级不低于{0}级，并清剿第{1}或更高层镜像迷宫"
+      "id": "mission_ui_condition_tags_201005017_6",
+      "content": "在一次镜像迷宫进程中，所有人格的等级不低于{0}，并清剿第{1}或更高层镜像迷宫"
     },
     {
-      "id": "mission_ui_condition_tags_201005018",
+      "id": "mission_ui_condition_tags_201005018_6",
       "content": "在一场战斗的首个回合中，{0}名罪人剩余的所有硬币均暴击命中主要目标"
     },
     {
-      "id": "mission_ui_condition_tags_201005019",
+      "id": "mission_ui_condition_tags_201005019_6",
       "content": "在一场战斗中，拼点威力不低于{0}"
     },
     {

@@ -10,7 +10,7 @@
     },
     {
       "id": "ContinueMainDesc_HellChainInsufficient",
-      "content": "战斗失败。\n是否要消耗<color=#e94d37>40狂气</color>以继续战斗？\n\n<color=#ebcaa2><续关时生效的效果></color>\n<color=#F8C200> - 重置人格与E.G.O的“每场战斗中存在激活次数限制的效果”的激活次数\n- 全属性E.G.O资源 +10\n- 全体友方单位的体力值与理智值完全恢复\n（减算硬币人格则将理智值恢复至-30）</color>"
+      "content": "战斗失败。\n是否要消耗<color=#e94d37>40狂气</color>以继续战斗？\n\n<color=#ebcaa2><续关时生效的效果></color>\n<color=#F8C200> - 重置人格与E.G.O的“每场战斗中存在激活次数限制的效果”的激活次数\n- 全属性E.G.O资源 +10\n- 全体友方单位的体力与理智值完全恢复\n（减算硬币人格则将理智值恢复至-30）</color>"
     },
     {
       "id": "ContinueMainRemainContinueCount",
