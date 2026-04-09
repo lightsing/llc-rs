@@ -458,7 +458,7 @@
         {
           "level": 1,
           "name": "材料获取-浴血之物",
-          "desc": "优先指定人体观剧\n[WhenUse] 若目标的[Laceration]强度不低于6级，则使本技能的硬币威力+1\n[DefeatDuel] 使本技能造成的伤害-80%，且本技能造成的伤害不会使目标陷入混乱",
+          "desc": "优先指定<noparse>人体观剧</noparse>\n[WhenUse] 若目标的[Laceration]强度不低于6级，则使本技能的硬币威力+1\n[DefeatDuel] 使本技能造成的伤害-80%，且本技能造成的伤害不会使目标陷入混乱",
           "coinlist": [
             {
               "coindescs": [

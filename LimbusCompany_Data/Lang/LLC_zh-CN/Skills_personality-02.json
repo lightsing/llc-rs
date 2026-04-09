@@ -2655,7 +2655,7 @@
         {
           "level": 4,
           "name": "展览准备",
-          "desc": "[CanDuelGuard]\n[IronMaidenPersonality]专用技能\n[WinDuel] 对攻击者施加1层[Laceration](每回合最多2次)\n[WinDuel] 对攻击者造成<style=\"highlight\">(其[Laceration]强度×2)</style>点突刺伤害(最多<style=\"highlight\">30</style>点)",
+          "desc": "[CanDuelGuard]\n[IronMaidenPersonality]专用技能\n[WinDuel] 对攻击者施加2层[Laceration](每回合最多2次)\n[WinDuel] 对攻击者造成<style=\"highlight\">(其[Laceration]强度×2)</style>点突刺伤害(最多<style=\"highlight\">30</style>点)",
           "coinlist": [
             {
               "coindescs": [

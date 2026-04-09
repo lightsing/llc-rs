@@ -231,6 +231,10 @@
     {
       "id": "mainui_settings_select_lack_of_ego_gift_warning",
       "content": "E.G.O饰品选择"
+    },
+    {
+      "id": "mirror_dungeon_ui_purchase_exp_loss_warning",
+      "content": "※ 达到最大等级时，将无法获得超出的投影度。"
     }
   ]
 }

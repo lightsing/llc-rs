@@ -165,7 +165,7 @@
     {
       "id": 9239,
       "name": "粉红花束",
-      "desc": "突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合每名友方单位最多2次)\n- 该技能击杀敌方单位时，下回合使自身额外获得1层[Agility]与2层[PenetrateDamageUp](每回合每名友方单位最多1次)\n\n增加[Sinking]强度，施加[Sinking]层数与施加特殊沉沦的技能命中敌方单位时，对其施加2层[PinkPetals]\n- 其每带有5级[Sinking]强度，对其额外施加1层[PinkPetals](最多4层)\n- 若其[PinkPetals]层数不低于10层，则攻击命中时使其增加2级[Vibration]强度(每回合最多3次)\n\n回合结束时，下回合对[Sinking]强度与[Vibration]强度之和不低于5级的敌方单位(若是异想体，则改为部位)施加2层[Binding]与3层[DefenseDown]\n- 若目标的[Sinking]强度与[Vibration]强度之和不低于10级，则改为施加2层[Binding]、1层[Paralysis]与4层[DefenseDown]\n\n回合结束时，若全体敌方单位均带有[PinkPetals]，则下回合使全体友方单位获得1层[Enhancement]",
+      "desc": "突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合每名友方单位最多2次)\n- 该技能击杀敌方单位时，下回合使自身额外获得1层[Agility]与2层[PenetrateDamageUp](每回合每名友方单位最多1次)\n\n增加[Sinking]强度，施加[Sinking]层数与施加特殊沉沦的技能命中敌方单位时，对其施加2层[PinkPetals]\n- 其每带有5级[Sinking]强度，对其额外施加1层[PinkPetals](最多4层)\n- 若其[PinkPetals]层数不低于10层，则攻击命中时使其增加2级[Vibration]强度(每回合最多3次)\n\n回合结束时，下回合对[Sinking]强度与[Vibration]强度之和不低于5级的敌方单位(若是异想体，则改为以部位判定)施加2层[Binding]与3层[DefenseDown]\n- 若目标的[Sinking]强度与[Vibration]强度之和不低于10级，则改为施加2层[Binding]、1层[Paralysis]与4层[DefenseDown]\n\n回合结束时，若全体敌方单位均带有[PinkPetals]，则下回合使全体友方单位获得1层[Enhancement]",
       "simpleDesc": [
         {
           "abilityID": 9239,
@@ -192,7 +192,7 @@
     {
       "id": 9240,
       "name": "蜂王浆香水",
-      "desc": "[第6顺位友方单位专属]\n\n关卡开始时，使自身获得[QueenBeepheromone]\n\n受到带有[Combustion]的敌方单位的伤害-15%\n\n回合结束时，下回合对对自身造成的伤害最多的敌方单位(若是集中遭遇战，则改为部位)施加[QueenBeeMark]\n- 若未受到来自敌方单位的伤害，则下回合随机对1名敌方单位(若是集中遭遇战，则改为部位)施加[QueenBeeMark]",
+      "desc": "[第6顺位友方单位专属]\n\n关卡开始时，使自身获得[QueenBeepheromone]\n\n受到带有[Combustion]的敌方单位的伤害-15%\n\n回合结束时，下回合对对自身造成的伤害最多的敌方单位(若是集中遭遇战，则改为以部位判定)施加[QueenBeeMark]\n- 若未受到来自敌方单位的伤害，则下回合随机对1名敌方单位(若是集中遭遇战，则改为以部位判定)施加[QueenBeeMark]",
       "simpleDesc": [
         {
           "abilityID": 9240,

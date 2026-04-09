@@ -2105,7 +2105,7 @@
         {
           "level": 3,
           "name": "轻蔑下所倾落的敬畏之视线",
-          "desc": "本技能不会因外部效果而重复使用\n优先指定带有[GazeRyoshu]或[ContemptRyoshu]的敌方单位为次要目标\n- 使本技能对次要目标造成的伤害-50%\n若本技能仅指定1名单位，则使本技能造成的伤害+200%(若是集中遭遇战，则改为部位)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有4级，使本技能的硬币威力+1(最多+2)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有1级，使本技能造成的伤害+2%(最多+50%)\n[WhenUse] 全体攻击目标的[GazeRyoshu]层数之和每有1层，使本技能造成的伤害+7%(最多+49%)\n[EndSkill] 消耗受到攻击的全体目标的所有[GazeRyoshu]或[ContemptRyoshu]",
+          "desc": "本技能不会因外部效果而重复使用\n优先指定带有[GazeRyoshu]或[ContemptRyoshu]的敌方单位为次要目标\n- 使本技能对次要目标造成的伤害-50%\n若本技能仅指定1名单位，则使本技能造成的伤害+200%(若是集中遭遇战，则改为以部位判定)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有4级，使本技能的硬币威力+1(最多+2)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有1级，使本技能造成的伤害+2%(最多+50%)\n[WhenUse] 全体攻击目标的[GazeRyoshu]层数之和每有1层，使本技能造成的伤害+7%(最多+49%)\n[EndSkill] 消耗受到攻击的全体目标的所有[GazeRyoshu]或[ContemptRyoshu]",
           "coinlist": [
             {
               "coindescs": [
@@ -2134,7 +2134,7 @@
         {
           "level": 4,
           "name": "轻蔑下所倾落的敬畏之视线",
-          "desc": "本技能不会因外部效果而重复使用\n优先指定带有[GazeRyoshu]或[ContemptRyoshu]的敌方单位为次要目标<style=\"highlight\"></style>\n- 使本技能对次要目标造成的伤害-50%\n若本技能仅指定1名单位，则使本技能造成的伤害+200%(若是集中遭遇战，则改为部位)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有4级，使本技能的硬币威力+1(最多+<style=\"highlight\">4</style>)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有1级，使本技能造成的伤害+2%(最多+<style=\"highlight\">100</style>%)\n[WhenUse] 全体攻击目标的[GazeRyoshu]层数之和每有1层，使本技能造成的伤害+10%(最多+70%)\n[EndSkill] 消耗受到攻击的全体目标的所有[GazeRyoshu]或[ContemptRyoshu]",
+          "desc": "本技能不会因外部效果而重复使用\n优先指定带有[GazeRyoshu]或[ContemptRyoshu]的敌方单位为次要目标<style=\"highlight\"></style>\n- 使本技能对次要目标造成的伤害-50%\n若本技能仅指定1名单位，则使本技能造成的伤害+200%(若是集中遭遇战，则改为以部位判定)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有4级，使本技能的硬币威力+1(最多+<style=\"highlight\">4</style>)\n[WhenUse] 主要目标的[Laceration]强度与[Vibration]强度之和每有1级，使本技能造成的伤害+2%(最多+<style=\"highlight\">100</style>%)\n[WhenUse] 全体攻击目标的[GazeRyoshu]层数之和每有1层，使本技能造成的伤害+10%(最多+70%)\n[EndSkill] 消耗受到攻击的全体目标的所有[GazeRyoshu]或[ContemptRyoshu]",
           "coinlist": [
             {
               "coindescs": [

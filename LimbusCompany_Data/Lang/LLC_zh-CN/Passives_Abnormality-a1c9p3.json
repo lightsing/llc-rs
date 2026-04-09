@@ -459,7 +459,7 @@
     {
       "id": 134703,
       "name": "指令之意",
-      "desc": "回合开始时\n- 根据自身的[UnlockBuff_Base]阶段，相应使自身获得[IndexPrescript_Base_2nd]\n- 随机对除良秀以外的1名罪人施加[IndexPrescriptTargetToPersonality]并优先攻击该罪人\n<color=#ff6000><mark=#ff000040><b><u>- 使自身对[IndexPrescriptTargetToPersonality]使用的技能的所有硬币转化为[SuperCoin]</u></b></mark></color>\n· [IndexPrescriptTargetToPersonality]阵亡或自身无法攻击目标时，\n<color=#ff6000><mark=#ff000040><b><u>随机对除良秀以外的1名罪人使用剩余的技能\n(优先指定现存体力最低的目标)</u></b></mark></color>\n· 其他罪人全部阵亡时，对良秀施加\n\n自身每带有1层[BlessingOfIndexPrescriptEnemy]，使自身对[IndexPrescriptTargetToPersonality]造成的伤害+2.5%(最多+20%)\n- 若自身的[BlessingOfIndexPrescriptEnemy]层数为9层，则改为对全体目标造成的伤害+30%",
+      "desc": "回合开始时\n- 根据自身的[UnlockBuff_Base]阶段，相应使自身获得[IndexPrescript_Base_2nd]\n- 随机对除良秀以外的1名罪人施加[IndexPrescriptTargetToPersonality]并优先攻击该罪人\n<color=#ff6000><mark=#ff000040><b><u>- 使自身对[IndexPrescriptTargetToPersonality]使用的技能的所有硬币转化为[SuperCoin]</u></b></mark></color>\n· [IndexPrescriptTargetToPersonality]阵亡或自身无法攻击目标时，\n<color=#ff6000><mark=#ff000040><b><u>随机对除良秀以外的1名罪人使用剩余的技能\n(优先指定现存体力最低的目标)</u></b></mark></color>\n· 其他罪人全部阵亡时，对良秀触发该效果\n\n自身每带有1层[BlessingOfIndexPrescriptEnemy]，使自身对[IndexPrescriptTargetToPersonality]造成的伤害+2.5%(最多+20%)\n- 若自身的[BlessingOfIndexPrescriptEnemy]层数为9层，则改为对全体目标造成的伤害+30%",
       "flavor": "您希望我组建家庭吗。\n\n“我怎么会和你这样的丈夫，有如此命中注定的邂逅呢。”"
     },
     {
@@ -489,7 +489,7 @@
     {
       "id": 134803,
       "name": "指令之意",
-      "desc": "回合开始时\n- 随机对除良秀以外的1名罪人施加[IndexPrescriptTargetToPersonality]并优先攻击该罪人\n<color=#ff6000><mark=#ff000040><b><u>- 使自身对[IndexPrescriptTargetToPersonality]使用的技能的所有硬币转化为[SuperCoin]</u></b></mark></color>\n· [IndexPrescriptTargetToPersonality]阵亡或自身无法攻击目标时，<color=#ff6000><mark=#ff000040><b><u>随机对除良秀以外的1名罪人使用剩余的技能(优先指定现存体力最低的目标，不包括体力为1点的单位)</u></b></mark></color>\n· 其他罪人全部阵亡时，对良秀施加\n- 使自身获得层数相当于自身[BlessingOfIndexPrescriptEnemy]层数的[Protection](最多9层)\n<color=#ff6000><mark=#ff000040><b><u>· 自身每带有20层[KarmaOfIndexRien_2Phase]，使获得的[Protection]减少1层</u></b></mark></color>\n\n自身每带有1层[BlessingOfIndexPrescriptEnemy]，使自身对[IndexPrescriptTargetToPersonality]造成的伤害+5%(最多+40%)\n- 若自身的[BlessingOfIndexPrescriptEnemy]层数为9层，则改为对全体目标造成的伤害+50%\n\n从改变模式的回合起触发效果\n- 每2回合使自身获得[BlackNightmare]\n- 获得[BlackNightmare]时，若自身的[StackRienSpecialSkill]层数低于9层，则触发特殊模式",
+      "desc": "回合开始时\n- 随机对除良秀以外的1名罪人施加[IndexPrescriptTargetToPersonality]并优先攻击该罪人\n<color=#ff6000><mark=#ff000040><b><u>- 使自身对[IndexPrescriptTargetToPersonality]使用的技能的所有硬币转化为[SuperCoin]</u></b></mark></color>\n· [IndexPrescriptTargetToPersonality]阵亡或自身无法攻击目标时，<color=#ff6000><mark=#ff000040><b><u>随机对除良秀以外的1名罪人使用剩余的技能(优先指定现存体力最低的目标，不包括体力为1点的单位)</u></b></mark></color>\n· 其他罪人全部阵亡时，对良秀触发该效果\n- 使自身获得层数相当于自身[BlessingOfIndexPrescriptEnemy]层数的[Protection](最多9层)\n<color=#ff6000><mark=#ff000040><b><u>· 自身每带有20层[KarmaOfIndexRien_2Phase]，使获得的[Protection]减少1层</u></b></mark></color>\n\n自身每带有1层[BlessingOfIndexPrescriptEnemy]，使自身对[IndexPrescriptTargetToPersonality]造成的伤害+5%(最多+40%)\n- 若自身的[BlessingOfIndexPrescriptEnemy]层数为9层，则改为对全体目标造成的伤害+50%\n\n从改变模式的回合起触发效果\n- 每2回合使自身获得[BlackNightmare]\n- 获得[BlackNightmare]时，若自身的[StackRienSpecialSkill]层数低于9层，则触发特殊模式",
       "flavor": "我组建了家庭。\n\n“你现在不该在这里的。”\n“我的工作还在进行之中。我正要将其装饰得比其他任何事物都更精致且美丽。”\n“……你这混蛋，难道是想违抗指令吗。”"
     },
     {

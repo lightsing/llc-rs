@@ -55,6 +55,62 @@
     {
       "id": "mission_ui_condition_tags_201003040",
       "content": "在编队中编入“拉·曼却领 总督 堂吉诃德”人格的情况下（不包括待命人员），击杀“WARP快车谋杀案”，“WARP快车谋杀案 复刻”，“重新开园的拉·曼却领”，“无尽的游行”，“梦之终焉”5个主题卡包的头目（租借编队不可完成）"
+    },
+    {
+      "id": "ui_condition_clear_201100007_CLEAR",
+      "content": "清剿隐藏节点 - 蜘蛛巢的拇指"
+    },
+    {
+      "id": "ui_condition_clear_201100008_CLEAR",
+      "content": "清剿隐藏节点 - 蜘蛛巢的食指"
+    },
+    {
+      "id": "ui_condition_clear_201100009_CLEAR",
+      "content": "清剿隐藏节点 - 蜘蛛巢的中指"
+    },
+    {
+      "id": "ui_condition_clear_201100010_CLEAR",
+      "content": "清剿隐藏节点 - 蜘蛛巢的环指"
+    },
+    {
+      "id": "ui_condition_clear_201100011_CLEAR",
+      "content": "净化诅咒E.G.O饰品，于E.G.O饰品列表中解锁E.G.O饰品“人剑合一”"
+    },
+    {
+      "id": "ui_condition_clear_201100012_CLEAR",
+      "content": "净化诅咒E.G.O饰品，于E.G.O饰品列表中解锁E.G.O饰品“黄金时间”"
+    },
+    {
+      "id": "ui_condition_clear_201100013_CLEAR",
+      "content": "净化诅咒E.G.O饰品，于E.G.O饰品列表中解锁E.G.O饰品“可能性”"
+    },
+    {
+      "id": "ui_condition_clear_201100007_NONE",
+      "content": "清剿隐藏节点 - ？？？"
+    },
+    {
+      "id": "ui_condition_clear_201100008_NONE",
+      "content": "清剿隐藏节点 - ？？？"
+    },
+    {
+      "id": "ui_condition_clear_201100009_NONE",
+      "content": "清剿隐藏节点 - ？？？"
+    },
+    {
+      "id": "ui_condition_clear_201100010_NONE",
+      "content": "清剿隐藏节点 - ？？？"
+    },
+    {
+      "id": "ui_condition_clear_201100011_NONE",
+      "content": "净化诅咒E.G.O饰品，于E.G.O饰品列表中解锁E.G.O饰品“？？？”"
+    },
+    {
+      "id": "ui_condition_clear_201100012_NONE",
+      "content": "净化诅咒E.G.O饰品，于E.G.O饰品列表中解锁E.G.O饰品“？？？”"
+    },
+    {
+      "id": "ui_condition_clear_201100013_NONE",
+      "content": "净化诅咒E.G.O饰品，于E.G.O饰品列表中解锁E.G.O饰品“？？？”"
     }
   ]
 }

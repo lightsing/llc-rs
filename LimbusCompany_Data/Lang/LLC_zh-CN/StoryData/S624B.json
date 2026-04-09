@@ -138,7 +138,7 @@
     {
       "id": 28,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "……"
     },
@@ -160,7 +160,7 @@
     {
       "id": 32,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "此处禁止靠近。"
     },
@@ -182,21 +182,21 @@
     {
       "id": 36,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "……"
     },
     {
       "id": 37,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "没想到你们已经来到这里了……不过，时机还未到来。"
     },
     {
       "id": 38,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "释放副产物。"
     },

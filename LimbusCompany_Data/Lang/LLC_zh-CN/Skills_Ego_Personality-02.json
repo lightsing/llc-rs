@@ -873,7 +873,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[EndCoin] 若自身的[Combustion]强度不低于15级，则使全体目标增加1级[FaustFlameMothEmber]强度(每回合最多1次，若是集中遭遇战，则改为部位)"
+                  "desc": "[EndCoin] 若自身的[Combustion]强度不低于15级，则使全体目标增加1级[FaustFlameMothEmber]强度(每回合最多1次；若是集中遭遇战，则改为以部位判定)"
                 }
               ]
             }
@@ -898,7 +898,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[EndCoin] 若自身的[Combustion]强度不低于15级，则使全体目标增加1级[FaustFlameMothEmber]强度(每回合最多1次，若是集中遭遇战，则改为部位)"
+                  "desc": "[EndCoin] 若自身的[Combustion]强度不低于15级，则使全体目标增加1级[FaustFlameMothEmber]强度(每回合最多1次；若是集中遭遇战，则改为以部位判定)"
                 }
               ]
             }
@@ -926,7 +926,7 @@
                   "desc": "<style=\"highlight\">[OnSucceedAttack] 对目标施加(暴怒共鸣数/3)层[Combustion](最多2层，向下取整)</style>"
                 },
                 {
-                  "desc": "[EndCoin] 若自身的[Combustion]强度不低于15级，则使全体目标增加1级[FaustFlameMothEmber]强度(每回合最多1次，若是集中遭遇战，则改为部位)<style=\"highlight\"></style>"
+                  "desc": "[EndCoin] 若自身的[Combustion]强度不低于15级，则使全体目标增加1级[FaustFlameMothEmber]强度(每回合最多1次；若是集中遭遇战，则改为以部位判定)<style=\"highlight\"></style>"
                 }
               ]
             }
@@ -960,7 +960,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[EndCoin] 随机使目标增加共计3级[FaustFlameMothEmber]强度(每回合最多1次，不包括[FaustFlameMothEmber]强度为最大值的目标，若是集中遭遇战，则改为部位)"
+                  "desc": "[EndCoin] 随机使目标增加共计3级[FaustFlameMothEmber]强度(每回合最多1次，不包括[FaustFlameMothEmber]强度为最大值的目标；若是集中遭遇战，则改为以部位判定)"
                 }
               ]
             }
@@ -992,7 +992,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[EndCoin] 随机使目标增加共计3级[FaustFlameMothEmber]强度(每回合最多1次，不包括[FaustFlameMothEmber]强度为最大值的目标，若是集中遭遇战，则改为部位)"
+                  "desc": "[EndCoin] 随机使目标增加共计3级[FaustFlameMothEmber]强度(每回合最多1次，不包括[FaustFlameMothEmber]强度为最大值的目标；若是集中遭遇战，则改为以部位判定)"
                 }
               ]
             }
@@ -1027,7 +1027,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[EndCoin] 随机使目标增加共计<style=\"highlight\">6</style>级[FaustFlameMothEmber]强度(每回合最多1次，不包括[FaustFlameMothEmber]强度为最大值的目标，若是集中遭遇战，则改为部位)"
+                  "desc": "[EndCoin] 随机使目标增加共计<style=\"highlight\">6</style>级[FaustFlameMothEmber]强度(每回合最多1次，不包括[FaustFlameMothEmber]强度为最大值的目标；若是集中遭遇战，则改为以部位判定)"
                 }
               ]
             }

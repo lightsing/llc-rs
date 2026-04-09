@@ -27,8 +27,8 @@
     {
       "id": 1077,
       "panicName": "过时的艺术",
-      "lowMoraleDescription": "回合开始时，使自身失去5点体力，并使自身获得1层[AttackUp]",
-      "panicDescription": "回合开始时，使自身失去15点体力，并使自身获得2层[AttackUp]"
+      "lowMoraleDescription": "回合开始时，使自身获得1层[AttackUp]",
+      "panicDescription": "回合开始时，使自身获得2层[AttackUp]"
     },
     {
       "id": 1075,

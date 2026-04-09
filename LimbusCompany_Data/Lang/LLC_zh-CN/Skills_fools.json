@@ -6,7 +6,7 @@
         {
           "level": 1,
           "name": "给我糖果。",
-          "desc": "优先指定带有[CandyForCharon]的对象\n[EndSkill] 若目标未带有[CandyForCharon]，则对其施加[CandyForCharon]",
+          "desc": "优先指定带有[CandyForCharon]的目标\n[EndSkill] 若目标未带有[CandyForCharon]，则对其施加[CandyForCharon]",
           "coinlist": [
             {
               "coindescs": [

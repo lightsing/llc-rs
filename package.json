@@ -1,7 +1,7 @@
 {
   "name": "@lightsing/llc-zh-cn",
-  "version": "1.0.1775149905",
-  "githubTag": "2026040301",
+  "version": "1.0.1775729917",
+  "githubTag": "2026040901",
   "description": "**Unofficial** NPM distribution of LocalizeLimbusCompany assets.",
   "publishConfig": {
     "access": "public"

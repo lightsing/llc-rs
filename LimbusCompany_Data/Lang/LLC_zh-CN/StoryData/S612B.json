@@ -97,14 +97,14 @@
     {
       "id": 19,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "随着陈情时间结束，财产继承遗嘱将继续执行。"
     },
     {
       "id": 20,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "这是逝者凯瑟琳女士的遗嘱。经过多轮程序验证，没有发现伪造的证据。"
     },
@@ -126,21 +126,21 @@
     {
       "id": 24,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "凯瑟琳小姐要求在宣布财产分配之前，将这封信……"
     },
     {
       "id": 25,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "……在所有人面前朗读。"
     },
     {
       "id": 26,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "现在开始宣读此份遗嘱。"
     },
@@ -286,14 +286,14 @@
     {
       "id": 60,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "如果再次发生骚动，导致执行中止……"
     },
     {
       "id": 61,
       "model": "외우피협회보스F",
-      "teller": "Öufi协会收尾人 科长",
+      "teller": "<size=90%>Öufi协会收尾人 科长</size>",
       "title": "Öufi协会",
       "content": "……我们将在没有警告的情况下采取武力措施。"
     },
