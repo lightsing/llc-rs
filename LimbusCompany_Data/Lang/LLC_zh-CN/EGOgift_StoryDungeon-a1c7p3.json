@@ -92,15 +92,15 @@
     {
       "id": 2054,
       "name": "无尽的饥饿",
-      "desc": "关卡的首个回合开始时，使全体参战的友方单位失去5点理智值，3回合内使其获得1层[Enhancement]。\n若该友方单位属于血魔，则使其失去10点理智值，3回合内使其获得2层[Enhancement]，令其技能或硬币效果增加的[Laceration]强度与施加的[Laceration]层数额外+1",
+      "desc": "关卡的首个回合开始时，使全体参战的人格失去5点理智值，3回合内使其获得1层[Enhancement]。\n若该人格属于血魔，则使其失去10点理智值，3回合内使其获得2层[Enhancement]，令其技能或硬币效果增加的[Laceration]强度与施加的[Laceration]层数额外+1",
       "simpleDesc": [
         {
           "abilityID": 2054,
-          "simpleDesc": "关卡的首个回合开始时，使全体参战的友方单位失去5点理智值，3回合内使其获得1层[Enhancement]。"
+          "simpleDesc": "关卡的首个回合开始时，使全体参战的人格失去5点理智值，3回合内使其获得1层[Enhancement]。"
         },
         {
           "abilityID": 205401,
-          "simpleDesc": "若该友方单位属于血魔，则使其失去10点理智值，3回合内使其获得2层[Enhancement]，令其技能或硬币效果增加的[Laceration]强度与施加的[Laceration]层数额外+1"
+          "simpleDesc": "若该人格属于血魔，则使其失去10点理智值，3回合内使其获得2层[Enhancement]，令其技能或硬币效果增加的[Laceration]强度与施加的[Laceration]层数额外+1"
         }
       ]
     },

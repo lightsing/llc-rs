@@ -2361,6 +2361,522 @@
           ]
         }
       ]
+    },
+    {
+      "id": 1091501,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "强烈覆涂",
+          "desc": "若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "强烈覆涂",
+          "desc": "若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n<style=\"highlight\">[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的最终威力+1(最多+2)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "强烈覆涂",
+          "desc": "<style=\"highlight\">目标每带有1种负面状态，使本技能造成的伤害+5%(最多+15%)</style>\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的<style=\"highlight\">拼点威力+1</style>，最终威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "<style=\"highlight\">若目标带有的负面状态不少于4种，则重复使用本硬币(最多1次)</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[Laceration]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1091502,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "原色表现",
+          "desc": "若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Sinking]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[EagleClawWoundAlly]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有的负面状态不少于6种，则对其施加1层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "原色表现",
+          "desc": "若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n<style=\"highlight\">[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的最终威力+1(最多+2)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Sinking]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加<style=\"highlight\">3</style>层[EagleClawWoundAlly]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有的负面状态不少于6种，则对其施加1层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "原色表现",
+          "desc": "<style=\"highlight\">目标每带有1种负面状态，使本技能造成的伤害+20%(最多+60%)</style>\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n<style=\"highlight\">若目标带有的被撕裂的色彩不少于2种，则使本技能造成的伤害+20%</style>\n[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的最终威力+1(最多+2)\n<style=\"highlight\">[WhenUse] 目标每带有2种负面状态，使本技能的硬币威力+1(最多+3)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Sinking]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[EagleClawWoundAlly]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标带有的负面状态不少于<style=\"highlight\">5</style>种，则对其施加1层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1091503,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "野兽派-暴烈呈现",
+          "desc": "若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n[BeforeUse] 若目标带有的负面状态不少于6种，\n则改为使用“令你皮肤下搏动着的那赤红色彩更加狂野”(每回合最多1次)\n[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的硬币威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[EagleClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "野兽派-暴烈呈现",
+          "desc": "<style=\"highlight\">目标每带有1种负面状态，使本技能造成的伤害+20%(最多+60%)</style>\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n[BeforeUse] 若目标带有的负面状态不少于6种，\n则改为使用“令你皮肤下搏动着的那赤红色彩更加狂野”(每回合最多1次)\n[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的硬币威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[EagleClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 若目标带有的负面状态不少于5种，则下回合对其施加1层[BoldBrushstrokesRodion]</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BoldBrushstrokesRodion]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1091504,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "处理素材",
+          "desc": "[DuelCounter]\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[EagleClawWoundAlly]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "name": "处理素材",
+          "desc": "[DuelCounter]\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+20%\n<style=\"highlight\">[BeforeUse] 若自身未带有[TestWaitDocentRodion]且目标带有的负面状态不少于3种，则改为使用“批评”\n[WhenUse] 目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的最终威力+1(最多+2)</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                },
+                {
+                  "desc": "<style=\"highlight\">- 若目标未带有[BearClawWoundAlly]，则对其额外施加1层[BearClawWoundAlly]</style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[EagleClawWoundAlly]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">- 若目标未带有[EagleClawWoundAlly]，则对其额外施加1层[EagleClawWoundAlly]</style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1091505,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "令你皮肤下搏动着的那赤红色彩更加狂野",
+          "desc": "[WideAreaRampage]\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+40%\n[WhenUse] 主要目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的硬币威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加4层[EagleClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "本硬币会命中全体攻击目标"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "令你皮肤下搏动着的那赤红色彩更加狂野",
+          "desc": "[WideAreaRampage]\n<style=\"highlight\">目标每带有1种负面状态，使本技能造成的伤害+15%(最多+90%)</style>\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+40%\n[WhenUse] 主要目标的[Laceration]强度与[Sinking]强度之和每有4级，使本技能的硬币威力+1(最多+2)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Laceration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加1层[BearClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加3级[Sinking]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加4层[EagleClawWoundAlly]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "本硬币会命中全体攻击目标"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Laceration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1091506,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "批评",
+          "desc": "[DuelCounter]\n目标每带有1种负面状态，使本技能造成的伤害+8%(最多+40%)\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+30%\n[WhenUse] 若目标带有[IntenseColorsRodion]，则使自身获得2层[ParryingResultUp]\n[WhenUse] 若目标的[Laceration]强度与[Sinking]强度之和不低于4级，则使本技能的最终威力+3\n[EndSkillAll] 使自身获得2层[TestWaitDocentRodion]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "目标每带有3种负面状态，重复使用本硬币1次(最多2次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Laceration]强度(每个技能最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度(每个技能最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 随机对目标施加1层[BearClawWoundAlly]或[EagleClawWoundAlly]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若本硬币为第3次使用的硬币，则对目标施加1层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "批评",
+          "desc": "[DuelCounter]\n目标每带有1种负面状态，使本技能造成的伤害<style=\"highlight\">+10%</style>(最多+40%)\n若目标带有[IntenseColorsRodion]，则使本技能造成的伤害+30%\n[WhenUse] 若目标带有[IntenseColorsRodion]，则使自身获得2层[ParryingResultUp]\n[WhenUse] 若目标的[Laceration]强度与[Sinking]强度之和不低于4级，则使本技能的最终威力+3\n<style=\"highlight\">[WhenUse] 目标每带有2种负面状态，使本技能的拼点威力+2(最多+6)</style>\n[EndSkillAll] 使自身获得2层[TestWaitDocentRodion]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "目标每带有3种负面状态，重复使用本硬币1次(最多2次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Laceration]强度(每个技能最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Sinking]强度(每个技能最多1次)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 随机对目标施加1层[BearClawWoundAlly]或[EagleClawWoundAlly]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若本硬币为第3次使用的硬币，则对目标施加1层[BoldBrushstrokesRodion]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -98,6 +98,18 @@
     {
       "id": 9123,
       "openCondition": "通过第8次 瓦尔普吉斯之夜"
+    },
+    {
+      "id": 9125,
+      "openCondition": "通过绞丝结线"
+    },
+    {
+      "id": 912520,
+      "openCondition": "(더미) 10001 NORMAL 클리어"
+    },
+    {
+      "id": 912521,
+      "openCondition": "(더미) 10001 HARD 클리어"
     }
   ]
 }

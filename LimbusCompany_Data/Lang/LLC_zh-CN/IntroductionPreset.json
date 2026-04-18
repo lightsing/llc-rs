@@ -1931,6 +1931,22 @@
     {
       "id": "introduce_sentence_242",
       "content": "你在害怕吗，{0}？"
+    },
+    {
+      "id": "introduce_word_243",
+      "content": "审查"
+    },
+    {
+      "id": "introduce_sentence_243",
+      "content": "期待您的严正{0}。"
+    },
+    {
+      "id": "introduce_word_244",
+      "content": "色彩"
+    },
+    {
+      "id": "introduce_sentence_244",
+      "content": "用在任何地方都见不到的{0}。"
     }
   ]
 }

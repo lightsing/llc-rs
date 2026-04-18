@@ -1279,6 +1279,22 @@
     {
       "id": "10215_getCondition_gacksung",
       "content": "蜘蛛巢 环指 子辈 浮士德 3阶段同步完成"
+    },
+    {
+      "id": "10915_getCondition_normal",
+      "content": "环指 野兽派 讲解员 罗佳 获得时"
+    },
+    {
+      "id": "10915_getCondition_gacksung",
+      "content": "环指 野兽派 讲解员 罗佳 3阶段同步完成"
+    },
+    {
+      "id": "10515_getCondition_normal",
+      "content": "环指 野兽派 学徒 默尔索 获得时"
+    },
+    {
+      "id": "10515_getCondition_gacksung",
+      "content": "环指 野兽派 学徒 默尔索 3阶段同步完成"
     }
   ]
 }

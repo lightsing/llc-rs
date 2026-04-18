@@ -934,7 +934,7 @@
         {
           "level": 1,
           "name": "在开玩笑吗？",
-          "desc": "[WhenUse] 使自身恢复15点理智值\n[WhenUse] 若目标带有的负面状态数不少于3种，则使本技能的基础威力+1",
+          "desc": "[WhenUse] 使自身恢复15点理智值\n[WhenUse] 若目标带有的负面状态不少于3种，则使本技能的基础威力+1",
           "coinlist": [
             {
               "coindescs": [

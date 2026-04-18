@@ -289,12 +289,32 @@
       "content": "学徒"
     },
     {
+      "id": "UnitKeyword_RING_FINGER_FAUVISM",
+      "content": "野兽派"
+    },
+    {
       "id": "UnitKeyword_RING_FINGER_POINTILLISM",
       "content": "点彩派"
     },
     {
       "id": "UnitKeyword_RING_FINGER_PHYSICAL",
       "content": "人体派"
+    },
+    {
+      "id": "UnitKeyword_FINGER_CANCELED",
+      "content": "<s>手指</s>"
+    },
+    {
+      "id": "UnitKeyword_MIDDLE_FINGER_CANCELED",
+      "content": "<s>中指</s>"
+    },
+    {
+      "id": "UnitKeyword_SPIDER_HOUSE_CANCELED",
+      "content": "<s>蜘蛛巢</s>"
+    },
+    {
+      "id": "UnitKeyword_LIMBUS_COMPANY_LCE_UNSETTLED",
+      "content": "LCE？"
     }
   ]
 }

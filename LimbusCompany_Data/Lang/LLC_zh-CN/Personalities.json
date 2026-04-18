@@ -1210,6 +1210,20 @@
       "name": "浮士德",
       "nameWithTitle": "浮士德",
       "desc": "浮士德的第15人格"
+    },
+    {
+      "id": 10515,
+      "title": "环指 野兽派\n学徒",
+      "name": "默尔索",
+      "nameWithTitle": "默尔索",
+      "desc": "默尔索的第15人格"
+    },
+    {
+      "id": 10915,
+      "title": "环指 野兽派\n讲解员",
+      "name": "罗佳",
+      "nameWithTitle": "罗佳",
+      "desc": "罗佳的第15人格"
     }
   ]
 }

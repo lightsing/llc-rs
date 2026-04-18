@@ -96,7 +96,7 @@
     {
       "id": 9004,
       "name": "采血包",
-      "desc": "通过技能对敌方单位造成伤害时，恢复技能使用者已失去体力12.5%的体力(每回合每名友方单位最多1次)。\n\n若该技能为暴怒技能，则恢复量改为25%。",
+      "desc": "友方单位通过技能对敌方单位造成伤害时，使该友方单位恢复已失去体力12.5%的体力(每回合每名人格最多1次)。\n\n若该技能为暴怒技能，则改为恢复已失去体力25%的体力。",
       "simpleDesc": [
         {
           "abilityID": 9004,
@@ -290,7 +290,7 @@
     {
       "id": 9012,
       "name": "此刻的神色",
-      "desc": "使用怠惰技能或打击技能击杀敌方单位时，使击杀者的打击技能威力+2，持续到下回合结束。",
+      "desc": "怠惰技能或打击技能攻击后，若敌方单位阵亡，则在除本回合以外的下2回合内使该友方单位的打击技能威力+2",
       "simpleDesc": [
         {
           "abilityID": 9012,
@@ -439,7 +439,7 @@
     {
       "id": 9017,
       "name": "石版字符",
-      "desc": "敌方单位陷入混乱时，使现存体力最低的友方单位恢复其体力上限5%的体力。\n\n若该友方单位拥有暴食攻击技能，则恢复量改为10%。",
+      "desc": "敌方单位陷入混乱时，使现存体力最低的人格恢复该人格体力上限5%的体力。\n\n若该人格拥有暴食攻击技能，则改为恢复体力上限10%的体力。",
       "simpleDesc": [
         {
           "abilityID": 9017,
@@ -510,7 +510,7 @@
     {
       "id": 9020,
       "name": "白棉花",
-      "desc": "回合开始时，解除敌方单位的混乱，使其增加(8+混乱阶段×4)级[Laceration]强度并对其施加 (8+混乱阶段×4)/2层[AttackDown]。(每场战斗每名敌方单位最多1次，不对不能解除混乱的特定敌方单位生效)",
+      "desc": "回合开始时，解除敌方单位的混乱，使其增加(8+混乱阶段×4)级[Laceration]强度并在本回合与下回合对其施加 (8+混乱阶段×4)/2层[AttackDown]。(每场战斗每名敌方单位最多1次，不对不能解除混乱的特定敌方单位生效)",
       "simpleDesc": [
         {
           "abilityID": 9020,
@@ -521,7 +521,7 @@
     {
       "id": 19020,
       "name": "白棉花+",
-      "desc": "回合开始时，解除敌方单位的混乱，使其<style=\"upgradeHighlight\">增加(10+混乱阶段×5)级[Laceration]强度并对其施加 (10+混乱阶段×5)层[AttackDown]</style>。(每场战斗每名敌方单位最多1次，不对不能解除混乱的特定敌方单位生效)",
+      "desc": "回合开始时，解除敌方单位的混乱，使其<style=\"upgradeHighlight\">增加(10+混乱阶段×5)级[Laceration]强度并在本回合与下回合对其施加 (10+混乱阶段×5)层[AttackDown]</style>。(每场战斗每名敌方单位最多1次，不对不能解除混乱的特定敌方单位生效)",
       "simpleDesc": [
         {
           "abilityID": 19020,
@@ -532,7 +532,7 @@
     {
       "id": 29020,
       "name": "白棉花++",
-      "desc": "回合开始时，解除敌方单位的混乱，使其<style=\"upgradeHighlight\">增加(12+混乱阶段×6)级[Laceration]强度并对其施加 (12+混乱阶段×6)层[AttackDown]与[DefenseDown]</style>。(每场战斗每名敌方单位最多1次，不对不能解除混乱的特定敌方单位生效)",
+      "desc": "回合开始时，解除敌方单位的混乱，使其<style=\"upgradeHighlight\">增加(12+混乱阶段×6)级[Laceration]强度并在本回合与下回合对其施加 (12+混乱阶段×6)层[AttackDown]与[DefenseDown]</style>。(每场战斗每名敌方单位最多1次，不对不能解除混乱的特定敌方单位生效)",
       "simpleDesc": [
         {
           "abilityID": 29020,
@@ -726,7 +726,7 @@
     {
       "id": 9030,
       "name": "头骨收藏",
-      "desc": "使用傲慢技能或造成突刺伤害的技能击杀敌方单位时，下2回合使击杀者的突刺技能威力+2。",
+      "desc": "傲慢技能或突刺技能攻击后，若敌方单位阵亡，则在除本回合以外的下2回合内使该友方单位的突刺技能威力+2",
       "simpleDesc": [
         {
           "abilityID": 9030,
@@ -782,7 +782,7 @@
     {
       "id": 9032,
       "name": "梦中的电子羊",
-      "desc": "使用嫉妒技能或斩击技能击杀敌方单位时，下2回合使击杀者的斩击技能威力+2。\n\n激活嫉妒完全共鸣时，战斗开始时，使全体友方单位获得2层[AttackUp]与2层[DefenseUp]。",
+      "desc": "嫉妒技能或斩击技能攻击后，若敌方单位阵亡，则在除本回合以外的下2回合内使该友方单位的斩击技能威力+2\n\n激活嫉妒完全共鸣时，战斗开始时，使全体友方单位获得2层[AttackUp]与2层[DefenseUp]。",
       "simpleDesc": [
         {
           "abilityID": 9032,
@@ -945,7 +945,7 @@
     {
       "id": 9041,
       "name": "赤色指令",
-      "desc": "友方单位通过技能效果使敌方单位增加[Sinking]强度，对敌方单位施加[Sinking]层数或对敌方单位施加特殊沉沦时，下回合使该友方单位增加1级攻击等级（最多增加3级）。\n\n若该友方单位拥有忧郁或暴怒攻击技能，则改为每次增加[Sinking]强度或施加[Sinking]层数时，下回合使该友方单位增加2级攻击等级（最多增加4级）。",
+      "desc": "友方单位通过技能效果使敌方单位增加[Sinking]强度，对敌方单位施加[Sinking]层数或对敌方单位施加特殊沉沦时，下回合使该人格增加1级攻击等级（最多增加3级）。\n\n若该友方单位拥有忧郁或暴怒攻击技能，则改为每次增加[Sinking]强度或施加[Sinking]层数时，下回合使该人格增加2级攻击等级（最多增加4级）。",
       "simpleDesc": [
         {
           "abilityID": 9041,
@@ -960,7 +960,7 @@
     {
       "id": 19041,
       "name": "赤色指令+",
-      "desc": "友方单位通过技能效果使敌方单位增加[Sinking]强度，对敌方单位施加[Sinking]层数或对敌方单位施加特殊沉沦时，下回合使该友方单位增加1级攻击等级<style=\"upgradeHighlight\">（最多增加4级）</style>。\n\n若该友方单位拥有忧郁或暴怒攻击技能，则改为每次增加[Sinking]强度或施加[Sinking]层数时，下回合使该友方单位增加2级攻击等级<style=\"upgradeHighlight\">（最多增加5级）</style>。",
+      "desc": "友方单位通过技能效果使敌方单位增加[Sinking]强度，对敌方单位施加[Sinking]层数或对敌方单位施加特殊沉沦时，下回合使该人格增加1级攻击等级<style=\"upgradeHighlight\">（最多增加4级）</style>。\n\n若该友方单位拥有忧郁或暴怒攻击技能，则改为每次增加[Sinking]强度或施加[Sinking]层数时，下回合使该人格增加2级攻击等级<style=\"upgradeHighlight\">（最多增加5级）</style>。",
       "simpleDesc": [
         {
           "abilityID": 19041,
@@ -975,7 +975,7 @@
     {
       "id": 29041,
       "name": "赤色指令++",
-      "desc": "友方单位通过技能效果使敌方单位增加[Sinking]强度，对敌方单位施加[Sinking]层数或对敌方单位施加特殊沉沦时，下回合使该友方单位<style=\"upgradeHighlight\">增加2级攻击等级</style>（最多增加4级）。\n\n若该友方单位拥有忧郁或暴怒攻击技能，则改为每次增加[Sinking]强度或施加[Sinking]层数时，下回合使该友方单位<style=\"upgradeHighlight\">增加3级攻击等级（最多增加6级）。</style>",
+      "desc": "友方单位通过技能效果使敌方单位增加[Sinking]强度，对敌方单位施加[Sinking]层数或对敌方单位施加特殊沉沦时，下回合使该人格<style=\"upgradeHighlight\">增加2级攻击等级</style>（最多增加4级）。\n\n若该友方单位拥有忧郁或暴怒攻击技能，则改为每次增加[Sinking]强度或施加[Sinking]层数时，下回合使该人格<style=\"upgradeHighlight\">增加3级攻击等级（最多增加6级）。</style>",
       "simpleDesc": [
         {
           "abilityID": 29041,
@@ -1398,7 +1398,7 @@
     {
       "id": 9052,
       "name": "便携式电源插座",
-      "desc": "回合开始时，随机使2名友方单位获得2层[Charge](优先选取拥有获得[Charge]层数或特殊充能的技能的友方单位)。\n\n激活怠惰完全共鸣时，战斗开始时随机使1名友方单位获得3层[Charge]。",
+      "desc": "回合开始时，随机使2名友方单位获得2层[Charge](优先选取拥有获得[Charge]层数或特殊充能的技能的人格)。\n\n激活怠惰完全共鸣时，战斗开始时随机使1名友方单位获得3层[Charge]。",
       "simpleDesc": [
         {
           "abilityID": 9052,
@@ -1413,7 +1413,7 @@
     {
       "id": 19052,
       "name": "便携式电源插座+",
-      "desc": "回合开始时，随机使2名友方单位<style=\"upgradeHighlight\">获得3层[Charge]</style>(优先选取拥有获得[Charge]层数或特殊充能的技能的友方单位)。\n\n<style=\"upgradeHighlight\">激活怠惰共鸣</style>时，战斗开始时随机使1名友方单位获得3层[Charge]。",
+      "desc": "回合开始时，随机使2名友方单位<style=\"upgradeHighlight\">获得3层[Charge]</style>(优先选取拥有获得[Charge]层数或特殊充能的技能的人格)。\n\n<style=\"upgradeHighlight\">激活怠惰共鸣</style>时，战斗开始时随机使1名友方单位获得3层[Charge]。",
       "simpleDesc": [
         {
           "abilityID": 19052,
@@ -1428,7 +1428,7 @@
     {
       "id": 29052,
       "name": "便携式电源插座++",
-      "desc": "回合开始时，随机使<style=\"upgradeHighlight\">3名友方单位获得3层[Charge]</style>(优先选取拥有获得[Charge]层数或特殊充能的技能的友方单位)。\n\n激活怠惰共鸣时，战斗开始时随机使1名友方单位<style=\"upgradeHighlight\">获得5层[Charge]</style>。",
+      "desc": "回合开始时，随机使<style=\"upgradeHighlight\">3名友方单位获得3层[Charge]</style>(优先选取拥有获得[Charge]层数或特殊充能的技能的人格)。\n\n激活怠惰共鸣时，战斗开始时随机使1名友方单位<style=\"upgradeHighlight\">获得5层[Charge]</style>。",
       "simpleDesc": [
         {
           "abilityID": 29052,
@@ -1559,7 +1559,7 @@
     {
       "id": 9057,
       "name": "夜视镜",
-      "desc": "回合开始时，若有友方单位的[Charge]层数不低于15层，则发动效果。(包括特殊充能)\n\n战斗开始时，该友方单位消耗3层[Charge]并在本回合内增加5级攻击等级。",
+      "desc": "回合开始时，若有人格的[Charge]层数不低于15层，则发动效果。(包括特殊充能)\n\n战斗开始时，该人格消耗3层[Charge]并在本回合内增加5级攻击等级。",
       "simpleDesc": [
         {
           "abilityID": 9057,
@@ -1713,7 +1713,7 @@
     {
       "id": 9063,
       "name": "追忆吊坠",
-      "desc": "战斗开始时，随机使1名友方单位增加3级[Breath]强度(优先选取拥有获得[Breath]层数的攻击技能的友方单位)。\n\n优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加3级[Breath]强度并获得2层[Breath]。",
+      "desc": "战斗开始时，随机使1名友方单位增加3级[Breath]强度(优先选取拥有获得[Breath]层数的攻击技能的人格)。\n\n优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加3级[Breath]强度并获得2层[Breath]。",
       "simpleDesc": [
         {
           "abilityID": 9063,
@@ -1728,7 +1728,7 @@
     {
       "id": 19063,
       "name": "追忆吊坠+",
-      "desc": "战斗开始时，随机使1名友方单位<style=\"upgradeHighlight\">增加4级[Breath]强度</style>。(优先选取拥有获得[Breath]层数的攻击技能的友方单位)\n\n优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其<style=\"upgradeHighlight\">增加4级[Breath]强度并获得3层[Breath]</style>。",
+      "desc": "战斗开始时，随机使1名友方单位<style=\"upgradeHighlight\">增加4级[Breath]强度</style>。(优先选取拥有获得[Breath]层数的攻击技能的人格)\n\n优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其<style=\"upgradeHighlight\">增加4级[Breath]强度并获得3层[Breath]</style>。",
       "simpleDesc": [
         {
           "abilityID": 19063,
@@ -1743,7 +1743,7 @@
     {
       "id": 29063,
       "name": "追忆吊坠++",
-      "desc": "战斗开始时，随机使<style=\"upgradeHighlight\">2名友方单位</style>增加4级[Breath]强度。(优先选取拥有获得[Breath]层数的攻击技能的友方单位)\n\n优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加4级[Breath]强度并获得3层[Breath]。",
+      "desc": "战斗开始时，随机使<style=\"upgradeHighlight\">2名友方单位</style>增加4级[Breath]强度。(优先选取拥有获得[Breath]层数的攻击技能的人格)\n\n优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加4级[Breath]强度并获得3层[Breath]。",
       "simpleDesc": [
         {
           "abilityID": 29063,
@@ -1930,7 +1930,7 @@
     {
       "id": 9070,
       "name": "明镜止水",
-      "desc": "友方单位的暴击倍率从1.2倍增加至1.7倍。\n\n若因暴击消耗了[Breath]层数，则下回合使该单位获得10层[AttackUp]。(每回合每名友方单位最多生效1次)",
+      "desc": "友方单位的暴击倍率从1.2倍增加至1.7倍。\n\n若因暴击消耗了[Breath]层数，则下回合使该人格获得10层[AttackUp]。(每回合每名人格最多生效1次)",
       "simpleDesc": [
         {
           "abilityID": 9070,
@@ -1941,7 +1941,7 @@
     {
       "id": 19070,
       "name": "明镜止水+",
-      "desc": "友方单位的暴击倍率从1.2倍<style=\"upgradeHighlight\">增加至2倍</style>\n\n若因暴击消耗了[Breath]层数，则下回合使该单位<style=\"upgradeHighlight\">获得12层[AttackUp]</style>。(每回合每名友方单位最多生效1次)",
+      "desc": "友方单位的暴击倍率从1.2倍<style=\"upgradeHighlight\">增加至2倍</style>\n\n若因暴击消耗了[Breath]层数，则下回合使该人格<style=\"upgradeHighlight\">获得12层[AttackUp]</style>。(每回合每名人格最多生效1次)",
       "simpleDesc": [
         {
           "abilityID": 19070,
@@ -1952,7 +1952,7 @@
     {
       "id": 29070,
       "name": "明镜止水++",
-      "desc": "友方单位的暴击倍率从1.2倍<style=\"upgradeHighlight\">增加至2.5倍</style>\n\n若因暴击消耗了[Breath]层数，则下回合使该单位<style=\"upgradeHighlight\">获得15层[AttackUp]</style>。(每回合每名友方单位最多生效1次)",
+      "desc": "友方单位的暴击倍率从1.2倍<style=\"upgradeHighlight\">增加至2.5倍</style>\n\n若因暴击消耗了[Breath]层数，则下回合使该人格<style=\"upgradeHighlight\">获得15层[AttackUp]</style>。(每回合每名人格最多生效1次)",
       "simpleDesc": [
         {
           "abilityID": 29070,
@@ -2317,7 +2317,7 @@
     {
       "id": 9087,
       "name": "炽热的智慧",
-      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方单位获得1层[AttackDmgUp]。",
+      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方人格获得1层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 9087,
@@ -2328,7 +2328,7 @@
     {
       "id": 19087,
       "name": "炽热的智慧+",
-      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方单位<style=\"upgradeHighlight\">获得2层[AttackDmgUp]。</style>",
+      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的2名友方人格<style=\"upgradeHighlight\">获得2层[AttackDmgUp]。</style>",
       "simpleDesc": [
         {
           "abilityID": 19087,
@@ -2339,7 +2339,7 @@
     {
       "id": 29087,
       "name": "炽热的智慧++",
-      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的<style=\"upgradeHighlight\">3名友方单位</style>获得2层[AttackDmgUp]。",
+      "desc": "通过[Combustion]效果击杀敌方单位后，下回合开始时使拥有增加[Combustion]强度的技能的<style=\"upgradeHighlight\">3名友方人格</style>获得2层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 29087,
@@ -2350,7 +2350,7 @@
     {
       "id": 9088,
       "name": "镇魂",
-      "desc": "回合开始时，若拥有增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，对全体敌方单位(或异想体的所有部位)施加3层[Combustion]并随机使全体敌方单位增加共计15级[Combustion]强度。(每个波次最多1次)\n\n使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的加算硬币技能的最终威力+1，硬币威力+1，使目标增加的[Combustion]强度额外+1级，对目标施加的[Combustion]层数额外+1层。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非硬币威力(最少+1，向下取整)\n\n增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能拼点胜利时，使目标敌方单位增加(剩余硬币数+1)级[Combustion]强度",
+      "desc": "回合开始时，若拥有增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，对全体敌方单位(或异想体的所有部位)施加3层[Combustion]并随机使全体敌方单位增加共计15级[Combustion]强度。(每个波次最多1次)\n\n使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的加算硬币技能的最终威力+1，硬币威力+1，使目标增加的[Combustion]强度额外+1级，对目标施加的[Combustion]层数额外+1层。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非硬币威力(最少+1，向下取整)\n\n增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能拼点胜利时，使目标敌方单位增加(剩余硬币数+1)级[Combustion]强度",
       "simpleDesc": [
         {
           "abilityID": 9088,
@@ -2414,7 +2414,7 @@
     {
       "id": 9090,
       "name": "血雾",
-      "desc": "回合开始时，若拥有增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n全体友方单位通过技能效果使敌方单位增加的[Laceration]强度与对敌方单位施加的[Laceration]层数变为2倍。\n\n首个编入的友方单位增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的加算硬币技能的硬币威力+2，造成的伤害+100%。\n- 减算硬币技能改为基础威力+(8/硬币数)，而非硬币威力(最少+1，向下取整)\n受到该友方单位攻击或与其拼点的敌方单位阵亡时，将阵亡的敌方单位的[Laceration]强度随机施加给全体敌方单位。(若是集中遭遇战，则改为以部位判定)\n\n所有增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的加算硬币技能的硬币威力+1，造成的伤害+30%\n- 减算硬币技能改为基础威力+(4/硬币数)，而非硬币威力(最少+1，向下取整)",
+      "desc": "回合开始时，若拥有增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n全体友方单位通过技能效果使敌方单位增加的[Laceration]强度与对敌方单位施加的[Laceration]层数变为2倍。\n\n最先编入的人格增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的加算硬币技能的硬币威力+2，造成的伤害+100%。\n- 减算硬币技能改为基础威力+(8/硬币数)，而非硬币威力(最少+1，向下取整)\n受到该人格攻击或与其拼点的敌方单位阵亡时，将阵亡的敌方单位的[Laceration]强度随机施加给全体敌方单位。(若是集中遭遇战，则改为以部位判定)\n\n所有增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的加算硬币技能的硬币威力+1，造成的伤害+30%\n- 减算硬币技能改为基础威力+(4/硬币数)，而非硬币威力(最少+1，向下取整)",
       "simpleDesc": [
         {
           "abilityID": 9090,
@@ -2470,7 +2470,7 @@
     {
       "id": 9092,
       "name": "震颤耦合",
-      "desc": "回合开始时，若拥有增加[Vibration]强度或施加[Vibration]层数的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，使全体敌方单位(若是异想体，则改为所有部位)增加5级[Vibration]强度并对其施加5层[Vibration]。(每个波次最多1次)\n\n使敌方单位[VibrationExplosion]时，本回合与下回合使其增加5级[Vibration]强度并对其施加2层[Vulnerable]。(每个[VibrationExplosion]的攻击技能最多触发1次)\n\n若本回合使1名敌方单位[VibrationExplosion]3次，则下回合开始时使其陷入混乱并在现存体力66%与33%处生成1条混乱阈值。(每场战斗最多1次)\n\n造成[Switch_Vibration]或[FusionVibration]时，施加1层[Vulnerable](每回合最多3次)",
+      "desc": "回合开始时，若拥有增加[Vibration]强度或施加[Vibration]层数的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，使全体敌方单位(若是异想体，则改为所有部位)增加5级[Vibration]强度并对其施加5层[Vibration]。(每个波次最多1次)\n\n使敌方单位[VibrationExplosion]时，本回合与下回合使其增加5级[Vibration]强度并对其施加2层[Vulnerable]。(每个[VibrationExplosion]的攻击技能最多触发1次)\n\n若本回合使1名敌方单位[VibrationExplosion]3次，则下回合开始时使其陷入混乱并在现存体力66%与33%处生成1条混乱阈值。(每场战斗最多1次)\n\n造成[Switch_Vibration]或[FusionVibration]时，施加1层[Vulnerable](每回合最多3次)",
       "simpleDesc": [
         {
           "abilityID": 9092,
@@ -2522,7 +2522,7 @@
     {
       "id": 9094,
       "name": "恍惚镜",
-      "desc": "回合开始时，若拥有增加[Burst]强度或施加[Burst]层数的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n技能命中敌方单位时，使其增加5级[Burst]强度。\n\n战斗中敌方单位的[Burst]层数降至1层以下时，改为消耗10级[Burst]强度，而非[Burst]层数。([Burst]强度低于10级时不会触发)\n\n若目标的[Burst]层数低于3层，则对其施加的[Burst]层数额外+1层(每场战斗最多3次)。",
+      "desc": "回合开始时，若拥有增加[Burst]强度或施加[Burst]层数的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n技能命中敌方单位时，使其增加5级[Burst]强度。\n\n战斗中敌方单位的[Burst]层数降至1层以下时，改为消耗10级[Burst]强度，而非[Burst]层数。([Burst]强度低于10级时不会触发)\n\n若目标的[Burst]层数低于3层，则对其施加的[Burst]层数额外+1层(每场战斗最多3次)。",
       "simpleDesc": [
         {
           "abilityID": 9094,
@@ -2574,7 +2574,7 @@
     {
       "id": 9096,
       "name": "黑色乐谱",
-      "desc": "回合开始时，若拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n使用技能命中敌方单位时，使其增加5级[Sinking]强度。\n\n回合开始时，对全体敌方单位或所有部位重新施加(其上回合因受到攻击而消耗的[Sinking]层数/2)层[Sinking]。\n\n基础攻击技能命中时，对目标造成(其[Sinking]强度/10)点忧郁伤害(最少1点伤害)。\n\n攻击技能命中时，若目标的理智值低于0点，则每低1点，使该技能造成的伤害+1%\n- 若目标陷入恐慌，则改为造成的伤害+50%\n- 若目标未带有理智值，则其每带有2级[Sinking]强度，使该技能造成的伤害+1%。若目标的[Sinking]强度不低于90级，则改为造成的伤害+50%",
+      "desc": "回合开始时，若拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n使用技能命中敌方单位时，使其增加5级[Sinking]强度。\n\n回合开始时，对全体敌方单位或所有部位重新施加(其上回合因受到攻击而消耗的[Sinking]层数/2)层[Sinking]。\n\n基础攻击技能命中时，对目标造成(其[Sinking]强度/10)点忧郁伤害(最少1点伤害)。\n\n攻击技能命中时，若目标的理智值低于0点，则每低1点，使该技能造成的伤害+1%\n- 若目标陷入恐慌，则改为造成的伤害+50%\n- 若目标未带有理智值，则其每带有2级[Sinking]强度，使该技能造成的伤害+1%。若目标的[Sinking]强度不低于90级，则改为造成的伤害+50%",
       "simpleDesc": [
         {
           "abilityID": 9096,
@@ -2642,7 +2642,7 @@
     {
       "id": 9098,
       "name": "福袋",
-      "desc": "回合开始时，若拥有增加[Breath]强度或获得[Breath]层数的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n随机1名战斗开始时带有[Breath]的友方单位通过技能对敌方单位造成暴击时，下回合开始时使全体友方单位增加7级[Breath]强度并获得7层[Breath]。(每回合最多1次)\n\n使拥有增加[Breath]强度或获得[Breath]层数的技能(不包括E.G.O技能)的友方单位3技能的最终威力+3，加算硬币威力+(12/硬币数)，造成的伤害+(50/硬币数)%。\n- 减算硬币技能改为最终威力+(12/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n战斗开始时，随机使1名友方单位增加3级[Breath]强度(优先选取拥有增加[Breath]强度或获得[Breath]层数的攻击技能的友方单位)。优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加3级[Breath]强度并获得2层[Breath]。",
+      "desc": "回合开始时，若拥有增加[Breath]强度或获得[Breath]层数的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n随机1名战斗开始时带有[Breath]的友方单位通过技能对敌方单位造成暴击时，下回合开始时使全体友方单位增加7级[Breath]强度并获得7层[Breath]。(每回合最多1次)\n\n使拥有增加[Breath]强度或获得[Breath]层数的技能(不包括E.G.O技能)的人格3技能的最终威力+3，加算硬币威力+(12/硬币数)，造成的伤害+(50/硬币数)%。\n- 减算硬币技能改为最终威力+(12/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n战斗开始时，随机使1名友方单位增加3级[Breath]强度(优先选取拥有增加[Breath]强度或获得[Breath]层数的攻击技能的人格)。优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加3级[Breath]强度并获得2层[Breath]。",
       "simpleDesc": [
         {
           "abilityID": 9098,
@@ -2694,7 +2694,7 @@
     {
       "id": 9100,
       "name": "第一类永动机",
-      "desc": "回合开始时，若拥有获得[Charge]层数或特殊充能的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，使全体友方单位获得7层[ChargeForceField]。(每个波次最多1次)\n\n回合开始时，使全体友方单位获得(其[Charge]层数/5 +1)层[AttackDmgUp]。(最多9层，向上取整；包括特殊充能)\n\n回合开始时，使全体友方单位获得(本场战斗中其通过攻击技能消耗的[Charge]层数与特殊充能之和/4)层攻击等级提升 。(累计消耗40层[Charge]时效果最高)\n\n每当1名友方单位累计消耗10层[Charge]时，使其增加1级[Charge]强度。(每场战斗每名友方单位最多5次，不包括固定强度的特殊充能)\n\n回合开始时，全体友方单位每各带有2级[Charge]强度，使其获得1层[Enhancement](最多3层)",
+      "desc": "回合开始时，若拥有获得[Charge]层数或特殊充能的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，使全体友方单位获得7层[ChargeForceField]。(每个波次最多1次)\n\n回合开始时，使全体友方单位获得(其[Charge]层数/5 +1)层[AttackDmgUp]。(最多9层，向上取整；包括特殊充能)\n\n回合开始时，使全体人格获得(本场战斗中其通过攻击技能消耗的[Charge]层数与特殊充能之和/4)层攻击等级提升 。(累计消耗40层[Charge]时效果最高)\n\n每当1名人格累计消耗10层[Charge]时，使其增加1级[Charge]强度。(每场战斗每名人格最多5次，不包括固定强度的特殊充能)\n\n回合开始时，全体友方单位每各带有2级[Charge]强度，使其获得1层[Enhancement](最多3层)",
       "simpleDesc": [
         {
           "abilityID": 9100,
@@ -2820,7 +2820,7 @@
     {
       "id": 9104,
       "name": "火光花",
-      "desc": "若暴怒共鸣数不低于3，则使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能的拼点威力+1\n- 若暴怒完全共鸣数不低于3或暴怒共鸣数不低于6，则改为拼点威力+2\n\n[第1、第2顺位友方单位专属]\n\n友方单位攻击敌方单位时，若目标现存体力不高于(目标的[Combustion]强度)%(若是异想体，则改为本体体力)，则使该友方单位增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能造成的伤害+50%。",
+      "desc": "若暴怒共鸣数不低于3，则使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能的拼点威力+1\n- 若暴怒完全共鸣数不低于3或暴怒共鸣数不低于6，则改为拼点威力+2\n\n[第1、第2顺位人格专属]\n\n友方单位攻击敌方单位时，若目标现存体力不高于(目标的[Combustion]强度)%(若是异想体，则改为本体体力)，则使该友方单位增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能造成的伤害+50%。",
       "simpleDesc": [
         {
           "abilityID": 9104,
@@ -2912,7 +2912,7 @@
     {
       "id": 9108,
       "name": "敬畏",
-      "desc": "[第1、第2顺位友方单位专属]\n\n若主要目标的[Laceration]层数不低于7层，则使增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能造成的伤害+10%",
+      "desc": "[第1、第2顺位人格专属]\n\n若主要目标的[Laceration]层数不低于7层，则使增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能造成的伤害+10%",
       "simpleDesc": [
         {
           "abilityID": 9108,
@@ -2923,7 +2923,7 @@
     {
       "id": 19108,
       "name": "敬畏+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n若主要目标的[Laceration]层数不低于5层，则使增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能<style=\"upgradeHighlight\">造成的伤害+15%</style>",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n若主要目标的[Laceration]层数不低于5层，则使增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能<style=\"upgradeHighlight\">造成的伤害+15%</style>",
       "simpleDesc": [
         {
           "abilityID": 19108,
@@ -2934,7 +2934,7 @@
     {
       "id": 29108,
       "name": "敬畏++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n若主要目标的[Laceration]层数不低于3层，则使增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能<style=\"upgradeHighlight\">造成的伤害+20%</style>",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n若主要目标的[Laceration]层数不低于3层，则使增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能<style=\"upgradeHighlight\">造成的伤害+20%</style>",
       "simpleDesc": [
         {
           "abilityID": 29108,
@@ -3041,7 +3041,7 @@
     {
       "id": 9113,
       "name": "酸味的酒香",
-      "desc": "[第1、第2顺位友方单位专属]\n\n增加[Vibration]强度或施加[Vibration]层数技能(包括对自身施加的技能)的攻击等级+2\n\n若主要目标带有[Vibration]且陷入混乱，则使技能造成的伤害+(混乱阶段×7.5)%\n\n增加[Vibration]强度或施加[Vibration]层数的技能则改为造成的伤害+(混乱阶段×15)%",
+      "desc": "[第1、第2顺位人格专属]\n\n增加[Vibration]强度或施加[Vibration]层数技能(包括对自身施加的技能)的攻击等级+2\n\n若主要目标带有[Vibration]且陷入混乱，则使技能造成的伤害+(混乱阶段×7.5)%\n\n增加[Vibration]强度或施加[Vibration]层数的技能则改为造成的伤害+(混乱阶段×15)%",
       "simpleDesc": [
         {
           "abilityID": 9113,
@@ -3060,7 +3060,7 @@
     {
       "id": 19113,
       "name": "酸味的酒香+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n增加[Vibration]强度或施加[Vibration]层数技能(包括对自身施加的技能)的攻击等级+2\n\n若主要目标带有[Vibration]且陷入混乱，则使技能造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">10</style>)%\n\n增加[Vibration]强度或施加[Vibration]层数的技能则改为造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">20</style>)%",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n增加[Vibration]强度或施加[Vibration]层数技能(包括对自身施加的技能)的攻击等级+2\n\n若主要目标带有[Vibration]且陷入混乱，则使技能造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">10</style>)%\n\n增加[Vibration]强度或施加[Vibration]层数的技能则改为造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">20</style>)%",
       "simpleDesc": [
         {
           "abilityID": 19113,
@@ -3079,7 +3079,7 @@
     {
       "id": 29113,
       "name": "酸味的酒香++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n增加[Vibration]强度或施加[Vibration]层数技能(包括对自身施加的技能)的攻击等级+<style=\"upgradeHighlight\">3</style>\n\n若主要目标带有[Vibration]且陷入混乱，则使技能造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">12.5</style>)%\n\n增加[Vibration]强度或施加[Vibration]层数的技能则改为造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">25</style>)%",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n增加[Vibration]强度或施加[Vibration]层数技能(包括对自身施加的技能)的攻击等级+<style=\"upgradeHighlight\">3</style>\n\n若主要目标带有[Vibration]且陷入混乱，则使技能造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">12.5</style>)%\n\n增加[Vibration]强度或施加[Vibration]层数的技能则改为造成的伤害+(混乱阶段×<style=\"upgradeHighlight\">25</style>)%",
       "simpleDesc": [
         {
           "abilityID": 29113,
@@ -3113,7 +3113,7 @@
     {
       "id": 9115,
       "name": "齿轮发条",
-      "desc": "[第1、第2顺位友方单位专属]\n\n增加[Vibration]强度或施加[Vibration]层数的技能(包括对自身施加的技能)拼点威力+1。\n\n增加[Vibration]强度或施加[Vibration]层数的攻击技能(不包括E.G.O技能)对带有[Vibration]的敌方单位造成伤害时，使该技能造成的伤害+(目标的[Vibration]强度+5)%\n\n傲慢技能改为造成的伤害+(目标的[Vibration]强度与层数之和+5)%",
+      "desc": "[第1、第2顺位人格专属]\n\n增加[Vibration]强度或施加[Vibration]层数的技能(包括对自身施加的技能)拼点威力+1。\n\n增加[Vibration]强度或施加[Vibration]层数的攻击技能(不包括E.G.O技能)对带有[Vibration]的敌方单位造成伤害时，使该技能造成的伤害+(目标的[Vibration]强度+5)%\n\n傲慢技能改为造成的伤害+(目标的[Vibration]强度与层数之和+5)%",
       "simpleDesc": [
         {
           "abilityID": 9115,
@@ -3147,7 +3147,7 @@
     {
       "id": 9117,
       "name": "有烟火药",
-      "desc": "[第1、第2顺位友方单位专属]\n\n回合结束时，若本回合使用过增加[Burst]强度或施加[Burst]层数的攻击技能，则下回合使自身获得1层[Agility]\n\n若自身的速度值不低于6，则使增加[Burst]强度或施加[Burst]层数的攻击技能造成的伤害+12.5%",
+      "desc": "[第1、第2顺位人格专属]\n\n回合结束时，若本回合使用过增加[Burst]强度或施加[Burst]层数的攻击技能，则下回合使自身获得1层[Agility]\n\n若自身的速度值不低于6，则使增加[Burst]强度或施加[Burst]层数的攻击技能造成的伤害+12.5%",
       "simpleDesc": [
         {
           "abilityID": 9117,
@@ -3173,7 +3173,7 @@
     {
       "id": 9119,
       "name": "破损的雨伞",
-      "desc": "[第1、第2顺位友方单位专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能拼点胜利时，对目标施加2层[Burst](每回合每名友方单位最多1次)\n\n若目标未带有[Burst]，则改为使其增加3级[Burst]强度并对其施加2层[Burst]。",
+      "desc": "[第1、第2顺位人格专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能拼点胜利时，对目标施加2层[Burst](每回合每名人格最多1次)\n\n若目标未带有[Burst]，则改为使其增加3级[Burst]强度并对其施加2层[Burst]。",
       "simpleDesc": [
         {
           "abilityID": 9119,
@@ -3188,7 +3188,7 @@
     {
       "id": 19119,
       "name": "破损的雨伞+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能拼点胜利时，使目标增加<style=\"upgradeHighlight\">2级[Burst]强度</style>并对其施加2层[Burst](每回合每名友方单位最多1次)\n\n若目标未带有[Burst]，则改为使其<style=\"upgradeHighlight\">增加4级[Burst]强度</style>并对其施加2层[Burst]。",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能拼点胜利时，使目标增加<style=\"upgradeHighlight\">2级[Burst]强度</style>并对其施加2层[Burst](每回合每名人格最多1次)\n\n若目标未带有[Burst]，则改为使其<style=\"upgradeHighlight\">增加4级[Burst]强度</style>并对其施加2层[Burst]。",
       "simpleDesc": [
         {
           "abilityID": 19119,
@@ -3203,7 +3203,7 @@
     {
       "id": 29119,
       "name": "破损的雨伞++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能拼点胜利时，使目标增加<style=\"upgradeHighlight\">4级[Burst]强度</style>并对其施加2层[Burst](每回合每名友方单位最多1次)\n\n若目标未带有[Burst]，则改为使其<style=\"upgradeHighlight\">增加6级[Burst]强度</style>并对其<style=\"upgradeHighlight\">施加3层[Burst]</style>。",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能拼点胜利时，使目标增加<style=\"upgradeHighlight\">4级[Burst]强度</style>并对其施加2层[Burst](每回合每名人格最多1次)\n\n若目标未带有[Burst]，则改为使其<style=\"upgradeHighlight\">增加6级[Burst]强度</style>并对其<style=\"upgradeHighlight\">施加3层[Burst]</style>。",
       "simpleDesc": [
         {
           "abilityID": 29119,
@@ -3218,7 +3218,7 @@
     {
       "id": 9120,
       "name": "寻死者",
-      "desc": "[第1、第2顺位友方单位专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能(不包括E.G.O技能)拼点威力+1，攻击等级+2，造成的伤害+15%。\n\n单硬币技能改为拼点威力+2，攻击等级+2，造成的伤害+40%。",
+      "desc": "[第1、第2顺位人格专属]\n\n增加[Burst]强度或施加[Burst]层数的攻击技能(不包括E.G.O技能)拼点威力+1，攻击等级+2，造成的伤害+15%。\n\n单硬币技能改为拼点威力+2，攻击等级+2，造成的伤害+40%。",
       "simpleDesc": [
         {
           "abilityID": 9120,
@@ -3293,7 +3293,7 @@
     {
       "id": 9123,
       "name": "破布",
-      "desc": "拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的友方单位拼点胜利时，使其额外恢复5点理智值(每回合最多1次)，若该单位理智值为最大值，则使其造成的伤害+7.5%。\n\n该单位使用减算硬币技能(不包括E.G.O技能)时效果改变，若该单位理智值不低于-15点，则使其理智值减少至-15点并使其造成的伤害+(理智值减少量)%，若该单位理智值低于-15点，则使其造成的伤害+15%。",
+      "desc": "拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的人格拼点胜利时，使其额外恢复5点理智值(每回合最多1次)，若该单位理智值为最大值，则使其造成的伤害+7.5%。\n\n该单位使用减算硬币技能(不包括E.G.O技能)时效果改变，若该单位理智值不低于-15点，则使其理智值减少至-15点并使其造成的伤害+(理智值减少量)%，若该单位理智值低于-15点，则使其造成的伤害+15%。",
       "simpleDesc": [
         {
           "abilityID": 9123,
@@ -3308,7 +3308,7 @@
     {
       "id": 19123,
       "name": "破布+",
-      "desc": "拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的友方单位拼点胜利时，使其额外恢复<style=\"upgradeHighlight\">6</style>点理智值(每回合最多1次)，若该单位理智值为最大值，则使其<style=\"upgradeHighlight\">造成的伤害+10%。</style>\n\n该单位使用减算硬币技能(不包括E.G.O技能)时效果改变，若该单位理智值不低于-15点，则使其理智值减少至-15点并使其造成的伤害+(理智值减少量<style=\"upgradeHighlight\">+5</style>)%，若该单位理智值低于-15点，则使其<style=\"upgradeHighlight\">造成的伤害+20%。</style>",
+      "desc": "拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的人格拼点胜利时，使其额外恢复<style=\"upgradeHighlight\">6</style>点理智值(每回合最多1次)，若该单位理智值为最大值，则使其<style=\"upgradeHighlight\">造成的伤害+10%。</style>\n\n该单位使用减算硬币技能(不包括E.G.O技能)时效果改变，若该单位理智值不低于-15点，则使其理智值减少至-15点并使其造成的伤害+(理智值减少量<style=\"upgradeHighlight\">+5</style>)%，若该单位理智值低于-15点，则使其<style=\"upgradeHighlight\">造成的伤害+20%。</style>",
       "simpleDesc": [
         {
           "abilityID": 19123,
@@ -3323,7 +3323,7 @@
     {
       "id": 29123,
       "name": "破布++",
-      "desc": "拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的友方单位拼点胜利时，使其额外恢复<style=\"upgradeHighlight\">7</style>点理智值(每回合最多1次)，若该单位理智值为最大值，则使其<style=\"upgradeHighlight\">造成的伤害+12.5%。</style>\n\n该单位使用减算硬币技能(不包括E.G.O技能)时效果改变，若该单位理智值不低于-15点，则使其理智值减少至-15点并使其造成的伤害+(理智值减少量+<style=\"upgradeHighlight\">10</style>)%，若该单位理智值低于-15点，则使其<style=\"upgradeHighlight\">造成的伤害+25%。</style>",
+      "desc": "拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的人格拼点胜利时，使其额外恢复<style=\"upgradeHighlight\">7</style>点理智值(每回合最多1次)，若该单位理智值为最大值，则使其<style=\"upgradeHighlight\">造成的伤害+12.5%。</style>\n\n该单位使用减算硬币技能(不包括E.G.O技能)时效果改变，若该单位理智值不低于-15点，则使其理智值减少至-15点并使其造成的伤害+(理智值减少量+<style=\"upgradeHighlight\">10</style>)%，若该单位理智值低于-15点，则使其<style=\"upgradeHighlight\">造成的伤害+25%。</style>",
       "simpleDesc": [
         {
           "abilityID": 29123,
@@ -3338,7 +3338,7 @@
     {
       "id": 9124,
       "name": "庄严",
-      "desc": "[第1、第2顺位友方单位专属]\n\n若目标的[Sinking]强度与[Sinking]层数之和不低于10点，则对其使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能造成伤害时，自身攻击结束后使目标增加2级[Sinking]强度并对其施加2层[Sinking](每回合每名友方单位最多2次)。\n若是集中遭遇战，则改为增加4级[Sinking]强度并施加2层[Sinking](每回合每名友方单位最多1次)。",
+      "desc": "[第1、第2顺位人格专属]\n\n若目标的[Sinking]强度与[Sinking]层数之和不低于10点，则对其使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能造成伤害时，自身攻击结束后使目标增加2级[Sinking]强度并对其施加2层[Sinking](每回合每名人格最多2次)。\n若是集中遭遇战，则改为增加4级[Sinking]强度并施加2层[Sinking](每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 9124,
@@ -3349,7 +3349,7 @@
     {
       "id": 19124,
       "name": "庄严+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n若目标的[Sinking]强度与[Sinking]层数之和不低于<style=\"upgradeHighlight\">8</style>点，则对其使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能造成伤害时，自身攻击结束后使目标<style=\"upgradeHighlight\">增加3级[Sinking]强度</style>并对其施加2层[Sinking](每回合每名友方单位最多2次)。\n若是集中遭遇战，则改为<style=\"upgradeHighlight\">增加5级[Sinking]强度</style>并施加2层[Sinking](每回合每名友方单位最多1次)。",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n若目标的[Sinking]强度与[Sinking]层数之和不低于<style=\"upgradeHighlight\">8</style>点，则对其使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能造成伤害时，自身攻击结束后使目标<style=\"upgradeHighlight\">增加3级[Sinking]强度</style>并对其施加2层[Sinking](每回合每名人格最多2次)。\n若是集中遭遇战，则改为<style=\"upgradeHighlight\">增加5级[Sinking]强度</style>并施加2层[Sinking](每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 19124,
@@ -3360,7 +3360,7 @@
     {
       "id": 29124,
       "name": "庄严++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n若目标的[Sinking]强度与[Sinking]层数之和不低于<style=\"upgradeHighlight\">5</style>点，则对其使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能造成伤害时，自身攻击结束后使目标增加3级[Sinking]强度并对其<style=\"upgradeHighlight\">施加3层[Sinking]</style>(每回合每名友方单位最多2次)。\n若是集中遭遇战，则改为增加5级[Sinking]强度并<style=\"upgradeHighlight\">施加3层[Sinking]</style>(每回合每名友方单位最多1次)。",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n若目标的[Sinking]强度与[Sinking]层数之和不低于<style=\"upgradeHighlight\">5</style>点，则对其使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能造成伤害时，自身攻击结束后使目标增加3级[Sinking]强度并对其<style=\"upgradeHighlight\">施加3层[Sinking]</style>(每回合每名人格最多2次)。\n若是集中遭遇战，则改为增加5级[Sinking]强度并<style=\"upgradeHighlight\">施加3层[Sinking]</style>(每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 29124,
@@ -3371,7 +3371,7 @@
     {
       "id": 9125,
       "name": "彼方之星",
-      "desc": "使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦(包括使自身增加或对自身施加)的基础攻击技能命中敌方单位时，每触发1次目标的[Sinking]效果(包括特殊沉沦)，在回合结束时，使自身恢复3点理智值(每回合每名友方单位最多2次)。\n\n若该友方单位在回合开始时理智值为45点，则改为使用基础攻击技能命中敌方单位并触发目标的[Sinking]效果(包括特殊沉沦)时，对目标施加2层[Sinking](每回合每名友方单位最多2次)。",
+      "desc": "使用增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦(包括使自身增加或对自身施加)的基础攻击技能命中敌方单位时，每触发1次目标的[Sinking]效果(包括特殊沉沦)，在回合结束时，使自身恢复3点理智值(每回合每名人格最多2次)。\n\n若该人格在回合开始时理智值为45点，则改为使用基础攻击技能命中敌方单位并触发目标的[Sinking]效果(包括特殊沉沦)时，对目标施加2层[Sinking](每回合每名人格最多2次)。",
       "simpleDesc": [
         {
           "abilityID": 9124,
@@ -3397,7 +3397,7 @@
     {
       "id": 9127,
       "name": "魔鬼所享",
-      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]。(该效果可能对同一单位重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]。(不包括E.G.O技能)",
+      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]。(该效果可能对同一人格重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]。(不包括E.G.O技能)",
       "simpleDesc": [
         {
           "abilityID": 9127,
@@ -3408,7 +3408,7 @@
     {
       "id": 19127,
       "name": "魔鬼所享+",
-      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]与<style=\"upgradeHighlight\">1层[AttackUp]</style>。(该效果可能对同一单位重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]与<style=\"upgradeHighlight\">2层[AttackUp]</style>。(不包括E.G.O技能)",
+      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]与<style=\"upgradeHighlight\">1层[AttackUp]</style>。(该效果可能对同一人格重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]与<style=\"upgradeHighlight\">2层[AttackUp]</style>。(不包括E.G.O技能)",
       "simpleDesc": [
         {
           "abilityID": 19127,
@@ -3419,7 +3419,7 @@
     {
       "id": 29127,
       "name": "魔鬼所享++",
-      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]，1层[AttackUp]与<style=\"upgradeHighlight\">1层[AttackDmgUp]</style>。(该效果可能对同一单位重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]2层[AttackUp]与<style=\"upgradeHighlight\">2层[AttackDmgUp]</style>。(不包括E.G.O技能)",
+      "desc": "回合结束时，下回合使[Breath]强度最高的1名友方单位与[Breath]层数最高的1名友方单位获得1层[Agility]，1层[AttackUp]与<style=\"upgradeHighlight\">1层[AttackDmgUp]</style>。(该效果可能对同一人格重复生效)\n\n若该友方单位拥有色欲攻击技能，则改为使其获得2层[Agility]2层[AttackUp]与<style=\"upgradeHighlight\">2层[AttackDmgUp]</style>。(不包括E.G.O技能)",
       "simpleDesc": [
         {
           "abilityID": 29127,
@@ -3463,7 +3463,7 @@
     {
       "id": 9129,
       "name": "陈旧的木雕人偶",
-      "desc": "[第1、第2顺位友方单位专属]\n\n暴击时，下回合对目标施加1层[DefenseDown](每回合每名友方单位最多3次)。\n[不可重复触发] 朱符 堂吉诃德 E.G.O被动触发时，该效果不会触发",
+      "desc": "[第1、第2顺位人格专属]\n\n暴击时，下回合对目标施加1层[DefenseDown](每回合每名人格最多3次)。\n[不可重复触发] 朱符 堂吉诃德 E.G.O被动触发时，该效果不会触发",
       "simpleDesc": [
         {
           "abilityID": 9129,
@@ -3474,7 +3474,7 @@
     {
       "id": 19129,
       "name": "陈旧的木雕人偶+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n暴击时，下回合对目标施加1层[DefenseDown](每回合每名友方单位<style=\"upgradeHighlight\">最多4次</style>)。\n[不可重复触发] 朱符 堂吉诃德 E.G.O被动触发时，该效果不会触发",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n暴击时，下回合对目标施加1层[DefenseDown](每回合每名人格<style=\"upgradeHighlight\">最多4次</style>)。\n[不可重复触发] 朱符 堂吉诃德 E.G.O被动触发时，该效果不会触发",
       "simpleDesc": [
         {
           "abilityID": 19129,
@@ -3485,7 +3485,7 @@
     {
       "id": 29129,
       "name": "陈旧的木雕人偶++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n暴击时，下回合对目标施加1层[DefenseDown](每回合每名友方单位<style=\"upgradeHighlight\">最多6次</style>)。\n[不可重复触发] 朱符 堂吉诃德 E.G.O被动触发时，该效果不会触发",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n暴击时，下回合对目标施加1层[DefenseDown](每回合每名人格<style=\"upgradeHighlight\">最多6次</style>)。\n[不可重复触发] 朱符 堂吉诃德 E.G.O被动触发时，该效果不会触发",
       "simpleDesc": [
         {
           "abilityID": 29129,
@@ -3496,7 +3496,7 @@
     {
       "id": 9130,
       "name": "留恋",
-      "desc": "[第1、第2顺位友方单位专属]\n\n回合开始时，使[Breath]强度与[Breath]层数之和不低于10点的友方单位拼点威力+1并获得1层[AttackDmgUp]。\n\n若总和不低于20点，则改为拼点威力+1并获得3层[AttackDmgUp]。\n\n若总和不低于40点，则改为拼点威力+2并获得3层[AttackDmgUp]。",
+      "desc": "[第1、第2顺位人格专属]\n\n回合开始时，使[Breath]强度与[Breath]层数之和不低于10点的友方单位拼点威力+1并获得1层[AttackDmgUp]。\n\n若总和不低于20点，则改为拼点威力+1并获得3层[AttackDmgUp]。\n\n若总和不低于40点，则改为拼点威力+2并获得3层[AttackDmgUp]。",
       "simpleDesc": [
         {
           "abilityID": 9130,
@@ -3608,7 +3608,7 @@
     {
       "id": 9134,
       "name": "巡逻用手电筒",
-      "desc": "[第1、第2顺位友方单位专属]\n\n回合开始时，若适用的友方单位拥有获得或消耗[Charge]层数或特殊充能的技能且带有[ChargeForceField]，则使其1技能的拼点威力+1，造成的伤害+10%。\n\n回合结束时，若适用的友方单位未带有[ChargeForceField]，则下回合使其获得2层[ChargeForceField]。",
+      "desc": "[第1、第2顺位人格专属]\n\n回合开始时，使适用的人格获得2层[ChargeForceField]\n\n若适用的人格拥有获得或消耗[Charge]层数或特殊充能的技能且带有[ChargeForceField]，则使其1技能的拼点威力+1，造成的伤害+10%。",
       "simpleDesc": [
         {
           "abilityID": 9134,
@@ -3623,7 +3623,7 @@
     {
       "id": 19134,
       "name": "巡逻用手电筒+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n回合开始时，若适用的友方单位拥有获得或消耗[Charge]层数或特殊充能的技能且带有[ChargeForceField]，则使其1技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+15%。</style>\n\n回合结束时，若适用的友方单位未带有[ChargeForceField]，则下回合使其<style=\"upgradeHighlight\">获得3层[ChargeForceField]。</style>",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n回合开始时，使适用的人格获得<style=\"upgradeHighlight\">3</style>层[ChargeForceField]\n\n若适用的人格拥有获得或消耗[Charge]层数或特殊充能的技能且带有[ChargeForceField]，则使其1技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+15%。</style>",
       "simpleDesc": [
         {
           "abilityID": 19134,
@@ -3638,7 +3638,7 @@
     {
       "id": 29134,
       "name": "巡逻用手电筒++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n回合开始时，若适用的友方单位拥有获得或消耗[Charge]层数或特殊充能的技能且带有[ChargeForceField]，则使其1技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+25%。</style>\n\n回合结束时，若适用的友方单位未带有[ChargeForceField]，则下回合使其<style=\"upgradeHighlight\">获得4层[ChargeForceField]。</style>",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n回合开始时，使适用的人格获得<style=\"upgradeHighlight\">4</style>层[ChargeForceField]\n\n若适用的人格拥有获得或消耗[Charge]层数或特殊充能的技能且带有[ChargeForceField]，则使其1技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+25%。</style>",
       "simpleDesc": [
         {
           "abilityID": 29134,
@@ -3653,7 +3653,7 @@
     {
       "id": 9135,
       "name": "仿造发电机",
-      "desc": "[第1、第2顺位友方单位专属]\n\n回合开始时，若单位的[Charge]层数与特殊充能(固定强度)之和不低于10层，则发动效果。\n\n使获得或消耗[Charge]层数或特殊充能(固定强度)的3技能的加算硬币威力+1。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n若该技能的基础威力低于5，则使该技能造成的伤害+25%。若该技能的基础威力不低于5，则使该技能的加算硬币威力额外+1。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n※ 拥有强度与层数的特殊充能以其层数计算",
+      "desc": "[第1、第2顺位人格专属]\n\n回合开始时，若单位的[Charge]层数与特殊充能(固定强度)之和不低于10层，则发动效果。\n\n使获得或消耗[Charge]层数或特殊充能(固定强度)的3技能的加算硬币威力+1。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n若该技能的基础威力低于5，则使该技能造成的伤害+25%。若该技能的基础威力不低于5，则使该技能的加算硬币威力额外+1。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n※ 拥有强度与层数的特殊充能以其层数计算",
       "simpleDesc": [
         {
           "abilityID": 9135,
@@ -3683,7 +3683,7 @@
     {
       "id": 9137,
       "name": "手术用刀",
-      "desc": "[第4顺位友方单位专属]\n\n回合结束时，拥有斩击攻击技能的友方单位下回合获得(其拥有的斩击攻击技能数)层[Agility](相同的技能仅计入1次，不包括E.G.O技能与反击)。",
+      "desc": "[第4顺位人格专属]\n\n回合结束时，拥有斩击攻击技能的人格下回合获得(其拥有的斩击攻击技能数)层[Agility](相同的技能仅计入1次，不包括E.G.O技能与反击)。",
       "simpleDesc": [
         {
           "abilityID": 9137,
@@ -3694,7 +3694,7 @@
     {
       "id": 19137,
       "name": "手术用刀+",
-      "desc": "[第4顺位友方单位专属]\n\n回合结束时，拥有斩击攻击技能的友方单位下回合获得(其拥有的斩击攻击技能数<style=\"upgradeHighlight\">+1</style>)层[Agility](相同的技能仅计入1次，不包括E.G.O技能与反击)。",
+      "desc": "[第4顺位人格专属]\n\n回合结束时，拥有斩击攻击技能的人格下回合获得(其拥有的斩击攻击技能数<style=\"upgradeHighlight\">+1</style>)层[Agility](相同的技能仅计入1次，不包括E.G.O技能与反击)。",
       "simpleDesc": [
         {
           "abilityID": 19137,
@@ -3705,7 +3705,7 @@
     {
       "id": 29137,
       "name": "手术用刀++",
-      "desc": "[第4、<style=\"upgradeHighlight\">第5</style>顺位友方单位专属]\n\n回合结束时，拥有斩击攻击技能的友方单位下回合获得(其拥有的斩击攻击技能数+1)层[Agility](相同的技能仅计入1次，不包括E.G.O技能与反击)。",
+      "desc": "[第4、<style=\"upgradeHighlight\">第5</style>顺位人格专属]\n\n回合结束时，拥有斩击攻击技能的人格下回合获得(其拥有的斩击攻击技能数+1)层[Agility](相同的技能仅计入1次，不包括E.G.O技能与反击)。",
       "simpleDesc": [
         {
           "abilityID": 29137,
@@ -3716,7 +3716,7 @@
     {
       "id": 9138,
       "name": "虚饰的和平",
-      "desc": "[第5顺位友方单位专属]\n\n若自身的速度值与目标相差至少3点，则使自身斩击技能造成的伤害+15%。",
+      "desc": "[第5顺位人格专属]\n\n若自身的速度值与目标相差至少3点，则使自身斩击技能造成的伤害+15%。",
       "simpleDesc": [
         {
           "abilityID": 9138,
@@ -3727,7 +3727,7 @@
     {
       "id": 19138,
       "name": "虚饰的和平+",
-      "desc": "[第5顺位友方单位专属]\n\n若自身的速度值与目标相差至少3点，则使自身斩击技能<style=\"upgradeHighlight\">造成的伤害+20%。</style>",
+      "desc": "[第5顺位人格专属]\n\n若自身的速度值与目标相差至少3点，则使自身斩击技能<style=\"upgradeHighlight\">造成的伤害+20%。</style>",
       "simpleDesc": [
         {
           "abilityID": 19138,
@@ -3738,7 +3738,7 @@
     {
       "id": 29138,
       "name": "虚饰的和平++",
-      "desc": "[第5、<style=\"upgradeHighlight\">第6</style>顺位友方单位专属]\n\n若自身的速度值与目标相差至少<style=\"upgradeHighlight\">2</style>点，则使自身斩击技能造成的伤害+20%。",
+      "desc": "[第5、<style=\"upgradeHighlight\">第6</style>顺位人格专属]\n\n若自身的速度值与目标相差至少<style=\"upgradeHighlight\">2</style>点，则使自身斩击技能造成的伤害+20%。",
       "simpleDesc": [
         {
           "abilityID": 29138,
@@ -3749,7 +3749,7 @@
     {
       "id": 9139,
       "name": "裁缝用剪刀",
-      "desc": "[第6顺位友方单位专属]\n\n硬币数不高于2枚的斩击技能(不包括E.G.O技能)拼点威力+1，造成的伤害+10%。\n\n单硬币技能改为拼点威力+1，造成的伤害+20%。",
+      "desc": "[第6顺位人格专属]\n\n硬币数不高于2枚的斩击技能(不包括E.G.O技能)拼点威力+1，造成的伤害+10%。\n\n单硬币技能改为拼点威力+1，造成的伤害+20%。",
       "simpleDesc": [
         {
           "abilityID": 9139,
@@ -3764,7 +3764,7 @@
     {
       "id": 19139,
       "name": "裁缝用剪刀+",
-      "desc": "[<style=\"upgradeHighlight\">第4</style>、第6顺位友方单位专属]\n\n硬币数不高于2枚的斩击技能(不包括E.G.O技能)拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+15%。</style>\n\n单硬币技能改为拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+25%。</style>",
+      "desc": "[<style=\"upgradeHighlight\">第4</style>、第6顺位人格专属]\n\n硬币数不高于2枚的斩击技能(不包括E.G.O技能)拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+15%。</style>\n\n单硬币技能改为拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+25%。</style>",
       "simpleDesc": [
         {
           "abilityID": 19139,
@@ -3779,7 +3779,7 @@
     {
       "id": 29139,
       "name": "裁缝用剪刀++",
-      "desc": "[第4、第6顺位友方单位专属]\n\n硬币数不高于2枚的斩击技能(不包括E.G.O技能)拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+20%。</style>\n\n单硬币技能改为拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+30%。</style>",
+      "desc": "[第4、第6顺位人格专属]\n\n硬币数不高于2枚的斩击技能(不包括E.G.O技能)拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+20%。</style>\n\n单硬币技能改为拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+30%。</style>",
       "simpleDesc": [
         {
           "abilityID": 29139,
@@ -3794,7 +3794,7 @@
     {
       "id": 9140,
       "name": "决意",
-      "desc": "本场战斗中，拥有不低于2个斩击技能的友方单位首个回合的拼点威力+1，从第2回合起使其获得1层[Agility]并使其拼点威力+1。\n\n属于し协会的友方单位恢复体力至多恢复至体力上限的75%，但受到的伤害与使自身恢复的体力-50%(关卡开始时立即触发，不包括E.G.O饰品恢复的体力)。\n\n每回合开始时，使属于し协会的友方单位获得1层斩击威力提升 与1层斩击伤害强化 ",
+      "desc": "本场战斗中，拥有不低于2个斩击技能的友方单位首个回合的拼点威力+1，从第2回合起使其获得1层[Agility]并使其拼点威力+1。\n\n属于し协会的人格恢复体力至多恢复至体力上限的75%，但受到的伤害与使自身恢复的体力-50%(关卡开始时立即触发，不包括E.G.O饰品恢复的体力)。\n\n每回合开始时，使属于し协会的人格获得1层斩击威力提升 与1层斩击伤害强化 ",
       "simpleDesc": [
         {
           "abilityID": 9140,
@@ -3809,7 +3809,7 @@
     {
       "id": 19140,
       "name": "决意+",
-      "desc": "本场战斗中，拥有不低于2个斩击技能的友方单位首个回合的拼点威力+1，从第2回合起使其获得<style=\"upgradeHighlight\">2层[Agility]</style>并使其拼点威力+1。\n\n属于し协会的友方单位恢复体力至多恢复至体力上限的<style=\"upgradeHighlight\">50</style>%，但受到的伤害与使自身恢复的体力-<style=\"upgradeHighlight\">75</style>%（关卡开始时立即触发，不包括E.G.O饰品恢复的体力）。\n\n每回合开始时，使属于し协会的友方单位获得1层斩击威力提升 与<style=\"upgradeHighlight\">2</style>层斩击伤害强化 ",
+      "desc": "本场战斗中，拥有不低于2个斩击技能的友方单位首个回合的拼点威力+1，从第2回合起使其获得<style=\"upgradeHighlight\">2层[Agility]</style>并使其拼点威力+1。\n\n属于し协会的人格恢复体力至多恢复至体力上限的<style=\"upgradeHighlight\">50</style>%，但受到的伤害与使自身恢复的体力-<style=\"upgradeHighlight\">75</style>%（关卡开始时立即触发，不包括E.G.O饰品恢复的体力）。\n\n每回合开始时，使属于し协会的人格获得1层斩击威力提升 与<style=\"upgradeHighlight\">2</style>层斩击伤害强化 ",
       "simpleDesc": [
         {
           "abilityID": 19140,
@@ -3824,7 +3824,7 @@
     {
       "id": 29140,
       "name": "决意++",
-      "desc": "本场战斗中，拥有不低于2个斩击技能的友方单位首个回合的拼点威力+1，从第2回合起使其获得2层[Agility]并使其<style=\"upgradeHighlight\">最终威力+1。</style>\n\n属于し协会的友方单位恢复体力至多恢复至体力上限的<style=\"upgradeHighlight\">49</style>%，但受到的伤害与使自身恢复的体力-75%（关卡开始时立即触发，不包括E.G.O饰品恢复的体力）。\n\n每回合开始时，使属于し协会的友方单位获得1层斩击威力提升 与<style=\"upgradeHighlight\">3</style>层斩击伤害强化 ",
+      "desc": "本场战斗中，拥有不低于2个斩击技能的友方单位首个回合的拼点威力+1，从第2回合起使其获得2层[Agility]并使其<style=\"upgradeHighlight\">最终威力+1。</style>\n\n属于し协会的人格恢复体力至多恢复至体力上限的<style=\"upgradeHighlight\">49</style>%，但受到的伤害与使自身恢复的体力-75%（关卡开始时立即触发，不包括E.G.O饰品恢复的体力）。\n\n每回合开始时，使属于し协会的人格获得1层斩击威力提升 与<style=\"upgradeHighlight\">3</style>层斩击伤害强化 ",
       "simpleDesc": [
         {
           "abilityID": 29140,
@@ -3839,7 +3839,7 @@
     {
       "id": 9141,
       "name": "宣判之刻",
-      "desc": "[第3、第4顺位友方单位专属]\n\n单方面攻击时，斩击技能造成的伤害+10%\n\n拼点胜利时，斩击技能造成的伤害+(40/剩余硬币数)%",
+      "desc": "[第3、第4顺位人格专属]\n\n单方面攻击时，斩击技能造成的伤害+10%\n\n拼点胜利时，斩击技能造成的伤害+(40/剩余硬币数)%",
       "simpleDesc": [
         {
           "abilityID": 9141,
@@ -3854,7 +3854,7 @@
     {
       "id": 19141,
       "name": "宣判之刻+",
-      "desc": "[第3、第4、<style=\"upgradeHighlight\">第5</style>顺位友方单位专属]\n\n单方面攻击时，斩击技能造成的伤害+10%\n\n拼点胜利时，斩击技能造成的伤害+(40/剩余硬币数)%",
+      "desc": "[第3、第4、<style=\"upgradeHighlight\">第5</style>顺位人格专属]\n\n单方面攻击时，斩击技能造成的伤害+10%\n\n拼点胜利时，斩击技能造成的伤害+(40/剩余硬币数)%",
       "simpleDesc": [
         {
           "abilityID": 19141,
@@ -3869,7 +3869,7 @@
     {
       "id": 29141,
       "name": "宣判之刻++",
-      "desc": "[第3、第4、第5、<style=\"upgradeHighlight\">第6</style>顺位友方单位专属]\n\n单方面攻击时，斩击技能<style=\"upgradeHighlight\">造成的伤害+12.5%</style>\n\n拼点胜利时，斩击技能造成的伤害+(<style=\"upgradeHighlight\">50</style>/剩余硬币数)%",
+      "desc": "[第3、第4、第5、<style=\"upgradeHighlight\">第6</style>顺位人格专属]\n\n单方面攻击时，斩击技能<style=\"upgradeHighlight\">造成的伤害+12.5%</style>\n\n拼点胜利时，斩击技能造成的伤害+(<style=\"upgradeHighlight\">50</style>/剩余硬币数)%",
       "simpleDesc": [
         {
           "abilityID": 29141,
@@ -3884,7 +3884,7 @@
     {
       "id": 9142,
       "name": "切开的记忆",
-      "desc": "[第1、2顺位友方单位专属]\n\n斩击攻击技能的基础威力+2，加算硬币威力+1，减算硬币威力-1(包括E.G.O技能)。\n\n斩击攻击技能拼点胜利时，使其造成的伤害+30%。该技能命中时，自身每失去5%体力，使该技能造成的伤害+5%(最多+20%)(不包括E.G.O技能)。",
+      "desc": "[第1、2顺位人格专属]\n\n斩击攻击技能的基础威力+2，加算硬币威力+1，减算硬币威力-1(包括E.G.O技能)。\n\n斩击攻击技能拼点胜利时，使其造成的伤害+30%。该技能命中时，自身每失去5%体力，使该技能造成的伤害+5%(最多+20%)(不包括E.G.O技能)。",
       "simpleDesc": [
         {
           "abilityID": 9142,
@@ -3899,7 +3899,7 @@
     {
       "id": 9143,
       "name": "木工用长钉",
-      "desc": "[第4顺位友方单位专属]\n\n若自身拥有不低于2个突刺攻击技能，则回合开始时使自身获得1层[PenetrateDamageUp]。",
+      "desc": "[第4顺位人格专属]\n\n若自身拥有不低于2个突刺攻击技能，则回合开始时使自身获得1层[PenetrateDamageUp]。",
       "simpleDesc": [
         {
           "abilityID": 9143,
@@ -3910,7 +3910,7 @@
     {
       "id": 19143,
       "name": "木工用长钉+",
-      "desc": "[第4顺位友方单位专属]\n\n若自身拥有不低于2个突刺攻击技能，则回合开始时使自身<style=\"upgradeHighlight\">获得2层[PenetrateDamageUp]。</style>",
+      "desc": "[第4顺位人格专属]\n\n若自身拥有不低于2个突刺攻击技能，则回合开始时使自身<style=\"upgradeHighlight\">获得2层[PenetrateDamageUp]。</style>",
       "simpleDesc": [
         {
           "abilityID": 19143,
@@ -3921,7 +3921,7 @@
     {
       "id": 29143,
       "name": "木工用长钉++",
-      "desc": "[第4、<style=\"upgradeHighlight\">第5</style>顺位友方单位专属]\n\n若自身拥有不低于2个突刺攻击技能，则回合开始时使自身获得2层[PenetrateDamageUp]。",
+      "desc": "[第4、<style=\"upgradeHighlight\">第5</style>顺位人格专属]\n\n若自身拥有不低于2个突刺攻击技能，则回合开始时使自身获得2层[PenetrateDamageUp]。",
       "simpleDesc": [
         {
           "abilityID": 29143,
@@ -3932,7 +3932,7 @@
     {
       "id": 9144,
       "name": "曾经的祝福",
-      "desc": "[第6顺位友方单位专属]\n\n使用突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合最多1次)。\n\n该技能击杀敌方单位时，下回合使自身额外获得1层[Agility](每回合最多1次)。",
+      "desc": "[第6顺位人格专属]\n\n使用突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合最多1次)。\n\n该技能击杀敌方单位时，下回合使自身额外获得1层[Agility](每回合最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 9144,
@@ -3943,7 +3943,7 @@
     {
       "id": 19144,
       "name": "曾经的祝福+",
-      "desc": "[<style=\"upgradeHighlight\">第5</style>、第6顺位友方单位专属]\n\n使用突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合每名友方单位最多1次)。\n\n该技能击杀敌方单位时，下回合使自身额外获得1层[Agility]与<style=\"upgradeHighlight\">1层[PenetrateDamageUp]</style>(每回合每名友方单位最多1次)。",
+      "desc": "[<style=\"upgradeHighlight\">第5</style>、第6顺位人格专属]\n\n使用突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合每名人格最多1次)。\n\n该技能击杀敌方单位时，下回合使自身额外获得1层[Agility]与<style=\"upgradeHighlight\">1层[PenetrateDamageUp]</style>(每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 19144,
@@ -3954,7 +3954,7 @@
     {
       "id": 29144,
       "name": "曾经的祝福++",
-      "desc": "[第5、第6顺位友方单位专属]\n\n使用突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合每名友方单位<style=\"upgradeHighlight\">最多2次</style>)。\n\n该技能击杀敌方单位时，下回合使自身额外获得1层[Agility]与<style=\"upgradeHighlight\">2层[PenetrateDamageUp]</style>(每回合每名友方单位最多1次)。",
+      "desc": "[第5、第6顺位人格专属]\n\n使用突刺技能命中敌方单位时，下回合使自身获得1层[Agility]与1层[PenetrateDamageUp](每回合每名人格<style=\"upgradeHighlight\">最多2次</style>)。\n\n该技能击杀敌方单位时，下回合使自身额外获得1层[Agility]与<style=\"upgradeHighlight\">2层[PenetrateDamageUp]</style>(每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 29144,
@@ -3965,7 +3965,7 @@
     {
       "id": 9145,
       "name": "撕裂的弹带",
-      "desc": "突刺攻击技能的拼点威力+1\n\n消耗[Bullet]的技能造成的伤害+(40/硬币数)%\n\n若自身消耗了所有的[Bullet]，则下回合开始时使自身获得2发[Bullet](每场战斗每名友方单位最多1次)",
+      "desc": "突刺攻击技能的拼点威力+1\n\n消耗[Bullet]的技能造成的伤害+(40/硬币数)%\n\n若自身消耗了所有的[Bullet]，则下回合开始时使自身获得2发[Bullet](每场战斗每名人格最多1次)",
       "simpleDesc": [
         {
           "abilityID": 9145,
@@ -3984,7 +3984,7 @@
     {
       "id": 19145,
       "name": "撕裂的弹带+",
-      "desc": "突刺攻击技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+5%</style>\n\n消耗[Bullet]的技能造成的伤害+(<style=\"upgradeHighlight\">50</style>/硬币数)%\n\n若自身消耗了所有的[Bullet]，则下回合开始时使自身获得2发[Bullet](每场战斗每名友方单位最多1次)",
+      "desc": "突刺攻击技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+5%</style>\n\n消耗[Bullet]的技能造成的伤害+(<style=\"upgradeHighlight\">50</style>/硬币数)%\n\n若自身消耗了所有的[Bullet]，则下回合开始时使自身获得2发[Bullet](每场战斗每名人格最多1次)",
       "simpleDesc": [
         {
           "abilityID": 19145,
@@ -4003,7 +4003,7 @@
     {
       "id": 29145,
       "name": "撕裂的弹带++",
-      "desc": "突刺攻击技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+10%</style>\n\n消耗[Bullet]的技能造成的伤害+(<style=\"upgradeHighlight\">60</style>/硬币数)%\n\n若自身消耗了所有的[Bullet]，则下回合开始时使自身获得2发[Bullet](每场战斗每名友方单位最多1次)",
+      "desc": "突刺攻击技能的拼点威力+1，<style=\"upgradeHighlight\">造成的伤害+10%</style>\n\n消耗[Bullet]的技能造成的伤害+(<style=\"upgradeHighlight\">60</style>/硬币数)%\n\n若自身消耗了所有的[Bullet]，则下回合开始时使自身获得2发[Bullet](每场战斗每名人格最多1次)",
       "simpleDesc": [
         {
           "abilityID": 29145,
@@ -4022,7 +4022,7 @@
     {
       "id": 9146,
       "name": "磨尖的树枝",
-      "desc": "[第3、第4顺位友方单位专属]\n\n进行拼点时，使自身的拼点威力+1，突刺技能造成的伤害+20%。\n\n单方面攻击时，突刺技能造成的伤害+10%。",
+      "desc": "[第3、第4顺位人格专属]\n\n进行拼点时，使自身的拼点威力+1，突刺技能造成的伤害+20%。\n\n单方面攻击时，突刺技能造成的伤害+10%。",
       "simpleDesc": [
         {
           "abilityID": 9146,
@@ -4037,7 +4037,7 @@
     {
       "id": 19146,
       "name": "磨尖的树枝+",
-      "desc": "[第3、第4、<style=\"upgradeHighlight\">第5</style>顺位友方单位专属]\n\n进行拼点时，使自身的拼点威力+1，突刺技能造成的伤害+20%。\n\n单方面攻击时，突刺技能造成的伤害+10%。",
+      "desc": "[第3、第4、<style=\"upgradeHighlight\">第5</style>顺位人格专属]\n\n进行拼点时，使自身的拼点威力+1，突刺技能造成的伤害+20%。\n\n单方面攻击时，突刺技能造成的伤害+10%。",
       "simpleDesc": [
         {
           "abilityID": 19146,
@@ -4052,7 +4052,7 @@
     {
       "id": 29146,
       "name": "磨尖的树枝++",
-      "desc": "[第3、第4、第5、<style=\"upgradeHighlight\">第6</style>顺位友方单位专属]\n\n进行拼点时，使自身的拼点威力+1，突刺技能<style=\"upgradeHighlight\">造成的伤害+25%。</style>\n\n单方面攻击时，突刺技能<style=\"upgradeHighlight\">造成的伤害+12.5%。</style>",
+      "desc": "[第3、第4、第5、<style=\"upgradeHighlight\">第6</style>顺位人格专属]\n\n进行拼点时，使自身的拼点威力+1，突刺技能<style=\"upgradeHighlight\">造成的伤害+25%。</style>\n\n单方面攻击时，突刺技能<style=\"upgradeHighlight\">造成的伤害+12.5%。</style>",
       "simpleDesc": [
         {
           "abilityID": 29146,
@@ -4067,7 +4067,7 @@
     {
       "id": 9147,
       "name": "洞穿的记忆",
-      "desc": "[第1、2顺位友方单位专属]\n\n突刺攻击技能的基础威力+2，加算硬币威力+1，减算硬币威力-1(包括E.G.O技能)。\n\n突刺攻击技能拼点胜利时，使其造成的伤害+15%。该技能命中时，若自身的速度值高于主要目标，则使该技能造成的伤害+(速度值之差×2.5)%(最多+35%)(不包括E.G.O技能)。",
+      "desc": "[第1、2顺位人格专属]\n\n突刺攻击技能的基础威力+2，加算硬币威力+1，减算硬币威力-1(包括E.G.O技能)。\n\n突刺攻击技能拼点胜利时，使其造成的伤害+15%。该技能命中时，若自身的速度值高于主要目标，则使该技能造成的伤害+(速度值之差×2.5)%(最多+35%)(不包括E.G.O技能)。",
       "simpleDesc": [
         {
           "abilityID": 9147,
@@ -4082,7 +4082,7 @@
     {
       "id": 9148,
       "name": "作祟",
-      "desc": "[第6顺位友方单位专属]\n\n打击技能拼点胜利时，下回合使自身获得1层[Agility](每回合最多2次)。\n\n回合结束时，若本回合自身没有对敌方单位造成伤害，则改为下回合使自身获得3层[Agility]。",
+      "desc": "[第6顺位人格专属]\n\n打击技能拼点胜利时，下回合使自身获得1层[Agility](每回合最多2次)。\n\n回合结束时，若本回合自身没有对敌方单位造成伤害，则改为下回合使自身获得3层[Agility]。",
       "simpleDesc": [
         {
           "abilityID": 9148,
@@ -4097,7 +4097,7 @@
     {
       "id": 19148,
       "name": "作祟+",
-      "desc": "[第6顺位友方单位专属]\n\n<style=\"upgradeHighlight\">使用</style>打击技能时，下回合使自身获得1层[Agility](每回合最多2次)。\n\n回合结束时，若本回合自身没有对敌方单位造成伤害，则改为下回合使自身获得3层[Agility]。",
+      "desc": "[第6顺位人格专属]\n\n<style=\"upgradeHighlight\">使用</style>打击技能时，下回合使自身获得1层[Agility](每回合最多2次)。\n\n回合结束时，若本回合自身没有对敌方单位造成伤害，则改为下回合使自身获得3层[Agility]。",
       "simpleDesc": [
         {
           "abilityID": 19148,
@@ -4112,7 +4112,7 @@
     {
       "id": 29148,
       "name": "作祟++",
-      "desc": "[<style=\"upgradeHighlight\">第4</style>、第6顺位友方单位专属]\n\n使用打击技能时，下回合使自身获得1层[Agility]与<style=\"upgradeHighlight\">1层[HitDamageUp]</style>(每回合最多2次)。\n\n回合结束时，若本回合自身没有对敌方单位造成伤害，则改为下回合使自身获得3层[Agility]与<style=\"upgradeHighlight\">2层[HitDamageUp]。</style>",
+      "desc": "[<style=\"upgradeHighlight\">第4</style>、第6顺位人格专属]\n\n使用打击技能时，下回合使自身获得1层[Agility]与<style=\"upgradeHighlight\">1层[HitDamageUp]</style>(每回合最多2次)。\n\n回合结束时，若本回合自身没有对敌方单位造成伤害，则改为下回合使自身获得3层[Agility]与<style=\"upgradeHighlight\">2层[HitDamageUp]。</style>",
       "simpleDesc": [
         {
           "abilityID": 29148,
@@ -4127,7 +4127,7 @@
     {
       "id": 9149,
       "name": "加压绷带",
-      "desc": "[第5顺位友方单位专属]\n\n打击技能命中敌方单位时，对目标额外造成3点打击伤害。\n\n若是忧郁攻击技能，则额外使自身恢复3点体力。",
+      "desc": "[第5顺位人格专属]\n\n打击技能命中敌方单位时，对目标额外造成3点打击伤害。\n\n若是忧郁攻击技能，则额外使自身恢复3点体力。",
       "simpleDesc": [
         {
           "abilityID": 9149,
@@ -4142,7 +4142,7 @@
     {
       "id": 19149,
       "name": "加压绷带+",
-      "desc": "[第5、<style=\"upgradeHighlight\">第6</style>顺位友方单位专属]\n\n打击技能命中敌方单位时，对目标额外造成<style=\"upgradeHighlight\">3~5</style>点打击伤害。\n\n若是忧郁攻击技能，则额外使自身恢复<style=\"upgradeHighlight\">4</style>点体力。",
+      "desc": "[第5、<style=\"upgradeHighlight\">第6</style>顺位人格专属]\n\n打击技能命中敌方单位时，对目标额外造成<style=\"upgradeHighlight\">3~5</style>点打击伤害。\n\n若是忧郁攻击技能，则额外使自身恢复<style=\"upgradeHighlight\">4</style>点体力。",
       "simpleDesc": [
         {
           "abilityID": 19149,
@@ -4157,7 +4157,7 @@
     {
       "id": 29149,
       "name": "加压绷带++",
-      "desc": "[第5、第6顺位友方单位专属]\n\n打击技能命中敌方单位时，对目标额外造成<style=\"upgradeHighlight\">3~7</style>点打击伤害。\n\n若是忧郁攻击技能，则额外使自身恢复<style=\"upgradeHighlight\">6</style>点体力。",
+      "desc": "[第5、第6顺位人格专属]\n\n打击技能命中敌方单位时，对目标额外造成<style=\"upgradeHighlight\">3~7</style>点打击伤害。\n\n若是忧郁攻击技能，则额外使自身恢复<style=\"upgradeHighlight\">6</style>点体力。",
       "simpleDesc": [
         {
           "abilityID": 29149,
@@ -4229,7 +4229,7 @@
     {
       "id": 9151,
       "name": "紧握的雕像",
-      "desc": "[第3、第4顺位友方单位专属]\n\n打击技能拼点结束后，若剩余硬币数不低于2枚，则使其造成的伤害+10%，若剩余硬币数不低于3枚，则使其造成的伤害+20%，若剩余硬币数不低于4枚，则使其造成的伤害+40%。",
+      "desc": "[第3、第4顺位人格专属]\n\n打击技能拼点结束后，若剩余硬币数不低于2枚，则使其造成的伤害+10%，若剩余硬币数不低于3枚，则使其造成的伤害+20%，若剩余硬币数不低于4枚，则使其造成的伤害+40%。",
       "simpleDesc": [
         {
           "abilityID": 9151,
@@ -4240,7 +4240,7 @@
     {
       "id": 19151,
       "name": "紧握的雕像+",
-      "desc": "[第3、第4、<style=\"upgradeHighlight\">第5</style>顺位友方单位专属]\n\n打击技能拼点结束后，若剩余硬币数不低于2枚，则使其造成的伤害+10%，若剩余硬币数不低于3枚，则使其造成的伤害+20%，若剩余硬币数不低于4枚，则使其造成的伤害+40%。",
+      "desc": "[第3、第4、<style=\"upgradeHighlight\">第5</style>顺位人格专属]\n\n打击技能拼点结束后，若剩余硬币数不低于2枚，则使其造成的伤害+10%，若剩余硬币数不低于3枚，则使其造成的伤害+20%，若剩余硬币数不低于4枚，则使其造成的伤害+40%。",
       "simpleDesc": [
         {
           "abilityID": 19151,
@@ -4251,7 +4251,7 @@
     {
       "id": 29151,
       "name": "紧握的雕像++",
-      "desc": "[第3、第4、第5、<style=\"upgradeHighlight\">第6</style>顺位友方单位专属]\n\n打击技能拼点结束后，若剩余硬币数不低于2枚，则使其<style=\"upgradeHighlight\">造成的伤害+12.5%</style>，若剩余硬币数不低于3枚，则使其<style=\"upgradeHighlight\">造成的伤害+25%</style>，若剩余硬币数不低于4枚，则使其<style=\"upgradeHighlight\">造成的伤害+50%</style>。",
+      "desc": "[第3、第4、第5、<style=\"upgradeHighlight\">第6</style>顺位人格专属]\n\n打击技能拼点结束后，若剩余硬币数不低于2枚，则使其<style=\"upgradeHighlight\">造成的伤害+12.5%</style>，若剩余硬币数不低于3枚，则使其<style=\"upgradeHighlight\">造成的伤害+25%</style>，若剩余硬币数不低于4枚，则使其<style=\"upgradeHighlight\">造成的伤害+50%</style>。",
       "simpleDesc": [
         {
           "abilityID": 29151,
@@ -4262,7 +4262,7 @@
     {
       "id": 9152,
       "name": "粉碎的记忆",
-      "desc": "[第1、2顺位友方单位专属]\n\n打击攻击技能的基础威力+2，加算硬币威力+1，减算硬币威力-1(包括E.G.O技能)。\n\n打击攻击技能拼点胜利时，使其造成的伤害+20%。该技能命中时，造成的伤害+(30/硬币数)%(最少+10%)(不包括E.G.O技能)。",
+      "desc": "[第1、2顺位人格专属]\n\n打击攻击技能的基础威力+2，加算硬币威力+1，减算硬币威力-1(包括E.G.O技能)。\n\n打击攻击技能拼点胜利时，使其造成的伤害+20%。该技能命中时，造成的伤害+(30/硬币数)%(最少+10%)(不包括E.G.O技能)。",
       "simpleDesc": [
         {
           "abilityID": 9152,
@@ -4329,7 +4329,7 @@
     {
       "id": 19117,
       "name": "有烟火药+",
-      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位友方单位专属]\n\n回合结束时，若本回合使用过增加[Burst]强度或施加[Burst]层数的攻击技能，则下回合使自身获得1层[Agility]\n\n若自身的速度值不低于<style=\"upgradeHighlight\">5</style>，则使增加[Burst]强度或施加[Burst]层数的攻击技能<style=\"upgradeHighlight\">造成的伤害+15%</style>",
+      "desc": "[第1、第2、<style=\"upgradeHighlight\">第3</style>顺位人格专属]\n\n回合结束时，若本回合使用过增加[Burst]强度或施加[Burst]层数的攻击技能，则下回合使自身获得1层[Agility]\n\n若自身的速度值不低于<style=\"upgradeHighlight\">5</style>，则使增加[Burst]强度或施加[Burst]层数的攻击技能<style=\"upgradeHighlight\">造成的伤害+15%</style>",
       "simpleDesc": [
         {
           "abilityID": 19117,
@@ -4344,7 +4344,7 @@
     {
       "id": 29117,
       "name": "有烟火药++",
-      "desc": "[第1、第2、第3顺位友方单位专属]\n\n回合结束时，若本回合使用过增加[Burst]强度或施加[Burst]层数的攻击技能，则下回合使自身获得<style=\"upgradeHighlight\">1~2</style>层[Agility]。\n\n若自身的速度值不低于<style=\"upgradeHighlight\">4</style>，则使增加[Burst]强度或施加[Burst]层数的攻击技能<style=\"upgradeHighlight\">造成的伤害+20%</style>",
+      "desc": "[第1、第2、第3顺位人格专属]\n\n回合结束时，若本回合使用过增加[Burst]强度或施加[Burst]层数的攻击技能，则下回合使自身获得<style=\"upgradeHighlight\">1~2</style>层[Agility]。\n\n若自身的速度值不低于<style=\"upgradeHighlight\">4</style>，则使增加[Burst]强度或施加[Burst]层数的攻击技能<style=\"upgradeHighlight\">造成的伤害+20%</style>",
       "simpleDesc": [
         {
           "abilityID": 29117,
@@ -4370,7 +4370,7 @@
     {
       "id": 9157,
       "name": "烹饪秘诀书",
-      "desc": "回合开始时，若拥有增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能的最终威力+1\n\n增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能拼点胜利时，使目标敌方单位增加(剩余硬币数/2 +1)级[Combustion]强度",
+      "desc": "回合开始时，若拥有增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能的最终威力+1\n\n增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能拼点胜利时，使目标敌方单位增加(剩余硬币数/2 +1)级[Combustion]强度",
       "simpleDesc": [
         {
           "abilityID": 9157,
@@ -4396,7 +4396,7 @@
     {
       "id": 9161,
       "name": "虔诚",
-      "desc": "回合开始时，若拥有增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n速度值最高的1名友方单位增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的加算硬币技能的硬币威力+1，造成的伤害+50%\n- 减算硬币技能改为基础威力+(4/硬币数)，而非硬币威力(最少+1，向下取整)\n\n增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能的最终威力+1。",
+      "desc": "回合开始时，若拥有增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n速度值最高的1名友方单位增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的加算硬币技能的硬币威力+1，造成的伤害+50%\n- 减算硬币技能改为基础威力+(4/硬币数)，而非硬币威力(最少+1，向下取整)\n\n增加[Laceration]强度，施加[Laceration]层数或施加特殊流血的技能的最终威力+1。",
       "simpleDesc": [
         {
           "abilityID": 9161,
@@ -4411,7 +4411,7 @@
     {
       "id": 9165,
       "name": "啮合的齿轮",
-      "desc": "回合开始时，若拥有增加[Vibration]强度或施加[Vibration]层数的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n若本回合使目标[VibrationExplosion]6次，则在其现存体力0%处生成1条混乱阈值。(每场战斗最多1次)\n\n造成[Switch_Vibration]或[FusionVibration]时，施加1层[Vulnerable](每回合最多1次)",
+      "desc": "回合开始时，若拥有增加[Vibration]强度或施加[Vibration]层数的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n若本回合使目标[VibrationExplosion]6次，则在其现存体力0%处生成1条混乱阈值。(每场战斗最多1次)\n\n造成[Switch_Vibration]或[FusionVibration]时，施加1层[Vulnerable](每回合最多1次)",
       "simpleDesc": [
         {
           "abilityID": 9165,
@@ -4426,7 +4426,7 @@
     {
       "id": 9169,
       "name": "荆棘捕绳",
-      "desc": "回合开始时，若拥有增加[Burst]强度或施加[Burst]层数的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n战斗中敌方单位的[Burst]层数降至1层以下时，改为消耗20级[Burst]强度，而非[Burst]层数。([Burst]强度低于20级时不会触发)\n\n战斗中命中敌方单位时，若其[Burst]层数为1层，则对其施加的[Burst]层数额外+1层(每场战斗最多2次)。",
+      "desc": "回合开始时，若拥有增加[Burst]强度或施加[Burst]层数的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n战斗中敌方单位的[Burst]层数降至1层以下时，改为消耗20级[Burst]强度，而非[Burst]层数。([Burst]强度低于20级时不会触发)\n\n战斗中命中敌方单位时，若其[Burst]层数为1层，则对其施加的[Burst]层数额外+1层(每场战斗最多2次)。",
       "simpleDesc": [
         {
           "abilityID": 9169,
@@ -4441,7 +4441,7 @@
     {
       "id": 9174,
       "name": "碎裂的骨片",
-      "desc": "回合开始时，若拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，对带有[Sinking]的全体敌方单位(若是异想体，则改为所有部位)重新施加(上回合受击而消耗的[Sinking]层数/3)层[Sinking]。\n\n基础技能命中时，若目标的理智值低于0点(未带有理智值的目标改为若其忧郁抗性不低于1.5)，则对其造成(其[Sinking]强度/10)点忧郁伤害(最少1点伤害，该效果每回合最多触发10次)。",
+      "desc": "回合开始时，若拥有增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，对带有[Sinking]的全体敌方单位(若是异想体，则改为所有部位)重新施加(上回合受击而消耗的[Sinking]层数/3)层[Sinking]。\n\n基础技能命中时，若目标的理智值低于0点(未带有理智值的目标改为若其忧郁抗性不低于1.5)，则对其造成(其[Sinking]强度/10)点忧郁伤害(最少1点伤害，该效果每回合最多触发10次)。",
       "simpleDesc": [
         {
           "abilityID": 9174,
@@ -4456,7 +4456,7 @@
     {
       "id": 9177,
       "name": "某日的记忆",
-      "desc": "拥有增加[Breath]强度或获得[Breath]层数的技能(不包括E.G.O技能)的友方单位的3技能最终威力+2",
+      "desc": "拥有增加[Breath]强度或获得[Breath]层数的技能(不包括E.G.O技能)的人格的3技能最终威力+2",
       "simpleDesc": [
         {
           "abilityID": 9177,
@@ -4467,7 +4467,7 @@
     {
       "id": 9179,
       "name": "追忆",
-      "desc": "回合开始时，若拥有增加[Breath]强度或获得[Breath]层数的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n使拥有增加[Breath]强度或获得[Breath]层数的技能(不包括E.G.O技能)的友方单位3技能的加算硬币威力+1。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n战斗开始时，随机使1名友方单位增加3级[Breath]强度(优先选取拥有增加[Breath]强度或获得[Breath]层数的攻击技能的友方单位)。优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加3级[Breath]强度并获得2层[Breath]。",
+      "desc": "回合开始时，若拥有增加[Breath]强度或获得[Breath]层数的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n使拥有增加[Breath]强度或获得[Breath]层数的技能(不包括E.G.O技能)的人格3技能的加算硬币威力+1。\n- 减算硬币技能改为基础威力+(4/硬币数)，而非加算硬币威力(最少+1，向下取整)\n\n战斗开始时，随机使1名友方单位增加3级[Breath]强度(优先选取拥有增加[Breath]强度或获得[Breath]层数的攻击技能的人格)。优先选取拥有忧郁攻击技能的友方单位，且该情况下改为使其增加3级[Breath]强度并获得2层[Breath]。",
       "simpleDesc": [
         {
           "abilityID": 9179,
@@ -4482,7 +4482,7 @@
     {
       "id": 9182,
       "name": "1B型八角螺栓",
-      "desc": "回合开始时，若拥有获得[Charge]层数或特殊充能的攻击技能的友方单位不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，使全体友方单位获得(其[Charge]层数之和/10)层[AttackDmgUp](最多2层，向上取整；包括特殊充能)\n\n回合结束时，使未带有[ChargeForceField]的友方单位获得1层[ChargeForceField]。\n\n每当1名友方单位累计消耗20层[Charge]时，使其增加1级[Charge]强度。(每场战斗每名友方单位最多2次，不包括固定强度的特殊充能)",
+      "desc": "回合开始时，若拥有获得[Charge]层数或特殊充能的攻击技能的人格不低于5名，则在本场战斗期间触发该效果。(不包括E.G.O技能，不包括待命人员)\n\n回合开始时，使全体友方单位获得(其[Charge]层数之和/10)层[AttackDmgUp](最多2层，向上取整；包括特殊充能)\n\n回合结束时，使未带有[ChargeForceField]的友方单位获得1层[ChargeForceField]。\n\n每当1名人格累计消耗20层[Charge]时，使其增加1级[Charge]强度。(每场战斗每名人格最多2次，不包括固定强度的特殊充能)",
       "simpleDesc": [
         {
           "abilityID": 9182,
@@ -4633,7 +4633,7 @@
     {
       "id": 9192,
       "name": "重叠的创可贴",
-      "desc": "回合结束时，使带有流血 且现存体力最低的1名友方单位恢复其体力上限5%的体力。",
+      "desc": "回合结束时，使带有流血 且现存体力最低的1名人格恢复其体力上限5%的体力。",
       "simpleDesc": [
         {
           "abilityID": 9192,
@@ -4644,7 +4644,7 @@
     {
       "id": 19192,
       "name": "重叠的创可贴+",
-      "desc": "回合结束时，使带有流血 且现存体力最低的<style=\"upgradeHighlight\">2名</style>友方单位恢复其体力上限5%的体力。",
+      "desc": "回合结束时，使带有流血 且现存体力最低的<style=\"upgradeHighlight\">2名</style>人格恢复其体力上限5%的体力。",
       "simpleDesc": [
         {
           "abilityID": 19192,
@@ -4655,7 +4655,7 @@
     {
       "id": 9193,
       "name": "磨损的砥石",
-      "desc": "[第3顺位友方单位专属]\n\n斩击技能的攻击等级+(该友方单位拥有的斩击基础攻击技能数)(同技能不重复计数，最多+3)。\n\n攻击斩击抗性为脆弱(抗性高于1.0，陷入混乱的单位不计入)的敌方单位时，造成的斩击伤害+(5+目标的斩击抗性×10)%(最多+25%)。",
+      "desc": "[第3顺位人格专属]\n\n斩击技能的攻击等级+(该人格拥有的斩击基础攻击技能数)(同技能不重复计数，最多+3)。\n\n攻击斩击抗性为脆弱(抗性高于1.0，陷入混乱的单位不计入)的敌方单位时，造成的斩击伤害+(5+目标的斩击抗性×10)%(最多+25%)。",
       "simpleDesc": [
         {
           "abilityID": 9193,
@@ -4670,11 +4670,11 @@
     {
       "id": 9194,
       "name": "拐杖短剑",
-      "desc": "斩击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Seven协会的友方单位，该效果同样适用于突刺与打击基础攻击技能\n\n关卡开始时，使属于Seven协会的友方单位获得(除自身外属于Seven协会的友方单位数/2)层拼点威力提升 。(向下取整，最多2层)",
+      "desc": "斩击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Seven协会的人格，该效果同样适用于突刺与打击基础攻击技能\n\n关卡开始时，使属于Seven协会的人格获得(除自身外属于Seven协会的人格数/2)层拼点威力提升 。(向下取整，最多2层)",
       "simpleDesc": [
         {
           "abilityID": 9193,
-          "simpleDesc": "施加防御等级降低 。属于Seven协会的友方单位获得拼点威力提升 "
+          "simpleDesc": "施加防御等级降低 。属于Seven协会的人格获得拼点威力提升 "
         },
         {
           "abilityID": 91931,
@@ -4685,11 +4685,11 @@
     {
       "id": 19194,
       "name": "拐杖短剑+",
-      "desc": "斩击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Seven协会的友方单位，该效果同样适用于突刺与打击基础攻击技能，<style=\"upgradeHighlight\">并额外施加弱点分析 </style>\n\n<style=\"upgradeHighlight\">奇数回合开始时</style>，使属于Seven协会的友方单位获得(除自身外属于Seven协会的友方单位数/2)层拼点威力提升 。(向下取整，最多2层)",
+      "desc": "斩击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Seven协会的人格，该效果同样适用于突刺与打击基础攻击技能，<style=\"upgradeHighlight\">并额外施加弱点分析 </style>\n\n<style=\"upgradeHighlight\">奇数回合开始时</style>，使属于Seven协会的人格获得(除自身外属于Seven协会的人格数/2)层拼点威力提升 。(向下取整，最多2层)",
       "simpleDesc": [
         {
           "abilityID": 19193,
-          "simpleDesc": "施加防御等级降低 。属于Seven协会的友方单位获得拼点威力提升 并施加弱点分析 "
+          "simpleDesc": "施加防御等级降低 。属于Seven协会的人格获得拼点威力提升 并施加弱点分析 "
         },
         {
           "abilityID": 191931,
@@ -4700,11 +4700,11 @@
     {
       "id": 29194,
       "name": "拐杖短剑++",
-      "desc": "斩击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Seven协会的友方单位，该效果同样适用于突刺与打击基础攻击技能，并额外施加弱点分析 <style=\"upgradeHighlight\">与1层拼点威力降低 </style>\n\n<style=\"upgradeHighlight\">回合开始时</style>，使属于Seven协会的友方单位获得(除自身外属于Seven协会的友方单位数/2)层拼点威力提升 (向下取整，最多2层)。<style=\"upgradeHighlight\">拼点胜利时，使该技能造成的伤害+20%。</style>",
+      "desc": "斩击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Seven协会的人格，该效果同样适用于突刺与打击基础攻击技能，并额外施加弱点分析 <style=\"upgradeHighlight\">与1层拼点威力降低 </style>\n\n<style=\"upgradeHighlight\">回合开始时</style>，使属于Seven协会的人格获得(除自身外属于Seven协会的人格数/2)层拼点威力提升 (向下取整，最多2层)。<style=\"upgradeHighlight\">拼点胜利时，使该技能造成的伤害+20%。</style>",
       "simpleDesc": [
         {
           "abilityID": 29193,
-          "simpleDesc": "施加防御等级降低 。属于Seven协会的友方单位获得拼点威力提升 并施加弱点分析 "
+          "simpleDesc": "施加防御等级降低 。属于Seven协会的人格获得拼点威力提升 并施加弱点分析 "
         },
         {
           "abilityID": 291931,
@@ -4715,7 +4715,7 @@
     {
       "id": 9195,
       "name": "云纹鹤颈瓶",
-      "desc": "斩击1技能的拼点威力+1，命中时对目标施加2层攻击等级降低 。\n- 对于属于黑云会的友方单位，该效果同样适用于所有斩击基础攻击技能\n\n回合开始时，使属于黑云会的友方单位获得1层威力提升 ，基础攻击技能命中并增加流血 强度或施加流血 层数时，使自身增加1级呼吸法 强度(每回合每名友方单位最多4次)。",
+      "desc": "斩击1技能的拼点威力+1，命中时对目标施加2层攻击等级降低 。\n- 对于属于黑云会的人格，该效果同样适用于所有斩击基础攻击技能\n\n回合开始时，使属于黑云会的人格获得1层威力提升 ，基础攻击技能命中并增加流血 强度或施加流血 层数时，使自身增加1级呼吸法 强度(每回合每名人格最多4次)。",
       "simpleDesc": [
         {
           "abilityID": 9195,
@@ -4730,7 +4730,7 @@
     {
       "id": 19195,
       "name": "云纹鹤颈瓶+",
-      "desc": "斩击1技能的拼点威力+1，命中时对目标施加2层攻击等级降低 。\n- 对于属于黑云会的友方单位，该效果同样适用于所有斩击<style=\"upgradeHighlight\">或色欲基础攻击技能</style>\n\n回合开始时，使属于黑云会的友方单位获得1层威力提升 ，基础攻击技能命中并增加流血 强度或施加流血 层数时，使自身增加1级呼吸法 强度(每回合每名友方单位最多<style=\"upgradeHighlight\">6</style>次)。",
+      "desc": "斩击1技能的拼点威力+1，命中时对目标施加2层攻击等级降低 。\n- 对于属于黑云会的人格，该效果同样适用于所有斩击<style=\"upgradeHighlight\">或色欲基础攻击技能</style>\n\n回合开始时，使属于黑云会的人格获得1层威力提升 ，基础攻击技能命中并增加流血 强度或施加流血 层数时，使自身增加1级呼吸法 强度(每回合每名人格最多<style=\"upgradeHighlight\">6</style>次)。",
       "simpleDesc": [
         {
           "abilityID": 19195,
@@ -4745,7 +4745,7 @@
     {
       "id": 29195,
       "name": "云纹鹤颈瓶++",
-      "desc": "斩击1技能的拼点威力+1，命中时对目标施加2层攻击等级降低 。\n- 对于属于黑云会的友方单位，该效果同样适用于所有<style=\"upgradeHighlight\">基础攻击技能</style>\n\n回合开始时，使属于黑云会的友方单位获得1层威力提升 ，基础攻击技能命中并增加流血 强度或施加流血 层数时，使自身增加<style=\"upgradeHighlight\">1~2</style>级呼吸法 强度(每回合每名友方单位最多<style=\"upgradeHighlight\">8</style>次)。",
+      "desc": "斩击1技能的拼点威力+1，命中时对目标施加2层攻击等级降低 。\n- 对于属于黑云会的人格，该效果同样适用于所有<style=\"upgradeHighlight\">基础攻击技能</style>\n\n回合开始时，使属于黑云会的人格获得1层威力提升 ，基础攻击技能命中并增加流血 强度或施加流血 层数时，使自身增加<style=\"upgradeHighlight\">1~2</style>级呼吸法 强度(每回合每名人格最多<style=\"upgradeHighlight\">8</style>次)。",
       "simpleDesc": [
         {
           "abilityID": 29195,
@@ -4760,7 +4760,7 @@
     {
       "id": 9196,
       "name": "破碎的巨剑",
-      "desc": "斩击基础攻击技能的拼点威力+2。战斗开始时，本回合除自身以外每有1名友方单位使用了斩击基础攻击技能，使自身获得1层[AttackUp]。(最多3层)\n\n回合开始时，使拥有的基础攻击技能全部为斩击技能的友方单位获得2层[SlashDamageUp]。(不包括强化技能或需要特殊条件的技能)\n\n使用防御技能(不包括强化防御)时，使自身获得1层[Protection]与3层[DefenseUp](每回合每名友方单位最多1次)。单个回合内，友方单位每因敌方单位的单目标攻击技能攻击并受到2次体力或护盾体力伤害，下回合使该友方单位获得1层[DefenseUp](最多3层)\n\n回合开始时，使属于Zwei协会的友方单位获得2层[Enhancement]与1层[SlashResultUp]，除自身以外每有1名属于Zwei协会的友方单位，使自身获得2层[DefenseUp](最多8层)",
+      "desc": "斩击基础攻击技能的拼点威力+2。战斗开始时，本回合除自身以外每有1名人格使用了斩击基础攻击技能，使自身获得1层[AttackUp]。(最多3层)\n\n回合开始时，使拥有的基础攻击技能全部为斩击技能的友方单位获得2层[SlashDamageUp]。(不包括强化技能或需要特殊条件的技能)\n\n使用防御技能(不包括强化防御)时，使自身获得1层[Protection]与3层[DefenseUp](每回合每名人格最多1次)。单个回合内，友方人格每因敌方单位的单目标攻击技能攻击并受到2次体力或护盾体力伤害，下回合使该人格获得1层[DefenseUp](最多3层)\n\n回合开始时，使属于Zwei协会的人格获得2层[Enhancement]与1层[SlashResultUp]，除自身以外每有1名属于Zwei协会的人格，使自身获得2层[DefenseUp](最多8层)",
       "simpleDesc": [
         {
           "abilityID": 9196,
@@ -4779,7 +4779,7 @@
     {
       "id": 9197,
       "name": "高弹性钢鞋",
-      "desc": "[第3顺位友方单位专属]\n\n突刺技能的攻击等级+(该友方单位拥有的突刺基础攻击技能数)(同技能不重复计数，最多+3)。\n\n带有的[Agility]层数不低于3层时，攻击敌方单位时造成的突刺伤害+(10+自身的[Agility]层数×3)%(最多25%)。",
+      "desc": "[第3顺位人格专属]\n\n突刺技能的攻击等级+(该人格拥有的突刺基础攻击技能数)(同技能不重复计数，最多+3)。\n\n带有的[Agility]层数不低于3层时，攻击敌方单位时造成的突刺伤害+(10+自身的[Agility]层数×3)%(最多25%)。",
       "simpleDesc": [
         {
           "abilityID": 9197,
@@ -4794,11 +4794,11 @@
     {
       "id": 9198,
       "name": "见证的羽饰",
-      "desc": "突刺基础攻击技能拼点胜利后命中时，下回合对目标施加1层束缚 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Cinq协会的友方单位，下回合额外使自身获得1层迅捷 (每回合每名友方单位最多1次)\n\n属于Cinq协会的友方单位使用基础攻击技能与带有该单位施加的决斗宣告，点穴或集中攻击的敌方单位(若是异想体，则改为以部位判定)拼点胜利后命中时，使该友方单位增加2级呼吸法 强度(每回合每名友方单位最多1次)。",
+      "desc": "突刺基础攻击技能拼点胜利后命中时，下回合对目标施加1层束缚 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Cinq协会的人格，下回合额外使自身获得1层迅捷 (每回合每名人格最多1次)\n\n属于Cinq协会的人格使用基础攻击技能与带有该单位施加的决斗宣告，点穴或集中攻击的敌方单位(若是异想体，则改为以部位判定)拼点胜利后命中时，使该人格增加2级呼吸法 强度(每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 9198,
-          "simpleDesc": "施加束缚 ，属于Cinq协会的友方单位额外获得迅捷 "
+          "simpleDesc": "施加束缚 ，属于Cinq协会的人格额外获得迅捷 "
         },
         {
           "abilityID": 91981,
@@ -4809,11 +4809,11 @@
     {
       "id": 19198,
       "name": "见证的羽饰+",
-      "desc": "突刺基础攻击技能拼点胜利后命中时，下回合对目标施加1层束缚 。(每回合每名友方单位最多1次，每名敌方单位<style=\"upgradeHighlight\">最多2次</style>)\n- 对于属于Cinq协会的友方单位，下回合额外使自身获得1层迅捷 (每回合每名友方单位最多1次)\n\n属于Cinq协会的友方单位使用基础攻击技能与带有该单位施加的决斗宣告，点穴或集中攻击的敌方单位(若是异想体，则改为以部位判定)拼点胜利后命中时，使该友方单位增加<style=\"upgradeHighlight\">4</style>级呼吸法 强度(每回合每名友方单位最多1次)。",
+      "desc": "突刺基础攻击技能拼点胜利后命中时，下回合对目标施加1层束缚 。(每回合每名人格最多1次，每名敌方单位<style=\"upgradeHighlight\">最多2次</style>)\n- 对于属于Cinq协会的人格，下回合额外使自身获得1层迅捷 (每回合每名人格最多1次)\n\n属于Cinq协会的人格使用基础攻击技能与带有该单位施加的决斗宣告，点穴或集中攻击的敌方单位(若是异想体，则改为以部位判定)拼点胜利后命中时，使该人格增加<style=\"upgradeHighlight\">4</style>级呼吸法 强度(每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 19198,
-          "simpleDesc": "施加束缚 ，属于Cinq协会的友方单位额外获得迅捷 "
+          "simpleDesc": "施加束缚 ，属于Cinq协会的人格额外获得迅捷 "
         },
         {
           "abilityID": 191981,
@@ -4824,11 +4824,11 @@
     {
       "id": 29198,
       "name": "见证的羽饰++",
-      "desc": "突刺基础攻击技能拼点胜利后命中时，下回合对目标施加1层束缚 。(每回合每名友方单位最多1次，每名敌方单位最多2次)\n- 对于属于Cinq协会的友方单位，下回合额外使自身获得1层迅捷 (每回合每名友方单位最多<style=\"upgradeHighlight\">2</style>次)\n\n属于Cinq协会的友方单位使用基础攻击技能与带有该单位施加的决斗宣告，点穴或集中攻击的敌方单位(若是异想体，则改为以部位判定)拼点胜利后命中时，使该友方单位增加4级呼吸法 强度(每回合每名友方单位最多<style=\"upgradeHighlight\">2</style>次)。",
+      "desc": "突刺基础攻击技能拼点胜利后命中时，下回合对目标施加1层束缚 。(每回合每名人格最多1次，每名敌方单位最多2次)\n- 对于属于Cinq协会的人格，下回合额外使自身获得1层迅捷 (每回合每名人格最多<style=\"upgradeHighlight\">2</style>次)\n\n属于Cinq协会的人格使用基础攻击技能与带有该单位施加的决斗宣告，点穴或集中攻击的敌方单位(若是异想体，则改为以部位判定)拼点胜利后命中时，使该人格增加4级呼吸法 强度(每回合每名人格最多<style=\"upgradeHighlight\">2</style>次)。",
       "simpleDesc": [
         {
           "abilityID": 29198,
-          "simpleDesc": "施加束缚 ，属于Cinq协会的友方单位额外获得迅捷 "
+          "simpleDesc": "施加束缚 ，属于Cinq协会的人格额外获得迅捷 "
         },
         {
           "abilityID": 291981,
@@ -4839,7 +4839,7 @@
     {
       "id": 9199,
       "name": "磨破的衣袖",
-      "desc": "突刺2技能的攻击等级+2；硬币数不高于2枚的技能改为攻击等级+2，拼点威力+(2/硬币数)。\n- 对于属于技术解放联盟的友方单位，该效果同样适用于所有突刺基础攻击技能\n\n回合开始时，使属于技术解放联盟的友方单位获得(其带有的负面状态数)层[AttackUp](最多3层)。",
+      "desc": "突刺2技能的攻击等级+2；硬币数不高于2枚的技能改为攻击等级+2，拼点威力+(2/硬币数)。\n- 对于属于技术解放联盟的人格，该效果同样适用于所有突刺基础攻击技能\n\n回合开始时，使属于技术解放联盟的人格获得(其带有的负面状态数)层[AttackUp](最多3层)。",
       "simpleDesc": [
         {
           "abilityID": 9199,
@@ -4854,7 +4854,7 @@
     {
       "id": 19199,
       "name": "磨破的衣袖+",
-      "desc": "突刺2技能的攻击等级+2；硬币数不高于2枚的技能改为攻击等级+2，拼点威力+(2/硬币数)。\n- 对于属于技术解放联盟的友方单位，该效果同样适用于所有突刺<style=\"upgradeHighlight\">或暴食基础攻击技能</style>\n\n回合开始时，使属于技术解放联盟的友方单位获得<style=\"upgradeHighlight\">(其带有的负面状态数+1)</style>层[AttackUp](最多<style=\"upgradeHighlight\">4</style>层)。",
+      "desc": "突刺2技能的攻击等级+2；硬币数不高于2枚的技能改为攻击等级+2，拼点威力+(2/硬币数)。\n- 对于属于技术解放联盟的人格，该效果同样适用于所有突刺<style=\"upgradeHighlight\">或暴食基础攻击技能</style>\n\n回合开始时，使属于技术解放联盟的人格获得<style=\"upgradeHighlight\">(其带有的负面状态数+1)</style>层[AttackUp](最多<style=\"upgradeHighlight\">4</style>层)。",
       "simpleDesc": [
         {
           "abilityID": 19199,
@@ -4869,7 +4869,7 @@
     {
       "id": 29199,
       "name": "磨破的衣袖++",
-      "desc": "突刺2技能的攻击等级+2；硬币数不高于2枚的技能改为攻击等级+2，拼点威力+(2/硬币数)。\n- 对于属于技术解放联盟的友方单位，该效果同样适用于<style=\"upgradeHighlight\">所有基础攻击技能</style>\n\n回合开始时，使属于技术解放联盟的友方单位获得<style=\"upgradeHighlight\">1层拼点威力提升</style>与(其带有的负面状态的最高点数+1)层[AttackUp](最多<style=\"upgradeHighlight\">5</style>层)。",
+      "desc": "突刺2技能的攻击等级+2；硬币数不高于2枚的技能改为攻击等级+2，拼点威力+(2/硬币数)。\n- 对于属于技术解放联盟的人格，该效果同样适用于<style=\"upgradeHighlight\">所有基础攻击技能</style>\n\n回合开始时，使属于技术解放联盟的人格获得<style=\"upgradeHighlight\">1层拼点威力提升</style>与(其带有的负面状态的最高点数+1)层[AttackUp](最多<style=\"upgradeHighlight\">5</style>层)。",
       "simpleDesc": [
         {
           "abilityID": 29199,
@@ -4884,7 +4884,7 @@
     {
       "id": 9200,
       "name": "决斗教材第三卷",
-      "desc": "突刺基础攻击技能的拼点威力+2。战斗开始时，本回合除自身以外每有1名友方单位使用了突刺基础攻击技能，使自身获得1层[AttackUp]。(最多3层)\n\n回合开始时，使拥有的基础攻击技能全部为突刺技能的友方单位获得2层[PenetrateDamageUp]。(不包括强化技能或需要特殊条件的技能)\n\n闪避技能的威力+2。单个回合内，友方单位每闪避成功2次，下回合使该友方单位获得1层[AttackDmgUp](最多3层)\n\n回合开始时，使属于Cinq协会的友方单位获得1层[PenetrateResultUp]与2层[PenetrateDamageUp]，属于Cinq协会的友方单位攻击命中带有其施加的决斗宣告，点穴或集中攻击的敌方单位时，在下回合使该友方单位获得2层[PenetrateDamageUp]与1层[Agility](每回合每名友方单位最多1次)。",
+      "desc": "突刺基础攻击技能的拼点威力+2。战斗开始时，本回合除自身以外每有1名人格使用了突刺基础攻击技能，使自身获得1层[AttackUp]。(最多3层)\n\n回合开始时，使拥有的基础攻击技能全部为突刺技能的友方单位获得2层[PenetrateDamageUp]。(不包括强化技能或需要特殊条件的技能)\n\n闪避技能的威力+2。单个回合内，友方人格每闪避成功2次，下回合使该友方单位获得1层[AttackDmgUp](最多3层)\n\n回合开始时，使属于Cinq协会的人格获得1层[PenetrateResultUp]与2层[PenetrateDamageUp]，属于Cinq协会的人格攻击命中带有其施加的决斗宣告，点穴或集中攻击的敌方单位时，在下回合使该人格获得2层[PenetrateDamageUp]与1层[Agility](每回合每名人格最多1次)。",
       "simpleDesc": [
         {
           "abilityID": 9200,
@@ -4907,7 +4907,7 @@
     {
       "id": 9201,
       "name": "次元分类回收箱",
-      "desc": "[第3顺位友方单位专属]\n\n打击技能的攻击等级+(该友方单位拥有的打击基础攻击技能数)(同技能不重复计数，最多+3)。\n\n使用技能攻击敌方单位时，若[Discard]了其他技能，则使造成的打击伤害+(10+被丢弃技能的级别×5)%(以最高级别计算，最多+25%)。",
+      "desc": "[第3顺位人格专属]\n\n打击技能的攻击等级+(该人格拥有的打击基础攻击技能数)(同技能不重复计数，最多+3)。\n\n使用技能攻击敌方单位时，若[Discard]了其他技能，则使造成的打击伤害+(10+被丢弃技能的级别×5)%(以最高级别计算，最多+25%)。",
       "simpleDesc": [
         {
           "abilityID": 9201,
@@ -4922,7 +4922,7 @@
     {
       "id": 9202,
       "name": "口袋助记卡",
-      "desc": "打击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Dieci协会的友方单位，该效果同样适用于斩击与突刺基础攻击技能，并额外施加1层防御等级降低 \n\n若属于Dieci协会的友方单位通过丢弃 技能丢弃 了自身的技能，则下回合开始时使其获得(被丢弃技能的级别)层攻击等级提升 。(以最高级别计算，最多3层)",
+      "desc": "打击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Dieci协会的人格，该效果同样适用于斩击与突刺基础攻击技能，并额外施加1层防御等级降低 \n\n若属于Dieci协会的人格通过丢弃 技能丢弃 了自身的技能，则下回合开始时使其获得(被丢弃技能的级别)层攻击等级提升 。(以最高级别计算，最多3层)",
       "simpleDesc": [
         {
           "abilityID": 9202,
@@ -4937,7 +4937,7 @@
     {
       "id": 19202,
       "name": "口袋助记卡+",
-      "desc": "打击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Dieci协会的友方单位，该效果同样适用于斩击与突刺基础攻击技能，并额外施加1层防御等级降低 \n\n若属于Dieci协会的友方单位通过丢弃 技能丢弃 了自身的技能，则下回合开始时使其获得<style=\"upgradeHighlight\">(被丢弃技能的级别+1)</style>层攻击等级提升 。(以最高级别计算，最多<style=\"upgradeHighlight\">4</style>层)",
+      "desc": "打击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Dieci协会的人格，该效果同样适用于斩击与突刺基础攻击技能，并额外施加1层防御等级降低 \n\n若属于Dieci协会的人格通过丢弃 技能丢弃 了自身的技能，则下回合开始时使其获得<style=\"upgradeHighlight\">(被丢弃技能的级别+1)</style>层攻击等级提升 。(以最高级别计算，最多<style=\"upgradeHighlight\">4</style>层)",
       "simpleDesc": [
         {
           "abilityID": 19202,
@@ -4952,7 +4952,7 @@
     {
       "id": 29202,
       "name": "口袋助记卡++",
-      "desc": "打击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名友方单位最多1次，不会对同一名敌方单位叠加)\n- 对于属于Dieci协会的友方单位，该效果同样适用于斩击与突刺基础攻击技能，并额外施加1层防御等级降低 \n\n若属于Dieci协会的友方单位通过丢弃 技能丢弃 了自身的技能，则下回合开始时使其获得<style=\"upgradeHighlight\">(被丢弃技能的级别+2)</style>层攻击等级提升 。(以最高级别计算，最多<style=\"upgradeHighlight\">5</style>层)",
+      "desc": "打击基础攻击技能拼点胜利时，下回合对目标施加2层防御等级降低 。(每回合每名人格最多1次，不会对同一名敌方单位叠加)\n- 对于属于Dieci协会的人格，该效果同样适用于斩击与突刺基础攻击技能，并额外施加1层防御等级降低 \n\n若属于Dieci协会的人格通过丢弃 技能丢弃 了自身的技能，则下回合开始时使其获得<style=\"upgradeHighlight\">(被丢弃技能的级别+2)</style>层攻击等级提升 。(以最高级别计算，最多<style=\"upgradeHighlight\">5</style>层)",
       "simpleDesc": [
         {
           "abilityID": 29202,
@@ -4967,7 +4967,7 @@
     {
       "id": 9203,
       "name": "次元知觉变体",
-      "desc": "打击1技能与2技能的攻击等级+(硬币数-1)(最多+2)\n- 拥有丢弃 效果的技能改为攻击等级+(硬币数)(最多+4)\n\n友方单位通过丢弃 技能丢弃 了自身的技能时，下回合使其获得1层伤害强化 与(被丢弃技能的级别)层攻击等级提升 (每回合每名友方单位最多1次，以最高级别计算，最多3层)。\n- 若丢弃 了打击技能，则额外获得1层打击伤害强化 ",
+      "desc": "打击1技能与2技能的攻击等级+(硬币数-1)(最多+2)\n- 拥有丢弃 效果的技能改为攻击等级+(硬币数)(最多+4)\n\n人格通过丢弃 技能丢弃 了自身的技能时，下回合使其获得1层伤害强化 与(被丢弃技能的级别)层攻击等级提升 (每回合每名人格最多1次，以最高级别计算，最多3层)。\n- 若丢弃 了打击技能，则额外获得1层打击伤害强化 ",
       "simpleDesc": [
         {
           "abilityID": 9203,
@@ -4982,7 +4982,7 @@
     {
       "id": 9204,
       "name": "复仇账簿",
-      "desc": "打击基础攻击技能的拼点威力+2。战斗开始时，本回合除自身以外每有1名友方单位使用了打击基础攻击技能，使自身获得1层[AttackUp]。(最多3层)\n\n回合开始时，使拥有的基础攻击技能全部为打击技能的友方单位获得2层[HitDamageUp]。(不包括强化技能或需要特殊条件的技能)\n\n使用反击技能(不包括强化反击)时，使自身获得体力上限7.5%的护盾并使该技能造成的伤害+20%。使用反击技能时，自身不会因受到伤害而陷入混乱(每场战斗每名友方单位最多1次)。\n\n回合开始时，使属于中指的友方单位获得1层[HitResultUp]与2层[Endurance]。属于中指的友方单位使用反击技能时，以上反击技能的强化效果改为每场战斗最多2次，造成的伤害改为+40%。",
+      "desc": "打击基础攻击技能的拼点威力+2。战斗开始时，本回合除自身以外每有1名人格使用了打击基础攻击技能，使自身获得1层[AttackUp]。(最多3层)\n\n回合开始时，使拥有的基础攻击技能全部为打击技能的友方单位获得2层[HitDamageUp]。(不包括强化技能或需要特殊条件的技能)\n\n使用反击技能(不包括强化反击)时，使自身获得体力上限7.5%的护盾并使该技能造成的伤害+20%。使用反击技能时，自身不会因受到伤害而陷入混乱(每场战斗每名人格最多1次)。\n\n回合开始时，使属于中指的人格获得1层[HitResultUp]与2层[Endurance]。属于中指的人格使用反击技能时，以上反击技能的强化效果改为每场战斗最多2次，造成的伤害改为+40%。",
       "simpleDesc": [
         {
           "abilityID": 9204,

@@ -455,6 +455,10 @@
     {
       "id": "GiveRandomNegativeSinbuffOnRoundStart",
       "desc": "回合开始时，随机使自身增加{0}级某种效果的强度，该效果可能为烧伤 、流血 、震颤 、破裂 或沉沦 "
+    },
+    {
+      "id": "MD7LimitMpAdjuster",
+      "desc": "回合开始时，使自身恢复{0}点理智值\n- 若拥有的技能全部为减算硬币技能，则改为失去{1}点理智值"
     }
   ]
 }

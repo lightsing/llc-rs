@@ -3,7 +3,7 @@
     {
       "id": 9805,
       "name": "灰色星座的加护",
-      "desc": "[第1顺位友方单位专属]\n\n关卡开始时，使自身获得[KnightBless]",
+      "desc": "[第1顺位人格专属]\n\n关卡开始时，使自身获得[KnightBless]",
       "simpleDesc": [
         {
           "abilityID": 9744,

@@ -594,7 +594,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "上色",
+          "name": "着色",
           "desc": "[WinDuel] 若目标的[Laceration]强度不低于5级，则在攻击结束后随机对1名敌方单位重复使用本技能(最多1次)",
           "coinlist": [
             {

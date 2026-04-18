@@ -14,7 +14,7 @@
       "id": 133102,
       "name": "以人体为中心的美术",
       "desc": "登场时，使自身恢复30点理智值\n\n若攻击技能命中时对目标施加负面状态并使自身获得正面状态，则攻击结束后使自身恢复4点理智值\n- 通过该效果恢复理智值时，若自身理智值为最大值，则下回合使自身获得1层[ResultEnhancement](每回合最多1次)",
-      "flavor": "现场以对手的骨骼与肌肉作为素材来塑形的战斗，是随着那过程的持续，连细小的骨片都会变成精巧的武器的艺术。"
+      "flavor": "现场以对手的骨骼与肌肉作为材料来塑形的战斗，是随着那过程的持续，连细小的骨片都会变成精巧的武器的艺术。"
     },
     {
       "id": 133103,
@@ -161,7 +161,7 @@
     {
       "id": 132804,
       "name": "我说过，中指永不遗忘",
-      "desc": "每当自身被2个技能攻击时，使自身获得1层[ResentmentSpiderDaughter]并使自身的[GotACompliment]层数减少1层(受到攻击次数累计计算)\n\n若自身的[ResentmentSpiderDaughter]层数为最大值，则使用强力攻击\n\n回合结束时，若现存体力低于80%、60%或40%，使自身的[ResentmentSpiderDaughter]层数变为最大值",
+      "desc": "每当自身被2个技能攻击时，使自身获得1层[ResentmentSpiderDaughter]并使自身的[GotACompliment]层数减少1层(受到攻击次数累计计算)\n\n若自身的[ResentmentSpiderDaughter]层数为最大值，则使用强力攻击\n\n回合结束时，若现存体力低于80%、60%或40%，则使自身的[ResentmentSpiderDaughter]层数变为最大值",
       "summary": "",
       "undefined": "-"
     },

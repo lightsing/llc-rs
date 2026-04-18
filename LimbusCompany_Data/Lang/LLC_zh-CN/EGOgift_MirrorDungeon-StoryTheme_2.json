@@ -3,7 +3,7 @@
     {
       "id": 9427,
       "name": "守镇鱼叉",
-      "desc": "[第6顺位友方单位专属]\n回合结束时，若现存体力低于体力上限的30%，则下回合使自身获得1层[Enhancement]",
+      "desc": "[第6顺位人格专属]\n回合结束时，若现存体力低于体力上限的30%，则下回合使自身获得1层[Enhancement]",
       "simpleDesc": [
         {
           "abilityID": 9427,
@@ -14,7 +14,7 @@
     {
       "id": 19427,
       "name": "守镇鱼叉+",
-      "desc": "[第6顺位友方单位专属]\n回合结束时，若现存体力低于体力上限的40%，则下回合使自身获得1层[Enhancement]\n\n回合结束时，若有友方单位陷入混乱，则下回合使自身的[Aggro]+6，并使自身获得4层[DefenseUp]",
+      "desc": "[第6顺位人格专属]\n回合结束时，若现存体力低于体力上限的40%，则下回合使自身获得1层[Enhancement]\n\n回合结束时，若有友方单位陷入混乱，则下回合使自身的[Aggro]+6，并使自身获得4层[DefenseUp]",
       "simpleDesc": [
         {
           "abilityID": 19427,
@@ -29,7 +29,7 @@
     {
       "id": 29427,
       "name": "守镇鱼叉++",
-      "desc": "[第6顺位友方单位专属]\n回合结束时，若现存体力低于体力上限的50%，则下回合使自身获得1层[Enhancement]\n\n回合结束时，若有友方单位陷入混乱，则下回合使自身的[Aggro]+6，并使自身获得4层[DefenseUp]",
+      "desc": "[第6顺位人格专属]\n回合结束时，若现存体力低于体力上限的50%，则下回合使自身获得1层[Enhancement]\n\n回合结束时，若有友方单位陷入混乱，则下回合使自身的[Aggro]+6，并使自身获得4层[DefenseUp]",
       "simpleDesc": [
         {
           "abilityID": 29427,
@@ -44,7 +44,7 @@
     {
       "id": 9428,
       "name": "鲸心",
-      "desc": "使用攻击技能命中带有[Laceration]或特殊流血的敌方单位时，使自身增加1级[Breath]强度。(每回合每名友方单位最多3次)\n\n暴击命中时，以50%的概率在下回合使自身获得1层[PenetrateResultUp](每回合每名友方单位最多2次，包括E.G.O技能与反击技能)\n\n基础技能正面命中并暴击时，令该硬币对目标施加的负面状态额外+1。(每回合每名友方单位最多1次，不包括E.G.O技能，包括反击技能)",
+      "desc": "使用攻击技能命中带有[Laceration]或特殊流血的敌方单位时，使自身增加1级[Breath]强度。(每回合每名人格最多3次)\n\n暴击命中时，以50%的概率在下回合使自身获得1层[PenetrateResultUp](每回合每名人格最多2次，包括E.G.O技能与反击技能)\n\n基础技能正面命中并暴击时，令该硬币对目标施加的负面状态额外+1。(每回合每名人格最多1次，不包括E.G.O技能，包括反击技能)",
       "simpleDesc": [
         {
           "abilityID": 9428,
@@ -63,7 +63,7 @@
     {
       "id": 9431,
       "name": "损坏的小提琴",
-      "desc": "[第5、第6顺位友方单位专属]\n\n若现存体力不高于45%，则拼点胜利时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n若现存体力不高于20%，则改为使用技能时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)",
+      "desc": "[第5、第6顺位人格专属]\n\n若现存体力不高于45%，则拼点胜利时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n若现存体力不高于20%，则改为使用技能时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)",
       "simpleDesc": [
         {
           "abilityID": 9431,
@@ -78,7 +78,7 @@
     {
       "id": 19431,
       "name": "损坏的小提琴+",
-      "desc": "[第5、第6顺位友方单位专属]\n\n若现存体力不高于<style=\"upgradeHighlight\">65%</style>，则拼点胜利时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n若现存体力不高于<style=\"upgradeHighlight\">40%</style>，则改为使用技能时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n<style=\"upgradeHighlight\">拼点胜利且拼点次数不低于5次时，使拼点胜利的技能造成的伤害+(拼点次数×2)%(最多+20%)</style>",
+      "desc": "[第5、第6顺位人格专属]\n\n若现存体力不高于<style=\"upgradeHighlight\">65%</style>，则拼点胜利时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n若现存体力不高于<style=\"upgradeHighlight\">40%</style>，则改为使用技能时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n<style=\"upgradeHighlight\">拼点胜利且拼点次数不低于5次时，使拼点胜利的技能造成的伤害+(拼点次数×2)%(最多+20%)</style>",
       "simpleDesc": [
         {
           "abilityID": 19431,
@@ -97,7 +97,7 @@
     {
       "id": 29431,
       "name": "损坏的小提琴++",
-      "desc": "[第5、第6顺位友方单位专属]\n\n若现存体力不高于65%，则拼点胜利时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n若现存体力不高于40%，则改为使用技能时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n拼点胜利且拼点次数不低于5次时，使拼点胜利的技能造成的伤害<style=\"upgradeHighlight\">+(拼点次数×3)%(最多+30%)</style>",
+      "desc": "[第5、第6顺位人格专属]\n\n若现存体力不高于65%，则拼点胜利时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n若现存体力不高于40%，则改为使用技能时使自身获得1层[AttackUp]与1层[TakeHpHealIncrease](每回合每名单位最多2次)\n\n拼点胜利且拼点次数不低于5次时，使拼点胜利的技能造成的伤害<style=\"upgradeHighlight\">+(拼点次数×3)%(最多+30%)</style>",
       "simpleDesc": [
         {
           "abilityID": 29431,
@@ -116,7 +116,7 @@
     {
       "id": 9432,
       "name": "宅邸模型八音盒",
-      "desc": "[第1顺位友方单位专属]\n\n回合结束时，若自身陷入混乱，则解除自身的混乱，下回合开始时使全体敌方单位增加4级[Sinking]强度并对其施加4层[Sinking](每场战斗最多1次，若是集中遭遇战，则改为所有部位)\n\n击杀带有[Sinking]的敌方单位时，对[Sinking]层数最低的1名敌方单位施加2层[Sinking](若是集中遭遇战，则改为1个部位)",
+      "desc": "回合结束时，若自身陷入混乱，则解除自身的混乱，下回合开始时使全体敌方单位增加4级[Sinking]强度并对其施加4层[Sinking](每场战斗最多1次；不包括强制混乱；若是集中遭遇战，则改为所有部位)\n\n击杀敌方单位时，对[Sinking]层数最低的1名敌方单位施加2层[Sinking](每回合最多3次；若是集中遭遇战，则改为1个部位)",
       "simpleDesc": [
         {
           "abilityID": 9432,
