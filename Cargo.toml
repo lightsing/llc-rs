@@ -9,7 +9,7 @@ homepage = "https://github.com/lightsing/llc-rs"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/lightsing/llc-rs.git"
 rust-version = "1.89"
-version = "0.2.6"
+version = "0.2.7"
 
 [workspace.dependencies]
 aho-corasick = "1.1"
@@ -50,6 +50,7 @@ uuid = { version = "1.17", default-features = false }
 vdf-reader = "0.3"
 winreg = "0.55"
 winres = "0.1"
+ttf-parser = "0.25"
 
 [profile.release]
 codegen-units = 1

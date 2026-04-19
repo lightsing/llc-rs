@@ -108,7 +108,7 @@ async fn main_inner(
     shutdown_tx: tokio::sync::broadcast::Sender<()>,
     shutdown_rx: tokio::sync::broadcast::Receiver<()>,
 ) {
-    let logging_guard = logging::init(&dirs, &launcher_config, shutdown_rx).await;
+    let _logging_guard = logging::init(&dirs, &launcher_config, shutdown_rx).await;
 
     if is_tool {
         info!("Running as tool, path: {}", self_path.display());
@@ -132,9 +132,9 @@ async fn main_inner(
         .ok();
 
     shutdown_tx.send(()).ok();
-    if let Some(reporter) = logging_guard.sls_reporter {
-        reporter.await.ok();
-    }
+    // if let Some(reporter) = logging_guard.sls_reporter {
+    //     reporter.await.ok();
+    // }
 }
 
 #[allow(unused)]

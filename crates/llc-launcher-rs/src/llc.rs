@@ -68,6 +68,8 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         .inspect_err(|e| error!("Failed to create LLC directory: {e}"))
         .context("无法创建语言目录")?;
 
+    let font_installer = tokio::spawn(install_font_if_needed(game_root.clone()));
+
     let installed_tag = match get_version_installed(&game_root) {
         Ok(Some(version)) => version,
         Ok(None) => {
@@ -95,7 +97,6 @@ async fn install_or_update_llc(llc_config: LLCConfig) -> eyre::Result<()> {
         return Ok(());
     }
 
-    let font_installer = tokio::spawn(install_font_if_needed(game_root.clone()));
     let cleaner = tokio::spawn(cleanup_installed_llc(game_root.clone()));
     let downloader = tokio::spawn(download_release(llc_config, latest_version.dist));
 
@@ -184,6 +185,16 @@ async fn cleanup_installed_llc(game_root: PathBuf) {
 async fn install_font_if_needed(game_root: PathBuf) -> eyre::Result<()> {
     static FONT_FILE: &[u8] = include_bytes!("../../../assets/SarasaGothicSC-Bold.ttf");
 
+    let font_dir = game_root
+        .join("LimbusCompany_Data")
+        .join("Lang")
+        .join("LLC_zh-CN")
+        .join("Font");
+
+    tokio::fs::create_dir_all(&font_dir).await?;
+    tokio::fs::create_dir_all(font_dir.join("Context")).await?;
+    tokio::fs::create_dir_all(font_dir.join("Title")).await?;
+
     let font_file = game_root
         .join("LimbusCompany_Data")
         .join("Lang")
@@ -192,7 +203,15 @@ async fn install_font_if_needed(game_root: PathBuf) -> eyre::Result<()> {
         .join("Context")
         .join("ChineseFont.ttf");
 
-    if font_file.exists() {
+    let mut font_valid = false;
+
+    if let Ok(font_data) = tokio::fs::read(&font_file).await {
+        if ttf_parser::Face::parse(&font_data, 0).is_ok() {
+            font_valid = true;
+        }
+    }
+
+    if font_valid {
         info!("Font file is already installed.");
         return Ok(());
     } else {

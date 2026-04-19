@@ -3,15 +3,14 @@ use aho_corasick::{AhoCorasick, Anchored, Input, MatchKind, StartKind};
 use directories::ProjectDirs;
 use eyre::Context;
 use std::fs;
-use tokio::task::JoinHandle;
 use tracing_appender::{
     non_blocking::WorkerGuard,
     rolling::{self, Rotation},
 };
 use tracing_subscriber::{
     filter::filter_fn, fmt, fmt::writer::MakeWriterExt, layer::SubscriberExt,
-    util::SubscriberInitExt,
 };
+use tracing_subscriber::util::SubscriberInitExt;
 
 static NOISE_TARGETS: &[&str] = &[
     "async_io",
@@ -28,7 +27,7 @@ static NOISE_TARGETS: &[&str] = &[
 pub(crate) struct LoggingGuard {
     _file_appender_guard: Option<WorkerGuard>,
     _stderr_appender_guard: Option<WorkerGuard>,
-    pub(crate) sls_reporter: Option<JoinHandle<()>>,
+    // pub(crate) sls_reporter: Option<JoinHandle<()>>,
 }
 
 pub async fn init(
@@ -95,58 +94,58 @@ async fn init_inner(
                 .with_writer(non_blocking_stderr_appender.with_max_level(config.log_level())),
         );
 
-    #[cfg(not(debug_assertions))]
-    let sls_reporter = if config.telemetry() {
-        let client = tracing_aliyun_sls::SlsClient::builder()
-            .endpoint(env!("ALIYUN_SLS_ENDPOINT"))
-            .access_key(env!("ALIYUN_SLS_ACCESS_KEY"))
-            .access_secret(env!("ALIYUN_SLS_ACCESS_SECRET"))?
-            .project(env!("ALIYUN_SLS_PROJECT"))
-            .logstore(env!("ALIYUN_SLS_LOGSTORE"))
-            .enable_trace(true)
-            .build()
-            .inspect_err(|e| eprintln!("failed to create sls client: {e}"))
-            .context("无法创建 SLS 客户端")?;
-        let reporter = tracing_aliyun_sls::reporter::Reporter::from_client(client);
+    // #[cfg(not(debug_assertions))]
+    // let sls_reporter = if config.telemetry() {
+    //     let client = tracing_aliyun_sls::SlsClient::builder()
+    //         .endpoint(env!("ALIYUN_SLS_ENDPOINT"))
+    //         .access_key(env!("ALIYUN_SLS_ACCESS_KEY"))
+    //         .access_secret(env!("ALIYUN_SLS_ACCESS_SECRET"))?
+    //         .project(env!("ALIYUN_SLS_PROJECT"))
+    //         .logstore(env!("ALIYUN_SLS_LOGSTORE"))
+    //         .enable_trace(true)
+    //         .build()
+    //         .inspect_err(|e| eprintln!("failed to create sls client: {e}"))
+    //         .context("无法创建 SLS 客户端")?;
+    //     let reporter = tracing_aliyun_sls::reporter::Reporter::from_client(client);
+    //
+    //     let sls_reporter = tokio::spawn(
+    //         reporter
+    //             .clone()
+    //             .reporting(|| async {
+    //                 tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+    //             })
+    //             .await
+    //             .unwrap()
+    //             .with_graceful_shutdown(async move {
+    //                 let mut shutdown_rx = shutdown_rx;
+    //                 shutdown_rx.recv().await.ok();
+    //             })
+    //             .with_vec_pool_capacity(128)
+    //             .with_log_group_capacity(128)
+    //             .with_log_vec_capacity(128)
+    //             .start(),
+    //     );
+    //
+    //     layered
+    //         .with(tracing_aliyun_sls::layer(reporter).with_instance_id(config.uuid().to_string()))
+    //         .init();
+    //     Some(sls_reporter)
+    // } else {
+    //     layered.init();
+    //     None
+    // };
 
-        let sls_reporter = tokio::spawn(
-            reporter
-                .clone()
-                .reporting(|| async {
-                    tokio::time::sleep(std::time::Duration::from_millis(100)).await;
-                })
-                .await
-                .unwrap()
-                .with_graceful_shutdown(async move {
-                    let mut shutdown_rx = shutdown_rx;
-                    shutdown_rx.recv().await.ok();
-                })
-                .with_vec_pool_capacity(128)
-                .with_log_group_capacity(128)
-                .with_log_vec_capacity(128)
-                .start(),
-        );
-
-        layered
-            .with(tracing_aliyun_sls::layer(reporter).with_instance_id(config.uuid().to_string()))
-            .init();
-        Some(sls_reporter)
-    } else {
-        layered.init();
-        None
-    };
-
-    #[cfg(debug_assertions)]
-    let sls_reporter = {
-        let _ = shutdown_rx;
-        layered.init();
-        None
-    };
+    // #[cfg(debug_assertions)]
+    // let sls_reporter = {
+    //     let _ = shutdown_rx;
+    layered.init();
+    //     None
+    // };
 
     Ok(LoggingGuard {
         _file_appender_guard: Some(file_appender_guard),
         _stderr_appender_guard: Some(stderr_appender_guard),
-        sls_reporter,
+        // sls_reporter,
     })
 }
 

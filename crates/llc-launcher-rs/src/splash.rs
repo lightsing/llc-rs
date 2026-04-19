@@ -51,9 +51,7 @@ impl SplashScreen {
     }
 
     fn update_resolution(&mut self, ctx: &egui::Context) {
-        let monitor_size = ctx
-            .input(|i| i.viewport().monitor_size)
-            .unwrap_or(TARGET_SIZE);
+        let monitor_size = ctx.input(|i| i.viewport().monitor_size).unwrap_or(TARGET_SIZE);
 
         let viewport = ctx.viewport_rect().size();
         let target_size = {
@@ -70,6 +68,17 @@ impl SplashScreen {
 
         ctx.send_viewport_cmd(ViewportCommand::InnerSize(target_size));
         self.scale = viewport.x / TARGET_SIZE.x;
+
+        if let Some(current_pos) = ctx.input(|i| i.viewport().outer_rect) {
+            let current_pos = current_pos.left_top();
+            let center_x = (monitor_size.x - target_size.x) / 2.0;
+            let center_y = (monitor_size.y - target_size.y) / 2.0;
+            let target_pos = pos2(center_x, center_y);
+
+            if (current_pos - target_pos).length() > 2.0 {
+                ctx.send_viewport_cmd(ViewportCommand::OuterPosition(target_pos));
+            }
+        }
     }
 
     fn update_fake_progress(&mut self, ctx: &egui::Context) {

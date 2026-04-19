@@ -36,6 +36,7 @@ tracing-appender.workspace = true
 tracing-subscriber = { workspace = true, features = ["fmt"] }
 url.workspace = true
 uuid = { workspace = true, features = ["v4", "serde"] }
+ttf-parser = { workspace = true }
 
 [dev-dependencies]
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
