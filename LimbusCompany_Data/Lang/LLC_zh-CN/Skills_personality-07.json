@@ -1125,7 +1125,7 @@
         {
           "level": 1,
           "name": "一枪爆头",
-          "desc": "[WhenUse] 使自身增加3级[Breath]强度并获得1层[Breath]",
+          "desc": "[WhenUse] 使自身增加3级[Breath]强度并使自身获得1层[Breath]",
           "coinlist": [
             {
               "coindescs": [
@@ -1142,7 +1142,7 @@
         {
           "level": 2,
           "name": "一枪爆头",
-          "desc": "<style=\"highlight\">若自身的速度值高于目标，则每相差1点，使本技能造成的伤害+10%(最多+30%)</style>\n[WhenUse] 使自身增加3级[Breath]强度并获得1层[Breath]\n<style=\"highlight\">[WhenUse] 下回合使自身获得2层[Agility](每回合最多1次)</style>",
+          "desc": "<style=\"highlight\">若自身的速度值高于目标，则每相差1点，使本技能造成的伤害+10%(最多+30%)</style>\n[WhenUse] 使自身增加3级[Breath]强度并使自身获得1层[Breath]\n<style=\"highlight\">[WhenUse] 下回合使自身获得2层[Agility](每回合最多1次)</style>",
           "coinlist": [
             {
               "coindescs": [
@@ -1165,7 +1165,7 @@
         {
           "level": 4,
           "name": "一枪爆头",
-          "desc": "若自身的速度值高于目标，则每相差1点，使本技能造成的伤害+10%<style=\"highlight\">(最多+50%)</style>\n[WhenUse] 使自身增加3级[Breath]强度并获得<style=\"highlight\">2</style>层[Breath]\n[WhenUse] 下回合使自身获得2层[Agility](每回合最多1次)",
+          "desc": "若自身的速度值高于目标，则每相差1点，使本技能造成的伤害+10%<style=\"highlight\">(最多+50%)</style>\n[WhenUse] 使自身增加3级[Breath]强度并使自身获得<style=\"highlight\">2</style>层[Breath]\n[WhenUse] 下回合使自身获得2层[Agility](每回合最多1次)",
           "coinlist": [
             {
               "coindescs": [

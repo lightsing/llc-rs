@@ -4599,6 +4599,114 @@
     {
       "id": "TutoEvent9125_P8_D1",
       "content": "活动结束后，可在驾驶席 - [外传故事]及放映室 - [其他故事]中，重温绞丝结线的战斗和剧情。"
+    },
+    {
+      "id": "TutoEvent9125_P9_T1",
+      "content": "映射战斗][斗战射映"
+    },
+    {
+      "id": "TutoEvent9125_P9_D1",
+      "content": "在活动的第二周时，映射战斗][斗战射映将加入游戏，\n且仅在通过此活动的全部关卡时开放。"
+    },
+    {
+      "id": "TutoEvent9125_P9_D2",
+      "content": "其中会出现进一步强化后的活动头目，\n请运用多个队伍，在一定回合内击败活动头目。"
+    },
+    {
+      "id": "TutoBossraid_Title",
+      "content": "映射战斗][斗战射映"
+    },
+    {
+      "id": "TutoBossraid_P1_T1",
+      "content": "开放期间"
+    },
+    {
+      "id": "TutoBossraid_P1_D1",
+      "content": "此处会显示所选的章节头目的可挑战时间段。"
+    },
+    {
+      "id": "TutoBossraid_P1_D2",
+      "content": "击败头目后可以获得仅限一次的奖励。在限定的回合数内击败头目时，可以领取额外奖励。"
+    },
+    {
+      "id": "TutoBossraid_P1_D3",
+      "content": "在活动复刻中添加的头目不会有另外的开放时期，而是可以随时进行挑战。"
+    },
+    {
+      "id": "TutoBossraid_P2_T1",
+      "content": "推荐配置"
+    },
+    {
+      "id": "TutoBossraid_P2_D1",
+      "content": "由于映射战斗][斗战射映为高难度挑战，\n建议将所有的人格与E.G.O按照推荐配置充分成长后\n再进行挑战。"
+    },
+    {
+      "id": "TutoBossraid_P2_T2",
+      "content": "难度"
+    },
+    {
+      "id": "TutoBossraid_P2_D2",
+      "content": "难度分为普通以及困难两种难度，\n困难难度将在通过普通难度后解锁。"
+    },
+    {
+      "id": "TutoBossraid_P3_T1",
+      "content": "映射效果"
+    },
+    {
+      "id": "TutoBossraid_P3_D1",
+      "content": "在映射战斗][斗战射映中，根据\n各个战斗以及阶段会有着特殊效果。\n\n在编队时将其考虑在内可以让\n战斗更为顺利地进行。"
+    },
+    {
+      "id": "TutoBossraid_P4_T1",
+      "content": "流程说明"
+    },
+    {
+      "id": "TutoBossraid_P4_D1",
+      "content": "您可以在此确认映射战斗][斗战射映\n的一般流程说明。"
+    },
+    {
+      "id": "TutoBossraid_P5_T1",
+      "content": "敌方信息确认"
+    },
+    {
+      "id": "TutoBossraid_P5_D1",
+      "content": "您可以在战斗前预先确认\n各个阶段的敌人的信息、技能以及被动。"
+    },
+    {
+      "id": "TutoBossraid_P6_T1",
+      "content": "编队"
+    },
+    {
+      "id": "TutoBossraid_P6_D1",
+      "content": "在战斗中，您可以按顺序使用最多3个编队。"
+    },
+    {
+      "id": "TutoBossraid_P6_D2",
+      "content": "然而，在之前的战斗编队中使用的人格，无法在之后的编队中再次使用。"
+    },
+    {
+      "id": "TutoBossraid_P7_D1",
+      "content": "每个编队最多能进行12回合的战斗。"
+    },
+    {
+      "id": "TutoBossraid_P8_D1",
+      "content": "如果在战斗中超过了12回合或是选择了战斗结束，头目的阶段、体力、理智值以及剩余的E.G.O资源都会被保存并继承至下一个编队，从而可以继续进行战斗。"
+    },
+    {
+      "id": "TutoBossraid_P9_D1",
+      "content": "通过普通难度后，困难难度将会开放。"
+    },
+    {
+      "id": "TutoBossraid_P10_D1",
+      "content": "在困难难度中，除了映射效果外\n会额外增加苦难效果。"
+    },
+    {
+      "id": "TutoBossraid_P11_T1",
+      "content": "奖励"
+    },
+    {
+      "id": "TutoBossraid_P11_D1",
+      "content": "在击败各个难度的头目时，可以获得\n仅限一次的奖励。在限定的回合数内\n击败头目时，可以领取额外的奖励。"
     }
   ]
 }

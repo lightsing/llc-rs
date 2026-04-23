@@ -1154,7 +1154,7 @@
     {
       "id": 1050802,
       "name": "追悼",
-      "desc": "若不低于3名属于剑契组成员的友方单位阵亡\n- 通过自身的技能或硬币效果使自身增加呼吸法 强度或获得呼吸法 层数时，使自身额外增加1级呼吸法 强度并使自身获得1层呼吸法 \n- 若不低于5名属于剑契组成员的友方单位阵亡，则改为额外增加2级呼吸法强度并获得2层呼吸法 \n- 战斗开始时，使自身获得[SwordPlayOfTheHomeland]"
+      "desc": "若不低于3名属于剑契组成员的友方单位阵亡\n- 通过自身的技能或硬币效果使自身增加呼吸法 强度或获得呼吸法 层数时，使自身额外增加1级呼吸法 强度并使自身获得1层呼吸法 \n- 若不低于5名属于剑契组成员的友方单位阵亡，则改为额外增加2级呼吸法 强度并获得2层呼吸法 \n- 战斗开始时，使自身获得[SwordPlayOfTheHomeland]"
     },
     {
       "id": 1090801,
@@ -1893,7 +1893,7 @@
     {
       "id": 1071102,
       "name": "精确瞄准",
-      "desc": "回合结束时，自身每带有10级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n\n回合结束时，若本回合自身未使用攻击技能(包括E.G.O技能，不包括[CoveringFire])，则下回合使自身增加10级[Breath]强度并获得1层[PenetrateResultUp]"
+      "desc": "回合结束时，自身每带有10级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n\n回合结束时，若本回合自身未使用攻击技能(包括E.G.O技能，不包括[CoveringFire])，则下回合使自身增加10级[Breath]强度并使自身获得1层[PenetrateResultUp]"
     },
     {
       "id": 1071103,
@@ -1903,7 +1903,7 @@
     {
       "id": 1071111,
       "name": "精确瞄准",
-      "desc": "回合结束时，自身每带有10级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n\n<style=\"highlight\">战斗开始时，若自身未准备使用攻击技能(包括E.G.O技能)，则使[Breath]强度最低的1名友方单位增加3级[Breath]强度</style>\n\n回合结束时，若本回合自身未使用攻击技能(包括E.G.O技能，不包括[CoveringFire])，则下回合使自身增加10级[Breath]强度并获得1层[PenetrateResultUp]"
+      "desc": "回合结束时，自身每带有10级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n\n<style=\"highlight\">战斗开始时，若自身未准备使用攻击技能(包括E.G.O技能)，则使[Breath]强度最低的1名友方单位增加3级[Breath]强度</style>\n\n回合结束时，若本回合自身未使用攻击技能(包括E.G.O技能，不包括[CoveringFire])，则下回合使自身增加10级[Breath]强度并使自身获得1层[PenetrateResultUp]"
     },
     {
       "id": 1071121,
@@ -2807,7 +2807,7 @@
     {
       "id": 1041421,
       "name": "春之诞",
-      "desc": "速度值最高的1名友方单位增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦[TabExplain]的技能命中敌方单位时，使该敌方单位增加2级[Vibration]强度，[VibrationExplosion]，并使该敌方单位的[Vibration]层数减少1层(每回合最多1次)",
+      "desc": "速度值最高的1名友方单位增加[Sinking]强度，施加[Sinking]层数或施加特殊沉沦[TabExplain]的技能命中敌方单位时，使该敌方单位增加2级[Vibration]强度，使该敌方单位[VibrationExplosion]，并使该敌方单位的[Vibration]层数减少1层(每回合最多1次)",
       "summary": "增加[Vibration]强度，[VibrationExplosion]"
     },
     {
