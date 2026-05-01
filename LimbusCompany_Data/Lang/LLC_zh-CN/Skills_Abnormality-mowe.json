@@ -43,7 +43,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "走开…走开！",
+          "name": "走开…走开…！",
           "desc": "[WhenUse] 若目标的[Laceration]强度不低于4级，则使本技能的拼点威力+1\n[WhenUse] 目标每带有1层[Laceration]，使本技能造成的伤害+5%(最多+20%)",
           "coinlist": [
             {},

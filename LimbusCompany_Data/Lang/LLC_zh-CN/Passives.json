@@ -1705,14 +1705,14 @@
     {
       "id": 1051101,
       "name": "决斗直播",
-      "desc": "回合结束时，自身每带有3级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n基础攻击技能命中时，下回合对目标施加[ConcentratedAttackMeursault]。(每个技能最多1次)",
-      "summary": "回合结束时，根据自身带有的呼吸法 层数，相应使自身获得迅捷 。基础攻击技能命中时，下回合对目标施加[ConcentratedAttackMeursault]"
+      "desc": "回合结束时，自身每带有3级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n基础技能命中时，下回合对目标施加[ConcentratedAttackMeursault]。(每个技能最多1次)",
+      "summary": "回合结束时，根据自身带有的呼吸法 层数，相应使自身获得迅捷 。基础技能命中时，下回合对目标施加[ConcentratedAttackMeursault]"
     },
     {
       "id": 1051111,
       "name": "决斗直播",
-      "desc": "回合结束时，自身每带有3级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n基础攻击技能命中时，下回合对目标施加[ConcentratedAttackMeursault]。(每个技能最多1次)\n<style=\"highlight\">若自身攻击带有[ConcentratedAttackMeursault]的行动槽并击杀其拥有者或破坏部位，则使自身恢复7点理智值</style>",
-      "summary": "回合结束时，根据自身带有的呼吸法 层数，相应使自身获得迅捷 。基础攻击技能命中时，下回合对目标施加[ConcentratedAttackMeursault]。击杀目标时恢复理智值。"
+      "desc": "回合结束时，自身每带有3级[Breath]强度，下回合使自身获得1层[Agility](最多2层)\n基础技能命中时，下回合对目标施加[ConcentratedAttackMeursault]。(每个技能最多1次)\n<style=\"highlight\">若自身攻击带有[ConcentratedAttackMeursault]的行动槽并击杀其拥有者或破坏部位，则使自身恢复7点理智值</style>",
+      "summary": "回合结束时，根据自身带有的呼吸法 层数，相应使自身获得迅捷 。基础技能命中时，下回合对目标施加[ConcentratedAttackMeursault]。击杀目标时恢复理智值。"
     },
     {
       "id": 1051121,
@@ -2933,6 +2933,31 @@
       "id": 1091521,
       "name": "轻轻地，不要把它弄坏…",
       "desc": "最先编入的人格适用以下效果\n- 若色欲共鸣数为奇数，则使该友方单位增加的[Laceration]强度额外+1级\n- 若色欲共鸣数为偶数，则使该友方单位增加的[Sinking]强度额外+1级\n- 若该人格属于环指，则战斗开始时使其获得1层[AttackUp]或1层[DefenseUp]"
+    },
+    {
+      "id": 1071502,
+      "name": "复仇账簿",
+      "desc": "自身或属于中指的友方人格受到敌方单位攻击时，对该敌方单位施加1层[VendettaMark]并使自身获得1层[VengeanceBookHeathcliff](每个技能最多1次)\n友方人格阵亡时，使自身获得3层[VengeanceBookHeathcliff]"
+    },
+    {
+      "id": 1071512,
+      "name": "复仇账簿",
+      "desc": "自身或属于中指的友方人格受到敌方单位攻击时，对该敌方单位施加1层[VendettaMark]并使自身获得1层[VengeanceBookHeathcliff](每个技能最多1次)\n友方人格阵亡时，使自身获得3层[VengeanceBookHeathcliff]\n\n<style=\"highlight\">回合开始时，若自身的[MiddleFingerTattooID]层数不低于15层，则触发以下效果\n- 使自身的1个基础技能转化为“全员，处刑！！”(优先转化位于仪表盘最左侧行动槽下方一行的技能)\n· 若被转化的技能因转化为其他技能而无法使用，则再次触发以上效果\n- 直到回合结束，改变战斗BGM(不包括部分战斗)\n\n自身解除待命或重返战斗的战斗开始时，随机对1名目标使用“我的理发啊啊啊券！！！！”\n- 该技能攻击后，使全体属于中指的友方人格获得1层[AttackUp]与1层[DefenseUp]</style>"
+    },
+    {
+      "id": 1071503,
+      "name": "仇怨纹身共鸣",
+      "desc": "战斗开始时，本回合使属于中指且装备了守备技能的友方人格受到来自单方面攻击的伤害-20%\n\n战斗开始时，若嫉妒共鸣数不低于4，则仪表盘上位于自身两侧且属于中指的友方人格仍有可使用的反击技能时，该友方人格不会因受到伤害而陷入混乱(不包括强制混乱)\n- 若嫉妒共鸣数不低于6，则使全体属于中指的友方人格获得该效果"
+    },
+    {
+      "id": 1071501,
+      "name": "幼兄",
+      "desc": "战斗开始时，每有1点嫉妒共鸣数，使自身获得1层[MiddleFingerTattooID](最多7层)\n\n若敌方单位攻击了包括自身在内属于中指的友方人格，则在该技能攻击后对攻击者使用“脚踢”进行单方面攻击(每回合最多1次)"
+    },
+    {
+      "id": 1071521,
+      "name": "忠义锁链",
+      "desc": "若本回合战斗中有属于中指的友方人格阵亡，则本回合与下回合使全体属于中指的友方人格获得1层[Enhancement](每回合最多1次)"
     }
   ]
 }

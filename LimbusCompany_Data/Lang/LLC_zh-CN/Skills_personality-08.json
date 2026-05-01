@@ -2224,7 +2224,7 @@
         {
           "level": 4,
           "name": "给我等着",
-          "desc": "<style=\"highlight\">[StartBattle] 若嫉妒完全共鸣数总计不低于6，则反击时改为以“紫罗兰破坏猛击”进行反击\n(仪表盘上位于左侧的技能优先触发，每回合最多触发2次)</style>\n[StartBattle] 使自身获得自身已失去体力25%的护盾(每回合最多1次)",
+          "desc": "<style=\"highlight\">[StartBattle] 若嫉妒完全共鸣数总计不低于6，则反击时改为使用“紫罗兰破坏猛击”进行反击\n(仪表盘上位于左侧的技能优先触发，每回合最多触发2次)</style>\n[StartBattle] 使自身获得自身已失去体力25%的护盾(每回合最多1次)",
           "coinlist": [
             {
               "coindescs": [

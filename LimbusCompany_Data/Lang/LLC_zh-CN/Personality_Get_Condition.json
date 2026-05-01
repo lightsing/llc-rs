@@ -1295,6 +1295,14 @@
     {
       "id": "10515_getCondition_gacksung",
       "content": "环指 野兽派 学徒 默尔索 3阶段同步完成"
+    },
+    {
+      "id": "10715_getCondition_normal",
+      "content": "中指 幼兄 希斯克利夫 获得时"
+    },
+    {
+      "id": "10715_getCondition_gacksung",
+      "content": "中指 幼兄 希斯克利夫 3阶段同步完成"
     }
   ]
 }
