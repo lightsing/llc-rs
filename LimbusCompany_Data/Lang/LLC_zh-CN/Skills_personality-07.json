@@ -2333,7 +2333,7 @@
         {
           "level": 4,
           "name": "血天下鸡舞乱刀",
-          "desc": "[WideAreaRampage]\n<style=\"highlight\">自身每带有1级[Combustion]强度，使本技能造成的伤害+3%(最多+60%)\n自身与目标的已失去体力比例之和每有2%，使本技能造成的伤害+1%(最多+50%)</style>\n[WhenUse] 使自身获得3层[ChickenStance]\n<style=\"highlight\">[WhenUse] 目标的[Combustion]强度与[Burst]强度之和每有6级，使本技能的硬币威力+1(最多+2)\n[WhenUse] 自身每失去20%的体力，使本技能的拼点威力+1(最多+3)</style>\n[WinDuel] 使自身增加10级[Combustion]强度\n[EndSkill] 消耗自身所有[ChickenFightlust]\n[EndSkill] 若自身的[Combustion]强度高于20级，则消耗至多25级超出的[Combustion]强度并使自身恢复体力上限(消耗的[Combustion]强度×2)%的体力",
+          "desc": "[WideAreaRampage]\n<style=\"highlight\">自身每带有1级[Combustion]强度，使本技能造成的伤害+3%(最多+60%)\n自身与目标的已失去体力比例之和每有2%，使本技能造成的伤害+1%(最多+50%)</style>\n[WhenUse] 使自身获得3层[ChickenStance]\n<style=\"highlight\">[WhenUse] 主要目标的[Combustion]强度与[Burst]强度之和每有6级，使本技能的硬币威力+1(最多+2)\n[WhenUse] 自身每失去20%的体力，使本技能的拼点威力+1(最多+3)</style>\n[WinDuel] 使自身增加10级[Combustion]强度\n[EndSkill] 消耗自身所有[ChickenFightlust]\n[EndSkill] 若自身的[Combustion]强度高于20级，则消耗至多25级超出的[Combustion]强度并使自身恢复体力上限(消耗的[Combustion]强度×2)%的体力",
           "coinlist": [
             {
               "coindescs": [

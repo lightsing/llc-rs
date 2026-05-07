@@ -521,7 +521,7 @@
     {
       "id": 9255,
       "name": "拍手啪啪！",
-      "desc": "使敌方单位增加[Vibration]强度，对敌方单位施加[Vibration]层数或对敌方单位施加特殊震颤的基础技能拼点胜利时，随机使目标以以下的特殊<noparse>震颤</noparse>[FusionVibration](每回合最多1次)\n- [VibrationIgnition]\n- [VibrationBleeding]\n- [VibrationEcho]\n- [VibrationCollapse]\n- [VibrationChainPersonality]",
+      "desc": "使敌方单位增加[Vibration]强度，对敌方单位施加[Vibration]层数或对敌方单位施加特殊<noparse>震颤</noparse>的基础技能拼点胜利时，随机使目标以以下的特殊<noparse>震颤</noparse>[FusionVibration](每回合最多1次)\n- [VibrationIgnition]\n- [VibrationBleeding]\n- [VibrationEcho]\n- [VibrationCollapse]\n- [VibrationChainPersonality]",
       "simpleDesc": [
         {}
       ]

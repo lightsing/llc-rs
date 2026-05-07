@@ -2828,7 +2828,7 @@
       "simpleDesc": [
         {
           "abilityID": 9104,
-          "simpleDesc": "符合条件时，使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的技能造成的伤害+50%"
+          "simpleDesc": "符合条件时，使增加[Combustion]强度，施加[Combustion]层数或施加特殊烧伤的攻击技能造成的伤害+50%"
         }
       ]
     },
@@ -4075,7 +4075,7 @@
       "simpleDesc": [
         {
           "abilityID": 9147,
-          "simpleDesc": "突刺技能威力增加"
+          "simpleDesc": "突刺攻击技能威力增加"
         },
         {
           "abilityID": 91471,
