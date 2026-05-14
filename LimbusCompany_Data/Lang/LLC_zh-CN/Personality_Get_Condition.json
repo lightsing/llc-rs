@@ -170,11 +170,11 @@
     },
     {
       "id": "11004_getCondition_normal",
-      "content": "流浪乐队 头目 辛克莱 获得时"
+      "content": "流浪乐队 老大 辛克莱 获得时"
     },
     {
       "id": "11004_getCondition_gacksung",
-      "content": "流浪乐队 头目 辛克莱 3阶段同步完成"
+      "content": "流浪乐队 老大 辛克莱 3阶段同步完成"
     },
     {
       "id": "11102_getCondition_normal",
@@ -1303,6 +1303,14 @@
     {
       "id": "10715_getCondition_gacksung",
       "content": "中指 幼兄 希斯克利夫 3阶段同步完成"
+    },
+    {
+      "id": "10415_getCondition_normal",
+      "content": "蜘蛛巢之刃 良秀 获得时"
+    },
+    {
+      "id": "10415_getCondition_gacksung",
+      "content": "蜘蛛巢之刃 良秀 3阶段同步完成"
     }
   ]
 }

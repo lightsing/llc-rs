@@ -257,7 +257,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "你们骗了我！！！",
+          "name": "你们骗了我吗！！！",
           "desc": "[StartBattle] 使自身失去20点理智值\n[StartBattle] 使自身获得6层[AttackUp]\n[StartBattle] 对自身施加4层[Vulnerable]",
           "coinlist": [
             {

@@ -902,7 +902,7 @@
         {
           "level": 1,
           "name": "入骨尖刀",
-          "desc": "[BeforeAttack] 若目标现存体力低于50%，则重复使用本技能的第1、2枚硬币1次",
+          "desc": "[BeforeAttack] 若目标现存体力低于50%，则额外使用本技能的第1、2枚硬币1次",
           "coinlist": [
             {
               "coindescs": [

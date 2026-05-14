@@ -1963,6 +1963,14 @@
     {
       "id": "introduce_sentence_246",
       "content": "看吧，这些小家伙因为想跟着你……都{0}成这样了。"
+    },
+    {
+      "id": "introduce_word_247",
+      "content": "蜘蛛丝"
+    },
+    {
+      "id": "introduce_sentence_247",
+      "content": "我无法得到自由。除非能够将这{0}斩断……"
     }
   ]
 }

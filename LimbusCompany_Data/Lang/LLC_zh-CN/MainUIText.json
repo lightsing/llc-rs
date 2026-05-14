@@ -2047,6 +2047,18 @@
     {
       "id": "mainui_cont_mine_invalid_text",
       "content": "通关1次后即可连续进行"
+    },
+    {
+      "id": "mainui_ego_sync_level_up_select_item",
+      "content": "选择道具制作材料"
+    },
+    {
+      "id": "mainui_passive_skill_upgrade",
+      "content": "被动技能强化"
+    },
+    {
+      "id": "mainui_new_passive_skill_upgrade",
+      "content": "被动技能 [{0}] 强化"
     }
   ]
 }
