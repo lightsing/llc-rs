@@ -1232,7 +1232,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "我将断绝汝之诞生。",
+          "name": "吾将断绝汝之诞生。",
           "desc": "可无视速度值与本技能拼点，直到使用本技能时，自身不会陷入混乱\n[WhenUse] 自身每带有100级[NoirShieldUp]强度，使本技能的最终威力+1\n[WhenUse] 若目标带有[NoirShieldPiece]，则使本技能的拼点威力-5\n[DefeatDuel] 使本技能造成的伤害-80%，且本技能造成的伤害不会使目标陷入混乱\n[EndSkill] 结束本回合",
           "coinlist": [
             {
@@ -1276,7 +1276,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "几度挥落，我将断绝汝之诞生！",
+          "name": "几度挥落，吾将断绝汝之诞生！",
           "desc": "可无视速度值与本技能拼点，直到使用本技能时，自身不会陷入混乱\n\n[WhenUse] 消耗自身所有[ChargeNoir]层数\n- 每消耗3层[ChargeNoir]，使本技能的最终威力+1\n- 使本技能造成的伤害+(消耗的[ChargeNoir]层数×5)%\n\n[WhenUse] 若主要目标带有[NoirShieldPiece]，则使本技能的拼点威力-5\n[WhenUse] 若主要目标未带有[NoirShieldPiece]，则使本技能的最终威力+5\n[DefeatDuel] 使本技能造成的伤害-80%，且本技能造成的伤害不会使目标陷入混乱\n[EndSkill] 结束本回合",
           "coinlist": [
             {

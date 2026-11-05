@@ -3346,7 +3346,7 @@
     {
       "id": 1031504,
       "name": "神之旨意及价值与吾等同在…",
-      "desc": "除自身以外属于黑派的友方人格攻击敌方单位前，自身优先使用“审判！”对主要目标进行单方面攻击(每回合最多1次)\n\n基础技能的最后一枚硬币开始时，使该硬币的最终威力+(自身的[ChargeNoirAlly]强度+(目标的[NoirNailDonQuixote]层数/2))(最多+5)\n\n若自身带有[OathFieldDonQuixote]，则使自身基础1/2/3技能的拼点威力+1/+2/+3\n\n带有[NoirNailDonQuixote]的目标受到[VibrationExplosion]时， 使自身与除自身以外[Charge]层数最低的1名友方[PersonalityCharge]获得2层[Charge](每回合最多2次)",
+      "desc": "除自身以外属于黑派的友方人格对敌方单位使用攻击技能或反击技能前，自身优先使用“审判！”对主要目标进行单方面攻击(每回合最多1次)\n\n基础技能的最后一枚硬币开始时，使该硬币的最终威力+(自身的[ChargeNoirAlly]强度+(目标的[NoirNailDonQuixote]层数/2))(最多+5)\n\n若自身带有[OathFieldDonQuixote]，则使自身基础1/2/3技能的拼点威力+1/+2/+3\n\n带有[NoirNailDonQuixote]的目标受到[VibrationExplosion]时， 使自身与除自身以外[Charge]层数最低的1名友方[PersonalityCharge]获得2层[Charge](每回合最多2次)",
       "summary": "属于黑派的友方单位攻击前使用“审判！”\n基础技能最后一枚硬币的最终威力增加[TabExplain]\n若激活[OathFieldDonQuixote]，则使基础技能的拼点威力增加[TabExplain]\n带有[NoirNailDonQuixote]的目标受到[VibrationExplosion]时，获得[Charge]层数",
       "flavor": "在一切都不确定的此世之间，引导并守护我等的事物仅有一件，即为漆黑之神的圣言；那圣言将成为道路、成为光照亮我等，于是我等才初次被赋予了意义。"
     },

@@ -117,6 +117,72 @@
           "simpleDesc": "对主要目标造成斩击伤害[TabExplain]"
         }
       ]
+    },
+    {
+      "id": 9301,
+      "name": "狂风呼啸的山丘",
+      "desc": "回合结束时，若自身陷入混乱，则解除自身的混乱，下回合开始时使全体敌方单位增加4级[Sinking]强度并对其施加4层[Sinking](每场战斗最多1次；不包括强制混乱；若是集中遭遇战，则改为所有部位)\n- 每编入2名属于呼啸山庄或埃德加家族的人格，该效果每场战斗可额外触发1次(每场战斗最多触发4次，包括待命人员)\n\n击杀敌方单位时，对[Sinking]层数最低的1名敌方单位施加2层[Sinking](每回合最多3次；若是集中遭遇战，则改为1个部位)\n\n命中带有理智值的敌方单位时，若目标的理智值为-45点，则对其造成相当于其[Sinking]强度的忧郁伤害\n\n集中遭遇战中，命中[Sinking]强度与[Sinking]层数之和不低于10点的敌方单位时，对目标造成(其[Sinking]强度/2)点忧郁伤害(每个技能最多1次)\n\n若命中敌方单位的技能为施加[Sinking](包括施加[Sinking]层数与特殊[Sinking])的技能，则改为其造成(其[Sinking]强度)点忧郁伤害，而非([Sinking]强度/2)点\n(适用于每回合首个攻击命中的施加[Sinking]的技能)\n\n[<noparse>狂猎</noparse> 希斯克利夫专属]\n回合开始时，若自身未带有[NightPathfinding]，则使自身获得1层[NightPathfinding]\n- 若自身的[Coffin]层数为5/10层，则改为使自身获得2/3层[NightPathfinding]\n- 使属于呼啸山庄或埃德加家族的人格获得1层[SoundOfStorm](每名人格每场战斗最多3次)\n\n使自身获得的[Coffin]层数变为2倍\n- 属于呼啸山庄或埃德加家族的人格击杀敌方单位时，使自身获得2层[Coffin]\n\n“悲叹、哀恸、破灭吧”的使用时效果额外使自身失去15点理智值\n- 该技能或本饰品的效果不会使自身的理智值低于-40点\n\n“悲叹、哀恸、破灭吧”的最后一枚硬币命中时，若敌方单位的[Sinking]强度不低于20级，则对其造成本硬币最终伤害量100%的忧郁伤害",
+      "simpleDesc": [
+        {
+          "abilityID": 9432,
+          "simpleDesc": "下回合使全体敌方单位增加4级[Sinking]强度并施加4层[Sinking]"
+        },
+        {
+          "abilityID": 94321,
+          "simpleDesc": "对[Sinking]层数最低的1名敌方单位施加2层[Sinking]"
+        },
+        {
+          "abilityID": 9436,
+          "simpleDesc": "根据目标带有的[Sinking]强度造成忧郁伤害"
+        },
+        {
+          "abilityID": 94361,
+          "simpleDesc": "根据目标带有的[Sinking]强度造成忧郁伤害"
+        },
+        {
+          "abilityID": 93011,
+          "simpleDesc": "获得[NightPathfinding]，属于特定阵营的人格获得[SoundOfStorm]"
+        },
+        {
+          "abilityID": 93012,
+          "simpleDesc": "获得的[Coffin]层数变为2倍"
+        },
+        {
+          "abilityID": 93013,
+          "simpleDesc": "属于特定阵营的人格击杀敌方单位时，获得[Coffin]"
+        },
+        {
+          "abilityID": 93014,
+          "simpleDesc": "“悲叹、哀恸、破灭吧”使用时减少的理智值增加"
+        },
+        {
+          "abilityID": 93015,
+          "simpleDesc": "“悲叹、哀恸、破灭吧”的最后一枚硬币命中时，造成忧郁伤害"
+        }
+      ]
+    },
+    {
+      "id": 9302,
+      "name": "霜之温度",
+      "desc": "回合开始时，若自身的理智值不低于40点或不高于-40点，则使自身获得1层[GainSinStockAdder]\n\n[拥有不低于2个减算硬币技能的人格专属]\n回合开始时，使自身失去15点理智值(该效果不会使自身的理智值低于-40点)\n\n本场战斗中，受到使自身的理智值降至-45点的理智伤害时，该回合期间使自身的理智值维持为-44点(每场战斗最多1次)\n(※ 仅适用于理智伤害，不对改变理智值或使用E.G.O技能等消耗理智值的效果生效) \n\n3技能或E.G.O技能攻击前，消耗最多5个与该技能属性相同的E.G.O资源，使该技能造成的伤害+(消耗的E.G.O资源数×10)%",
+      "simpleDesc": [
+        {
+          "abilityID": 9302,
+          "simpleDesc": "满足理智值条件时获得[GainSinStockAdder]"
+        },
+        {
+          "abilityID": 93021,
+          "simpleDesc": "回合开始时理智值减少"
+        },
+        {
+          "abilityID": 93022,
+          "simpleDesc": "受到使自身理智值降至-45点的理智伤害时，维持为-44点1次"
+        },
+        {
+          "abilityID": 93023,
+          "simpleDesc": "消耗E.G.O资源并使3技能与E.G.O技能<noparse>造成的伤害增加</noparse>"
+        }
+      ]
     }
   ]
 }

@@ -16,7 +16,7 @@
       "id": 150303,
       "name": "到古老海洋中去",
       "desc": "若有部位<color=#ff6000><mark color=#ff000040><b><u>陷入混乱</color></mark></b></u>，则<color=#ff6000><mark color=#ff000040><b><u>移除其他部位的1条混乱阈值并结束本回合</color></mark></b></u>\n随后，下回合使所有部位获得[HideBlackYarn]\n\n<color=#ff6000><mark color=#ff000040><b><u>若[HideBlackYarn]因受到攻击而解除</color></mark></b></u>，则\n- 对自身施加10层[SickBlackYarn]\n- 若施加[SickBlackYarn]层数超过最大值，则本回合与下回合对自身施加3层易损 \n\n回合结束时，若[HideBlackYarn]解除，则\n- 对自身施加(7-剩余[HideBlackYarn]强度)层[SickBlackYarn]\n- 下回合使自身获得1层[AngryBlackYarn]",
-      "flavor": "曾于现今已然消失的时代的海洋中，再自然不过地畅游。"
+      "flavor": "向着曾再自然不过地畅游其中，而现今已然消失的时代的海洋的怀抱中去。"
     },
     {
       "id": 150304,
@@ -175,7 +175,7 @@
     },
     {
       "id": 148803,
-      "name": "原罪皮革鞣制 满负荷运行",
+      "name": "原罪皮革制革厂 满负荷运行",
       "desc": "若本体体力不高于体力上限的50%，则结束本回合并改变模式，使包括自身在内的全体友方单位本场战斗中获得[RestrictFailed]",
       "flavor": "皮革需求骤增。生皮批发困难。原罪皮革曾经是一种并不起眼的皮革，但以某个季度为契机，对原罪皮革的需求骤增，价格也随之水涨船高。以前廉价、废弃的皮革，现在连其表面的伤痕也被包装成品味来吸引消费。"
     },
