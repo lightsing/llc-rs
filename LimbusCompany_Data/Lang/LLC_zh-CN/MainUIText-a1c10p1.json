@@ -59,6 +59,54 @@
     {
       "id": "exp_dungeon_10_open_condition",
       "content": "通关9.5-26与10-4"
+    },
+    {
+      "id": "formation_deck_code_condition_reset",
+      "content": "不符合编队条件的人格将变更为基本人格。"
+    },
+    {
+      "id": "character_list_friend_support_companion_impossible",
+      "content": "{0}同时被指定。本关卡无法使用他们的支援人格。"
+    },
+    {
+      "id": "gacha_additional_explain_button_label",
+      "content": "成对人格说明"
+    },
+    {
+      "id": "gacha_307_additional_explain_title",
+      "content": "成对人格说明"
+    },
+    {
+      "id": "gacha_307_additional_explain_desc",
+      "content": "楔子事务所收尾人堂吉诃德与楔子事务所收尾人辛克莱在提取时仅算作一名3★人格，\n提取获得时必定同时获得双方人格。\n\n· 楔子事务所收尾人堂吉诃德与楔子事务所收尾人辛克莱的提取概率如下。\n- 两名人格为当前卡池目标的3★人格定向提取：与卡池目标的3★人格单体的出现概率相同\n- 两名人格进入卡池的其他提取：与非卡池目标的3★人格单体的提取概率相同\n(详细概率请于各提取的[概率详情]中进行确认。)\n \n· 星芒仅按一名3★人格计算，首次提取获得时，两名人格共获得300星芒。\n\n· 在两名人格为当前卡池目标的3★人格定向提取中，可使用200个[理想]同时兑换该两名人格。\n\n· 已拥有该两名人格的情况下再次获得时，\n会获得当前赛季的25个堂吉诃德自我碎片与25个辛克莱自我碎片，以替代★级对应的自我碎片。\n\n· 加入自动贩卖机后，合计使用400个堂吉诃德的自我碎片与辛克莱的自我碎片，即可同时购入该两名人格。双方的自我碎片分别需要使用不少于1个，其比例可自由调整。\n\n· 人格在等级提升、人格同步、外观投影时，两名人格需分别进行，各人格所需材料与普通3★人格相同。此时，自我碎片仅供对应罪人使用。"
+    },
+    {
+      "id": "formation_ui_panel_start_battle_lor",
+      "content": "接待开始"
+    },
+    {
+      "id": "battle_walpu10_ego_page_history_ashes",
+      "content": "为了烧尽所有明亮之物……"
+    },
+    {
+      "id": "battle_walpu10_ego_page_history_nostalgic_embrace",
+      "content": "能紧紧拥抱我吗？心情会变轻松的哦。"
+    },
+    {
+      "id": "battle_walpu10_ego_page_history_gluttony",
+      "content": "我们守在你身边的理由？\n当然是为了保护你啊！"
+    },
+    {
+      "id": "notice_of_pity_point_progress_or_not_already_have_companion",
+      "content": "您已拥有选定的成对人格。是否消耗200个[理想]兑换所选罪人的各25个自我碎片？"
+    },
+    {
+      "id": "notice_of_vending_machine_companion_1",
+      "content": "使用合计400个堂吉诃德的自我碎片与辛克莱的自我碎片，即可同时购入该两名人格。双方的自我碎片分别需要使用不少于1个，其比例可自由调整。"
+    },
+    {
+      "id": "notice_of_story_same_content",
+      "content": "内容与{0}相同，仅获取奖励。"
     }
   ]
 }

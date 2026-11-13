@@ -2,7 +2,7 @@
   "dataList": [
     {
       "id": 1098,
-      "panicName": "从皮里出去！",
+      "panicName": "到皮外面去！",
       "lowMoraleDescription": "防御等级-3，攻击等级+1",
       "panicDescription": "防御等级-5，攻击等级+2"
     },

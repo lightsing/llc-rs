@@ -1283,7 +1283,7 @@
     {
       "id": "마왕히스클리프2",
       "name": "<size=90%>魔王希斯克利夫</size>",
-      "nickName": "A Distant World"
+      "nickName": ""
     },
     {
       "id": "어린린튼2",
@@ -1303,12 +1303,12 @@
     {
       "id": "마왕히스클리프말",
       "name": "<size=90%>魔王希斯克利夫</size>",
-      "nickName": "A Distant World"
+      "nickName": ""
     },
     {
       "id": "마왕히스클리프3",
       "name": "<size=90%>魔王希斯克利夫</size>",
-      "nickName": "A Distant World"
+      "nickName": ""
     },
     {
       "id": "다친넬리",
@@ -3749,6 +3749,46 @@
       "id": "뫼르소엄마뒤틀림2",
       "name": "妈妈",
       "nickName": "？？？"
+    },
+    {
+      "id": "살바도르",
+      "name": "萨尔瓦多",
+      "nickName": "黎明事务所"
+    },
+    {
+      "id": "유나",
+      "name": "尤娜",
+      "nickName": "黎明事务所"
+    },
+    {
+      "id": "필립",
+      "name": "菲利普",
+      "nickName": "黎明事务所"
+    },
+    {
+      "id": "다친필립",
+      "name": "菲利普",
+      "nickName": "黎明事务所"
+    },
+    {
+      "id": "에고필립",
+      "name": "菲利普",
+      "nickName": "黎明事务所"
+    },
+    {
+      "id": "오스카",
+      "name": "奥斯卡",
+      "nickName": "楔子事务所"
+    },
+    {
+      "id": "파멜라",
+      "name": "帕梅菈",
+      "nickName": "楔子事务所"
+    },
+    {
+      "id": "파멜리",
+      "name": "帕梅莉",
+      "nickName": "楔子事务所"
     }
   ]
 }

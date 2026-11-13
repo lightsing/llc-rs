@@ -115,7 +115,7 @@
     },
     {
       "id": 148703,
-      "name": "泪水浸湿布料，布料绞住喉咙…我说不出话。",
+      "name": "泪水浸湿布料，布料绞住喉咙…想不起来要说什么了。",
       "desc": "<color=#ff6000><mark=#ff000040><b><u>[Sinking]效果不会使自身减少理智值</u></b></mark></color>，\n而改为对自身造成相应的忧郁伤害\n\n受到来自罪人的攻击时，对其施加1层[Sinking]\n(每回合每名罪人最多2次)\n\n自身的[Breath]强度最多获得至20级，\n<color=#ff6000><mark=#ff000040><b><u>增加超过20级的[Breath]强度改为使自身恢复相应的理智值</u></b></mark></color>\n\n使罪人[VibrationExplosion]时，若目标罪人<color=#ff6000><mark=#ff000040><b><u>未带有混乱阈值</u></b></mark></color>，\n则不会使其混乱阈值前移，而改为造成其[Vibration]强度一半的<color=#ff6000><mark=#ff000040><b><u>怠惰伤害</u></b></mark></color>(不包括陷入混乱的目标，每名目标分别判定)",
       "flavor": "“这下你真该‘祈祷’一下了吧？”",
       "summary": "受到攻击时，对攻击者施加[Sinking]层数\n若使未带有混乱阈值目标[VibrationExplosion]，则造成怠惰伤害"

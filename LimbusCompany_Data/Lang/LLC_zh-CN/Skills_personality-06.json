@@ -2218,7 +2218,7 @@
         {
           "level": 3,
           "name": "全体黑兽，回应于我",
-          "desc": "本技能不会触发守备技能\n\n[WhenUse] 使自身增加3级[Breath]强度并使自身获得1层[Breath]\n\n[EndSkill] 使可以行动的属于黑兽的友方单位中[HeishouComboCount]层数最低的1名单位获得1层[HeishouComboCount]，并让其[HeishouCombo](每回合最多1次)\n- [HeishouCombo]结束后，使用“开辟君主之道吧”\n- 若[HeishouCombo]未触发，或连携的人格在[HeishouCombo]结束前陷入混乱或阵亡，则改为使用“孑然一身，舍生取园”",
+          "desc": "本技能不会触发守备技能\n\n[WhenUse] 使自身增加3级[Breath]强度并使自身获得1层[Breath]\n\n[EndSkill] 使可行动且属于黑兽的友方单位中[HeishouComboCount]层数最低的1名单位获得1层[HeishouComboCount]，并让其[HeishouCombo](每回合最多1次)\n- [HeishouCombo]结束后，使用“开辟君主之道吧”\n- 若[HeishouCombo]未触发，或连携的人格在[HeishouCombo]结束前陷入混乱或阵亡，则改为使用“孑然一身，舍生取园”",
           "coinlist": [
             {
               "coindescs": [
@@ -2238,7 +2238,7 @@
         {
           "level": 4,
           "name": "全体黑兽，回应于我",
-          "desc": "本技能不会触发守备技能\n\n<style=\"highlight\">[WhenUse] 目标的[Burst]强度与自身的[Breath]强度之和每有4级，使本技能的硬币威力+1(最多+3)</style>\n[WhenUse] 使自身增加<style=\"highlight\">5</style>级[Breath]强度并使自身获得<style=\"highlight\">3</style>层[Breath]\n\n[EndSkill] 使可以行动的属于黑兽的友方单位中[HeishouComboCount]层数最低的1名单位获得1层[HeishouComboCount]，并让其[HeishouCombo](每回合最多1次)\n- [HeishouCombo]结束后，使用“开辟君主之道吧”\n- 若[HeishouCombo]未触发，或连携的人格在[HeishouCombo]结束前陷入混乱或阵亡，则改为使用“孑然一身，舍生取园”",
+          "desc": "本技能不会触发守备技能\n\n<style=\"highlight\">[WhenUse] 目标的[Burst]强度与自身的[Breath]强度之和每有4级，使本技能的硬币威力+1(最多+3)</style>\n[WhenUse] 使自身增加<style=\"highlight\">5</style>级[Breath]强度并使自身获得<style=\"highlight\">3</style>层[Breath]\n\n[EndSkill] 使可行动且属于黑兽的友方单位中[HeishouComboCount]层数最低的1名单位获得1层[HeishouComboCount]，并让其[HeishouCombo](每回合最多1次)\n- [HeishouCombo]结束后，使用“开辟君主之道吧”\n- 若[HeishouCombo]未触发，或连携的人格在[HeishouCombo]结束前陷入混乱或阵亡，则改为使用“孑然一身，舍生取园”",
           "coinlist": [
             {
               "coindescs": [

@@ -551,7 +551,7 @@
           "level": 1,
           "name": "三千大世界",
           "abName": "罗生蝶",
-          "desc": "[CantIdentify]\n随机指定目标\n本技能的硬币命中时，使自身增加5级[Combustion]强度并使本技能最后一枚硬币使用时的最终威力+1(最多+3，每个硬币最多1次)\n[BeforeAttack] 使自身增加(最大共鸣数)级[Breath]强度(最多7级)\n- 若该共鸣为完全共鸣，则额外使自身获得(最大共鸣数/3)层[Breath](最多2层，向下取整)\n[BeforeAttack] 本技能每有1枚硬币被破坏，使本技能的基础威力-1(最多-4)",
+          "desc": "[CantIdentify]\n随机指定目标\n本技能的硬币命中时，使自身增加5级[Combustion]强度并使本技能最后一枚硬币使用时的最终威力+1(最多+3，每个硬币最多1次)\n[BeforeAttack] 使自身增加(最大共鸣数)级[Breath]强度(最多7级)\n- 若该共鸣为完全共鸣，则额外使自身获得(最大共鸣数/3)层[Breath](最多2层，向下取整)\n[BeforeAttack] 本技能每有1枚硬币被摧毁，使本技能的基础威力-1(最多-4)",
           "coinlist": [
             {
               "coindescs": [
@@ -609,7 +609,7 @@
           "level": 3,
           "name": "三千大世界",
           "abName": "罗生蝶",
-          "desc": "[CantIdentify]\n随机指定目标\n本技能的硬币命中时，使自身增加<style=\"highlight\">4</style>级[Combustion]强度并使本技能最后一枚硬币使用时的最终威力+1(最多+3，每个硬币最多1次)\n[BeforeAttack] 使自身增加(最大共鸣数)级[Breath]强度(最多7级)\n- 若该共鸣为完全共鸣，则额外使自身获得(最大共鸣数/3)层[Breath](最多2层，向下取整)\n[BeforeAttack] 本技能每有1枚硬币被破坏，使本技能的基础威力-1(最多-4)",
+          "desc": "[CantIdentify]\n随机指定目标\n本技能的硬币命中时，使自身增加<style=\"highlight\">4</style>级[Combustion]强度并使本技能最后一枚硬币使用时的最终威力+1(最多+3，每个硬币最多1次)\n[BeforeAttack] 使自身增加(最大共鸣数)级[Breath]强度(最多7级)\n- 若该共鸣为完全共鸣，则额外使自身获得(最大共鸣数/3)层[Breath](最多2层，向下取整)\n[BeforeAttack] 本技能每有1枚硬币被摧毁，使本技能的基础威力-1(最多-4)",
           "coinlist": [
             {
               "coindescs": [
@@ -667,7 +667,7 @@
           "level": 4,
           "name": "三千大世界",
           "abName": "罗生蝶",
-          "desc": "[CantIdentify]\n随机指定目标\n本技能的硬币命中时，使自身增加<style=\"highlight\">3</style>级[Combustion]强度并使本技能最后一枚硬币使用时的最终威力+1(最多+3，每个硬币最多1次)\n[BeforeAttack] 使自身增加(最大共鸣数)级[Breath]强度(最多7级)\n- 若该共鸣为完全共鸣，则额外使自身获得(最大共鸣数/3)层[Breath](最多2层，向下取整)\n[BeforeAttack] 本技能每有1枚硬币被破坏，使本技能的基础威力-1(最多-4)",
+          "desc": "[CantIdentify]\n随机指定目标\n本技能的硬币命中时，使自身增加<style=\"highlight\">3</style>级[Combustion]强度并使本技能最后一枚硬币使用时的最终威力+1(最多+3，每个硬币最多1次)\n[BeforeAttack] 使自身增加(最大共鸣数)级[Breath]强度(最多7级)\n- 若该共鸣为完全共鸣，则额外使自身获得(最大共鸣数/3)层[Breath](最多2层，向下取整)\n[BeforeAttack] 本技能每有1枚硬币被摧毁，使本技能的基础威力-1(最多-4)",
           "coinlist": [
             {
               "coindescs": [

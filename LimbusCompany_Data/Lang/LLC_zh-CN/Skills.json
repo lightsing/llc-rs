@@ -10796,7 +10796,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "延续进攻",
+          "name": "再刺",
           "desc": "若自身的速度值不低于7，则使本技能的硬币威力+1",
           "coinlist": [
             {},
@@ -10811,7 +10811,7 @@
         },
         {
           "level": 2,
-          "name": "延续进攻",
+          "name": "再刺",
           "desc": "若自身的速度值不低于7，则使本技能的硬币威力+1\n[WinDuel] 下回合使自身获得1层迅捷 ",
           "coinlist": [
             {},
@@ -10826,7 +10826,7 @@
         },
         {
           "level": 4,
-          "name": "延续进攻",
+          "name": "再刺",
           "desc": "若自身的速度值不低于7，则使本技能的硬币威力+2\n[WinDuel] 下回合使自身获得1层迅捷 ",
           "coinlist": [
             {},
@@ -10937,7 +10937,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "防守闪避",
+          "name": "防守",
           "desc": "[OnSucceedEvade] 使目标失去3点理智值",
           "coinlist": [
             {}
@@ -10945,7 +10945,7 @@
         },
         {
           "level": 4,
-          "name": "防守闪避",
+          "name": "防守",
           "desc": "[OnSucceedEvade] 使目标失去3点理智值",
           "coinlist": [
             {}

@@ -130,7 +130,7 @@
         {
           "level": 1,
           "name": "阿卡纳光破斩",
-          "desc": "[CantDuel]\n不会对遗忘骑士之剑造成伤害\n命中带有[WornOutKnight]的敌方单位时，结束本回合\n[EndBattle] 对自身施加[UsedTooMuchPower]",
+          "desc": "[CantDuel]\n不会对被遗忘骑士之剑造成伤害\n命中带有[WornOutKnight]的敌方单位时，结束本回合\n[EndBattle] 对自身施加[UsedTooMuchPower]",
           "coinlist": [
             {
               "coindescs": [

@@ -3209,6 +3209,474 @@
           ]
         }
       ]
+    },
+    {
+      "id": 1111601,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "快速突刺",
+          "desc": "[WhenUse] 使自身获得2层[Breath]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[CriticalOnSucceedAttack] 对目标施加1层[Vibration]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "快速突刺",
+          "desc": "<style=\"highlight\">[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1</style>\n[WhenUse] 使自身获得2层[Breath]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级[Breath]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[CriticalOnSucceedAttack] 对目标施加1层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "快速突刺",
+          "desc": "[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1\n<style=\"highlight\">[WhenUse] 若自身的[WedgeOffice]层数为3层，则使本技能的最终威力+1</style>\n[WhenUse] 使自身获得2层[Breath]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级[Breath]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[CriticalOnSucceedAttack] 对目标施加1层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111602,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "闪光之枪",
+          "desc": "[StartBattle] 使包括自身在内的属于楔子事务所[TabExplain]的全体友方人格获得1层[PenetrateDamageUp](每回合最多1次)\n[WhenUse] 若同一行动槽的另一个技能为“快速突刺”，则丢弃 该技能\n[WhenUse] 使自身获得2层[Breath]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加3级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度并对其施加1层[Vibration]"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "闪光之枪",
+          "desc": "[StartBattle] 使包括自身在内的属于楔子事务所[TabExplain]的全体友方人格获得1层[PenetrateDamageUp](每回合最多1次)\n[WhenUse] 若同一行动槽的另一个技能为“快速突刺”，则丢弃 该技能\n<style=\"highlight\">[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1</style>\n<style=\"highlight\">[WhenUse] 自身每带有1层[WedgeOffice]，使本技能的最终威力+1(最多+3)</style>\n[WhenUse] 使自身获得2层[Breath]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加3级[Breath]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度并对其施加1层[Vibration]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "闪光之枪",
+          "desc": "[StartBattle] 使包括自身在内的属于楔子事务所[TabExplain]的全体友方人格获得1层[PenetrateDamageUp](每回合最多1次)\n[WhenUse] 若同一行动槽的另一个技能为“快速突刺”，则丢弃 该技能\n[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和<style=\"highlight\">每有6级，使本技能的硬币威力+1(最多+2)</style>\n[WhenUse] 自身每带有1层[WedgeOffice]，使本技能的最终威力+1(最多+3)\n[WhenUse] 使自身获得<style=\"highlight\">3</style>层[Breath]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加3级[Breath]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度并对其施加1层[Vibration]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[CriticalOnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111603,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "贯穿",
+          "desc": "[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和每有4级，使本技能的最终威力+1(最多+3)\n[WhenUse] 使自身增加2级[Breath]强度\n[WhenUse] 使自身获得3层[Breath]\n\n[ComboSkill]：黎明事务所[TabExplain] 代表 格里高尔\n- [WhenUse] 使自身获得1层[ComboWedgeDawn](每个技能最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+50%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]状态，则使其[Switch_Vibration]为[VibrationCollapse]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量100%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：黎明事务所[TabExplain] 代表 格里高尔\n- 使本硬币造成的伤害+30%\n- [OnSucceedAttack] 对目标施加2层[Vibration]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "贯穿",
+          "desc": "<style=\"highlight\">[WhenUse] 使本技能造成的伤害+(目标的[Vibration]强度与[Vibration]层数之积)%(最多+100%)</style>\n<style=\"highlight\">[WhenUse] 使本技能暴击时造成的伤害+(自身的[Breath]强度与[Breath]层数之积)%(最多+100%)</style>\n[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和每有4级，使本技能的最终威力+1(最多+<style=\"highlight\">5</style>)\n<style=\"highlight\">[WhenUse] 若自身的[WedgeOffice]层数为3层，则使本技能的拼点威力+6</style>\n[WhenUse] 使自身增加2级[Breath]强度\n[WhenUse] 使自身获得3层[Breath]\n\n[ComboSkill]：黎明事务所[TabExplain] 代表 格里高尔\n- [WhenUse] 使自身获得1层[ComboWedgeDawn](每个技能最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+50%<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]状态，则使其[Switch_Vibration]为[VibrationCollapse]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 对目标施加2层[PenetrateTakeDamageUp](每回合最多1次)</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量100%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：黎明事务所[TabExplain] 代表 格里高尔\n- 使本硬币造成的伤害+30%\n- [OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111604,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "调整呼吸",
+          "desc": "[StartBattle] 使自身获得1层[SupportProtect](每回合最多2次)\n[OnSucceedEvade]\n- 使自身增加2级[Breath]强度(每回合最多3次)\n- 下回合使自身获得2层[Agility](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "调整呼吸",
+          "desc": "[StartBattle] 使自身获得1层[SupportProtect](每回合最多2次)\n<style=\"highlight\">[WhenUse] 自身每带有3级[Breath]强度，使本技能的硬币威力+1(最多+2)</style>\n[OnSucceedEvade]\n- 使自身增加2级[Breath]强度(每回合最多3次)\n- 下回合使自身获得2层[Agility](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111605,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "展开楔形阵势",
+          "desc": "[CantDuel]\n[WhenUse] 若自身的[Breath]强度不低于8级，则使本技能的硬币威力+1\n[WhenUse] 若目标的[Vibration]强度不低于8级，则使本技能的最终威力+1\n[WhenUse] 使自身获得3层[Breath]\n[EndSkill]\n- 消耗自身25层[ComboWedge]\n- 下回合使除自身以外属于楔子事务所[TabExplain]的友方人格获得1层[PenetrateResultUp]\n- 使自身获得1层[ComboWedgeDawn]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                },
+                {
+                  "desc": "[ComboSkill]：楔子事务所[TabExplain] 收尾人 堂吉诃德\n- 使本硬币造成的伤害+30%\n- 本技能的最后一枚硬币命中时，使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[ComboSkill]：楔子事务所[TabExplain] 收尾人 辛克莱\n- 使本硬币造成的伤害+30%\n- 本技能的最后一枚硬币命中时，使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "使本硬币暴击时造成的伤害+30%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111606,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "…全员，做好交锋准备。",
+          "desc": "[WhenUse] 自身每带有8级[Breath]强度，使本技能的硬币威力+1(最多+2)\n[WhenUse] 目标每带有8级[Vibration]强度，使本技能的最终威力+1(最多+2)\n[WhenUse]\n- 使自身获得3层[Breath]\n- 除自身以外每有1名可行动且属于楔子事务所[TabExplain]的友方人格，使本技能的攻击容量+1(最多+2)\n[WhenUse] 本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+60%(若是集中遭遇战，则改为以部位判定)\n[EndSkill]\n- 消耗自身所有[ComboWedgeDawn]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标以[VibrationCollapse][FusionVibration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量15%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：黎明事务所[TabExplain] 收尾人 浮士德\n- 使本硬币造成的伤害+20%\n- [OnSucceedAttack] 使目标增加3级[Combustion]强度\n- [OnSucceedAttack] 使目标[Switch_Vibration]为[VibrationIgnition]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量15%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：楔子事务所[TabExplain] 收尾人 堂吉诃德\n- 使本硬币暴击时造成的伤害+20%\n- [OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[ComboSkill]：楔子事务所[TabExplain] 收尾人 辛克莱\n- 使本硬币暴击时造成的伤害+20%\n- [OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量15%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：黎明事务所[TabExplain] 代表 格里高尔\n- 使本硬币造成的伤害+20%\n- [OnSucceedAttack] 使目标增加2级[Combustion]强度\n- [OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层\n- [OnSucceedAttack] 触发目标的[Combustion]，并使其[Combustion]层数减少1层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111608,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "黎明后贯穿而来之楔",
+          "desc": "[WhenUse] 自身每带有8级[Breath]强度，使本技能的硬币威力+1(最多+2)\n[WhenUse] 目标每带有8级[Vibration]强度，使本技能的最终威力+1(最多+2)\n[WhenUse]\n- 使自身获得3层[Breath]\n- 除自身以外每有1名可行动且属于楔子事务所[TabExplain]的友方人格，使本技能的攻击容量+1(最多+2)\n[WhenUse] 本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+60%(若是集中遭遇战，则改为以部位判定)\n[WinDuel] 使目标以[VibrationCollapse][FusionVibration]\n[EndSkill]\n- 消耗自身所有[ComboWedgeDawn]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量20%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：黎明事务所[TabExplain] 收尾人 浮士德\n- 使本硬币造成的伤害+20%\n- [OnSucceedAttack] 使目标增加3级[Combustion]强度\n- [OnSucceedAttack] 使目标[Switch_Vibration]为[VibrationIgnition]"
+                },
+                {
+                  "desc": "[ComboSkill]：黎明事务所[TabExplain] 代表 格里高尔\n- 使本硬币造成的伤害+20%\n- [OnSucceedAttack] 使目标增加2级[Combustion]强度\n- [OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层\n- [OnSucceedAttack] 触发目标的[Combustion]，并使其[Combustion]层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量20%的突刺伤害"
+                },
+                {
+                  "desc": "[ComboSkill]：楔子事务所[TabExplain] 收尾人 堂吉诃德\n- 使本硬币暴击时造成的伤害+20%\n- [OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[ComboSkill]：楔子事务所[TabExplain] 收尾人 辛克莱\n- 使本硬币暴击时造成的伤害+20%\n- [OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "使本硬币暴击时造成的伤害+100%"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量20%的突刺伤害"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1111607,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "退下吧",
+          "desc": "[DuelCounter]\n[SupportProtect]专用技能\n[WhenUse] 自身每失去20%的体力，使本技能的拼点威力+1(最多+4)\n[WhenUse]\n- 使[SupportProtect]的目标友方单位与自身恢复5点理智值\n- 使自身获得体力上限15%的护盾(每回合最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Vibration]强度"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级[Breath]强度"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

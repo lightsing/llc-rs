@@ -1310,6 +1310,196 @@
           ]
         }
       ]
+    },
+    {
+      "id": 2061111,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "泪锋之剑",
+          "abName": "绝望骑士",
+          "desc": "[CantChangeTarget]\n[SupportAlly]\n自身每带有1层[DespairKnightEGOSword]，使本技能造成的伤害+20%\n[BeforeAttack] 自身每带有20层[DespairKnightEGOMind]，使本技能造成的伤害+1%\n[BeforeAttack] 若目标为敌方单位，则使本技能的攻击容量+2\n[BeforeAttack] 使自身获得3层[Breath]\n[BeforeAttack] 使自身获得6层[Charge]\n[BeforeAttack] 若自身的[DespairKnightEGOMind]层数为999层，则消耗所有[DespairKnightEGOMind]并在下回合使自身获得1层[CriticalDamageUp]\n\n[EndSkill] 使自身获得1层[DespairKnightEGOSword]\n[EndSkill] 使自身获得100层[DespairKnightEGOMind]\n\n[EndSkill] 若目标为友方单位\n- 若目标为[PersonalityBreath]或[PersonalityCharge]人格，则使其获得2层[AttackDmgUp]\n- 使目标增加5级[Breath]强度\n- 使目标获得3层[Breath]\n- 使目标获得6层[Charge]\n- 使目标获得自身体力上限20%的护盾\n- 使目标获得[DespairKnightEGOProtect]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "name": "泪锋之剑",
+          "abName": "绝望骑士",
+          "desc": "[CantChangeTarget]\n[SupportAlly]\n自身每带有1层[DespairKnightEGOSword]，使本技能造成的伤害+<style=\"highlight\">30</style>%\n<style=\"highlight\">本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+30%(若是集中遭遇战，则改为以部位判定)</style>\n[BeforeAttack] 自身每带有20层[DespairKnightEGOMind]，使本技能造成的伤害+1%\n[BeforeAttack] 若目标为敌方单位，则使本技能的攻击容量+2\n[BeforeAttack] 使自身获得3层[Breath]\n[BeforeAttack] 使自身获得6层[Charge]\n[BeforeAttack] 若自身的[DespairKnightEGOMind]层数为999层，则消耗所有[DespairKnightEGOMind]并在下回合使自身获得1层[CriticalDamageUp]\n\n[EndSkill] 使自身获得1层[DespairKnightEGOSword]\n[EndSkill] 使自身获得100层[DespairKnightEGOMind]\n\n[EndSkill] 若目标为友方单位\n- 若目标为[PersonalityBreath]或[PersonalityCharge]人格，则使其获得2层[AttackDmgUp]\n- 使目标增加5级[Breath]强度\n- 使目标获得3层[Breath]\n- 使目标获得6层[Charge]\n- 使目标获得自身体力上限20%的护盾\n- 使目标获得[DespairKnightEGOProtect]\n<style=\"highlight\">- 使自身与目标恢复15点理智值</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "泪锋之剑",
+          "abName": "绝望骑士",
+          "desc": "[CantChangeTarget]\n[SupportAlly]\n自身每带有1层[DespairKnightEGOSword]，使本技能造成的伤害+<style=\"highlight\">50</style>%\n本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+<style=\"highlight\">50</style>%(若是集中遭遇战，则改为以部位判定)\n[BeforeAttack] 自身每带有20层[DespairKnightEGOMind]，使本技能造成的伤害+1%\n[BeforeAttack] 若目标为敌方单位，则使本技能的攻击容量+2\n[BeforeAttack] 使自身获得3层[Breath]\n[BeforeAttack] 使自身获得6层[Charge]\n[BeforeAttack] 若自身的[DespairKnightEGOMind]层数为999层，则消耗所有[DespairKnightEGOMind]并在下回合使自身获得1层[CriticalDamageUp]\n\n[EndSkill] 使自身获得1层[DespairKnightEGOSword]\n[EndSkill] 使自身获得100层[DespairKnightEGOMind]\n\n[EndSkill] 若目标为友方单位\n- 若目标为[PersonalityBreath]或[PersonalityCharge]人格，则使其获得2层[AttackDmgUp]\n- 使目标增加5级[Breath]强度\n- 使目标获得3层[Breath]\n- 使目标获得6层[Charge]\n- 使目标获得自身体力上限20%的护盾\n- 使目标获得[DespairKnightEGOProtect]\n- 使自身与目标恢复15点理智值\n<style=\"highlight\">- 随机解除目标带有的1种可解除的负面状态</style>",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">使本硬币暴击时造成的伤害+30%</style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2061121,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "泪锋之剑",
+          "abName": "绝望骑士",
+          "desc": "[CantIdentify]\n随机指定目标\n自身每带有1层[DespairKnightEGOSword]，使本技能的最终威力+2\n[BeforeAttack] 自身每带有10层[DespairKnightEGOMind]，使本技能造成的伤害+1%\n[BeforeAttack] 使自身获得3层[Breath]\n[BeforeAttack] 使自身获得6层[Charge]\n[BeforeAttack] 本技能每有1枚硬币被摧毁，使本技能的基础威力-3(最多-9)\n\n[EndSkill] 使自身恢复(自身的[DespairKnightEGOSword]层数×5)点理智值，并解除自身的[DespairKnightEGOSword]\n[EndSkill] 解除自身的[DespairKnightEGOMind]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "name": "泪锋之剑",
+          "abName": "绝望骑士",
+          "desc": "[CantIdentify]\n随机指定目标\n自身每带有1层[DespairKnightEGOSword]，使本技能的最终威力+2\n<style=\"highlight\">本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+30%(若是集中遭遇战，则改为以部位判定)</style>\n[BeforeAttack] 自身每带有10层[DespairKnightEGOMind]，使本技能造成的伤害+1%\n[BeforeAttack] 使自身获得3层[Breath]\n[BeforeAttack] 使自身获得6层[Charge]\n[BeforeAttack] 本技能每有1枚硬币被摧毁，使本技能的基础威力-3(最多-9)\n\n[EndSkill] 使自身恢复(自身的[DespairKnightEGOSword]层数×5)点理智值，并解除自身的[DespairKnightEGOSword]\n[EndSkill] 解除自身的[DespairKnightEGOMind]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 下回合使自身获得1层[PenetrateResultUp](每回合最多1次)</style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 下回合使自身获得1层[PenetrateDamageUp](每回合最多1次)</style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 下回合使自身获得1层[IndigoDamageUp](每回合最多1次)</style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "泪锋之剑",
+          "abName": "绝望骑士",
+          "desc": "[CantIdentify]\n随机指定目标\n<style=\"highlight\">若自身的[DespairKnightEGOMind]层数为999层，则使本技能的最终威力+3</style>\n自身每带有1层[DespairKnightEGOSword]，使本技能的最终威力+<style=\"highlight\">3</style>\n本技能的攻击容量高于攻击目标数时，每高于1点，使本技能造成的伤害+<style=\"highlight\">50</style>%(若是集中遭遇战，则改为以部位判定)\n<style=\"highlight\">每有1名处于阵亡状态的友方单位，使本技能造成的伤害+10%</style>\n[BeforeAttack] 自身每带有10层[DespairKnightEGOMind]，使本技能造成的伤害+1%\n[BeforeAttack] 使自身获得3层[Breath]\n[BeforeAttack] 使自身获得6层[Charge]\n[BeforeAttack] 本技能每有1枚硬币被摧毁，使本技能的基础威力-3(最多-9)\n\n[EndSkill] 使自身恢复(自身的[DespairKnightEGOSword]层数×5)点理智值，并解除自身的[DespairKnightEGOSword]\n[EndSkill] 解除自身的[DespairKnightEGOMind]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[PenetrateResultUp](每回合最多1次)<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[PenetrateDamageUp](每回合最多1次)<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">使本硬币暴击时造成的伤害+30%</style>"
+                },
+                {
+                  "desc": "<style=\"highlight\">[OnSucceedAttack] 下回合对目标施加1层[PenetrateTakeDamageUp]</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 下回合使自身获得1层[IndigoDamageUp](每回合最多1次)<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

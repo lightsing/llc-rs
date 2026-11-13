@@ -557,6 +557,10 @@
       "content": "追加被动技能"
     },
     {
+      "id": "mainui_synergy_addition",
+      "content": "获得协同"
+    },
+    {
       "id": "mainui_ego_awaken_skill_reinforcement",
       "content": "E.G.O觉醒技能强化"
     },
@@ -603,6 +607,10 @@
     {
       "id": "mainui_new_passive_skill_acquisition",
       "content": "获得新的被动技能[{0}]"
+    },
+    {
+      "id": "mainui_new_synergy_acquisition",
+      "content": "获得协同{0}"
     },
     {
       "id": "mainui_new_battle_passive_acquisition",
@@ -2083,6 +2091,14 @@
     {
       "id": "mainui_exp_dungeon_18_open_day",
       "content": "经验采光#10（打击）将在周五、周六、周日开放。"
+    },
+    {
+      "id": "unitinfo_tab_synergy",
+      "content": "协同"
+    },
+    {
+      "id": "unitinfo_synergy_unsatisfied",
+      "content": "{0}项条件未达成"
     }
   ]
 }

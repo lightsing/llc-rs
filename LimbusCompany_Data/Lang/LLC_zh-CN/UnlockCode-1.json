@@ -225,6 +225,11 @@
       "openCondition": "通过主线剧情第10章",
       "openConditionNumber": "通过10-7",
       "relatedChapterText": "Canto X"
+    },
+    {
+      "id": 9129,
+      "openCondition": "通过第10次 瓦尔普吉斯之夜",
+      "relatedChapterText": "第10次 瓦尔普吉斯之夜"
     }
   ]
 }

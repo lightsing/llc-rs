@@ -1116,7 +1116,7 @@
       "levelList": [
         {
           "level": 1,
-          "name": "防守闪避",
+          "name": "防守",
           "desc": "",
           "coinlist": [
             {
@@ -1130,7 +1130,7 @@
         },
         {
           "level": 4,
-          "name": "防守闪避",
+          "name": "防守",
           "desc": "[WhenUse] 若自身的速度值高于攻击者至少3点，则使本技能的硬币威力+2",
           "coinlist": [
             {

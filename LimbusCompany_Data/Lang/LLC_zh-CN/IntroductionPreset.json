@@ -2163,6 +2163,30 @@
     {
       "id": "introduce_sentence_271",
       "content": "要认真{0}才行呀？"
+    },
+    {
+      "id": "introduce_word_272",
+      "content": "楔子"
+    },
+    {
+      "id": "introduce_sentence_272",
+      "content": "{0}阵势，展开！"
+    },
+    {
+      "id": "introduce_word_273",
+      "content": "保险更新"
+    },
+    {
+      "id": "introduce_sentence_273",
+      "content": "这次的{0}，你没忘吧？"
+    },
+    {
+      "id": "introduce_word_274",
+      "content": "誓言"
+    },
+    {
+      "id": "introduce_sentence_274",
+      "content": "由无法守护的{0}磨砺而成的这柄剑……"
     }
   ]
 }

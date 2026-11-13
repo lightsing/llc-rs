@@ -1,0 +1,34 @@
+{
+  "dataList": [
+    {
+      "id": "announcer_walpu10_start_90008_1",
+      "dlg": "冷静下来，按平常的发挥就能赢！",
+      "isHide": true
+    },
+    {
+      "id": "announcer_walpu10_battle_win_90008_1",
+      "dlg": "赢了，我们赢了！我做到了。这样算是帮上忙了吗？",
+      "isHide": true
+    },
+    {
+      "id": "announcer_walpu10_ally_dead_90008_1",
+      "dlg": "不要责备自己。你也尽力了不是吗。",
+      "isHide": true
+    },
+    {
+      "id": "announcer_walpu10_ally_dead_90008_2",
+      "dlg": "大家别慌！越是在这种时候越要打起精神来。",
+      "isHide": true
+    },
+    {
+      "id": "announcer_walpu10_killenemy_90008_1",
+      "dlg": "取胜也只是时间问题哟！",
+      "isHide": true
+    },
+    {
+      "id": "announcer_walpu10_killenemy_90008_2",
+      "dlg": "好，进行得很顺利！不过现在就开心有些为时尚早呢。",
+      "isHide": true
+    }
+  ]
+}

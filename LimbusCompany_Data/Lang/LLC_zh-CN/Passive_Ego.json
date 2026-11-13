@@ -637,6 +637,24 @@
       "name": "内出血(l'hémorragie interne)",
       "desc": "[AlwaysUseEGOPassive]\n若自身的[BulletHole]数为5发，则自身的“空洞”E.G.O技能(觉醒、侵蚀)使用时不会消耗E.G.O资源\n\n回合开始时，使自身获得1发[BulletHole]\n\n[WhenUseEGOPassive]\n回合开始时，使自身获得1层[BlackWingHole]\n\n每当自身累计消耗或失去3发[Bullet]时，使自身恢复5点理智值并在下回合获得1层[ResultEnhancement](包括特殊[Bullet]；每回合最多计入9发[Bullet])",
       "flavor": "他人之视线刺穿我的身体，形成空洞，使一切溢出。溢出之物化作子弹又再次射向你，刺出空洞。"
+    },
+    {
+      "id": 2061111,
+      "name": "于绝望之中",
+      "desc": "使自身高于1.5的物理抗性变为1.5(不包括陷入混乱)\n若自身陷入混乱，则使自身受到的伤害-30%(包括强制混乱)\n\n若自身的[DespairKnightEGOMind]层数为999层，则自身的“泪锋之剑”E.G.O技能(觉醒、侵蚀)使用时不会消耗E.G.O资源\n\n包括自身在内的友方单位受到伤害时，使自身获得层数相当于受到伤害量的[DespairKnightEGOMind](包括护盾受到的伤害)\n友方单位阵亡时，使自身获得1层[DespairKnightEGOSword](每回合最多1次)\n带有[DespairKnightEGOProtect]的友方单位阵亡时，使自身获得1层[DespairKnightEGOSword](每回合最多1次)\n\n每有2名处于阵亡状态的友方单位，使自身的攻击等级+1，防御等级-1(分别最多+5，-5)",
+      "summary": "抗性强化，受到的伤害减少"
+    },
+    {
+      "id": 50001,
+      "name": "魔法阿卡纳",
+      "desc": "参战的属于魔法少女的人格与属于魔法少女的E.G.O不低于一定量时，触发以下效果(人格与E.G.O可重复适用)\n(2)属于魔法少女的友方人格与属于魔法少女的E.G.O的技能造成的伤害+10%",
+      "summary": "(2)属于魔法少女的人格与E.G.O的技能造成的伤害+10%"
+    },
+    {
+      "id": 50002,
+      "name": "魔法阿卡纳",
+      "desc": "(3)使全体友方单位的减算硬币技能造成的伤害+10%\n“泪锋之剑”E.G.O技能攻击为主要目标的敌方单位后，对其施加1层[DespairKnightEGOAlly](每回合最多1次)",
+      "summary": "(3)使全体友方单位的减算硬币技能造成的伤害+10%，“泪锋之剑”攻击后，对目标施加1层[DespairKnightEGOAlly]"
     }
   ]
 }

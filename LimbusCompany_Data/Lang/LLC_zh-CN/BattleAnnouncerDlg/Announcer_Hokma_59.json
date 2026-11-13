@@ -1,0 +1,132 @@
+{
+  "dataList": [
+    {
+      "id": "announcer_cheer_59_1",
+      "dlg": "最好还是不要让时间白白逝去。虽然这里即将变得喧闹又痛苦，但我们无需呆板地接受既定的结果。"
+    },
+    {
+      "id": "announcer_cheer_59_2",
+      "dlg": "我并不愿意让您因员工们的死亡而陷入痛苦。所以请您安心地开始工作吧。在这循环之下，我们不会失去任何人。"
+    },
+    {
+      "id": "announcer_specialcheer_59_1",
+      "dlg": "看来情况变得相当不利。没关系。下次试试其他办法吧。"
+    },
+    {
+      "id": "announcer_specialcheer_59_2",
+      "dlg": "将您想尝试的事情全都尝试一遍吧。之后，只需重新开始即可。"
+    },
+    {
+      "id": "announcer_enemy_break_59_1",
+      "dlg": "看来它们也是可以停下动作，静止不动的。"
+    },
+    {
+      "id": "announcer_ally_break_59_1",
+      "dlg": "这位员工的状态看起来不太对劲。"
+    },
+    {
+      "id": "announcer_killenemy_59_1",
+      "dlg": "您还是一如既往地优秀。我会将刚才的成果记录下来。"
+    },
+    {
+      "id": "announcer_ally_dead_59_1",
+      "dlg": "不论有多少员工殒命，都会有人补上他们的位置。这不过是周而复始的循环，您无需为此感到痛苦。"
+    },
+    {
+      "id": "announcer_enemy_adv_59_1",
+      "dlg": "干脆止步于此如何？我们没必要非得做出改变。"
+    },
+    {
+      "id": "announcer_ally_adv_59_1",
+      "dlg": "您正在遵循成功的公式。但愿您可以一直保持下去。"
+    },
+    {
+      "id": "announcer_ally_advex_59_1",
+      "dlg": "……即便如此，您也要继续前进吗？"
+    },
+    {
+      "id": "announcer_danger_59_1",
+      "dlg": "即使时间的流逝被无限地延长，我们也终将翻到最后一页。\n您要进行最后的记录吗？"
+    },
+    {
+      "id": "announcer_enemy_specialskill_59_1",
+      "dlg": "根据记录，死亡会紧随着那种行动而来。请小心。"
+    },
+    {
+      "id": "announcer_enemy_specialgimmick_59_1",
+      "dlg": "如果是您的话，应该能用理性的眼光进行判断，并得出结论。如此即可。我会为您记录结果。"
+    },
+    {
+      "id": "announcer_advatk_physical_59_1",
+      "dlg": "该行动与记录一致。"
+    },
+    {
+      "id": "announcer_disadvatk_physical_59_1",
+      "dlg": "您是想做出与记录不同的行动吗？"
+    },
+    {
+      "id": "announcer_advatk_attr_59_1",
+      "dlg": "理性的判断。"
+    },
+    {
+      "id": "announcer_disadvatk_attr_59_1",
+      "dlg": "……过度的理性会成为刺向自己的刀刃。"
+    },
+    {
+      "id": "announcer_enemy_specialbuff_59_1",
+      "dlg": "它变得愈发猖獗了。看来它正在收容单元之外的世界中尽情享受自由。"
+    },
+    {
+      "id": "announcer_enemy_specialdebuff_59_1",
+      "dlg": "抑制力正常。我会在记录和考核中反映此事。"
+    },
+    {
+      "id": "announcer_ally_specialbuff_59_1",
+      "dlg": "您看起来欣喜若狂。或许那些收到我所寄出的录用通知的人，脸上也是这副表情。"
+    },
+    {
+      "id": "announcer_ally_specialdebuff_59_1",
+      "dlg": "那位迷茫的员工正在试图找回理智。"
+    },
+    {
+      "id": "announcer_enemy_destroy_59_1",
+      "dlg": "某物自碎裂之处流淌而出。"
+    },
+    {
+      "id": "announcer_enemy_destroy_59_2",
+      "dlg": "它终于产生变化，并开始瓦解了。您期盼着变化，这对您而言或许是件好事。"
+    },
+    {
+      "id": "announcer_round_takebigdmg_59_1",
+      "dlg": "我不知道您到底还要付出多少牺牲，而您又想从中得到什么？"
+    },
+    {
+      "id": "announcer_round_takebigdmg_59_2",
+      "dlg": "您不知该何时停下吗？我认为现在就是最恰当的时机。请您驻足于此，与我度过永恒。"
+    },
+    {
+      "id": "announcer_round_givebigdmg_59_1",
+      "dlg": "这种优秀的表现对我来说并不陌生。真令人难忘。"
+    },
+    {
+      "id": "announcer_round_givebigdmg_59_2",
+      "dlg": "毕竟员工人选与命令都源自您的决策，这应该算是理所当然的结果。但“理所当然”并不能成为使您无法得到称赞的理由。做得好。"
+    },
+    {
+      "id": "announcer_multikillenemy_59_1",
+      "dlg": "令人惊讶。我会记录这位员工的详细信息。以备您今后再次选择这位员工。"
+    },
+    {
+      "id": "announcer_battle_win_59_1",
+      "dlg": "请享用由您的选择和牺牲所结出的果实。在使您不断失去的时光中取得的成果，是否令您满意？"
+    },
+    {
+      "id": "announcer_battle_defeat_59_1",
+      "dlg": "没必要执着于糟糕的结果。来，与我一起，再试一次吧。\n您或许不记得了，但我始终都站在您这边。"
+    },
+    {
+      "id": "announcer_equip_59_1",
+      "dlg": "我想您差不多也该来了。即便只是在这全然沉寂的空间之中一味地等待着，我也早已知晓。\n请称呼我为Hokma。我负责记录与掌控一切发生之事。"
+    }
+  ]
+}

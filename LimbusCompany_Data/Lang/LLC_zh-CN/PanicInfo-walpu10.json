@@ -1,0 +1,22 @@
+{
+  "dataList": [
+    {
+      "id": 1123,
+      "panicName": "黎明事务所",
+      "lowMoraleDescription": "对带有[Combustion]的敌方单位造成的伤害-5%\n对带有[Vibration]的敌方单位造成的混乱阈值前移量+5%",
+      "panicDescription": "对带有[Combustion]的敌方单位造成的伤害-10%\n对带有[Vibration]的敌方单位造成的混乱阈值前移量+10%"
+    },
+    {
+      "id": 1124,
+      "panicName": "楔子事务所",
+      "lowMoraleDescription": "暴击时造成的伤害-5%\n对带有[Vibration]的敌方单位造成的混乱阈值前移量+5%",
+      "panicDescription": "暴击时造成的伤害-10%\n对带有[Vibration]的敌方单位造成的混乱阈值前移量+10%"
+    },
+    {
+      "id": 1125,
+      "panicName": "蜡翼",
+      "lowMoraleDescription": "对自身施加1层[Vulnerable]\n对带有[Combustion]的敌方单位造成的伤害+10%",
+      "panicDescription": "对自身施加1层[Vulnerable]\n对带有[Combustion]的敌方单位造成的伤害+25%"
+    }
+  ]
+}

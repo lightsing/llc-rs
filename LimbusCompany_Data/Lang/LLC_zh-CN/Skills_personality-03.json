@@ -3693,6 +3693,371 @@
           ]
         }
       ]
+    },
+    {
+      "id": 1031601,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "交锋",
+          "desc": "[WhenUse] 使自身增加3级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+1\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 重复使用本技能的最后一枚硬币1次\n[WinDuel] 下回合使自身获得1层[PenetrateDamageUp](每回合最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加1级[Vibration]强度"
+                },
+                {
+                  "desc": "[ReUseOnSucceedAttack] 对目标施加1层[WedgeMarkGreen]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "交锋",
+          "desc": "<style=\"highlight\">[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和每有4级，使本技能的最终威力+1(最多+2)</style>\n[WhenUse] 使自身增加<style=\"highlight\">4</style>级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+<style=\"highlight\">2</style>\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 重复使用本技能的最后一枚硬币1次\n[WinDuel] 下回合使自身获得1层[PenetrateDamageUp](每回合最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加<style=\"highlight\">2</style>级[Vibration]强度"
+                },
+                {
+                  "desc": "[ReUseOnSucceedAttack] 对目标施加1层[WedgeMarkGreen]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "交锋",
+          "desc": "[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和每有4级，使本技能的最终威力+1(最多+<style=\"highlight\">3</style>)\n[WhenUse] 使自身增加4级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+2\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 重复使用本技能的最后一枚硬币1次\n[WinDuel] 下回合使自身获得1层[PenetrateDamageUp](每回合最多1次)",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使目标增加2级[Vibration]强度<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[ReUseOnSucceedAttack] 对目标施加1层[WedgeMarkGreen]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1031602,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "瞄准空隙",
+          "desc": "[WhenUse] 使自身增加2级[Breath]强度\n[WinDuel] 使目标增加1级[Vibration]强度，使其[VibrationExplosion]，并使其[Vibration]层数减少1层",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加1级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "name": "瞄准空隙",
+          "desc": "<style=\"highlight\">[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和每有4级，使本技能的最终威力+1(最多+2)</style>\n[WhenUse] 使自身增加<style=\"highlight\">3</style>级[Breath]强度\n[WinDuel] 使目标增加1级[Vibration]强度，使其[VibrationExplosion]，并使其[Vibration]层数减少1层",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加<style=\"highlight\">2</style>级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "<style=\"highlight\">[OnStartCoin] 自身每带有1层[BattleFieldKnow]，使本硬币的最终威力+1(最多+4)</style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "瞄准空隙",
+          "desc": "[WhenUse] 自身的[Breath]强度与目标的[Vibration]强度之和每有4级，使本技能的最终威力+1(最多+<style=\"highlight\">3</style>)\n[WhenUse] 使自身增加3级[Breath]强度\n[WinDuel] 使目标增加1级[Vibration]强度，使其[VibrationExplosion]，并使其[Vibration]层数减少1层",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加2级[Breath]强度<style=\"highlight\"></style>"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnStartCoin] 自身每带有1层[BattleFieldKnow]，使本硬币的最终威力+1(最多+4)<style=\"highlight\"></style>"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1031603,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "长枪横扫",
+          "desc": "[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1\n[WhenUse] 使自身增加2级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+1\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 使本技能造成的伤害+20%\n[WinDuel] 使目标增加2级[Vibration]强度，使其[VibrationExplosion]，并使其[Vibration]层数减少1层",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加4级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+20%"
+                },
+                {
+                  "desc": "[OnStartCoin] 自身每带有1层[BattleFieldKnow]，使本硬币的最终威力+1(最多+4)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]状态，则使其[Switch_Vibration]为[VibrationCollapse]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "长枪横扫",
+          "desc": "[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1\n[WhenUse] 使自身增加2级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+<style=\"highlight\">3</style>\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 使本技能造成的伤害+<style=\"highlight\">40%</style>\n[WinDuel] 使目标增加2级[Vibration]强度，使其[VibrationExplosion]，并使其[Vibration]层数减少1层",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加4级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+<style=\"highlight\">30%</style>"
+                },
+                {
+                  "desc": "[OnStartCoin] 自身每带有1层[BattleFieldKnow]，使本硬币的最终威力+1(最多+4)"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]状态，则使其[Switch_Vibration]为[VibrationCollapse]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]，并使其[Vibration]层数减少1层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1031604,
+      "levelList": [
+        {
+          "level": 1,
+          "name": "调整呼吸",
+          "desc": "[WhenUse] 若自身的[Breath]强度不低于6级，则使本技能的硬币威力+1\n[OnSucceedEvade] 使自身增加1级[Breath]强度(每回合最多3次)\n[OnBattleEnd] 若本回合自身未通过技能效果获得[BattleFieldKnow]，则使自身获得1层[BattleFieldKnow](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 3,
+          "name": "调整呼吸",
+          "desc": "<style=\"highlight\">[StartBattle] 若目标的[WedgeMarkGreen]层数不低于4层，则改为使用“不留空隙，切实贯穿吧”(每回合最多1次，该效果在单方面攻击时也会触发)</style>\n[WhenUse] 若自身的[Breath]强度不低于6级，则使本技能的硬币威力+1\n[OnSucceedEvade] 使自身增加<style=\"highlight\">2</style>级[Breath]强度(每回合最多3次)\n[OnBattleEnd] 若本回合自身未通过技能效果获得[BattleFieldKnow]，则使自身获得1层[BattleFieldKnow](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        },
+        {
+          "level": 4,
+          "name": "调整呼吸",
+          "desc": "[StartBattle] 若目标的[WedgeMarkGreen]层数不低于4层，则改为使用“不留空隙，切实贯穿吧”(每回合最多1次，该效果在单方面攻击时也会触发)\n[WhenUse] 若自身的[Breath]强度不低于6级，则使本技能的硬币威力+1\n[OnSucceedEvade] 使自身增加2级[Breath]强度(每回合最多3次)\n<style=\"highlight\">[OnSucceedEvade] 下回合使自身获得1层[Agility](每回合最多1次)</style>\n[OnBattleEnd] 若本回合自身未通过技能效果获得[BattleFieldKnow]，则使自身获得1层[BattleFieldKnow](每回合最多1次)",
+          "coinlist": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1031605,
+      "levelList": [
+        {
+          "level": 3,
+          "name": "不留空隙，切实贯穿吧",
+          "desc": "守备技能改为使用本技能时，本技能视作攻击技能，不受改变守备威力的效果影响，而改为适用于改变攻击威力的效果\n目标每带有2层[WedgeMarkGreen]，使本技能的拼点威力+1(最多+4)\n[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1\n[WhenUse] 使自身增加2级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+1\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 使本技能造成的伤害+30%\n[WinDuel] 使目标增加4级[Vibration]强度并使其[VibrationExplosion]\n[EndSkill] 解除目标所有[WedgeMarkGreen]\n[EndSkill] 使友方<noparse>楔子事务所</noparse> 代表 奥提斯人格获得3层[ComboWedge]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加4级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "使本硬币暴击时造成的伤害+20%",
+                  "summary": "使本硬币暴击时造成的伤害增加"
+                },
+                {
+                  "desc": "使本硬币造成的+(40/目标的突刺抗性)%(最多+80%，向下取整)",
+                  "summary": "目标的突刺抗性越低，本硬币造成的伤害越高"
+                },
+                {
+                  "desc": "若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+30%",
+                  "summary": "造成的伤害+30%"
+                },
+                {
+                  "desc": "[OnStartCoin] 自身每带有1层[BattleFieldKnow]，使本硬币的最终威力+2(最多+8)",
+                  "summary": "[OnStartCoin] 根据自身的[BattleFieldKnow]层数，相应增加最终威力"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]状态，则使其[Switch_Vibration]为[VibrationCollapse]",
+                  "summary": "[OnSucceedAttack] 使目标[Switch_Vibration]为[VibrationCollapse]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量(其[WedgeMarkGreen]层数×7)%的突刺伤害(最多56%)",
+                  "summary": "[OnSucceedAttack] 根据目标的[WedgeMarkGreen]层数，相应造成突刺伤害"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]2次，并使其[Vibration]层数减少2层"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "name": "不留空隙，切实贯穿吧",
+          "desc": "守备技能改为使用本技能时，本技能视作攻击技能，不受改变守备威力的效果影响，而改为适用于改变攻击威力的效果\n目标每带有2层[WedgeMarkGreen]，使本技能的拼点威力+1(最多+4)\n[WhenUse] 若自身的[Breath]强度与目标的[Vibration]强度之和不低于6级，则使本技能的硬币威力+1\n[WhenUse] 使自身增加2级[Breath]强度\n[ComboSkill]：与<noparse>楔子事务所</noparse> 收尾人 辛克莱的技能共鸣时，触发以下效果(每回合最多1次)\n- [WhenUse] 使本技能的拼点威力+<style=\"highlight\">3</style>\n- [WhenUse] 使自身获得1层[BattleFieldKnow]\n- [WhenUse] 使本技能造成的伤害+<style=\"highlight\">50%</style>\n[WinDuel] 使目标增加4级[Vibration]强度并使其[VibrationExplosion]\n[EndSkill] 解除目标所有[WedgeMarkGreen]\n[EndSkill] 使友方<noparse>楔子事务所</noparse> 代表 奥提斯人格获得3层[ComboWedge]",
+          "coinlist": [
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使自身增加4级[Breath]强度"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标施加3层[Vibration]"
+                }
+              ]
+            },
+            {
+              "coindescs": [
+                {
+                  "desc": "[SuperCoin]"
+                },
+                {
+                  "desc": "使本硬币暴击时造成的伤害+<style=\"highlight\">40%</style>",
+                  "summary": "使本硬币暴击时造成的伤害增加"
+                },
+                {
+                  "desc": "使本硬币造成的+(40/目标的突刺抗性)%(最多+80%，向下取整)",
+                  "summary": "目标的突刺抗性越低，本硬币造成的伤害越高"
+                },
+                {
+                  "desc": "若目标处于[Switch_Vibration]或[FusionVibration]状态，则使本硬币造成的伤害+30%",
+                  "summary": "造成的伤害+30%"
+                },
+                {
+                  "desc": "[OnStartCoin] 自身每带有1层[BattleFieldKnow]，使本硬币的最终威力+2(最多+8)",
+                  "summary": "[OnStartCoin] 根据自身的[BattleFieldKnow]层数，相应增加最终威力"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 若目标未处于[Switch_Vibration]状态，则使其[Switch_Vibration]为[VibrationCollapse]",
+                  "summary": "[OnSucceedAttack] 使目标[Switch_Vibration]为[VibrationCollapse]"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 对目标造成本硬币最终伤害量(其[WedgeMarkGreen]层数×7)%的突刺伤害(最多56%)",
+                  "summary": "[OnSucceedAttack] 根据目标的[WedgeMarkGreen]层数，相应造成突刺伤害"
+                },
+                {
+                  "desc": "[OnSucceedAttack] 使目标[VibrationExplosion]2次，并使其[Vibration]层数减少2层"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
