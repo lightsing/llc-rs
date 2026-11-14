@@ -610,7 +610,7 @@
     },
     {
       "id": "mainui_new_synergy_acquisition",
-      "content": "获得协同{0}"
+      "content": "获得协同[{0}]"
     },
     {
       "id": "mainui_new_battle_passive_acquisition",

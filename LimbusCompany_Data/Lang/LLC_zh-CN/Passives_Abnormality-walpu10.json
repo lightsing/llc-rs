@@ -120,7 +120,7 @@
     {
       "id": 158701,
       "name": "激情",
-      "desc": "回合结束时，若自身陷入混乱，则使全体敌方单位增加2级[Combustion]强度\n\n<color=#ff6000><mark color=#ff000040><b><u>若自身的理智值不低于20/40/45点，</color></mark></b></u>则使自身的硬币威力+1/2/3\n\n<color=#ff6000><mark color=#ff000040><b><u>若现存体力不高于50%</color></mark></b></u>，则使自身的最终威力+1"
+      "desc": "回合结束时，若自身陷入混乱，则使全体敌方单位增加2级[Combustion]强度\n\n<color=#ff6000><mark color=#ff000040><b><u>若自身的理智值不低于20/40/45点，</color></mark></b></u>则使自身的最终威力+1/2/3\n\n<color=#ff6000><mark color=#ff000040><b><u>若现存体力不高于50%</color></mark></b></u>，则使自身的最终威力+1"
     },
     {
       "id": 158702,

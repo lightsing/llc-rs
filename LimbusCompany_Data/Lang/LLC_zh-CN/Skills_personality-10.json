@@ -606,7 +606,7 @@
       "levelList": [
         {
           "level": 3,
-          "name": "悔恨交加",
+          "name": "悔恨",
           "desc": "若自身处于不稳定E.G.O状态，则目标每带有2级[Combustion]强度，使本技能的基础威力+1(最多+10)",
           "coinlist": [
             {
@@ -620,7 +620,7 @@
         },
         {
           "level": 4,
-          "name": "悔恨交加",
+          "name": "悔恨",
           "desc": "若自身处于不稳定E.G.O状态，则目标每带有2级[Combustion]强度，使本技能的基础威力+1(最多+<style=\"highlight\">20</style>)",
           "coinlist": [
             {
