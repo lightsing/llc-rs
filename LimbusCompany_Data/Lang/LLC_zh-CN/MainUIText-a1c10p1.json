@@ -107,6 +107,10 @@
     {
       "id": "notice_of_story_same_content",
       "content": "内容与{0}相同，仅获取奖励。"
+    },
+    {
+      "id": "10th_anniversary_event_desc",
+      "content": "活动期间登录，即可获赠3★人格必得十连提取券与狂气"
     }
   ]
 }

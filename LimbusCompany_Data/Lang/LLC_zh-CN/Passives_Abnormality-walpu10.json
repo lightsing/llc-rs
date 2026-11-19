@@ -66,7 +66,7 @@
     {
       "id": 158302,
       "name": "楔子事务所",
-      "desc": "自身在关卡中首次登场时，触发以下效果\n- 使自身恢复45点理智值\n- 使属于楔子事务所的全体友方人格获得3层[WalpuTenWedgeOffice]\n\n回合开始时，<color=#ff6000><mark color=#ff000040><b><u>若有友方单位陷入混乱</color></mark></b></u>，则使楔子事务所[TabExplain] 代表 奥斯卡获得2层[SupportProtect](不包括自身)\n<color=#ff6000><mark color=#ff000040><b><u>战斗中友方单位陷入混乱时</color></mark></b></u>，使楔子事务所[TabExplain] 代表 奥斯卡获得1层[SupportProtect](每回合最多1次，持续判定)\n- 通过以上2种效果获得[SupportProtect]时，若楔子事务所[TabExplain] 代表 奥斯卡陷入混乱，则解除其混乱(不包括强制混乱)"
+      "desc": "自身在关卡中首次登场时，触发以下效果\n- 使自身恢复45点理智值\n- 使属于楔子事务所的全体友方单位获得3层[WalpuTenWedgeOffice]\n\n回合开始时，<color=#ff6000><mark color=#ff000040><b><u>若有友方单位陷入混乱</color></mark></b></u>，则使楔子事务所[TabExplain] 代表 奥斯卡获得2层[SupportProtect](不包括自身)\n<color=#ff6000><mark color=#ff000040><b><u>战斗中友方单位陷入混乱时</color></mark></b></u>，使楔子事务所[TabExplain] 代表 奥斯卡获得1层[SupportProtect](每回合最多1次，持续判定)\n- 通过以上2种效果获得[SupportProtect]时，若楔子事务所[TabExplain] 代表 奥斯卡陷入混乱，则解除其混乱(不包括强制混乱)"
     },
     {
       "id": 158303,
@@ -120,7 +120,7 @@
     {
       "id": 158701,
       "name": "激情",
-      "desc": "回合结束时，若自身陷入混乱，则使全体敌方单位增加2级[Combustion]强度\n\n<color=#ff6000><mark color=#ff000040><b><u>若自身的理智值不低于20/40/45点，</color></mark></b></u>则使自身的最终威力+1/2/3\n\n<color=#ff6000><mark color=#ff000040><b><u>若现存体力不高于50%</color></mark></b></u>，则使自身的最终威力+1"
+      "desc": "回合结束时，若自身未陷入混乱，则使全体敌方单位增加2级[Combustion]强度\n\n<color=#ff6000><mark color=#ff000040><b><u>若自身的理智值不低于20/40/45点，</color></mark></b></u>则使自身的最终威力+1/2/3\n\n<color=#ff6000><mark color=#ff000040><b><u>若现存体力不高于50%</color></mark></b></u>，则使自身的最终威力+1"
     },
     {
       "id": 158702,

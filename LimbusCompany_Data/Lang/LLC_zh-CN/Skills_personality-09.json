@@ -3676,7 +3676,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[OnSucceedAttack] 使目标获得2层[Vibration]<style=\"highlight\"></style>"
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
                 }
               ]
             },
@@ -3704,7 +3704,7 @@
             {
               "coindescs": [
                 {
-                  "desc": "[OnSucceedAttack] 使目标获得2层[Vibration]<style=\"highlight\"></style>"
+                  "desc": "[OnSucceedAttack] 对目标施加2层[Vibration]<style=\"highlight\"></style>"
                 }
               ]
             },
